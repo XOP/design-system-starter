@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "JS Library",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "lib": ["DOM", "ES2021"],
+    "module": "ESNext",
+    "target": "ES2021",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "sourceMap": false,
+    "noEmit": true
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "@awsm/tsconfig",
+  "version": "0.0.0",
+  "author": "Evgeny Khoroshilov",
+  "license": "MIT",
+  "private": true
+}

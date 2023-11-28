@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "React Library",
+  "extends": "./lib-js.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "incremental": true
+  }
+}

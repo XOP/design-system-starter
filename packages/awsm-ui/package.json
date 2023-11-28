@@ -1,0 +1,14 @@
+{
+  "name": "@awsm/ui",
+  "version": "0.0.0",
+  "author": "Evgeny Khoroshilov",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": ""
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
