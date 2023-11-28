@@ -4,11 +4,37 @@
   "author": "Evgeny Khoroshilov",
   "license": "MIT",
   "private": true,
-  "scripts": {
-    "build": ""
+  "type": "module",
+  "files": [
+    "dist/tokens.*",
+    "dist/css",
+    "dist/src"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/src/lib/tokens/tokens.d.ts",
+      "import": "./dist/tokens.esm.js",
+      "require": "./dist/tokens.cjs.js"
+    },
+    "./css/*": {
+      "import": "./dist/css/*",
+      "require": "./dist/css/*"
+    }
   },
-  "dependencies": {
+  "scripts": {
+    "lint": "eslint \"src/**/*.ts*\"",
+    "build": "pnpm gen && tsc && vite build",
+    "gen": "pnpm gen:palette && yarn gen:vars",
+    "gen:vars": "tsx ./scripts/generateVars.cts",
+    "gen:palette": "tsx ./scripts/generatePaletteVars.cts"
   },
   "devDependencies": {
+    "@awsm/tsconfig": "*",
+    "eslint": "^8.54.0",
+    "eslint-config-awsm": "*",
+    "polished": "^4.2.2",
+    "typescript": "^5.3.2",
+    "vite": "^5.0.2",
+    "vite-plugin-dts": "^3.6.3"
   }
 }

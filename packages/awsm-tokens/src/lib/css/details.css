@@ -1,0 +1,20 @@
+/* generated file, do not edit directly */
+
+:root {
+  --awsm-duration-instant: 123ms;
+  --awsm-duration-short: 173ms;
+  --awsm-duration-regular: 245ms;
+  --awsm-duration-long: 346ms;
+  --awsm-duration-extra: 490ms;
+  --awsm-shadow-color: var(--awsm-color-shadow);
+  --awsm-shadow-color-rgb: var(--awsm-color-shadow-rgb);
+  --awsm-shadow-small: 0px 1px 1px rgba(var(--awsm-color-shadow-rgb), 0.2), 0px 1px 2px -0.5px rgba(var(--awsm-color-shadow-rgb), 0.45), 0px 1px 4px -3px rgba(var(--awsm-color-shadow-rgb), 0.35);
+  --awsm-shadow-medium: 0px 1px 1px -0.5px rgba(var(--awsm-color-shadow-rgb), 0.1), 0px 1px 2px -1px rgba(var(--awsm-color-shadow-rgb), 0.25), 0px 2px 3px -1.5px rgba(var(--awsm-color-shadow-rgb), 0.3), 0px 5px 6px -2px rgba(var(--awsm-color-shadow-rgb), 0.4);
+  --awsm-shadow-large: 0px 0.5px 0.5px rgba(var(--awsm-color-shadow-rgb), 0.2), 0px 2px 2px -0.5px rgba(var(--awsm-color-shadow-rgb), 0.25), 0px 5px 6px -1px rgba(var(--awsm-color-shadow-rgb), 0.25), 0px 8px 9px -1px rgba(var(--awsm-color-shadow-rgb), 0.3), 0px 12px 14px -2px rgba(var(--awsm-color-shadow-rgb), 0.3), 0px 16px 20px -3px rgba(var(--awsm-color-shadow-rgb), 0.25);
+  --awsm-focus-color: var(--awsm-color-focus-ring);
+  --awsm-focus-outline: 2px solid var(--awsm-color-focus-ring);
+  --awsm-focus-outline-offset: 1px;
+  --awsm-selection-color: var(--awsm-color-secondary-contrast);
+  --awsm-selection-contrast: var(--awsm-color-secondary-main);
+
+}
