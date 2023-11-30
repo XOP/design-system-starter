@@ -20,6 +20,6 @@ export type Story = StoryObj<typeof Button>;
 
 export const Base: Story = {
   args: {
-    children: 'Hello',
+    children: 'Awesome',
   }
 };
