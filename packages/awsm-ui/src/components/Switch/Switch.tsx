@@ -15,7 +15,7 @@ export type SwitchSizes = 'regular' | 'small';
 export interface SwitchProps extends BaseSwitchProps {
   color?: SwitchColors;
   size?: SwitchSizes;
-  children?: React.ReactNode
+  children?: React.ReactNode;
 }
 
 const Switch = React.forwardRef(function Switch(
@@ -31,8 +31,12 @@ const Switch = React.forwardRef(function Switch(
   } = props;
 
   return (
-    <BaseSwitch {...rest} ref={ref} className={clsx(className, styles())}>
-      <span className={indicatorStyles()} />
+    <BaseSwitch
+      {...rest}
+      ref={ref}
+      className={clsx(className, styles({ size }))}
+    >
+      <span className={indicatorStyles({ color })} />
       {label && <span>{label}</span>}
     </BaseSwitch>
   );
