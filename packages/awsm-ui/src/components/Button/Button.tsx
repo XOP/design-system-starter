@@ -39,7 +39,7 @@ const Button = React.forwardRef(function Button(
       {...other}
       isDisabled={disabled}
       ref={ref}
-      className={clsx(className, styles())}
+      className={clsx(className, styles({ color, variant, size }))}
     >
       {children}
     </BaseButton>
