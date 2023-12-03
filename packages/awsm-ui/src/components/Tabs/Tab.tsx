@@ -18,7 +18,11 @@ const Tab = React.forwardRef(function Tab(
   const { className, ...rest } = props;
 
   return (
-    <BaseTab {...rest} ref={ref} className={clsx(className, tabStyles())}>
+    <BaseTab
+      {...rest}
+      ref={ref}
+      className={({ isDisabled, isSelected }) => clsx(className, tabStyles({ isDisabled, isSelected }))}
+    >
       {props.children}
     </BaseTab>
   );

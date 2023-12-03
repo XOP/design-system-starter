@@ -25,7 +25,11 @@ const Tabs = React.forwardRef(function Tabs(
   const { className, color = 'primary', variant = 'regular', ...rest } = props;
 
   return (
-    <BaseTabs {...rest} ref={ref} className={clsx(className, tabsStyles())}>
+    <BaseTabs
+      {...rest}
+      ref={ref}
+      className={clsx(className, tabsStyles({ color, variant }))}
+    >
       {props.children}
     </BaseTabs>
   );
