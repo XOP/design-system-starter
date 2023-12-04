@@ -5,7 +5,7 @@ import type { StorybookConfig } from '@storybook/react-vite';
 
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 
-// import { excludedProps } from './config/excludedProps';
+import { excludedProps } from './config/excludedProps';
 
 // other packages can be added to setup if needed
 const packages = ['awsm-ui'];
@@ -65,8 +65,10 @@ const config: StorybookConfig = {
       shouldRemoveUndefinedFromOptional: true,
       propFilter: (prop) => {
         if (prop.parent) {
-          return !/node_modules\/(?!react-aria)/.test(prop.parent.fileName); // &&
-          // !excludedProps.includes(prop.name)
+          return (
+            !/node_modules\/.pnpm\/(?!react-aria)/.test(prop.parent.fileName) &&
+            !excludedProps.includes(prop.name)
+          );
         } else {
           return false;
         }

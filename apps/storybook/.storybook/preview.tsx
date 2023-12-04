@@ -22,7 +22,7 @@ import { backgrounds } from './params/backgrounds';
 // ui core styles
 import '../../../packages/awsm-ui/src/assets/styles/index.css';
 
-// import { excludedControls } from './config/excludedControls';
+import { excludedControls } from './config/excludedControls';
 
 const preview: Preview = {
   parameters: {
@@ -33,7 +33,7 @@ const preview: Preview = {
     controls: {
       expanded: false,
       sort: 'requiredFirst',
-      // exclude: excludedControls,
+      exclude: excludedControls,
       matchers: {
         date: /Date$/,
       },
