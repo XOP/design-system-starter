@@ -36,6 +36,9 @@ importers:
       '@awsm/tsconfig':
         specifier: '*'
         version: link:../../packages/awsm-tsconfig
+      '@storybook/addon-a11y':
+        specifier: ^7.6.3
+        version: 7.6.3
       '@storybook/addon-essentials':
         specifier: ^7.6.1
         version: 7.6.1(@types/react@18.2.39)(react-dom@18.2.0)(react@18.2.0)
@@ -4520,6 +4523,13 @@ packages:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
     dev: true
 
+  /@storybook/addon-a11y@7.6.3:
+    resolution: {integrity: sha512-z/vaDkZgbLLqrLz2C1qr3lav5xuZDbBggtNdvnM1TFKqiaQu8MPC0oEe6QSFf2phREf7cB2Qa5LsW7ak16RddQ==}
+    dependencies:
+      '@storybook/addon-highlight': 7.6.3
+      axe-core: 4.7.0
+    dev: true
+
   /@storybook/addon-actions@7.6.1:
     resolution: {integrity: sha512-KSaIv1LKGyaCJuPuEIwwLtMp/Md8t/jprng3FwYW/lChbsYw40lexiLYRy2LHomsyvXT0acsjLuSmJ8FrynSoA==}
     dependencies:
@@ -4619,6 +4629,12 @@ packages:
 
   /@storybook/addon-highlight@7.6.1:
     resolution: {integrity: sha512-NcaIQA1clfKY8P13PlL7yypASaxNcLQ3+fjYa6ysS1dnXw4dV2ecPpYQD8/+sUXOTVtbSdtlVZIvPlmKrO2c5g==}
+    dependencies:
+      '@storybook/global': 5.0.0
+    dev: true
+
+  /@storybook/addon-highlight@7.6.3:
+    resolution: {integrity: sha512-Z9AJ05XCTzFZPAxQSkQf9/Hazf5/QQI0jYSsvKqt7Vk+03q5727oD9KcIY5IHPYqQqN9fHExQh1eyqY8AnS8mg==}
     dependencies:
       '@storybook/global': 5.0.0
     dev: true
@@ -6141,7 +6157,6 @@ packages:
   /axe-core@4.7.0:
     resolution: {integrity: sha512-M0JtH+hlOL5pLQwHOLNYZaXuhqmvS8oExsqB1SBYgA4Dk7u/xx+YdGHXaK5pyUfed5mYXdlYiphWq3G8cRi5JQ==}
     engines: {node: '>=4'}
-    dev: false
 
   /axios@1.6.2:
     resolution: {integrity: sha512-7i24Ri4pmDRfJTR7LDBhsOTtcm+9kjX5WiY1X3wIisx6G9So3pfMkEiU7emUBe46oceVImccTEM3k6C5dbVW8A==}

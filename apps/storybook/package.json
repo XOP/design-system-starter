@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "@awsm/tsconfig": "*",
+    "@storybook/addon-a11y": "^7.6.3",
     "@storybook/addon-essentials": "^7.6.1",
     "@storybook/addon-links": "^7.6.1",
     "@storybook/addon-themes": "^7.6.1",

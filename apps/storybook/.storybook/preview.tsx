@@ -17,7 +17,9 @@ import type { Preview, ReactRenderer } from '@storybook/react';
 
 import { StoryDecorator } from './helpers/StoryDecorator';
 
+import { a11y } from './params/a11y';
 import { backgrounds } from './params/backgrounds';
+import { viewport } from './params/viewport';
 
 // ui core styles
 import '../../../packages/awsm-ui/src/assets/styles/index.css';
@@ -26,7 +28,9 @@ import { excludedControls } from './config/excludedControls';
 
 const preview: Preview = {
   parameters: {
+    a11y,
     backgrounds,
+    viewport,
 
     actions: { argTypesRegex: '^on[A-Z].*' },
 
