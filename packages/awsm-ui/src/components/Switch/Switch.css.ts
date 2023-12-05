@@ -77,12 +77,6 @@ export const styles = recipe({
     fontFamily: theme.fontFamily,
     userSelect: 'none',
 
-    ':focus-visible': {
-      outline: `${theme.space['0.5']} solid`,
-      outlineColor: theme.color.focusRing,
-      outlineOffset: theme.space['0.5'],
-    },
-
     selectors: {
       ['&[data-disabled]']: {
         filter: 'grayscale(1)',
@@ -124,6 +118,12 @@ export const indicatorStyles = recipe({
     },
 
     selectors: {
+      '[data-focus-visible] &': {
+        outline: `${theme.space['0.5']} solid`,
+        outlineColor: theme.color.focusRing,
+        outlineOffset: theme.space['0.5'],
+      },
+  
       '[data-selected=true] &::after': {
         transform: `translateX(${calc($trackSize, calc.minus($thumbSize))})`,
       },
