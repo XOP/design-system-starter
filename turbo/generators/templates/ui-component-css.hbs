@@ -1,1 +1,35 @@
-export const styles = recipe({});
+import { StyleRule } from '@vanilla-extract/css';
+import { recipe } from '@vanilla-extract/recipes';
+
+import { theme } from '../../theme';
+import { calc } from '../../helpers';
+
+import { {{pascalCase name}}Colors } from './{{pascalCase name}}';
+
+const colors: { [key in {{pascalCase name}}Colors]: StyleRule } = {
+  primary: {
+    backgroundColor: theme.color.primary.gamma[500],
+  },
+  secondary: {
+    backgroundColor: theme.color.secondary.gamma[500],
+  },
+};
+
+export const styles = recipe({
+  base: {
+    boxSizing: 'border-box',
+    paddingBlock: calc(calc.x(theme.space[2], 2), '10vh'),
+    color: theme.color.text.regular,
+    fontFamily: theme.fontFamily,
+
+    selectors: {
+      ['&[data-disabled]']: {},
+      ['&[data-selected]']: {},
+      ['&[data-focus-visible]']: {},
+    },
+  },
+
+  variants: {
+    color: colors,
+  },
+});

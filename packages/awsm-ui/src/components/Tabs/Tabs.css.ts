@@ -37,7 +37,7 @@ export const listStyles = recipe({
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'nowrap',
-    borderBottom: `${theme.space.px} solid ${theme.color.gamma[300]}`,
+    borderBlockEnd: `${theme.space.px} solid ${theme.color.gamma[300]}`,
 
     selectors: {
       [`${tabsStyles.classNames.variants.variant.fluid} &`]: {
@@ -52,7 +52,7 @@ export const tabStyles = recipe({
     paddingBlock: theme.space[3],
     paddingBlockEnd: calc(theme.space[3], calc.minus(theme.space[1])),
     paddingInline: theme.space[3],
-    borderBottom: `${theme.space[1]} solid transparent`,
+    borderBlockEnd: `${theme.space[1]} solid transparent`,
     background: theme.color.gamma[100],
     color: theme.color.text.regular,
     fontSize: theme.fontSize.s,

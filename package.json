@@ -3,7 +3,10 @@
   "author": "Evgeny Khoroshilov",
   "license": "MIT",
   "private": true,
-    "devDependencies": {
+  "scripts": {
+    "gen:component": "turbo gen awsm-ui-component"
+  },
+  "devDependencies": {
     "@turbo/gen": "^1.11.1",
     "@types/node": "^20.10.0",
     "nx": "^17.1.3",

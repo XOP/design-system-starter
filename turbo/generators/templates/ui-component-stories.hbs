@@ -1,7 +1,50 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { __DemoFlow__ } from '../../helpers';
+
+import {{pascalCase name}} from './{{pascalCase name}}';
+
 export default {
   title: '{{pascalCase category}}/{{pascalCase name}}',
   component: {{pascalCase name}},
-  parameters: {},
-  argTypes: {},
+  parameters: {
+    layout: 'centered',
+    docs: {
+      description: {
+        component: 'Based on [React Aria {{pascalCase name}}](https://react-spectrum.adobe.com/react-aria/{{pascalCase name}}.html)',
+      },
+    },
+  },
   tags: ['autodocs'],
 } satisfies Meta<typeof {{pascalCase name}}>;
+
+type Story = StoryObj<typeof {{pascalCase name}}>;
+
+export const Base: Story = {
+  args: {
+    children: 'Awesome'
+  },
+};
+
+export const ColorPrimary: Story = {
+  args: {
+    ...Base.args,
+    color: 'primary',
+  },
+};
+
+export const ColorSecondary: Story = {
+  args: {
+    ...Base.args,
+    color: 'secondary',
+  },
+};
+
+export const AllColors: Story = {
+  render: () => (
+    <__DemoFlow__>
+      <{{pascalCase name}} color="primary">Awesome</{{pascalCase name}}>
+      <{{pascalCase name}} color="secondary">Awesome</{{pascalCase name}}>
+    </__DemoFlow__>
+  ),
+};

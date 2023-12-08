@@ -1,1 +1,43 @@
 import * as React from 'react';
+
+import clsx from 'clsx';
+
+import {
+  {{pascalCase name}} as Base{{pascalCase name}},
+  {{pascalCase name}}Props as Base{{pascalCase name}}Props,
+} from 'react-aria-components';
+
+import { styles } from './{{pascalCase name}}.css';
+
+export type {{pascalCase name}}Colors = 'primary' | 'secondary';
+
+export interface {{pascalCase name}}Props extends Base{{pascalCase name}}Props {
+  color?: {{pascalCase name}}Colors;
+  children?: React.ReactNode;
+}
+
+const {{pascalCase name}} = React.forwardRef(function {{pascalCase name}}(
+  props: {{pascalCase name}}Props,
+  ref: React.ForwardedRef<any>,
+) {
+  const {
+    children,
+    className,
+    color = 'primary',
+    ...rest
+  } = props;
+
+  return (
+    <Base{{pascalCase name}}
+      {...rest}
+      ref={ref}
+      className={clsx(className, styles({ color }))}
+    >
+      {children}
+    </Base{{pascalCase name}}>
+  );
+});
+
+{{pascalCase name}}.displayName = '{{pascalCase name}}';
+
+export default {{pascalCase name}};
