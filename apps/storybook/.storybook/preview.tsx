@@ -17,20 +17,29 @@ import type { Preview, ReactRenderer } from '@storybook/react';
 
 import { StoryDecorator } from './helpers/StoryDecorator';
 
+// parameters
 import { a11y } from './params/a11y';
 import { backgrounds } from './params/backgrounds';
 import { viewport } from './params/viewport';
 
+// configuration
+import { excludedControls } from './config/excludedControls';
+import { storiesOrder } from './config/storiesOrder';
+
 // ui core styles
 import '../../../packages/awsm-ui/src/assets/styles/index.css';
-
-import { excludedControls } from './config/excludedControls';
 
 const preview: Preview = {
   parameters: {
     a11y,
     backgrounds,
     viewport,
+
+    options: {
+      storySort: {
+        order: storiesOrder,
+      },
+    },
 
     actions: { argTypesRegex: '^on[A-Z].*' },
 
