@@ -1,0 +1,4 @@
+import type { SVGProps } from "react";
+const IconEyeOff = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="awsm-icon awsm-icon-eyeOff" viewBox="0 0 24 24" aria-hidden="true" {...props}><path stroke="none" d="M0 0h24v24H0z" /><path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" /><path d="M16.681 16.673A8.717 8.717 0 0 1 12 18c-3.6 0-6.6-2-9-6 1.272-2.12 2.712-3.678 4.32-4.674m2.86-1.146A9.055 9.055 0 0 1 12 6c3.6 0 6.6 2 9 6-.666 1.11-1.379 2.067-2.138 2.87M3 3l18 18" /></svg>;
+IconEyeOff.displayName = "IconEyeOff";
+export default IconEyeOff;

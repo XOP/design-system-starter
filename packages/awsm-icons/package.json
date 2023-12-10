@@ -4,11 +4,42 @@
   "author": "Evgeny Khoroshilov",
   "license": "MIT",
   "private": true,
-  "scripts": {
-    "build": ""
+  "type": "module",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js"
+    },
+    "./dist/*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.esm.js",
+      "require": "./dist/*.cjs.js"
+    },
+    "./svg/*": [
+      "./svg/*"
+    ]
   },
-  "dependencies": {
+  "scripts": {
+    "gen:clean": "rimraf ./lib/icons && mkdirp ./lib/icons",
+    "gen": "pnpm gen:clean && tsx ./scripts/generateIcons.cts",
+    "build:clean": "rimraf ./dist",
+    "build:icons": "pnpm build:clean && tsup-node && tsc",
+    "build": "pnpm gen && yarn build:icons"
   },
   "devDependencies": {
+    "@awsm/tsconfig": "*",
+    "@svgr/core": "^8.1.0",
+    "@svgr/plugin-jsx": "^8.1.0",
+    "@svgr/plugin-svgo": "^8.1.0",
+    "@types/react": "^18.2.39",
+    "eslint": "^8.54.0",
+    "eslint-config-awsm": "*",
+    "react": "^18.2.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.2"
   }
 }
