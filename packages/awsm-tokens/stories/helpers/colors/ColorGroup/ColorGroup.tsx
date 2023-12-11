@@ -2,7 +2,7 @@ import React from 'react';
 
 import ColorItem from '../ColorItem/ColorItem';
 
-import { group, heading, content } from './ColorGroup.css';
+import { group, subgroup, heading, subheading, content, subcontent } from './ColorGroup.css';
 
 export interface ColorGroupProps {
   name: string;
@@ -21,7 +21,20 @@ const ColorGroup = ({ name, data }: ColorGroupProps) => {
 
       <div className={content}>
         {!!data.length &&
-          data.map(({ name, color }) => {
+          data.map(({ name, color, data: nestedData }) => {
+            if (nestedData) {
+              return (
+                <section className={subgroup}>
+                  <h3 className={subheading}>{name}</h3>
+                  <div className={subcontent}>
+                    {nestedData.map(({ name, color }) => {
+                      return <ColorItem name={name} color={color} />;
+                    })}
+                  </div>
+                </section>
+              );
+            }
+
             return <ColorItem name={name} color={color} />;
           })}
       </div>

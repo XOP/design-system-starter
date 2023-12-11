@@ -9,14 +9,29 @@ export const group = style({
 });
 
 export const heading = style({
-  flexGrow: 1,
   marginBlock: tokens.space[4],
   fontSize: tokens.fontSize.l
+});
+
+export const subheading = style({
+  marginBlock: tokens.space[4],
+  fontSize: tokens.fontSize.n
 });
 
 export const content = style({
   display: 'flex',
   flexWrap: 'wrap',
   gap: tokens.space[4],
+  width: '100%'
+});
+
+export const subcontent = style({
+  display: 'flex',
+  flexWrap: 'wrap',
+  gap: tokens.space[4],
+  width: '100%'
+});
+
+export const subgroup = style({
   width: '100%'
 });

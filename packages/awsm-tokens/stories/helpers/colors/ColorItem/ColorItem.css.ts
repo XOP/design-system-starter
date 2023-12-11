@@ -4,13 +4,14 @@ import { tokens } from '../../../../dist/tokens.esm';
 
 export const item = style({
   display: 'flex',
-  flexGrow: 1,
+  boxSizing: 'border-box',
+  flexBasis: '30%',
   flexDirection: 'column',
   alignItems: 'flex-end',
   justifyContent: 'flex-end',
   gap: tokens.space[2],
-  minWidth: '14rem',
-  maxWidth: '14rem',
+  minWidth: '16rem',
+  maxWidth: '16rem',
   height: '8rem',
   padding: tokens.space[4],
   borderRadius: tokens.radius.n,

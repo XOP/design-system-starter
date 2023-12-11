@@ -14,7 +14,7 @@ const dictionary = Object.entries(Icons).map(([name, Element]) => ({
 
 const Iconography = () => {
   return (
-    <div className={root}>
+    <div className={`${root} sb-unstyled`}>
       <ListHeader data={['Name', 'Default', 'Primary', 'Secondary']} />
       <IconList data={dictionary} />
     </div>
