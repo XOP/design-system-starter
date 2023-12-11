@@ -8,7 +8,7 @@ import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import { excludedProps } from './config/excludedProps';
 
 // other packages can be added to setup if needed
-const packages = ['awsm-icons', 'awsm-ui'];
+const packages = ['awsm-tokens', 'awsm-icons', 'awsm-ui'];
 
 const storiesPaths = packages.map(
   (dir) => `../../../packages/${dir}/**/*.stories.@(js|jsx|ts|tsx)`,

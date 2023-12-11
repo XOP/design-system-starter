@@ -30,6 +30,8 @@
   },
   "devDependencies": {
     "@awsm/tsconfig": "*",
+    "@types/react": "^18.2.39",
+    "@vanilla-extract/css": "^1.14.0",
     "eslint": "^8.54.0",
     "eslint-config-awsm": "*",
     "polished": "^4.2.2",

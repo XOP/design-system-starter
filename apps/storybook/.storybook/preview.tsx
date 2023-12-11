@@ -24,7 +24,6 @@ import { viewport } from './params/viewport';
 
 // configuration
 import { excludedControls } from './config/excludedControls';
-import { storiesOrder } from './config/storiesOrder';
 
 // ui core styles
 import '../../../packages/awsm-ui/src/assets/styles/index.css';
@@ -37,7 +36,7 @@ const preview: Preview = {
 
     options: {
       storySort: {
-        order: storiesOrder,
+        order: ['Foundations'],
       },
     },
 
