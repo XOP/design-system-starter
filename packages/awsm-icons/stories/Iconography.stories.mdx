@@ -1,0 +1,25 @@
+import { Meta, IconGallery, IconItem } from '@storybook/blocks';
+
+import data from './helpers/data.ts';
+
+<Meta title="Foundations/Iconography" />
+
+# Iconography
+
+<br />
+
+<IconGallery>
+  {
+    data.map(
+      (item) => {
+        const Icon = item.element;
+
+        return (
+          <IconItem key={item.name} name={item.name}>
+            <Icon />
+          </IconItem>
+        )
+      }
+    )
+  }
+</IconGallery>

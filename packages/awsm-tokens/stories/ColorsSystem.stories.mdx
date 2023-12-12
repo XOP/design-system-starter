@@ -1,0 +1,92 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+
+import data from './helpers/data.ts';
+
+<Meta title="Foundations/Color System" />
+
+# Color System
+
+<br />
+
+<ColorPalette>
+  <ColorItem
+    title="Gamma / Shades"
+    subtitle="color.gamma"
+    colors={data.gammaTwo}
+  />
+  <ColorItem
+    title="Gamma / Shades"
+    subtitle="color.gamma"
+    colors={data.gammaOne}
+  />
+  <ColorItem
+    title="Primary"
+    subtitle="color.primary"
+    colors={data.primary}
+  />
+  <ColorItem
+    title="Primary Gamma"
+    subtitle="color.primary.gamma"
+    colors={data.primaryGammaOne}
+  />
+  <ColorItem
+    title="Primary Gamma"
+    subtitle="color.primary.gamma"
+    colors={data.primaryGammaTwo}
+  />
+  <ColorItem
+    title="Secondary"
+    subtitle="color.secondary"
+    colors={data.secondary}
+  />
+  <ColorItem
+    title="Secondary Gamma"
+    subtitle="color.secondary.gamma"
+    colors={data.secondaryGammaOne}
+  />
+  <ColorItem
+    title="Secondary Gamma"
+    subtitle="color.secondary.gamma"
+    colors={data.secondaryGammaTwo}
+  />
+  <ColorItem
+    title="Safe"
+    subtitle="color.safe"
+    colors={data.safe}
+  />
+  <ColorItem
+    title="Alert"
+    subtitle="color.alert"
+    colors={data.alert}
+  />
+  <ColorItem
+    title="Warning"
+    subtitle="color.warning"
+    colors={data.warning}
+  />
+  <ColorItem
+    title="Info"
+    subtitle="color.info"
+    colors={data.info}
+  />
+  <ColorItem
+    title="Text"
+    subtitle="color.text"
+    colors={data.text}
+  />
+  <ColorItem
+    title="Background"
+    subtitle="color.background"
+    colors={data.background}
+  />
+  <ColorItem
+    title="Focus Ring"
+    subtitle="color.focusRing"
+    colors={data.focusRing}
+  />
+  <ColorItem
+    title="Shadow"
+    subtitle="color.shadow"
+    colors={data.shadow}
+  />
+</ColorPalette>
