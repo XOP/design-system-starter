@@ -8,52 +8,69 @@ import { root } from './Colors.css';
 
 const { color } = tokens;
 
-const dictionary = Object.entries(color).reduce((acc, [group, groupObj]) => {
-  let groupData;
+export interface ColorTokenData {
+  name: string;
+  color: string;
+}
+export interface ColorGroupData {
+  name: string;
+  color?: string;
+  data?: ColorTokenData[];
+}
+export interface ColorTokensData {
+  name: string;
+  data: ColorGroupData[];
+}
 
-  if (typeof groupObj === 'string') {
-    groupData = [
+const dictionary = Object.entries(color).reduce<ColorTokensData[]>(
+  (acc, [group, groupObj]) => {
+    let groupData;
+
+    if (typeof groupObj === 'string') {
+      groupData = [
+        {
+          name: group,
+          color: groupObj,
+        },
+      ];
+    } else {
+      groupData = Object.entries(groupObj).map(([colorKey, colorValue]) => {
+        let data;
+
+        if (typeof colorValue === 'string') {
+          data = {
+            color: colorValue,
+          };
+        } else {
+          const colorData = Object.entries(colorValue).map(
+            ([deepKey, deepValue]) => ({
+              name: deepKey,
+              color: deepValue,
+            }),
+          );
+
+          data = {
+            data: colorData,
+          };
+        }
+
+        return {
+          name: colorKey,
+          ...data,
+        };
+      });
+    }
+
+    return [
+      ...acc,
       {
         name: group,
-        color: groupObj,
+        data: groupData,
       },
     ];
-  } else {
-    groupData = Object.entries(groupObj).map(([colorKey, colorValue]) => {
-      let data;
-
-      if (typeof colorValue === 'string') {
-        data = {
-          color: colorValue,
-        };
-      } else {
-        const colorData = Object.entries(colorValue).map(
-          ([deepKey, deepValue]) => ({
-            name: deepKey,
-            color: deepValue,
-          }),
-        );
-
-        data = {
-          data: colorData,
-        };
-      }
-
-      return {
-        name: colorKey,
-        ...data,
-      };
-    });
-  }
-
-  return [
-    ...acc,
-    {
-      name: group,
-      data: groupData,
-    },
-  ];
-}, []);
+  },
+  [],
+);
 
 const Colors = () => {
   return (
