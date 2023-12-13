@@ -11,7 +11,7 @@ import { excludedProps } from './config/excludedProps';
 const packages = ['awsm-tokens', 'awsm-icons', 'awsm-ui'];
 
 const storiesPaths = packages.map(
-  (dir) => `../../../packages/${dir}/**/*.stories.@(js|jsx|ts|tsx)`,
+  (dir) => `../../../packages/${dir}/src/**/*.stories.@(js|jsx|ts|tsx)`,
 );
 
 const docsPaths = packages.map(
