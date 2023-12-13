@@ -1,8 +1,15 @@
 import { expect, test } from '@playwright/test';
 
+import { getStories } from '../utils/getStories';
 import { loadStory } from '../utils/loadStory';
 
-test('Button', async ({ page }) => {
-  await loadStory(page, 'form-button');
-  await expect(page).toHaveScreenshot({ fullPage: true });
-});
+(async () => {
+  const stories = getStories();
+
+  stories.forEach((story) => {
+    test(`${story.kind}-${story.name}`, async ({ page }) => {
+      await loadStory(page, story.id);
+      await expect(page).toHaveScreenshot({ fullPage: true });
+    });
+  });
+})();
