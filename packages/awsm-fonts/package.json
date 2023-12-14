@@ -1,0 +1,20 @@
+{
+  "name": "@awsm/fonts",
+  "version": "0.0.0",
+  "author": "Evgeny Khoroshilov",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "echo build"
+  },
+  "devDependencies": {
+    "@awsm/tokens": "*",
+    "@awsm/tsconfig": "*",
+    "@storybook/blocks": "^7.6.1",
+    "@types/react": "^18.2.39",
+    "eslint": "^8.54.0",
+    "eslint-config-awsm": "*",
+    "typescript": "^5.3.2"
+  }
+}

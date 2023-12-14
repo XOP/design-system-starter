@@ -1,0 +1,48 @@
+import { Meta, Typeset } from '@storybook/blocks';
+
+import fonts from './helpers/fonts.ts';
+import { sampleText } from './helpers/constants.ts';
+
+<Meta title="Foundations/Typography" />
+
+# Typography
+
+<br />
+
+## Font Family: {fonts.fontFamily}
+
+<br />
+
+### Font Weight: {fonts.fontWeight.regular} (regular)
+
+<Typeset
+  sampleText={sampleText}
+  fontSizes={[
+    Number(fonts.fontSize.xs),
+    Number(fonts.fontSize.s),
+    Number(fonts.fontSize.n),
+    Number(fonts.fontSize.l),
+    Number(fonts.fontSize.xl),
+    Number(fonts.fontSize.xxl),
+    Number(fonts.fontSize.xxxl),
+  ]}
+  fontWeight={fonts.fontWeight.regular}
+  fontFamily={fonts.fontFamily}
+/>
+
+### Font Weight: {fonts.fontWeight.bold} (bold)
+
+<Typeset
+  sampleText={sampleText}
+  fontSizes={[
+    Number(fonts.fontSize.xs),
+    Number(fonts.fontSize.s),
+    Number(fonts.fontSize.n),
+    Number(fonts.fontSize.l),
+    Number(fonts.fontSize.xl),
+    Number(fonts.fontSize.xxl),
+    Number(fonts.fontSize.xxxl),
+  ]}
+  fontWeight={fonts.fontWeight.bold}
+  fontFamily={fonts.fontFamily}
+/>

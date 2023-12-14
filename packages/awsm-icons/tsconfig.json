@@ -1,7 +1,15 @@
 {
   "extends": "@awsm/tsconfig/lib-react.json",
-  "include": ["lib", "svg", "stories"],
-  "exclude": ["dist", "node_modules", "scripts/template.js"],
+  "include": [
+    "lib",
+    "svg",
+    "stories"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "scripts/template.js"
+  ],
   "compilerOptions": {
     "incremental": false,
     "noEmit": false,
