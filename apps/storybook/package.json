@@ -10,10 +10,21 @@
     "build": "storybook build",
     "lint": "eslint .storybook --ext ts,tsx",
     "serve": "http-server ./storybook-static --port 3030",
-    "test:vrt": "npx playwright test"
+    "vrt:test": "npx playwright test",
+    "vrt:update": "npx playwright test --update-snapshots"
   },
   "nx": {
     "targets": {
+      "vrt:test": {
+        "dependsOn": [
+          "build"
+        ]
+      },
+      "vrt:update": {
+        "dependsOn": [
+          "build"
+        ]
+      },
       "dev": {
         "dependsOn": [
           "^build"

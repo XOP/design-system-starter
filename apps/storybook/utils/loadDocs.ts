@@ -11,10 +11,11 @@ export async function loadDocs(
   tag: string = 'overview',
 ) {
   const fullId = id.includes(`--${tag}`) ? id : `${id}--${tag}`;
-  const search = new URLSearchParams({ viewMode: 'docs', fullId });
+  const search = new URLSearchParams({ viewMode: 'docs', id: fullId });
 
   await page.goto(`iframe.html?${search.toString()}`, {
     waitUntil: 'networkidle',
   });
+
   await page.waitForSelector('#storybook-docs');
 }

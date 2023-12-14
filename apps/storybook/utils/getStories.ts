@@ -3,7 +3,7 @@ import { readFileSync, existsSync } from 'fs';
 import { Parameters } from '@storybook/react';
 
 const STORYBOOK_BUILD = './storybook-static/';
-const OVERVIEW = 'Overview';
+const DOCS_NAME = 'Overview';
 
 interface StoryParams {
   id: string;
@@ -21,7 +21,7 @@ const storybookPath = new URL(STORYBOOK_BUILD, rootPath);
 
 /**
  * Makes stories.json into collection
- * and filters overview pages and skipped examples
+ * and filters docs pages and skipped examples
  * @returns Story[]
  */
 export function getStories() {
@@ -38,9 +38,9 @@ export function getStories() {
   const storiesObj: Record<string, StoryParams> = storiesJson.stories;
   const storiesData = Object.values(storiesObj).reduce<StoryParams[]>((acc, cur) => {
     const isSkipped = cur.parameters.vrtDisabled === true;
-    const isOverview = cur.name === OVERVIEW;
+    const isDocs = cur.name === DOCS_NAME;
 
-    if (isSkipped || isOverview) {
+    if (isSkipped || isDocs) {
       return acc;
     }
 

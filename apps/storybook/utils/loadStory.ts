@@ -11,5 +11,6 @@ export async function loadStory(page: Playwright.Page, id: string) {
   await page.goto(`iframe.html?${search.toString()}`, {
     waitUntil: 'networkidle',
   });
+
   await page.waitForSelector('#storybook-root');
 }
