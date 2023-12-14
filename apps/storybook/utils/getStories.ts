@@ -19,6 +19,11 @@ interface StoryParams {
 const rootPath = new URL('../', import.meta.url);
 const storybookPath = new URL(STORYBOOK_BUILD, rootPath);
 
+/**
+ * Makes stories.json into collection
+ * and filters overview pages and skipped examples
+ * @returns Story[]
+ */
 export function getStories() {
   const storiesPath = new URL('stories.json', storybookPath);
 
