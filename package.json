@@ -1,6 +1,7 @@
 {
   "name": "design-system-starter",
-  "author": "Evgeny Khoroshilov",
+  "author": "Evgeny Khoroshilov (https://github.com/XOP)",
+  "homepage": "https://github.com/XOP/design-system-starter",
   "license": "MIT",
   "private": true,
   "scripts": {
