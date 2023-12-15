@@ -13,7 +13,6 @@
   "compilerOptions": {
     "incremental": false,
     "noEmit": false,
-    "declarationMap": false,
     "emitDeclarationOnly": true,
     "declarationDir": "dist"
   }

@@ -63,6 +63,7 @@ export const styles = recipe({
       border: `${theme.space.px} solid transparent`,
       borderRadius: theme.radius.s,
       textTransform: 'uppercase',
+      fontFamily: theme.fontFamily,
       cursor: 'pointer',
       transition: 'background-color',
       transitionDuration: theme.duration.instant,

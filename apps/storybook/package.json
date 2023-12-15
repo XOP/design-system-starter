@@ -38,6 +38,7 @@
     }
   },
   "dependencies": {
+    "@awsm/fonts": "*",
     "@awsm/tokens": "*",
     "@awsm/ui": "*",
     "react": "^18.2.0",

@@ -25,6 +25,9 @@ import { viewport } from './params/viewport';
 // configuration
 import { excludedControls } from './config/excludedControls';
 
+// fonts as base64
+import '@awsm/fonts/css/fonts.css'
+
 // ui core styles
 import '../../../packages/awsm-ui/src/assets/styles/index.css';
 

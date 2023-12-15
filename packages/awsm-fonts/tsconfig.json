@@ -2,10 +2,17 @@
   "extends": "@awsm/tsconfig/lib-react.json",
   "include": [
     "src",
+    "entries",
     "stories"
   ],
   "exclude": [
     "dist",
     "node_modules"
-  ]
+  ],
+  "compilerOptions": {
+    "incremental": false,
+    "noEmit": false,
+    "emitDeclarationOnly": true,
+    "declarationDir": "dist"
+  }
 }
