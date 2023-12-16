@@ -1,0 +1,110 @@
+---
+import slugify from 'slugify';
+
+export interface Example {
+  heading: string;
+};
+
+interface Props extends Example {
+	class?: string;
+}
+
+const { class: className, heading } = Astro.props;
+const slug = 'awsm-' + slugify(heading, { lower: true });
+---
+
+<section class:list={["example", className]}>
+  <h2 class="heading" id={slug} data-handle="heading">
+    {heading}
+  </h2>
+  <div class="content"><slot /></div>
+</section>
+
+<style>
+  .example + .example {
+    margin-top: var(--awsm-space-12);
+  }
+
+  .heading {
+    position: relative;
+    margin: 0;
+    margin-bottom: var(--awsm-space-6);
+
+    color: var(--awsm-color-text-regular);
+    font-size: var(--awsm-font-size-l);
+    font-weight: normal;
+
+    cursor: pointer;
+    scroll-margin-block-start: var(--awsm-space-8);
+  }
+
+  .heading::before {
+    content: "#";
+    position: absolute;
+    left: calc(-1 * var(--awsm-space-4));
+    opacity: 0;
+    color: var(--awsm-color-primary-tint);
+    font-weight: bold;
+    font-size: var(--awsm-font-size-l);
+    transition: color, opacity ease-out var(--awsm-duration-instant);
+  }
+
+  .heading.--active::before{
+    opacity: 1;
+    color: var(--awsm-color-safe-main);
+  }
+
+  @media(hover: hover) {
+    .heading:hover::before{
+      opacity: 1;
+    }
+  }
+
+  .content {
+    /* min-height: 14rem; */
+  }
+</style>
+
+<script>
+  const headings = document.querySelectorAll('[data-handle="heading"]');
+  const urlBase = location.origin + location.pathname;
+
+  headings.forEach((heading) => {
+    const slug = heading.id;
+
+    if (slug === '') return;
+
+    const url = `${urlBase}#${slug}`;
+
+    heading.addEventListener('click', (e: Event) => {
+      e.preventDefault();
+      copy(url);
+      feedback(heading);
+      window.location.href = url;
+    });
+
+    heading.addEventListener('keyup', (e: KeyboardEvent) => {
+      if (e.code === 'Space' || e.code === 'Enter') {
+        e.preventDefault();
+        copy(url);
+        feedback(heading);
+        window.location.href = url;
+      }
+    });
+  });
+
+  async function copy(path: string): Promise<void> {
+    await navigator.clipboard.writeText(path);
+  }
+
+  function feedback(el: Element): void {
+    const activeCls = '--active';
+
+    el.classList.remove(activeCls);
+    el.classList.add(activeCls);
+
+    setTimeout(() => {
+      el.classList.remove(activeCls);
+    }, 550);
+  }
+</script>

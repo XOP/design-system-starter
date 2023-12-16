@@ -1,0 +1,46 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<footer class:list={["footer", className]}>
+  <span
+    >AWSM DSSD - Design System Starter Docs <br />
+     © <a href="https://github.com/XOP">XOP</a> 2023 - current</span
+  >
+</footer>
+
+<style>
+  .footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+
+    padding: var(--awsm-space-6) var(--awsm-space-8);
+
+    text-align: center;
+    color: var(--awsm-color-text-muted);
+    line-height: var(--awsm-line-height-relaxed);
+    background: var(--awsm-color-background-muted);
+  }
+
+  @media screen and (max-width: 480px) {
+    .footer {
+      padding: var(--awsm-space-6) var(--awsm-space-4);
+    }
+  }
+
+  .footer a {
+    color: var(--awsm-color-text-strong);
+    text-decoration: none;
+  }
+
+  @media (hover: hover) {
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  }
+</style>

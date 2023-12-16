@@ -1,0 +1,59 @@
+---
+interface Props {
+  data: Array<{ slug: string; title: string }>;
+}
+
+const { data } = Astro.props;
+---
+
+<nav class="nav">
+  {
+    data.map((entry) => {
+      return (
+        <a
+          href={entry.slug}
+          title={entry.title}
+        >
+          {entry.title}
+        </a>
+      );
+    })
+  }
+</nav>
+
+<style>
+  .nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--awsm-space-8);
+    margin-top: var(--awsm-space-8);
+  }
+
+  @media screen and (max-width: 780px) {
+    .nav {
+      grid-template-columns: auto;
+    }
+  }
+
+  .nav a {
+    display: block;
+    padding: var(--awsm-space-6);
+    color: var(--awsm-color-secondary-contrast);
+    border: var(--awsm-space-1) solid var(--awsm-color-secondary-main);
+    background: var(--awsm-color-secondary-gamma-200);
+    font-size: var(--awsm-font-size-n);
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  @media (hover: hover) {
+    .nav a:hover {
+      background: var(--awsm-color-secondary-gamma-300);
+    }
+  }
+
+  .nav a.active {
+    background: var(--awsm-color-secondary-gamma-400);
+  }
+</style>

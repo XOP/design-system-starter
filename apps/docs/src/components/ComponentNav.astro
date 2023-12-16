@@ -1,0 +1,60 @@
+---
+import { COLLECTION } from "../pages/components/index.astro";
+
+const currentSlug = Astro.url.pathname.split("/")[3] || "";
+
+interface Props {
+  page?: string;
+  data: Array<{ slug: string; title: string }>;
+}
+
+const { page = COLLECTION, data } = Astro.props;
+---
+
+<nav class="nav">
+  {
+    data.map((entry) => {
+      const isActive = currentSlug === (entry.slug.split("/")[1] || "");
+
+      return (
+        <a
+          class:list={{ active: isActive }}
+          href={`/${page}/${entry.slug}`}
+          title={entry.title}
+        >
+          {entry.title}
+        </a>
+      );
+    })
+  }
+</nav>
+
+<style>
+  .nav {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-bottom: var(--awsm-space-8);
+    margin-top: calc(-1 * var(--awsm-space-4));
+    background: var(--awsm-color-secondary-main);
+  }
+
+  .nav a {
+    padding: var(--awsm-space-3) var(--awsm-space-6);
+    color: var(--awsm-color-secondary-contrast);
+    border: var(--awsm-space-1) solid transparent;
+    font-size: var(--awsm-font-size-s);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  @media (hover: hover) {
+    .nav a:hover {
+      background: var(--awsm-color-secondary-tint);
+    }
+  }
+
+  .nav a.active {
+    background: var(--awsm-color-secondary-tint);
+  }
+</style>

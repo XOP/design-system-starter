@@ -1,0 +1,18 @@
+---
+interface Props {
+	class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<a  class:list={['logo', className]} href="/" title="AWSM Docs">AWSM</a>
+
+<style>
+  .logo {
+    font-size: var(--awsm-font-size-xxl);
+    font-weight: bold;
+    color: var(--awsm-color-primary-main);
+    text-decoration: none;
+  }
+</style>

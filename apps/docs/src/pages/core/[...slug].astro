@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content';
+
+import Layout from '../../layouts/Layout.astro';
+import Content from '../../components/Content.astro';
+
+import { getCollectionName } from '../../shared/utils';
+
+export const COLLECTION = "core";
+
+export async function getStaticPaths() {
+  const entries = await getCollection(COLLECTION);
+
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content: PageContent } = await entry.render();
+
+const collectionName = getCollectionName(COLLECTION);
+---
+<Layout title={entry.data.title} section={COLLECTION}>
+  <Content>
+    <h1><sup>{collectionName}</sup>{entry.data.title}</h1>
+    <PageContent />
+  </Content>
+</Layout>

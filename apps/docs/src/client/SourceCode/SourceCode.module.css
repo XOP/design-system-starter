@@ -1,0 +1,34 @@
+.root {
+  font-size: var(--awsm-font-size-s);
+}
+
+.code {
+  position: relative;
+  border-radius: var(--awsm-radius-n);
+
+  height: 0;
+  overflow: hidden;
+}
+
+/* contrast for dark theme */
+.code::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  bottom: 0; right: 0;
+  border-radius: var(--awsm-radius-n);
+  border: var(--awsm-space-px) solid rgba(var(--awsm-color-secondary-main-rgb), 0.4);
+  pointer-events: none;
+}
+
+.__open {
+  height: auto;
+}
+
+.controls {
+  display: flex;
+  gap: var(--awsm-space-4);
+  justify-content: flex-end;
+  
+  margin-top: var(--awsm-space-2);
+}

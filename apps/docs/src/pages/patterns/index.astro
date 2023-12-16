@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+
+import Layout from "../../layouts/Layout.astro";
+import Content from "../../components/Content.astro";
+import SectionNav from "../../components/SectionNav.astro";
+
+import { Content as PageContent } from '../../data/pages/patterns.mdx';
+
+export const COLLECTION = "patterns";
+
+const entries = await getCollection(COLLECTION);
+const sectionEntries = entries.map((item) => {
+  return {
+    slug: `${COLLECTION}/${item.slug}`,
+    title: item.data.title
+  }
+});
+---
+
+<Layout title="Patterns" section={COLLECTION}>
+  <Content>
+    <h1>Patterns</h1>
+
+    <PageContent />
+
+    <SectionNav data={sectionEntries} />
+  </Content>
+</Layout>

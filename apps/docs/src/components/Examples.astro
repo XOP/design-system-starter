@@ -1,0 +1,36 @@
+---
+import Example from './Example.astro';
+
+import ExampleContent from '../client/ExampleContent/ExampleContent';
+
+import type { StoriesCollection } from '../shared/types';
+
+interface Props {
+  data: StoriesCollection;
+  name: string;
+  dir: string;
+}
+
+const { data, name, dir } = Astro.props;
+---
+
+<div class="examples">
+  {data.map(([exampleName]) => {
+    return (
+      <Example heading={exampleName}>
+        <ExampleContent
+          client:only
+          name={exampleName}
+          componentName={name}
+          componentDir={dir}
+        />
+      </Example>
+    )
+  })}
+</div>
+
+<style>
+  .examples {
+    margin: var(--awsm-space-8) 0;
+  }
+</style>

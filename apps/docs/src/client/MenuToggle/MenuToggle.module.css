@@ -1,0 +1,20 @@
+.root {
+  font-size: var(--awsm-font-size-xl);
+  line-height: 0;
+  color: var(--awsm-color-text-strong);
+}
+
+.button {
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.button > svg {
+  width: 1em;
+  height: 1em;
+}

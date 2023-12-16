@@ -1,0 +1,71 @@
+---
+import { getCollection } from "astro:content";
+
+import Layout from "../../layouts/Layout.astro";
+import Content from "../../components/Content.astro";
+import ComponentNav from "../../components/ComponentNav.astro";
+import Examples from "../../components/Examples.astro";
+
+import { getCollectionName } from "../../shared/utils";
+import { refineStories } from "../../shared/utils/refineStories";
+
+export const COLLECTION = "components";
+
+export async function getStaticPaths() {
+  const entries = await getCollection(COLLECTION);
+
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content: PageContent } = await entry.render();
+
+const collectionName = getCollectionName(COLLECTION);
+const componentCollection = await getCollection(COLLECTION);
+
+const componentEntries = componentCollection.filter((item) => {
+  return item.data.title === entry.data.title;
+});
+
+const navEntries = componentEntries.map((item) => {
+  return {
+    slug: item.slug,
+    title: item.data.page,
+  };
+});
+
+const showExamples = entry.slug.split("/").length === 1;
+
+let stories, examplesData;
+
+if (showExamples) {
+  stories = await import(`../../../../../packages/awsm-ui/src/components/${entry.data.dir}/${entry.data.component}.stories.tsx`);
+  examplesData = refineStories(stories);
+}
+---
+
+<Layout title={entry.data.title} section={COLLECTION}>
+  <Content>
+    <h1>
+      <sup>{collectionName}/{entry.data.group}</sup>
+      <span>{entry.data.title}</span>
+    </h1>
+
+    <ComponentNav data={navEntries} />
+
+    <PageContent />
+  </Content>
+
+  {
+    showExamples && (
+      <Examples 
+        data={examplesData} 
+        name={entry.data.component} 
+        dir={entry.data.dir} 
+      />
+    )
+  }
+</Layout>

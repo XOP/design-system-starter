@@ -1,0 +1,62 @@
+---
+import Logo from "./Logo.astro";
+import TopNav from "./TopNav.astro";
+
+import MenuToggle from '../client/MenuToggle/MenuToggle';
+
+interface Props {
+	class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<header class:list={['header', className]}>
+  <Logo />
+  <TopNav />
+  <MenuToggle className="toggle" client:only />
+</header>
+
+<style>
+  .header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: var(--awsm-space-8);
+
+    padding: var(--awsm-space-6) var(--awsm-space-8);
+    border-bottom: var(--awsm-space-px) solid var(--awsm-color-primary-gamma-200);
+    background: var(--awsm-color-background-regular);
+  }
+
+  @media screen and (max-width: 480px) {
+    .header {
+      padding: var(--awsm-space-6) var(--awsm-space-4);
+    }
+  }
+
+  .toggle {
+    position: absolute;
+    right: var(--awsm-space-8);
+    top: var(--awsm-space-6);
+  }
+
+  @media screen and (max-width: 480px) {
+    .toggle {
+      right: var(--awsm-space-4);
+    }
+  }
+
+  @media screen and (min-width: 781px) {
+    .toggle {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 780px) {
+    .header {
+      flex-flow: column;
+    }
+  }
+  
+</style>

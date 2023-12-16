@@ -1,0 +1,98 @@
+---
+export interface Props {
+  class?: string;
+  id?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<div class={`content ${className}`}>
+  <slot />
+</div>
+
+<style>
+  .content {
+    color: var(--awsm-color-text-regular);
+    line-height: var(--awsm-line-height-normal);
+  }
+
+  .content > :global(h1),
+  .content > :global(h2),
+  .content > :global(h3) {
+    line-height: var(--awsm-line-height-tight);
+    color: var(--awsm-color-primary-main);
+   }
+
+   .content > :global(h1) {
+    margin-bottom: var(--awsm-space-8);
+    padding-bottom:  var(--awsm-space-2);
+    border-bottom: var(--awsm-space-05) solid var(--awsm-color-secondary-main);
+    font-size: var(--awsm-font-size-xxl);
+   }
+
+   .content > :global(h1 sup) {
+    display: block;
+    margin-bottom: var(--awsm-space-2);
+    font-size: var(--awsm-font-size-n);
+    color: var(--awsm-color-primary-tint);
+   }
+
+   .content > :global(h2) {
+    font-size: var(--awsm-font-size-xl);
+   }
+
+   .content > :global(h3) {
+    font-size: var(--awsm-font-size-l);
+   }
+
+  .content > :global(p),
+  .content > :global(ul),
+  .content > :global(blockquote) {
+    margin: var(--awsm-space-5) 0;
+
+    line-height: var(--awsm-line-height-normal);
+  }
+
+  .content > :global(h2 + p),
+  .content > :global(h3 + p) {
+    margin-top: var(--awsm-space-3);
+  }
+
+  .content > :global(ul) {
+    padding: 0;
+    padding-left: var(--awsm-space-8);
+  }
+
+  .content :global(ul li) {
+    margin: var(--awsm-space-2) 0;
+    padding-left: var(--awsm-space-2);
+  }
+
+  .content :global(code) {
+    padding: var(--awsm-space-1) var(--awsm-space-2);
+
+    font-size: 0.9em;
+    border: var(--awsm-space-px) solid var(--awsm-color-primary-tint);
+    border-radius: var(--awsm-radius-s);
+    white-space: nowrap;
+  }
+
+  .content :global(pre) {
+    margin: var(--awsm-space-5) 0;
+    padding: var(--awsm-space-3) var(--awsm-space-4);
+
+    border-radius: var(--awsm-radius-s);
+
+    white-space: pre;
+    line-height: var(--awsm-line-height-normal);
+  }
+
+  .content :global(pre > code) {
+    padding: 0;
+    border: none;
+
+    background: none;
+    white-space: inherit;
+  }
+</style>

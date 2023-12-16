@@ -1,0 +1,56 @@
+---
+import { NAVIGATION } from "../shared/globals";
+
+const currentSlug = Astro.url.pathname.split("/")[1];
+---
+
+<nav class="nav">
+  {
+    NAVIGATION.map((entry) => {
+      return (
+        <a
+          class:list={{ active: currentSlug === entry.slug }}
+          href={`/${entry.slug}`}
+          title={entry.title}
+        >
+          {entry.title}
+        </a>
+      );
+    })
+  }
+</nav>
+
+<style>
+  .nav {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: var(--awsm-space-8);
+
+    align-items: center;
+  }
+
+  @media screen and (max-width: 380px) {
+    .nav {
+      overflow-x: auto;
+    }
+  }
+
+  .nav a {
+    padding-block: var(--awsm-space-1);
+    color: var(--awsm-color-primary-main);
+    text-decoration: none;
+    text-wrap: nowrap;
+    border-bottom: var(--awsm-space-1) solid transparent;
+  }
+
+  @media (hover: hover) {
+    .nav a:hover {
+      color: var(--awsm-color-primary-gamma-600);
+      border-color: var(--awsm-color-primary-main);
+    }
+  }
+
+  .nav a.active {
+    border-color: var(--awsm-color-primary-main);
+  }
+</style>
