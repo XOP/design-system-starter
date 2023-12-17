@@ -12,7 +12,7 @@
 }
 
 .code {
-  margin-top: var(--awsm-space-1);
+  margin-block-start: var(--awsm-space-1);
 }
 
 @keyframes loadingAnimation {

@@ -25,15 +25,15 @@ const { class: className = "" } = Astro.props;
   }
 
   .content > :global(h1) {
-    margin-bottom: var(--awsm-space-8);
-    padding-bottom: var(--awsm-space-2);
-    border-bottom: var(--awsm-space-05) solid var(--awsm-color-secondary-main);
+    margin-block-end: var(--awsm-space-8);
+    padding-block-end: var(--awsm-space-2);
+    border-block-end: var(--awsm-space-05) solid var(--awsm-color-secondary-main);
     font-size: var(--awsm-font-size-xxl);
   }
 
   .content > :global(h1 sup) {
     display: block;
-    margin-bottom: var(--awsm-space-2);
+    margin-block-end: var(--awsm-space-2);
     font-size: var(--awsm-font-size-n);
     color: var(--awsm-color-primary-tint);
   }
@@ -56,17 +56,17 @@ const { class: className = "" } = Astro.props;
 
   .content > :global(h2 + p),
   .content > :global(h3 + p) {
-    margin-top: var(--awsm-space-3);
+    margin-block-start: var(--awsm-space-3);
   }
 
   .content > :global(ul) {
     padding: 0;
-    padding-left: var(--awsm-space-8);
+    padding-inline-start: var(--awsm-space-8);
   }
 
   .content :global(ul li) {
     margin: var(--awsm-space-2) 0;
-    padding-left: var(--awsm-space-2);
+    padding-inline-start: var(--awsm-space-2);
   }
 
   .content :global(code) {

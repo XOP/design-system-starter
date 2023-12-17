@@ -22,13 +22,13 @@ const slug = "awsm-" + slugify(heading, { lower: true });
 
 <style>
   .example + .example {
-    margin-top: var(--awsm-space-12);
+    margin-block-start: var(--awsm-space-12);
   }
 
   .heading {
     position: relative;
     margin: 0;
-    margin-bottom: var(--awsm-space-6);
+    margin-block-end: var(--awsm-space-6);
 
     color: var(--awsm-color-text-regular);
     font-size: var(--awsm-font-size-l);
@@ -63,7 +63,7 @@ const slug = "awsm-" + slugify(heading, { lower: true });
   }
 
   .content {
-    /* min-height: 14rem; */
+    min-height: 8rem;
   }
 </style>
 
