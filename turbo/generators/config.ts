@@ -28,6 +28,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       },
     ],
     actions: [
+      // ui library
       {
         type: 'add',
         path: 'packages/awsm-ui/src/components/{{pascalCase name}}/{{pascalCase name}}.tsx',
@@ -54,6 +55,18 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         path: 'packages/awsm-ui/src/components/index.ts',
         template:
           "export { {{pascalCase name}} } from './{{pascalCase name}}';",
+      },
+
+      // documentation
+      {
+        type: 'add',
+        path: 'apps/docs/src/content/components/{{pascalCase name}}/index.mdx',
+        templateFile: 'templates/docs-component-examples.hbs',
+      },
+      {
+        type: 'add',
+        path: 'apps/docs/src/content/components/{{pascalCase name}}/usage.mdx',
+        templateFile: 'templates/docs-component-usage.hbs',
       },
     ],
   });
