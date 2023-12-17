@@ -5,7 +5,7 @@ import {
   type CollectionEntry,
 } from "astro:content";
 
-import { COMPONENT_GROUPS, NAVIGATION_KEYS } from '../shared/globals';
+import { COMPONENT_GROUPS_ORDER, NAVIGATION_KEYS } from "../shared/globals";
 
 interface Props {
   class?: string;
@@ -44,22 +44,20 @@ navEntries = entries.map((item: Entry) => {
   };
 });
 
-// todo:
 if (section === NAVIGATION_KEYS.components) {
-  const groupForm = navEntries.filter(
-    (item: NavEntry) => item.group === COMPONENT_GROUPS.form
-  );
+  const _navEntries = navEntries;
 
-  const groupContent = navEntries.filter(
-    (item: NavEntry) => item.group === COMPONENT_GROUPS.content
-  );
+  navEntries = [];
 
-  navEntries = [
-    { heading: COMPONENT_GROUPS.form },
-    ...groupForm,
-    { heading: COMPONENT_GROUPS.content },
-    ...groupContent,
-  ];
+  COMPONENT_GROUPS_ORDER.forEach((heading) => {
+    const entries = _navEntries.filter(
+      (item: NavEntry) => item.group === heading
+    );
+
+    if (entries.length) {
+      navEntries = [...navEntries, { heading }, ...entries];
+    }
+  });
 }
 
 const fullSlug = Astro.url.pathname.split("/");
@@ -74,11 +72,18 @@ if (currentSlug === "usage" || currentSlug === "accessibility") {
   {
     section && (
       <>
-        <strong class="close" data-handle="close">
+        <button
+          class="close"
+          data-handle="close"
+          title="Close menu"
+        >
           <svg viewBox="0 0 24 24">
-            <path fill="currentColor" d="m12 10.586l4.95-4.95l1.415 1.415l-4.95 4.95l4.95 4.95l-1.415 1.414l-4.95-4.95l-4.95 4.95l-1.413-1.415l4.95-4.95l-4.95-4.95L7.05 5.638l4.95 4.95Z"/>
+            <path
+              fill="currentColor"
+              d="m12 10.586l4.95-4.95l1.415 1.415l-4.95 4.95l4.95 4.95l-1.415 1.414l-4.95-4.95l-4.95 4.95l-1.413-1.415l4.95-4.95l-4.95-4.95L7.05 5.638l4.95 4.95Z"
+            />
           </svg>
-        </strong>
+        </button>
 
         <div class="content">
           <strong class="heading">{section}</strong>
@@ -89,16 +94,18 @@ if (currentSlug === "usage" || currentSlug === "accessibility") {
 
                 if (heading) {
                   return (
-                    <li><h3>{heading}</h3></li>
+                    <li class="nav-heading">
+                      <h3>{heading}</h3>
+                    </li>
                   );
                 }
-      
+
                 const isHidden = slug!.split("/").length > 1;
 
                 if (isHidden) return;
 
                 return (
-                  <li>
+                  <li class="nav-item">
                     <a
                       class:list={{ active: slug === currentSlug }}
                       href={href}
@@ -132,8 +139,10 @@ if (currentSlug === "usage" || currentSlug === "accessibility") {
   @media screen and (max-width: 780px) {
     .side {
       position: fixed;
+      left: auto;
+      right: 100%;
       top: 0;
-      padding-top: var(--awsm-space-8); 
+      padding-top: var(--awsm-space-8);
       z-index: 1000;
       width: 100vw;
       height: 100%;
@@ -143,7 +152,7 @@ if (currentSlug === "usage" || currentSlug === "accessibility") {
     .side.__state-opened {
       left: 0;
     }
-  
+
     .side.__state-closed {
       left: auto;
       right: 100%;
@@ -178,6 +187,10 @@ if (currentSlug === "usage" || currentSlug === "accessibility") {
     top: var(--awsm-space-6);
     right: var(--awsm-space-8);
 
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: inherit;
     font-size: var(--awsm-font-size-xl);
     line-height: 0;
     cursor: pointer;
@@ -209,6 +222,10 @@ if (currentSlug === "usage" || currentSlug === "accessibility") {
     list-style: none;
   }
 
+  li.nav-item {
+    padding-inline-start: var(--awsm-space-4);
+  }
+
   .nav li h3 {
     margin-top: var(--awsm-space-8);
     color: var(--awsm-color-text-regular);
@@ -235,13 +252,13 @@ if (currentSlug === "usage" || currentSlug === "accessibility") {
 </style>
 
 <script>
-  import { sidebarState } from '../store/store';
-  import { SIDEBAR_STATE } from '../shared/globals';
+  import { sidebarState } from "../store/store";
+  import { SIDEBAR_STATE } from "../shared/globals";
 
   const sidebar = document.querySelector('[data-handle="sidebar"]');
 
   if (sidebar) {
-    const clsPrefix = '__state-';
+    const clsPrefix = "__state-";
 
     sidebarState.subscribe((state) => {
       const cls: string[] = [];
@@ -252,7 +269,7 @@ if (currentSlug === "usage" || currentSlug === "accessibility") {
         cls.push(className);
       }
 
-      sidebar.className = '';
+      sidebar.className = "";
       sidebar.classList.add(...cls);
       sidebar.classList.add(`${clsPrefix}${state}`);
     });
@@ -260,8 +277,15 @@ if (currentSlug === "usage" || currentSlug === "accessibility") {
     const close = document.querySelector('[data-handle="close"]');
 
     if (close) {
-      close.addEventListener('click', () => {
+      close.addEventListener("click", () => {
         sidebarState.set(SIDEBAR_STATE.closed);
+      });
+
+      close.addEventListener("keydown", (e: KeyboardEvent) => {
+        if (e.code === "Space" || e.code === "Enter") {
+          e.preventDefault();
+          sidebarState.set(SIDEBAR_STATE.closed);
+        }
       });
     }
   }

@@ -1,7 +1,7 @@
 export const NAVIGATION_KEYS = {
   core: 'core',
   patterns: 'patterns',
-  components: 'components'
+  components: 'components',
 } as const;
 
 export const NAVIGATION = [
@@ -16,7 +16,7 @@ export const NAVIGATION = [
   {
     slug: NAVIGATION_KEYS.components,
     title: 'Components',
-  }
+  },
 ];
 
 export const COMPONENT_NAVIGATION = [
@@ -27,7 +27,7 @@ export const COMPONENT_NAVIGATION = [
   {
     slug: 'usage',
     title: 'Usage',
-  }
+  },
 ];
 
 export const COMPONENT_GROUPS = {
@@ -38,8 +38,19 @@ export const COMPONENT_GROUPS = {
   status: 'Status',
   data: 'Data',
   overlay: 'Overlay',
-  datetime: 'Date & Time'
+  datetime: 'Date & Time',
 };
+
+export const COMPONENT_GROUPS_ORDER = [
+  COMPONENT_GROUPS.form,
+  COMPONENT_GROUPS.navigation,
+  COMPONENT_GROUPS.feedback,
+  COMPONENT_GROUPS.content,
+  COMPONENT_GROUPS.status,
+  COMPONENT_GROUPS.data,
+  COMPONENT_GROUPS.overlay,
+  COMPONENT_GROUPS.datetime,
+];
 
 export const DEFAULT = 'default';
 
@@ -49,7 +60,7 @@ export const EXAMPLE_SORT_KEYS = [
   'size',
   'variant',
   'disabled',
-  'with'
+  'with',
 ];
 
 export const EXAMPLE_STATE = {

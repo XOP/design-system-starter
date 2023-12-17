@@ -4,7 +4,7 @@ export interface Props {
   id?: string;
 }
 
-const { class: className = '' } = Astro.props;
+const { class: className = "" } = Astro.props;
 ---
 
 <div class={`content ${className}`}>
@@ -22,29 +22,29 @@ const { class: className = '' } = Astro.props;
   .content > :global(h3) {
     line-height: var(--awsm-line-height-tight);
     color: var(--awsm-color-primary-main);
-   }
+  }
 
-   .content > :global(h1) {
+  .content > :global(h1) {
     margin-bottom: var(--awsm-space-8);
-    padding-bottom:  var(--awsm-space-2);
+    padding-bottom: var(--awsm-space-2);
     border-bottom: var(--awsm-space-05) solid var(--awsm-color-secondary-main);
     font-size: var(--awsm-font-size-xxl);
-   }
+  }
 
-   .content > :global(h1 sup) {
+  .content > :global(h1 sup) {
     display: block;
     margin-bottom: var(--awsm-space-2);
     font-size: var(--awsm-font-size-n);
     color: var(--awsm-color-primary-tint);
-   }
+  }
 
-   .content > :global(h2) {
+  .content > :global(h2) {
     font-size: var(--awsm-font-size-xl);
-   }
+  }
 
-   .content > :global(h3) {
+  .content > :global(h3) {
     font-size: var(--awsm-font-size-l);
-   }
+  }
 
   .content > :global(p),
   .content > :global(ul),

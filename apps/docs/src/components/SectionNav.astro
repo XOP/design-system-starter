@@ -10,10 +10,7 @@ const { data } = Astro.props;
   {
     data.map((entry) => {
       return (
-        <a
-          href={entry.slug}
-          title={entry.title}
-        >
+        <a href={entry.slug} title={entry.title}>
           {entry.title}
         </a>
       );

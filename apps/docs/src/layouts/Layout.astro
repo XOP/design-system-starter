@@ -13,6 +13,7 @@ interface Props {
 
 const { title, section, showNav = true } = Astro.props;
 const isIndex = Astro.url.pathname === "/";
+const showMenu = showNav && !isIndex;
 
 import "@csstools/normalize.css/normalize.css";
 import "@awsm/tokens/css/tokens.css";
@@ -21,7 +22,7 @@ import "@awsm/fonts/css/fonts.css";
 import "../assets/css/index.css";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-awsm="nebula">
   <head>
     <meta charset="UTF-8" />
@@ -37,13 +38,13 @@ import "../assets/css/index.css";
   </head>
   <body>
     <div class="page">
-      <Header class="header" />
+      <Header class="header" showMenuToggle={showMenu} />
 
       <div class="wrap">
-        {showNav && !isIndex && <Sidebar class="side" section={section} />}
+        {showMenu && <Sidebar class="side" section={section} />}
 
         <main class="main">
-          <div class={`content${isIndex ? ' __index' : ''}`}>
+          <div class={`content${isIndex ? " __index" : ""}`}>
             <slot />
           </div>
 
@@ -119,7 +120,7 @@ import "../assets/css/index.css";
 
   @media screen and (max-width: 780px) {
     .content {
-      padding: var(--awsm-space-6) var(--awsm-space-8)
+      padding: var(--awsm-space-6) var(--awsm-space-8);
     }
   }
 
@@ -135,32 +136,32 @@ import "../assets/css/index.css";
 </style>
 
 <script is:inline>
-  history.scrollRestoration = 'manual';
+  history.scrollRestoration = "manual";
 </script>
 
 <script>
-  import { exampleState } from '../store/store';
-  import { EXAMPLE_STATE } from '../shared/globals';
+  import { exampleState } from "../store/store";
+  import { EXAMPLE_STATE } from "../shared/globals";
 
   if (location.hash) {
     const hash = location.hash;
 
-    location.hash = '';
-    window.document.documentElement.style.overflow = 'hidden';
+    location.hash = "";
+    window.document.documentElement.style.overflow = "hidden";
 
     exampleState.subscribe((state) => {
       if (state === EXAMPLE_STATE.idle) {
         const target = document.getElementById(hash.slice(1).trim());
-  
+
         location.hash = hash;
 
         if (target) {
           setTimeout(() => {
-            target.scrollIntoView({ behavior: 'smooth'});
-            window.document.documentElement.style.overflow = 'auto';
+            target.scrollIntoView({ behavior: "smooth" });
+            window.document.documentElement.style.overflow = "auto";
           }, 150);
         }
       }
-    })
+    });
   }
 </script>

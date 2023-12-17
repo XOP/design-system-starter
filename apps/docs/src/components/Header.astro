@@ -2,19 +2,20 @@
 import Logo from "./Logo.astro";
 import TopNav from "./TopNav.astro";
 
-import MenuToggle from '../client/MenuToggle/MenuToggle';
+import MenuToggle from "../client/MenuToggle/MenuToggle";
 
 interface Props {
-	class?: string;
+  class?: string;
+  showMenuToggle?: boolean;
 }
 
-const { class: className } = Astro.props;
+const { class: className, showMenuToggle = true } = Astro.props;
 ---
 
-<header class:list={['header', className]}>
+<header class:list={["header", className]}>
   <Logo />
   <TopNav />
-  <MenuToggle className="toggle" client:only />
+  {showMenuToggle && <MenuToggle className="toggle" client:only />}
 </header>
 
 <style>
@@ -25,7 +26,8 @@ const { class: className } = Astro.props;
     gap: var(--awsm-space-8);
 
     padding: var(--awsm-space-6) var(--awsm-space-8);
-    border-bottom: var(--awsm-space-px) solid var(--awsm-color-primary-gamma-200);
+    border-bottom: var(--awsm-space-px) solid
+      var(--awsm-color-primary-gamma-200);
     background: var(--awsm-color-background-regular);
   }
 
@@ -58,5 +60,4 @@ const { class: className } = Astro.props;
       flex-flow: column;
     }
   }
-  
 </style>
