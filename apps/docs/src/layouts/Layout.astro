@@ -133,3 +133,34 @@ import "../assets/css/index.css";
     flex: 0 1 auto;
   }
 </style>
+
+<script is:inline>
+  history.scrollRestoration = 'manual';
+</script>
+
+<script>
+  import { exampleState } from '../store/store';
+  import { EXAMPLE_STATE } from '../shared/globals';
+
+  if (location.hash) {
+    const hash = location.hash;
+
+    location.hash = '';
+    window.document.documentElement.style.overflow = 'hidden';
+
+    exampleState.subscribe((state) => {
+      if (state === EXAMPLE_STATE.idle) {
+        const target = document.getElementById(hash.slice(1).trim());
+  
+        location.hash = hash;
+
+        if (target) {
+          setTimeout(() => {
+            target.scrollIntoView({ behavior: 'smooth'});
+            window.document.documentElement.style.overflow = 'auto';
+          }, 150);
+        }
+      }
+    })
+  }
+</script>
