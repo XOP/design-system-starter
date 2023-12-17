@@ -1,7 +1,7 @@
 interface FontsProps {
   weights: number[] | string[];
-  display: 'swap' | 'auto' | 'block' | 'fallback' | 'optional';
-  preconnect: boolean;
+  display?: 'swap' | 'auto' | 'block' | 'fallback' | 'optional';
+  preconnect?: boolean;
 }
 
 const Fonts = ({
