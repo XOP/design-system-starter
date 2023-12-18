@@ -2,6 +2,85 @@ import { parseToRgb, lighten, darken, shade, tint, mix } from 'polished';
 
 import colors from './colors';
 
+export type TokensPaletteGamma = {
+  '50': string;
+  '100': string;
+  '150': string;
+  '200': string;
+  '250': string;
+  '300': string;
+  '350': string;
+  '400': string;
+  '450': string;
+  '500': string;
+  '550': string;
+  '600': string;
+  '650': string;
+  '700': string;
+  '750': string;
+  '800': string;
+  '850': string;
+  '900': string;
+  '950': string;
+};
+
+export type TokensPaletteColorBrand = {
+  main: string;
+  mainRgb: string;
+  tint: string;
+  shade: string;
+  tone: string;
+  contrast: string;
+  gamma: {
+    '100': string;
+    '200': string;
+    '300': string;
+    '400': string;
+    '500': string;
+    '600': string;
+    '700': string;
+    '800': string;
+    '900': string;
+  };
+};
+
+export type TokensPaletteColorUtil = {
+  main: string;
+  mainRgb: string;
+  tint: string;
+  shade: string;
+  tone: string;
+  contrast: string;
+};
+
+export type TokensPaletteColorText = {
+  strong: string;
+  regular: string;
+  subtle: string;
+  muted: string;
+};
+
+export type TokensPaletteColorBackground = {
+  regular: string;
+  subtle: string;
+  muted: string;
+};
+
+export interface TokensPalette {
+  gamma: TokensPaletteGamma;
+  primary: TokensPaletteColorBrand;
+  secondary: TokensPaletteColorBrand;
+  safe: TokensPaletteColorUtil;
+  alert: TokensPaletteColorUtil;
+  info: TokensPaletteColorUtil;
+  warning: TokensPaletteColorUtil;
+  text: TokensPaletteColorText;
+  background: TokensPaletteColorBackground;
+  shadow: string;
+  shadowRgb: string;
+  focusRing: string;
+}
+
 const utils = {
   safe: {
     main: colors.lima[600],
@@ -38,9 +117,9 @@ const utils = {
     tone: tone(0.25, colors.gold[600]),
     contrast: colors.white,
   },
-}
+} satisfies Record<string, TokensPaletteColorUtil>;
 
-export const paletteNebula = {
+export const paletteNebula: TokensPalette = {
   gamma: {
     '50': colors.gamma[950],
     '100': colors.gamma[900],
@@ -115,7 +194,7 @@ export const paletteNebula = {
   background: {
     regular: colors.gamma[900],
     subtle: colors.gamma[850],
-    muted: colors.gamma[750]
+    muted: colors.gamma[750],
   },
 
   shadow: colors.gamma[700],
@@ -124,7 +203,7 @@ export const paletteNebula = {
   focusRing: colors.cerulean[500],
 };
 
-export const palettePrism = {
+export const palettePrism: TokensPalette = {
   gamma: {
     '50': colors.gamma[50],
     '100': colors.gamma[100],
@@ -199,7 +278,7 @@ export const palettePrism = {
   background: {
     regular: colors.white,
     subtle: colors.gamma[50],
-    muted: colors.gamma[150]
+    muted: colors.gamma[150],
   },
 
   shadow: colors.black,
@@ -207,7 +286,6 @@ export const palettePrism = {
 
   focusRing: colors.cerulean[800],
 };
-
 
 function rgbString(color: string) {
   const rgb = parseToRgb(color);

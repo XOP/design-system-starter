@@ -1,3 +1,33 @@
+export type TokensSpace = {
+  0: string;
+  px: string;
+  0.5: string;
+  1: string;
+  2: string;
+  3: string;
+  4: string;
+  5: string;
+  6: string;
+  7: string;
+  8: string;
+  10: string;
+  12: string;
+  16: string;
+  20: string;
+  24: string;
+  32: string;
+  40: string;
+};
+
+export type TokensRadius = {
+  xs: string;
+  s: string;
+  n: string;
+  l: string;
+  pill: string;
+  round: string;
+};
+
 export default {
   space: {
     0: '0',
@@ -18,7 +48,7 @@ export default {
     24: '96px',
     32: '128px',
     40: '160px',
-  },
+  } satisfies TokensSpace,
 
   radius: {
     xs: '1px',
@@ -27,5 +57,5 @@ export default {
     l: '8px',
     pill: '9999px',
     round: '50%',
-  },
+  } satisfies TokensRadius,
 };

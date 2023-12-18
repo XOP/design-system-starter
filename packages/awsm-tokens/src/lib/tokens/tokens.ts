@@ -1,16 +1,23 @@
 import { paletteVars } from './palette.vars';
 import { paletteNebula, palettePrism } from './palette.out';
-import { detailsVars, detailsNebula, detailsPrism } from './details';
+
+import { makeDetailsTokens } from './details';
 
 import { default as content } from './content';
 import { default as sizes } from './sizes';
+import { default as details } from './details';
+
+export type * from './palette';
+export type * from './content';
+export type * from './sizes';
+export type * from './details';
 
 export const tokens = {
   color: paletteVars,
 
   ...content,
   ...sizes,
-  ...detailsVars,
+  ...details,
 };
 
 export const tokensNebula = {
@@ -18,7 +25,7 @@ export const tokensNebula = {
 
   ...content,
   ...sizes,
-  ...detailsNebula,
+  ...makeDetailsTokens(paletteNebula),
 };
 
 export const tokensPrism = {
@@ -26,5 +33,5 @@ export const tokensPrism = {
 
   ...content,
   ...sizes,
-  ...detailsPrism,
+  ...makeDetailsTokens(palettePrism),
 };

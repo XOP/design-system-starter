@@ -1,1 +1,1 @@
-export { detailsVars as default } from '../details';
+export { default } from '../details';

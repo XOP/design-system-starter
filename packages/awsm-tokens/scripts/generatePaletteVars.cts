@@ -3,7 +3,7 @@ import fs from 'fs/promises';
 
 import * as palette from '../src/lib/tokens/palette';
 
-import { PREFIX, convertVarsToCss, convertVarsToRefs } from './utils';
+import { MEMO, PREFIX, convertVarsToCss, convertVarsToRefs } from './utils';
 
 const category = 'color';
 const commonPrefix = [PREFIX, category];
@@ -15,11 +15,9 @@ const outputDir = path.resolve(process.cwd(), 'src/lib/tokens');
 const tsOutputFile = 'palette.out.ts';
 const varsOutputFile = 'palette.vars.ts';
 
-const memo = '/* generated file, do not edit directly */\n\n';
-
-let tsOutput = memo;
-let cssOutput = memo;
-let varsOutput = memo;
+let tsOutput = MEMO;
+let cssOutput = MEMO;
+let varsOutput = MEMO;
 let varsData;
 let paletteData: object | null = null;
 
