@@ -5,7 +5,7 @@
   "compilerOptions": {
     "lib": ["DOM", "ES2021"],
     "module": "ESNext",
-    "target": "ES2021",
+    "target": "ES6",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "allowJs": true,
