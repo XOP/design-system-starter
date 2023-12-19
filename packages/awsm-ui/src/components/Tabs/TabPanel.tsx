@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef } from 'react';
 
 import clsx from 'clsx';
 
@@ -11,7 +11,7 @@ import { panelStyles } from './Tabs.css';
 
 export interface TabPanelProps extends BaseTabPanelProps {}
 
-const TabPanel = React.forwardRef(function TabsList(
+const TabPanel = forwardRef(function TabsList(
   props: TabPanelProps,
   ref: React.ForwardedRef<any>
 ) {

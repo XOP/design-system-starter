@@ -1,15 +1,13 @@
-import { useState } from 'react';
-
-import Button from '@awsm/ui/components/Button/Button';
+import Cabin from './components/Cabin/Cabin';
+import Controls from './components/Controls/Controls';
+import Space from './components/Space/Space';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div>
-      <Button onPress={() => setCount((count) => count + 1)}>
-        count is {count}
-      </Button>
+      <Space />
+      <Cabin />
+      <Controls />
     </div>
   );
 }

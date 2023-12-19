@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef } from 'react';
 
 import clsx from 'clsx';
 
@@ -18,7 +18,7 @@ export interface SwitchProps extends BaseSwitchProps {
   children?: React.ReactNode;
 }
 
-const Switch = React.forwardRef(function Switch(
+const Switch = forwardRef(function Switch(
   props: SwitchProps,
   ref: React.ForwardedRef<any>,
 ) {

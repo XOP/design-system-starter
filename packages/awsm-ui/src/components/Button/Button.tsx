@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef } from 'react';
 
 import clsx from 'clsx';
 
@@ -20,9 +20,9 @@ export interface ButtonProps extends BaseButtonProps {
   disabled?: boolean;
 }
 
-const Button = React.forwardRef(function Button(
+const Button = forwardRef(function Button(
   props: ButtonProps,
-  ref: React.ForwardedRef<any>
+  ref: React.ForwardedRef<any>,
 ) {
   const {
     children,
