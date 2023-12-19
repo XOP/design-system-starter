@@ -12,13 +12,24 @@ export default defineConfig({
     lib: {
       entry: './src/index.ts',
       name: '@awsm/ui',
-      fileName: (format, alias) => `${alias}.${extensionForFormat(format)}.js`,
+      fileName: (format, alias) => {
+        const extFormat = extensionForFormat(format);
+
+        // renaming node_modules used internally
+        const altAlias = alias.replace(/node_modules\/.pnpm\//g, 'external/');
+
+        return `${altAlias}.${extFormat}.js`;
+      },
+
       formats: ['es', 'cjs'],
     },
 
     rollupOptions: {
       external: ['react', 'react-dom'],
+
       output: {
+        preserveModules: true,
+        preserveModulesRoot: 'src',
         compact: true,
         globals: {
           react: 'React',
