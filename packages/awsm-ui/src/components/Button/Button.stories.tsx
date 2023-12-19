@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { __DemoFlow__ } from '../../helpers';
+import { __DemoFlow__ } from '../../helpers/docs';
 
 import Button from './Button';
 

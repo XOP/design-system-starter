@@ -2,8 +2,8 @@ import { recipe } from '@vanilla-extract/recipes';
 
 import { StyleRule } from '@vanilla-extract/css';
 
+import { calc } from '../../helpers/utils';
 import { theme } from '../../theme';
-import { calc } from '../../helpers';
 
 import { ButtonColors, ButtonSizes, ButtonVariants } from './Button';
 

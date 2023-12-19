@@ -1,8 +1,8 @@
 import { createVar, StyleRule } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
+import { calc } from '../../helpers/utils';
 import { theme } from '../../theme';
-import { calc } from '../../helpers';
 
 import { SwitchColors, SwitchSizes } from './Switch';
 

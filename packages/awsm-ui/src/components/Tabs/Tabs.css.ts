@@ -1,10 +1,10 @@
 import { recipe } from '@vanilla-extract/recipes';
 import { StyleRule } from '@vanilla-extract/css';
 
+import { calc } from '../../helpers/utils';
 import { theme } from '../../theme';
 
 import { TabsColors, TabsVariants } from './Tabs';
-import { calc } from '../../helpers';
 
 const colors: { [key in TabsColors]: StyleRule } = {
   primary: {},
