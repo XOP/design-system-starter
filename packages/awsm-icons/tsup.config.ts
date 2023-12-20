@@ -2,6 +2,7 @@ import { defineConfig } from 'tsup';
 
 export default defineConfig({
   entry: ['lib/icons/*'],
+  outDir: 'dist/lib/icons',
   treeshake: true,
   external: ['react', 'react-dom'],
   splitting: false,

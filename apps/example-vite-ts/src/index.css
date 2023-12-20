@@ -1,3 +1,5 @@
+@import '@awsm/fonts/css/fonts.css';
+
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -7,7 +9,19 @@
 }
 
 body {
-  min-width: 320px;
   margin: 0;
   background: #010101;
+}
+
+#root > main {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  min-width: 560px;
+  min-height: 620px;
+  overflow: auto;
 }

@@ -1,8 +1,8 @@
 .root {
   position: absolute;
-  bottom: 10%;
-  left: 20%;
-  right: 20%;
+  bottom: calc(10% + var(--awsm-space-8) * 4.5);
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 2;
 
   display: flex;
@@ -11,10 +11,13 @@
   align-items: center;
   justify-content: center;
 
-  padding: var(--awsm-space-8);
+  padding: var(--awsm-space-4);
+  padding-inline: var(--awsm-space-8);
   border-radius: var(--awsm-radius-pill);
   border: var(--awsm-space-1) solid var(--awsm-color-primary-gamma-600);
   background-color: var(--awsm-color-background-muted);
-  box-shadow: 0 calc(-1 * var(--awsm-space-1)) 0 var(--awsm-space-1)
-    var(--awsm-color-primary-gamma-500), var(--awsm-shadow-large);
+  box-shadow:
+    0 calc(-1 * var(--awsm-space-1)) 0 var(--awsm-space-1)
+      var(--awsm-color-primary-gamma-500),
+    var(--awsm-shadow-medium);
 }

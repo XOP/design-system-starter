@@ -102,6 +102,12 @@ importers:
 
   apps/example-vite-ts:
     dependencies:
+      '@awsm/fonts':
+        specifier: '*'
+        version: link:../../packages/awsm-fonts
+      '@awsm/icons':
+        specifier: '*'
+        version: link:../../packages/awsm-icons
       '@awsm/ui':
         specifier: '*'
         version: link:../../packages/awsm-ui
@@ -129,43 +135,6 @@ importers:
       tsparticles:
         specifier: ^3.0.2
         version: 3.0.2
-    devDependencies:
-      '@awsm/tsconfig':
-        specifier: '*'
-        version: link:../../packages/awsm-tsconfig
-      '@types/react':
-        specifier: ^18.2.15
-        version: 18.2.39
-      '@types/react-dom':
-        specifier: ^18.2.7
-        version: 18.2.17
-      '@vitejs/plugin-react':
-        specifier: ^4.2.0
-        version: 4.2.0(vite@5.0.2)
-      eslint:
-        specifier: ^8.54.0
-        version: 8.54.0
-      eslint-config-awsm:
-        specifier: '*'
-        version: link:../../packages/eslint-config-awsm
-      typescript:
-        specifier: ^5.3.2
-        version: 5.3.2
-      vite:
-        specifier: ^5.0.2
-        version: 5.0.2
-
-  apps/sandbox:
-    dependencies:
-      '@awsm/ui':
-        specifier: '*'
-        version: link:../../packages/awsm-ui
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
     devDependencies:
       '@awsm/tsconfig':
         specifier: '*'
@@ -6939,7 +6908,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.23.3(@babel/core@7.23.5)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.0
-      vite: 5.0.2
+      vite: 5.0.2(@types/node@20.10.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -14995,41 +14964,6 @@ packages:
       esbuild: 0.18.20
       postcss: 8.4.31
       rollup: 3.29.4
-    optionalDependencies:
-      fsevents: 2.3.3
-    dev: true
-
-  /vite@5.0.2:
-    resolution: {integrity: sha512-6CCq1CAJCNM1ya2ZZA7+jS2KgnhbzvxakmlIjN24cF/PXhRMzpM/z8QgsVJA/Dm5fWUWnVEsmtBoMhmerPxT0g==}
-    engines: {node: ^18.0.0 || >=20.0.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': ^18.0.0 || >=20.0.0
-      less: '*'
-      lightningcss: ^1.21.0
-      sass: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      less:
-        optional: true
-      lightningcss:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
-      esbuild: 0.19.8
-      postcss: 8.4.31
-      rollup: 4.6.0
     optionalDependencies:
       fsevents: 2.3.3
     dev: true

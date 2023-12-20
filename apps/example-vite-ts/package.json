@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@awsm/fonts": "*",
+    "@awsm/icons": "*",
     "@awsm/ui": "*",
     "@tsparticles/engine": "^3.0.2",
     "@tsparticles/plugin-emitters": "^3.0.2",

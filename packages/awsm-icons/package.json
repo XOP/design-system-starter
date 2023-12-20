@@ -5,23 +5,21 @@
   "license": "MIT",
   "private": true,
   "type": "module",
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.esm.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/lib/icons/index.cjs.js",
+  "module": "./dist/lib/icons/index.esm.js",
+  "types": "./dist/lib/icons/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.cjs.js"
+      "types": "./dist/lib/icons/index.d.ts",
+      "import": "./dist/lib/icons/index.esm.js",
+      "require": "./dist/lib/icons/index.cjs.js"
     },
-    "./dist/*": {
-      "types": "./dist/*.d.ts",
-      "import": "./dist/*.esm.js",
-      "require": "./dist/*.cjs.js"
+    "./lib/*": {
+      "types": "./dist/lib/icons/*.d.ts",
+      "import": "./dist/lib/icons/*.esm.js",
+      "require": "./dist/lib/icons/*.cjs.js"
     },
-    "./svg/*": [
-      "./svg/*"
-    ]
+    "./svg/*": "./svg/*"
   },
   "scripts": {
     "gen:clean": "rimraf ./lib/icons && mkdirp ./lib/icons",
