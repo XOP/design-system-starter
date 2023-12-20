@@ -5,3 +5,9 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: #010101;
+}

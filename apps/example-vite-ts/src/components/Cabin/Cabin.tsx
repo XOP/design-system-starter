@@ -15,6 +15,7 @@ const Cabin = () => (
       aria-hidden="true"
       focusable="false"
       viewBox="0 0 1200 900"
+      preserveAspectRatio="none"
     >
       <g clipPath="url(#a)">
         <path

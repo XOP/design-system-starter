@@ -2,5 +2,8 @@
   "extends": "@awsm/tsconfig/lib-react.json",
   "include": [
     "src"
-  ]
+  ],
+  "compilerOptions": {
+    "isolatedModules": false
+  }
 }

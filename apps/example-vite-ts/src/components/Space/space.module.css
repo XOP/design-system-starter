@@ -1,0 +1,10 @@
+:global(#space) {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}

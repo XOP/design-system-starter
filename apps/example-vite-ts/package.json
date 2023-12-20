@@ -1,5 +1,5 @@
 {
-  "name": "sandbox",
+  "name": "example-vite-ts",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,8 +11,14 @@
   },
   "dependencies": {
     "@awsm/ui": "*",
+    "@tsparticles/engine": "^3.0.2",
+    "@tsparticles/plugin-emitters": "^3.0.2",
+    "@tsparticles/plugin-emitters-shape-square": "^3.0.2",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/updater-life": "^3.0.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tsparticles": "^3.0.2"
   },
   "devDependencies": {
     "@awsm/tsconfig": "*",

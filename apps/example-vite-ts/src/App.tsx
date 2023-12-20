@@ -4,11 +4,11 @@ import Space from './components/Space/Space';
 
 function App() {
   return (
-    <div>
+    <>
       <Space />
       <Cabin />
       <Controls />
-    </div>
+    </>
   );
 }
 
