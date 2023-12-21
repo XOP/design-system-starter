@@ -11,7 +11,6 @@ const Cabin = () => (
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={0}
-      className="cabin"
       aria-hidden="true"
       focusable="false"
       viewBox="0 0 1200 900"

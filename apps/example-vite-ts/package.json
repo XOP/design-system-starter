@@ -1,7 +1,9 @@
 {
   "name": "example-vite-ts",
-  "private": true,
   "version": "0.0.0",
+  "author": "Evgeny Khoroshilov (https://github.com/XOP)",
+  "license": "MIT",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -26,7 +28,7 @@
     "@awsm/tsconfig": "*",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.2.0",
+    "@vitejs/plugin-react-swc": "^3.5.0",
     "eslint": "^8.54.0",
     "eslint-config-awsm": "*",
     "typescript": "^5.3.2",
