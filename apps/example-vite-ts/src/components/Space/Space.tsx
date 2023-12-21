@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
+import { atom, useAtom } from 'jotai';
+
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadFull } from 'tsparticles';
 import { loadEmittersPlugin } from '@tsparticles/plugin-emitters';
@@ -9,6 +11,8 @@ import { loadLifeUpdater } from '@tsparticles/updater-life';
 import { type ISourceOptions } from '@tsparticles/engine';
 
 import styles from './space.module.css';
+
+export const shipSpeed = atom<number>(15);
 
 const Space = () => {
   const [init, setInit] = useState(false);
@@ -23,6 +27,8 @@ const Space = () => {
       setInit(true);
     });
   }, []);
+
+  const [speed] = useAtom(shipSpeed);
 
   const options: ISourceOptions = useMemo(
     () => ({
@@ -53,7 +59,7 @@ const Space = () => {
         },
         move: {
           enable: true,
-          speed: 15,
+          speed: speed,
           decay: 0.01,
           direction: 'outside',
           straight: true,
@@ -84,7 +90,7 @@ const Space = () => {
         },
       ],
     }),
-    [],
+    [speed],
   );
 
   if (init) {
