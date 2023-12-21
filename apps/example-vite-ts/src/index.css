@@ -11,6 +11,8 @@
 body {
   margin: 0;
   background: #010101;
+
+  font-family: var(--awsm-font-family-main), var(--awsm-font-family-fallback);
 }
 
 #root > main {

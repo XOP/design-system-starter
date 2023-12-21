@@ -17,7 +17,10 @@
     "./css/*": "./dist/css/*"
   },
   "files": [
-    "dist",
+    "dist/css",
+    "dist/entries",
+    "dist/src",
+    "dist/index.*",
     "fonts"
   ],
   "scripts": {

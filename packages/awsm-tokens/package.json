@@ -5,11 +5,6 @@
   "license": "MIT",
   "private": true,
   "type": "module",
-  "files": [
-    "dist/tokens.*",
-    "dist/css",
-    "dist/src"
-  ],
   "exports": {
     ".": {
       "types": "./dist/src/lib/tokens/tokens.d.ts",
@@ -21,6 +16,11 @@
       "require": "./dist/css/*"
     }
   },
+  "files": [
+    "dist/tokens.*",
+    "dist/css",
+    "dist/src"
+  ],
   "scripts": {
     "lint": "eslint \"src/**/*.ts*\"",
     "build": "pnpm gen && tsc && vite build",

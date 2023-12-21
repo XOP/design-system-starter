@@ -21,6 +21,10 @@
     },
     "./svg/*": "./svg/*"
   },
+  "files": [
+    "dist/lib",
+    "svg"
+  ],
   "scripts": {
     "gen:clean": "rimraf ./lib/icons && mkdirp ./lib/icons",
     "gen": "pnpm gen:clean && tsx ./scripts/generateIcons.cts",

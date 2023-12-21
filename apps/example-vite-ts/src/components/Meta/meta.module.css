@@ -1,0 +1,14 @@
+.root {
+  position: absolute;
+  bottom: calc(2% + var(--awsm-space-4));
+  left: 20%;
+  right: 20%;
+  z-index: 2;
+  text-align: center;
+  font-size: var(--awsm-font-size-s);
+  color: var(--awsm-color-text-subtle);
+}
+
+.root > a {
+  color: var(--awsm-color-text-subtle);
+}

@@ -11,14 +11,19 @@
   "exports": {
     ".": {
       "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js",
       "types": "./dist/index.d.ts"
     },
     "./components/*": {
       "import": "./dist/components/*.esm.js",
+      "require": "./dist/components/*.cjs.js",
       "types": "./dist/components/*.d.ts"
     },
     "./css/*": "./dist/css/*"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc && vite build"
   },
