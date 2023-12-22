@@ -7,9 +7,13 @@
   "scripts": {
     "gen:component": "turbo gen awsm-ui-component",
     "syncpack": "syncpack fix-mismatches",
-    "syncpack:list": "syncpack list-mismatches"
+    "syncpack:list": "syncpack list-mismatches",
+    "change:gen": "changeset add",
+    "change:version": "changeset version",
+    "change:publish": "changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.1",
     "@turbo/gen": "^1.11.1",
     "@types/node": "^20.10.0",
     "mkdirp": "^3.0.1",
