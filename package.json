@@ -10,7 +10,10 @@
     "syncpack:list": "syncpack list-mismatches",
     "change:gen": "changeset add",
     "change:version": "changeset version",
-    "change:publish": "changeset publish"
+    "change:publish": "changeset publish",
+    "build:pck": "nx run-many -t build --projects=packages/* --exclude @awsm/tsconfig",
+    "build:app": "nx run-many -t build --projects=apps/* --exclude example-vite-ts",
+    "release": "pnpm build:pck && pnpm change:publish"
   },
   "devDependencies": {
     "@changesets/changelog-git": "^0.2.0",
