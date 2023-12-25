@@ -5,6 +5,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "lint": "pnpm lint:pck && lint:app",
+    "lint:pck": "nx run-many -t lint --projects=packages/*",
+    "lint:app": "nx run-many -t lint --projects=apps/*",
     "lint:format-log": "prettier --check --log-level=warn \"**/*.{js,cjs,ts,tsx,md,mdx,json}\"",
     "lint:format-fix": "prettier --check --log-level=warn --write \"**/*.{js,cjs,ts,tsx,md,mdx,json}\"",
     "gen:component": "turbo gen awsm-ui-component",

@@ -8,7 +8,7 @@ import { composeCssVar } from './composeCss.js';
  * @returns object
  */
 export function convertVarsToRefs(varsObj: object, ...keys: string[]) {
-  let obj: { [key: string]: string | object } = {};
+  const obj: { [key: string]: string | object } = {};
 
   Object.entries(varsObj).forEach(([_, value]) => {
     const key = camelCaseToKebab(_);

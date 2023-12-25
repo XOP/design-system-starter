@@ -14,7 +14,7 @@ const indexPath = resolve(outputDir, 'index.ts');
 (async () => {
   const iconsList: string[] = [];
 
-  for (let fileName of await readdir(svgDir)) {
+  for (const fileName of await readdir(svgDir)) {
     if (!/.svg$/.test(fileName)) return;
 
     const iconName = fileName.split('.svg')[0];

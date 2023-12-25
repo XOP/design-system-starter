@@ -22,7 +22,7 @@
     "dist/src"
   ],
   "scripts": {
-    "lint": "eslint \"src/**/*.ts*\"",
+    "lint": "eslint --ext .js,.cjs,.ts,.cts,.tsx src/ scripts/ stories/",
     "build": "pnpm gen && tsc && vite build",
     "gen": "pnpm gen:palette && yarn gen:vars",
     "gen:vars": "tsx ./scripts/generateVars.cts",

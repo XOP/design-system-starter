@@ -22,7 +22,7 @@ export interface ButtonProps extends BaseButtonProps {
 
 const Button = forwardRef(function Button(
   props: ButtonProps,
-  ref: React.ForwardedRef<any>,
+  ref: React.ForwardedRef<HTMLButtonElement>,
 ) {
   const {
     children,

@@ -109,12 +109,12 @@ export const KeyActivationManual: Story = {
 export const WithoutPanels: Story = {
   ...Template,
   args: {
-    children: [
+    children: (
       <TabList>
         <Tab id="tab-1">Awesome</Tab>
         <Tab id="tab-2">This is Tab 2</Tab>
         <Tab id="tab-3">And Three</Tab>
-      </TabList>,
-    ],
+      </TabList>
+    ),
   },
 };

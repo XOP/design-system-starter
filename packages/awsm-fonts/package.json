@@ -24,6 +24,7 @@
     "fonts"
   ],
   "scripts": {
+    "lint": "eslint --ext .js,.cjs,.ts,.cts,.tsx src/ entries/ stories/",
     "build": "vite build && tsc"
   },
   "devDependencies": {

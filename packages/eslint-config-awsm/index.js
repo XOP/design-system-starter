@@ -13,6 +13,7 @@ module.exports = {
     'dist',
     'build',
     'storybook-static',
+    'test-results',
     '.eslintrc.js',
     'vite.config.ts',
   ],
