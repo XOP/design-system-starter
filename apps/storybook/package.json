@@ -6,9 +6,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "lint": "eslint --ext .js,.cjs,.ts,.cts,.tsx .storybook/ tests/ utils/",
     "dev": "storybook dev -p 6006",
     "build": "storybook build",
-    "lint": "eslint .storybook --ext ts,tsx",
     "serve": "http-server ./storybook-static --port 3030",
     "vrt:test": "npx playwright test",
     "vrt:update": "npx playwright test --update-snapshots"

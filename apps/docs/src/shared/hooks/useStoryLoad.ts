@@ -10,7 +10,7 @@ export const useStoryLoad = (
   componentName: string,
   dir: string | undefined,
 ): [ComponentStruct, Story, boolean] => {
-  const componentDir = !!dir ? dir : componentName;
+  const componentDir = dir || componentName;
 
   const [data, setData] = useState<Story>({});
   const [struct, setStruct] = useState<Story>({});
