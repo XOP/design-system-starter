@@ -1,6 +1,4 @@
 {
   "extends": "@awsm/tsconfig/lib-react.json",
-  "include": [
-    ".storybook/*"
-  ]
+  "include": [".storybook/*"]
 }

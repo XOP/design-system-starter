@@ -1,5 +1,1 @@
-export {
-  tokens,
-  tokensNebula,
-  tokensPrism,
-} from '../lib/tokens/tokens';
+export { tokens, tokensNebula, tokensPrism } from '../lib/tokens/tokens';

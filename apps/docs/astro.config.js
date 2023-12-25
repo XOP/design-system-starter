@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 
-import react from "@astrojs/react";
-import mdx from "@astrojs/mdx";
+import react from '@astrojs/react';
+import mdx from '@astrojs/mdx';
 
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 
@@ -11,5 +11,5 @@ export default defineConfig({
   vite: {
     plugins: [vanillaExtractPlugin()],
   },
-  scopedStyleStrategy: 'class'
+  scopedStyleStrategy: 'class',
 });

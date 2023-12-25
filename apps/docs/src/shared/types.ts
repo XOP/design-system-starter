@@ -1,7 +1,9 @@
 import type { ComponentProps, JSXElementConstructor } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-type AllProps = keyof React.JSX.IntrinsicElements | JSXElementConstructor<unknown>;
+type AllProps =
+  | keyof React.JSX.IntrinsicElements
+  | JSXElementConstructor<unknown>;
 
 export type ComponentStruct = Meta<ComponentProps<AllProps>>;
 

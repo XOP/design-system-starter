@@ -21,7 +21,9 @@ const Tab = forwardRef(function Tab(
     <BaseTab
       {...rest}
       ref={ref}
-      className={({ isDisabled, isSelected }) => clsx(className, tabStyles({ isDisabled, isSelected }))}
+      className={({ isDisabled, isSelected }) =>
+        clsx(className, tabStyles({ isDisabled, isSelected }))
+      }
     >
       {props.children}
     </BaseTab>

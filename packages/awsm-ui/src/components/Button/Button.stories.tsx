@@ -11,7 +11,8 @@ export default {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Based on [React Aria Button](https://react-spectrum.adobe.com/react-aria/Button.html)',
+        component:
+          'Based on [React Aria Button](https://react-spectrum.adobe.com/react-aria/Button.html)',
       },
     },
   },
@@ -23,7 +24,7 @@ export type Story = StoryObj<typeof Button>;
 export const Base: Story = {
   args: {
     children: 'Awesome',
-  }
+  },
 };
 
 export const VariantSolid: Story = {

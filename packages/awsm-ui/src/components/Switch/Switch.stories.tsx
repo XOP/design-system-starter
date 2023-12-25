@@ -11,7 +11,8 @@ export default {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Based on [React Aria Switch](https://react-spectrum.adobe.com/react-aria/Switch.html)',
+        component:
+          'Based on [React Aria Switch](https://react-spectrum.adobe.com/react-aria/Switch.html)',
       },
     },
   },
@@ -22,7 +23,7 @@ type Story = StoryObj<typeof Switch>;
 
 export const Base: Story = {
   args: {
-    children: 'Awesome'
+    children: 'Awesome',
   },
 };
 
@@ -51,7 +52,9 @@ export const Disabled: Story = {
   render: () => (
     <__DemoFlow__>
       <Switch isDisabled>Unchecked</Switch>
-      <Switch isDisabled isSelected>Checked</Switch>
+      <Switch isDisabled isSelected>
+        Checked
+      </Switch>
     </__DemoFlow__>
   ),
 };
@@ -72,7 +75,7 @@ export const SizeSmall: Story = {
 export const NoLabel: Story = {
   args: {
     ...Base.args,
-    children: null
+    children: null,
   },
 };
 

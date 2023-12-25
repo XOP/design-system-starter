@@ -13,7 +13,11 @@ interface ExampleContentProps {
 const ExampleContent = (props: ExampleContentProps) => {
   const { name, componentName, componentDir } = props;
 
-  const [struct, data, isLoading] = useStoryLoad(name, componentName, componentDir);
+  const [struct, data, isLoading] = useStoryLoad(
+    name,
+    componentName,
+    componentDir,
+  );
 
   if (isLoading) {
     return (

@@ -13,7 +13,7 @@ interface StoryParams {
   tags: string[];
   kind: string;
   story: string;
-  parameters: Parameters
+  parameters: Parameters;
 }
 
 const rootPath = new URL('../', import.meta.url);
@@ -36,16 +36,19 @@ export function getStories() {
   const storiesJson = JSON.parse(storiesFile);
 
   const storiesObj: Record<string, StoryParams> = storiesJson.stories;
-  const storiesData = Object.values(storiesObj).reduce<StoryParams[]>((acc, cur) => {
-    const isSkipped = cur.parameters.vrtDisabled === true;
-    const isDocs = cur.name === DOCS_NAME;
+  const storiesData = Object.values(storiesObj).reduce<StoryParams[]>(
+    (acc, cur) => {
+      const isSkipped = cur.parameters.vrtDisabled === true;
+      const isDocs = cur.name === DOCS_NAME;
 
-    if (isSkipped || isDocs) {
-      return acc;
-    }
+      if (isSkipped || isDocs) {
+        return acc;
+      }
 
-    return [...acc, cur];
-  }, []);
+      return [...acc, cur];
+    },
+    [],
+  );
 
   return storiesData;
 }

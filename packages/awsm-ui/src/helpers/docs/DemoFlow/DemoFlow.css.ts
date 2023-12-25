@@ -6,7 +6,7 @@ export const root = style({
 
   '@media': {
     'screen and (max-width: 768px)': {
-      flexFlow: 'column'
-    }
+      flexFlow: 'column',
+    },
   },
 });

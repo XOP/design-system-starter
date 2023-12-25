@@ -7,10 +7,10 @@ import { localStore } from './local';
 export type MetaDataStore = Record<string, string | number | boolean>;
 
 export type SidebarStateKeys = keyof typeof SIDEBAR_STATE;
-export type SidebarStateValues = typeof SIDEBAR_STATE[SidebarStateKeys];
+export type SidebarStateValues = (typeof SIDEBAR_STATE)[SidebarStateKeys];
 
 export type ExamplesStateKeys = keyof typeof EXAMPLE_STATE;
-export type ExamplesStateValues = typeof EXAMPLE_STATE[ExamplesStateKeys];
+export type ExamplesStateValues = (typeof EXAMPLE_STATE)[ExamplesStateKeys];
 
 // ------------------------------------
 // Setup
@@ -29,7 +29,7 @@ sourceCode.listen(() => {
 
 // store update
 export const updateMetaStore = function updateMetaStore(
-  data: MetaDataStore
+  data: MetaDataStore,
 ): void {
   sourceCode.set(data.sourceCode as boolean);
 };
@@ -52,7 +52,7 @@ export const showSourceCode = action(
   'showSourceCode',
   (store, value: boolean) => {
     store.set(value);
-  }
+  },
 );
 
 // ------------------------------------

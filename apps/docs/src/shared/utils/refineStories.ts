@@ -9,7 +9,7 @@ import { type Stories, type Story } from '../types';
  * @returns Array<[string, Story | undefined]>
  */
 export const refineStories = (
-  stories: Stories
+  stories: Stories,
 ): Array<[string, Story | undefined]> => {
   const refinedStories: Array<[string, Story | undefined]> = [];
 
@@ -17,7 +17,10 @@ export const refineStories = (
   let filteredStories = excludeKeys(stories, (key) => key === DEFAULT);
 
   // excluding hidden stories
-  filteredStories = excludeKeys(filteredStories, (_, obj) => obj?.parameters?.hidden === true);
+  filteredStories = excludeKeys(
+    filteredStories,
+    (_, obj) => obj?.parameters?.hidden === true,
+  );
 
   // order by sort keys first
   EXAMPLE_SORT_KEYS.forEach((key) => {

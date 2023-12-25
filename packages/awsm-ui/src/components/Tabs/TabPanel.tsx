@@ -13,12 +13,16 @@ export interface TabPanelProps extends BaseTabPanelProps {}
 
 const TabPanel = forwardRef(function TabsList(
   props: TabPanelProps,
-  ref: React.ForwardedRef<any>
+  ref: React.ForwardedRef<any>,
 ) {
   const { className, ...rest } = props;
 
   return (
-    <BaseTabPanel {...rest} ref={ref} className={clsx(className, panelStyles())}>
+    <BaseTabPanel
+      {...rest}
+      ref={ref}
+      className={clsx(className, panelStyles())}
+    >
       {props.children}
     </BaseTabPanel>
   );

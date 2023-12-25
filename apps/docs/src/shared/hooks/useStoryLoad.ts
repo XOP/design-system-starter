@@ -8,7 +8,7 @@ import { type ComponentStruct, type Story } from '../types';
 export const useStoryLoad = (
   name: string,
   componentName: string,
-  dir: string | undefined
+  dir: string | undefined,
 ): [ComponentStruct, Story, boolean] => {
   const componentDir = !!dir ? dir : componentName;
 
@@ -29,7 +29,7 @@ export const useStoryLoad = (
       setIsLoading(false);
       setData(_data);
       setStruct(_struct);
-      
+
       exampleState.set(EXAMPLE_STATE.idle);
     }
 

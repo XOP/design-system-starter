@@ -123,7 +123,7 @@ export const indicatorStyles = recipe({
         outlineColor: theme.color.focusRing,
         outlineOffset: theme.space['0.5'],
       },
-  
+
       '[data-selected=true] &::after': {
         transform: `translateX(${calc($trackSize, calc.minus($thumbSize))})`,
       },

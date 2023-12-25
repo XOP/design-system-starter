@@ -13,9 +13,9 @@ module.exports = {
     {
       label: 'Pin unpublished local packages to any version (*)',
       packages: ['**'],
-      dependencies: ['@awsm/fonts', '@awsm/icons','@awsm/tokens', '@awsm/ui'],
+      dependencies: ['@awsm/fonts', '@awsm/icons', '@awsm/tokens', '@awsm/ui'],
       dependencyTypes: ['dev', 'prod'],
       pinVersion: '*',
     },
   ],
-}
+};

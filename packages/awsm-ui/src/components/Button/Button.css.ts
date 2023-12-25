@@ -25,7 +25,7 @@ const sizes: { [key in ButtonSizes]: StyleRule } = {
     height: calc(
       calc.x(theme.fontSize.s, theme.lineHeight.tight),
       calc.x(theme.space[1], 2),
-      calc.x(theme.space.px, 2)
+      calc.x(theme.space.px, 2),
     ),
     fontSize: theme.fontSize.s,
     lineHeight: theme.lineHeight.tight,
@@ -37,7 +37,7 @@ const sizes: { [key in ButtonSizes]: StyleRule } = {
     height: calc(
       calc.x(theme.fontSize.s, theme.lineHeight.tight),
       calc.x(theme.space[2], 2),
-      calc.x(theme.space.px, 2)
+      calc.x(theme.space.px, 2),
     ),
     fontSize: theme.fontSize.s,
     lineHeight: theme.lineHeight.tight,
@@ -49,7 +49,7 @@ const sizes: { [key in ButtonSizes]: StyleRule } = {
     height: calc(
       calc.x(theme.fontSize.n, theme.lineHeight.tight),
       calc.x(theme.space[2], 2),
-      calc.x(theme.space.px, 2)
+      calc.x(theme.space.px, 2),
     ),
     fontSize: theme.fontSize.s,
     lineHeight: theme.lineHeight.tight,
