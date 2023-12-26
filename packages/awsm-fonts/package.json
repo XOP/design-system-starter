@@ -1,6 +1,6 @@
 {
   "name": "@awsm/fonts",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Evgeny Khoroshilov (https://github.com/XOP)",
   "license": "MIT",
   "private": true,
@@ -21,7 +21,8 @@
     "dist/entries",
     "dist/src",
     "dist/index.*",
-    "fonts"
+    "fonts",
+    "src"
   ],
   "scripts": {
     "lint": "eslint --ext .js,.cjs,.ts,.cts,.tsx src/ entries/ stories/",

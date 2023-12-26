@@ -1,7 +1,5 @@
 import { defineConfig } from 'vite';
 
-import dts from 'vite-plugin-dts';
-
 const extensionForFormat = (format) =>
   ({ es: 'esm', cjs: 'cjs', dts: 'd.ts' })[format];
 
@@ -23,6 +21,4 @@ export default defineConfig({
       },
     },
   },
-
-  plugins: [dts()],
 });

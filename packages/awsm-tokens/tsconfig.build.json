@@ -1,0 +1,10 @@
+{
+  "extends": "@awsm/tsconfig/lib-js.json",
+  "include": ["src"],
+  "exclude": ["dist", "node_modules"],
+  "compilerOptions": {
+    "noEmit": false,
+    "emitDeclarationOnly": true,
+    "declarationDir": "dist"
+  }
+}

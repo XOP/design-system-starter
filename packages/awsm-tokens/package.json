@@ -1,13 +1,13 @@
 {
   "name": "@awsm/tokens",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Evgeny Khoroshilov (https://github.com/XOP)",
   "license": "MIT",
   "private": true,
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/src/lib/tokens/tokens.d.ts",
+      "types": "./dist/lib/tokens/tokens.d.ts",
       "import": "./dist/tokens.esm.js",
       "require": "./dist/tokens.cjs.js"
     },
@@ -19,11 +19,12 @@
   "files": [
     "dist/tokens.*",
     "dist/css",
-    "dist/src"
+    "dist/lib",
+    "src/lib"
   ],
   "scripts": {
     "lint": "eslint --ext .js,.cjs,.ts,.cts,.tsx src/ scripts/ stories/",
-    "build": "pnpm gen && tsc && vite build",
+    "build": "pnpm gen && vite build && tsc --project tsconfig.build.json",
     "gen": "pnpm gen:palette && yarn gen:vars",
     "gen:vars": "tsx ./scripts/generateVars.cts",
     "gen:palette": "tsx ./scripts/generatePaletteVars.cts"
