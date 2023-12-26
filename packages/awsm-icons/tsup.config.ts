@@ -15,4 +15,5 @@ export default defineConfig({
     };
   },
   dts: './lib/icons/index.ts',
+  tsconfig: 'tsconfig.build.json'
 });

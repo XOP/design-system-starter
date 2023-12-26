@@ -1,6 +1,6 @@
 {
   "name": "@awsm/fonts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Evgeny Khoroshilov (https://github.com/XOP)",
   "license": "MIT",
   "private": true,
@@ -25,7 +25,7 @@
   ],
   "scripts": {
     "lint": "eslint --ext .js,.cjs,.ts,.cts,.tsx src/ entries/ stories/",
-    "build": "vite build && tsc"
+    "build": "vite build && tsc --project tsconfig.build.json"
   },
   "devDependencies": {
     "@awsm/tokens": "*",

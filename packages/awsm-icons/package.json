@@ -1,6 +1,6 @@
 {
   "name": "@awsm/icons",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Evgeny Khoroshilov (https://github.com/XOP)",
   "license": "MIT",
   "private": true,
@@ -31,8 +31,8 @@
     "gen:clean": "rimraf ./lib/icons && mkdirp ./lib/icons",
     "gen": "pnpm gen:clean && tsx ./scripts/generateIcons.cts",
     "build:clean": "rimraf ./dist",
-    "build:icons": "pnpm build:clean && tsup-node && tsc",
-    "build": "pnpm gen && yarn build:icons"
+    "build:icons": "pnpm build:clean && tsup-node && tsc --project ./tsconfig.build.json",
+    "build": "pnpm gen && pnpm build:icons"
   },
   "devDependencies": {
     "@awsm/tokens": "*",

@@ -1,11 +1,5 @@
 {
   "extends": "@awsm/tsconfig/lib-react.json",
-  "include": ["lib"],
-  "exclude": ["dist", "node_modules", "scripts/template.js"],
-  "compilerOptions": {
-    "incremental": false,
-    "noEmit": false,
-    "emitDeclarationOnly": true,
-    "declarationDir": "dist"
-  }
+  "include": ["lib", "stories"],
+  "exclude": ["dist", "node_modules", "scripts/template.js"]
 }

@@ -1,0 +1,10 @@
+{
+  "extends": "@awsm/tsconfig/lib-react.json",
+  "include": ["entries"],
+  "exclude": ["dist", "node_modules"],
+  "compilerOptions": {
+    "noEmit": false,
+    "emitDeclarationOnly": true,
+    "declarationDir": "dist"
+  }
+}
