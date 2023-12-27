@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "author": "Evgeny Khoroshilov (https://github.com/XOP)",
-  "homepage": "https://",
+  "homepage": "https://ds-starter-docs.vercel.app/",
   "license": "MIT",
   "private": true,
   "scripts": {
