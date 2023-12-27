@@ -1,5 +1,5 @@
 ---
-import slugify from "slugify";
+import slugify from 'slugify';
 
 export interface Example {
   heading: string;
@@ -10,10 +10,10 @@ interface Props extends Example {
 }
 
 const { class: className, heading } = Astro.props;
-const slug = "awsm-" + slugify(heading, { lower: true });
+const slug = 'awsm-' + slugify(heading, { lower: true });
 ---
 
-<section class:list={["example", className]}>
+<section class:list={['example', className]}>
   <h2 class="heading" id={slug} data-handle="heading">
     {heading}
   </h2>
@@ -39,7 +39,7 @@ const slug = "awsm-" + slugify(heading, { lower: true });
   }
 
   .heading::before {
-    content: "#";
+    content: '#';
     position: absolute;
     left: calc(-1 * var(--awsm-space-4));
     opacity: 0;
@@ -74,19 +74,19 @@ const slug = "awsm-" + slugify(heading, { lower: true });
   headings.forEach((heading) => {
     const slug = heading.id;
 
-    if (slug === "") return;
+    if (slug === '') return;
 
     const url = `${urlBase}#${slug}`;
 
-    heading.addEventListener("click", (e: Event) => {
+    heading.addEventListener('click', (e: Event) => {
       e.preventDefault();
       copy(url);
       feedback(heading);
       window.location.href = url;
     });
 
-    heading.addEventListener("keyup", (e: KeyboardEvent) => {
-      if (e.code === "Space" || e.code === "Enter") {
+    heading.addEventListener('keyup', (e: KeyboardEvent) => {
+      if (e.code === 'Space' || e.code === 'Enter') {
         e.preventDefault();
         copy(url);
         feedback(heading);
@@ -100,7 +100,7 @@ const slug = "awsm-" + slugify(heading, { lower: true });
   }
 
   function feedback(el: Element): void {
-    const activeCls = "--active";
+    const activeCls = '--active';
 
     el.classList.remove(activeCls);
     el.classList.add(activeCls);

@@ -4,7 +4,7 @@ export interface Props {
   id?: string;
 }
 
-const { class: className = "" } = Astro.props;
+const { class: className = '' } = Astro.props;
 ---
 
 <div class={`content ${className}`}>
@@ -27,7 +27,8 @@ const { class: className = "" } = Astro.props;
   .content > :global(h1) {
     margin-block-end: var(--awsm-space-8);
     padding-block-end: var(--awsm-space-2);
-    border-block-end: var(--awsm-space-05) solid var(--awsm-color-secondary-main);
+    border-block-end: var(--awsm-space-05) solid
+      var(--awsm-color-secondary-main);
     font-size: var(--awsm-font-size-xxl);
   }
 

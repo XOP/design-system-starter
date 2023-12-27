@@ -1,5 +1,5 @@
 ---
-import type { ReactNode } from "react";
+import type { ReactNode } from 'react';
 
 interface Props {
   className?: string;
@@ -9,7 +9,7 @@ interface Props {
 const { data, className } = Astro.props;
 ---
 
-<nav class:list={["nav", className]}>
+<nav class:list={['nav', className]}>
   {
     data.map((entry) => {
       return (

@@ -1,7 +1,7 @@
 ---
-import { COLLECTION } from "../pages/components/index.astro";
+import { COLLECTION } from '../pages/components/index.astro';
 
-const currentSlug = Astro.url.pathname.split("/")[3] || "";
+const currentSlug = Astro.url.pathname.split('/')[3] || '';
 
 interface Props {
   page?: string;
@@ -14,7 +14,7 @@ const { page = COLLECTION, data } = Astro.props;
 <nav class="nav">
   {
     data.map((entry) => {
-      const isActive = currentSlug === (entry.slug.split("/")[1] || "");
+      const isActive = currentSlug === (entry.slug.split('/')[1] || '');
 
       return (
         <a

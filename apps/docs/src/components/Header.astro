@@ -1,8 +1,8 @@
 ---
-import Logo from "./Logo.astro";
-import TopNav from "./TopNav.astro";
+import Logo from './Logo.astro';
+import TopNav from './TopNav.astro';
 
-import MenuToggle from "../client/MenuToggle/MenuToggle";
+import MenuToggle from '../client/MenuToggle/MenuToggle';
 
 interface Props {
   class?: string;
@@ -12,7 +12,7 @@ interface Props {
 const { class: className, showMenuToggle = true } = Astro.props;
 ---
 
-<header class:list={["header", className]}>
+<header class:list={['header', className]}>
   <Logo />
   <TopNav />
   {showMenuToggle && <MenuToggle className="toggle" client:only />}
