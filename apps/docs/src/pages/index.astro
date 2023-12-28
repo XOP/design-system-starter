@@ -1,17 +1,17 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import IntroNav from "../components/IntroNav.astro";
-import Content from "../components/Content.astro";
+import Layout from '../layouts/Layout.astro';
+import IntroNav from '../components/IntroNav.astro';
+import Content from '../components/Content.astro';
 
-import { NAVIGATION, NAVIGATION_KEYS } from "../shared/globals";
+import { NAVIGATION, NAVIGATION_KEYS } from '../shared/globals';
 
 const descriptionMap = {
   [NAVIGATION_KEYS.core]:
-    "Core visual elements that stitch together seamless user experiences",
+    'Core visual elements that stitch together seamless user experiences',
   [NAVIGATION_KEYS.patterns]:
-    "Recurring solutions that address common design problems",
+    'Recurring solutions that address common design problems',
   [NAVIGATION_KEYS.components]:
-    "Reusable building blocks and utilities of our design system",
+    'Reusable building blocks and utilities of our design system',
 };
 
 const entries = NAVIGATION.map((item) => {

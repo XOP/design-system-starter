@@ -1,15 +1,15 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content';
 
-import Layout from "../../layouts/Layout.astro";
-import Content from "../../components/Content.astro";
-import ComponentNav from "../../components/ComponentNav.astro";
-import Examples from "../../components/Examples.astro";
+import Layout from '../../layouts/Layout.astro';
+import Content from '../../components/Content.astro';
+import ComponentNav from '../../components/ComponentNav.astro';
+import Examples from '../../components/Examples.astro';
 
-import { getCollectionName } from "../../shared/utils";
-import { refineStories } from "../../shared/utils/refineStories";
+import { getCollectionName } from '../../shared/utils';
+import { refineStories } from '../../shared/utils/refineStories';
 
-export const COLLECTION = "components";
+export const COLLECTION = 'components';
 
 export async function getStaticPaths() {
   const entries = await getCollection(COLLECTION);
@@ -37,12 +37,14 @@ const navEntries = componentEntries.map((item) => {
   };
 });
 
-const showExamples = entry.slug.split("/").length === 1;
+const showExamples = entry.slug.split('/').length === 1;
 
 let stories, examplesData;
 
 if (showExamples) {
-  stories = await import(`../../../../../packages/awsm-ui/src/components/${entry.data.dir}/${entry.data.component}.stories.tsx`);
+  stories = await import(
+    `../../../../../packages/awsm-ui/src/components/${entry.data.dir}/${entry.data.component}.stories.tsx`
+  );
   examplesData = refineStories(stories);
 }
 ---
@@ -61,10 +63,10 @@ if (showExamples) {
 
   {
     showExamples && (
-      <Examples 
-        data={examplesData} 
-        name={entry.data.component} 
-        dir={entry.data.dir} 
+      <Examples
+        data={examplesData}
+        name={entry.data.component}
+        dir={entry.data.dir}
       />
     )
   }

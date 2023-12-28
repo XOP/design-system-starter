@@ -1,11 +1,11 @@
 ---
-import type { CollectionKey } from "astro:content";
+import type { CollectionKey } from 'astro:content';
 
-import { GoogleFonts } from "@awsm/fonts";
+import { GoogleFonts } from '@awsm/fonts';
 
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import Sidebar from "../components/Sidebar.astro";
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Sidebar from '../components/Sidebar.astro';
 
 interface Props {
   title: string;
@@ -14,13 +14,13 @@ interface Props {
 }
 
 const { title, section, showNav = true } = Astro.props;
-const isIndex = Astro.url.pathname === "/";
+const isIndex = Astro.url.pathname === '/';
 const showMenu = showNav && !isIndex;
 
-import "@csstools/normalize.css/normalize.css";
-import "@awsm/tokens/css/tokens.css";
+import '@csstools/normalize.css/normalize.css';
+import '@awsm/tokens/css/tokens.css';
 
-import "../assets/css/index.css";
+import '../assets/css/index.css';
 ---
 
 <!doctype html>
@@ -47,7 +47,7 @@ import "../assets/css/index.css";
         {showMenu && <Sidebar class="side" section={section} />}
 
         <main class="main">
-          <div class={`content${isIndex ? " __index" : ""}`}>
+          <div class={`content${isIndex ? ' __index' : ''}`}>
             <slot />
           </div>
 
@@ -55,114 +55,115 @@ import "../assets/css/index.css";
         </main>
       </div>
     </div>
-  </body><style>
-    .page {
-      display: flex;
-      flex-flow: column nowrap;
+    <style>
+      .page {
+        display: flex;
+        flex-flow: column nowrap;
 
-      flex: 1 1 auto;
+        flex: 1 1 auto;
 
-      position: relative;
-      box-sizing: border-box;
+        position: relative;
+        box-sizing: border-box;
 
-      width: 100%;
-    }
+        width: 100%;
+      }
 
-    .header,
-    .footer {
-      flex: 0 1 auto;
-    }
+      .header,
+      .footer {
+        flex: 0 1 auto;
+      }
 
-    .wrap {
-      display: flex;
-      flex-flow: row nowrap;
+      .wrap {
+        display: flex;
+        flex-flow: row nowrap;
 
-      position: relative;
-      z-index: 1;
+        position: relative;
+        z-index: 1;
 
-      flex: 1 1 auto;
-      box-sizing: border-box;
+        flex: 1 1 auto;
+        box-sizing: border-box;
 
-      width: 100%;
-    }
+        width: 100%;
+      }
 
-    .main {
-      box-sizing: border-box;
-      display: flex;
-      flex-flow: column;
-      flex: 1 1 auto;
+      .main {
+        box-sizing: border-box;
+        display: flex;
+        flex-flow: column;
+        flex: 1 1 auto;
 
-      width: 100%;
-      background: var(--awsm-color-background-regular);
-    }
+        width: 100%;
+        background: var(--awsm-color-background-regular);
+      }
 
-    .content {
-      box-sizing: border-box;
-      flex: 1 0 auto;
-      width: 100%;
-      max-width: 90ch;
-      padding: var(--awsm-space-10) var(--awsm-space-16);
-    }
-
-    .content.__index {
-      margin: 0 auto;
-    }
-
-    @media screen and (max-width: 1280px) {
       .content {
-        padding: var(--awsm-space-6) var(--awsm-space-8);
+        box-sizing: border-box;
+        flex: 1 0 auto;
+        width: 100%;
+        max-width: 90ch;
+        padding: var(--awsm-space-10) var(--awsm-space-16);
       }
 
-      .content:not(.__index) {
-        max-width: none;
+      .content.__index {
+        margin: 0 auto;
       }
-    }
 
-    @media screen and (max-width: 780px) {
-      .content {
-        padding: var(--awsm-space-6) var(--awsm-space-8);
-      }
-    }
-
-    @media screen and (max-width: 480px) {
-      .content {
-        padding: var(--awsm-space-4);
-      }
-    }
-
-    .side {
-      flex: 0 1 auto;
-    }
-  </style>
-
-  <script is:inline>
-    history.scrollRestoration = "manual";
-  </script>
-
-  <script>
-    import { exampleState } from "../store/store";
-    import { EXAMPLE_STATE } from "../shared/globals";
-
-    if (location.hash) {
-      const hash = location.hash;
-
-      location.hash = "";
-      window.document.documentElement.style.overflow = "hidden";
-
-      exampleState.subscribe((state) => {
-        if (state === EXAMPLE_STATE.idle) {
-          const target = document.getElementById(hash.slice(1).trim());
-
-          location.hash = hash;
-
-          if (target) {
-            setTimeout(() => {
-              target.scrollIntoView({ behavior: "smooth" });
-              window.document.documentElement.style.overflow = "auto";
-            }, 150);
-          }
+      @media screen and (max-width: 1280px) {
+        .content {
+          padding: var(--awsm-space-6) var(--awsm-space-8);
         }
-      });
-    }
-  </script>
+
+        .content:not(.__index) {
+          max-width: none;
+        }
+      }
+
+      @media screen and (max-width: 780px) {
+        .content {
+          padding: var(--awsm-space-6) var(--awsm-space-8);
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .content {
+          padding: var(--awsm-space-4);
+        }
+      }
+
+      .side {
+        flex: 0 1 auto;
+      }
+    </style>
+
+    <script is:inline>
+      history.scrollRestoration = 'manual';
+    </script>
+
+    <script>
+      import { exampleState } from '../store/store';
+      import { EXAMPLE_STATE } from '../shared/globals';
+
+      if (location.hash) {
+        const hash = location.hash;
+
+        location.hash = '';
+        window.document.documentElement.style.overflow = 'hidden';
+
+        exampleState.subscribe((state) => {
+          if (state === EXAMPLE_STATE.idle) {
+            const target = document.getElementById(hash.slice(1).trim());
+
+            location.hash = hash;
+
+            if (target) {
+              setTimeout(() => {
+                target.scrollIntoView({ behavior: 'smooth' });
+                window.document.documentElement.style.overflow = 'auto';
+              }, 150);
+            }
+          }
+        });
+      }
+    </script>
+  </body>
 </html>
