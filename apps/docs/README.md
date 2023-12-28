@@ -2,6 +2,8 @@
 
 > [https://ds-starter-docs.vercel.app/](https://ds-starter-docs.vercel.app/)
 
+> See also: main [README](/README.md)
+
 
 ## Mission
 
@@ -114,6 +116,8 @@ Build:
 ```sh
 nx run docs:build
 ```
+
+It's safe to remove `VITE_CJS_IGNORE_WARNING=true` in scripts, it's only disabled to suppress warning, related to vanilla-extract usage. Find further info [here](https://github.com/vanilla-extract-css/vanilla-extract/issues/1236). 
 
 
 ## Extras

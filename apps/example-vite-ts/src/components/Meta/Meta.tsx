@@ -7,7 +7,7 @@ const Meta = () => {
       <a href="https://github.com/XOP" title="XOP Github">
         XOP
       </a>{' '}
-      2023
+      2023 - now
     </footer>
   );
 };

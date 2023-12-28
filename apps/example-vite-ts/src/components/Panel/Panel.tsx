@@ -5,6 +5,9 @@ import Button from '@awsm/ui/components/Button/Button';
 
 import styles from './panel.module.css';
 
+// Buttons don't do anything here...
+// they just sit looking nice and demonstrate Icons import and usage
+
 const Panel = () => {
   return (
     <div className={styles.root}>
