@@ -3,6 +3,8 @@ import IconArrowRight from '@awsm/icons/lib/IconArrowRight';
 
 import Button from '@awsm/ui/components/Button/Button';
 
+import IconArrowRightSrc from '@awsm/icons/svg/arrow-right.svg';
+
 import styles from './panel.module.css';
 
 // Buttons don't do anything here...
