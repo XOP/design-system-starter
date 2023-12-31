@@ -25,7 +25,7 @@
   "scripts": {
     "lint": "eslint --ext .js,.cjs,.ts,.cts,.tsx src/ scripts/ stories/",
     "build": "pnpm gen && vite build && tsc --project tsconfig.build.json",
-    "gen": "pnpm gen:palette && yarn gen:vars",
+    "gen": "pnpm gen:palette && pnpm gen:vars && prettier --check --write src/lib/tokens/palette.*.ts",
     "gen:vars": "tsx ./scripts/generateVars.cts",
     "gen:palette": "tsx ./scripts/generatePaletteVars.cts"
   },
