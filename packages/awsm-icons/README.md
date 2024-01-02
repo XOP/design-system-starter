@@ -68,6 +68,12 @@ Then - build process takes care of bundling and typings.
 
 Generation is based on [SVGR](https://react-svgr.com/), that you can refer to further documentation and examples.
 
+Alternatively scripts can be run from the project root:
+
+```sh
+nx run @awsm/icons:build
+```
+
 
 ## References
 

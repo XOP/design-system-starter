@@ -96,8 +96,15 @@ pnpm gen
 > Note, all tokens are JS-first. Source values can be located in `src/lib/tokens/*.ts` files.  
 > Generation script takes care of CSS variables and references generation.
 
+Alternatively scripts can be run from the project root:
+
+```sh
+nx run @awsm/icons:build
+```
+
 
 ## References
 
 - Design tokens schema and palette organization is inspired by [Design Tokens Generator](https://www.design-tokens.dev/)
 - Color gammas are created with [Tailwind Color Generator](https://uicolors.app/create)
+- Build is powered by [Vite](https://vitejs.dev/)

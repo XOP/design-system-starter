@@ -53,3 +53,28 @@ interface FontsProps {
   preconnect?: boolean;
 }
 ```
+
+
+## Development
+
+To build the package run the standard command:
+```sh
+pnpm build
+```
+
+For ES lint:
+```sh
+pnpm lint
+```
+
+Alternatively scripts can be run from the project root:
+
+```sh
+nx run @awsm/icons:build
+```
+
+
+## References
+
+- Fonts by [Google Fonts](https://fonts.google.com/specimen/Play)
+- Build is powered by [Vite](https://vitejs.dev/)
