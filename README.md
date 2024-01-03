@@ -14,21 +14,24 @@ Design System Template consists of number of packages, as well apps, having vari
 All packages (expect configs) and apps have their dedicated README.md file containing more information about organization, scripts etc.
 
 Primary framework for the template is [React](https://react.dev/).  
-It is not opinionated nor forced recommendation, it's for demo purpose only.
+It is not opinionated nor forced recommendation, it's for demo purpose only.  
+Another staple of the DS Template is [Typescript](https://www.typescriptlang.org/).
+
+Now let's see what project consists of and what technologies are under the hood.
 
 
-### Packages
+## Packages
 
-#### UI Library - [awsm-ui](/packages/awsm-ui/README.md)
+### UI Library - [awsm-ui](/packages/awsm-ui/README.md)
 
 Primary module. It is hard to imagine a modern Design System without UI module.  
 Template UI is based on the headless [react-aria](https://react-spectrum.adobe.com/react-aria/) library.
 
-#### Design Tokens - [awsm-tokens](/packages/awsm-tokens/README.md)
+### Design Tokens - [awsm-tokens](/packages/awsm-tokens/README.md)
 
 Design Tokens in a separate module provide more flexibility for the clients not using the UI Library. It provides styling capabilities and consistency at the same time. It is easy to notice how quickly tokens become an essential dependency to nearly all packages and apps.
 
-#### Icons - [awsm-icons](/packages/awsm-icons/README.md)
+### Icons - [awsm-icons](/packages/awsm-icons/README.md)
 
 Secondary module, that is not usually separated from the very beginning. However it makes sense further to maintain a dedicated package. Icons offer a simple and efficient process of adding an Icon to the Design System setup.
 
@@ -36,36 +39,92 @@ Secondary module, that is not usually separated from the very beginning. However
 
 Another secondary module, that is exactly what it's named after. Fonts distribution can be done very differently and it's just one of the ways to support it. Find more details in the [documentation](/packages/awsm-fonts/README.md).
 
-#### Typescript Config - [awsm-tsconfig](/packages/awsm-tsconfig/package.json)
+### Typescript Config - [awsm-tsconfig](/packages/awsm-tsconfig/package.json)
 
 There are 2 essential configurations - `lib-js` and `lib-react`.  
 Easy to notice that the latter should be used when framework is utilized.
 
-#### ESLint Config - [eslint-config-awsm](/packages/eslint-config-awsm/package.json)
+### ESLint Config - [eslint-config-awsm](/packages/eslint-config-awsm/package.json)
 
 ESLint config is composed with minimum amount of opinionated customizations, providing a solid template for further modifications.
 
-### Apps
 
-#### Storybook - [storybook](/apps/storybook/README.md)
+## Apps
+
+### Storybook - [storybook](/apps/storybook/README.md)
 
 > [Deployed Demonstration](https://ds-starter-storybook.vercel.app/)
 
 Primary app. [Storybook](https://storybook.js.org/) is an essential tool for development, debugging and of course documenting UI.  
 Apart from consolidating all stories from the packages it also offers VRT capabilities together with [Playwright](https://playwright.dev/).
 
-#### Documentation Website - [docs](/apps/docs/README.md)
+### Documentation Website - [docs](/apps/docs/README.md)
 
 > [Deployed Demonstration](https://ds-starter-docs.vercel.app/)
 
 Dedicated documentation website gives your Design System a nice touch of customization and signifies a certain maturity stage.  
 Apart from components presentation it also holds articles on patterns, typography, color system and everything else that is essential for your Design System.
 
-#### Example with Vite and Typescript - [example-vite-ts](/apps/example-vite-ts/README.md)
+### Example with Vite and Typescript - [example-vite-ts](/apps/example-vite-ts/README.md)
 
 > [Deployed Demonstration](https://ds-starter-app-vite.vercel.app/)
 
 Example app is a great way to give your Design System a spin, collect insights and discover certain issues at the early stages. If you have multiple modules, it is also an idea for creating a demonstration of how they implement and collaborate together. 
+
+
+## Technology
+
+First things first, the monorepo is created with [pnpm](https://pnpm.io/) and [Nx](https://nx.dev/). Don't get confused by the `turbo.json` file, it's there as [turborepo](https://turbo.build/repo) is used alongside for generation functionality (see below).
+
+At this point it's worth mentioning that nearly **all technologies can be substituted** in one way or another with matching analogues according to your preferences or project requirements. Nothing extraordinary is used in any package or app, in the end it's all HTML, JS and CSS, however there is a _certain bias_ towards certain technologies.
+
+### Development
+
+- [Storybook](https://storybook.js.org/)
+
+### Libraries
+
+- [react-aria](https://react-spectrum.adobe.com/react-aria/)
+
+### CSS
+
+- [vanilla-extract](https://vanilla-extract.style/)
+- [CSS modules](https://github.com/css-modules/css-modules)
+- [clsx](https://www.npmjs.com/package/clsx)
+- [normalize.css](https://www.npmjs.com/package/@csstools/normalize.css)
+
+### Building
+
+- [Vite](https://vitejs.dev/)
+- [tsup](https://tsup.egoist.dev/)
+
+### Documentation
+
+- [Astro](https://astro.build/)
+
+### Testing
+
+- [Playwright](https://playwright.dev/)
+
+### State management
+
+- [nanostores](https://github.com/nanostores)
+- [jotai](https://jotai.org/)
+- [store2](https://www.npmjs.com/package/store2)
+
+### SVG processing
+
+- [SVGR](https://react-svgr.com/)
+
+### Cool stuff
+
+- [polished](https://polished.js.org/)
+- [tsParticles](https://particles.js.org/)
+
+### Notable mentions
+
+- [Design Tokens Generator](https://www.design-tokens.dev/)
+- [Tailwind Color Generator](https://uicolors.app/create)
 
 
 ## Adding Components
