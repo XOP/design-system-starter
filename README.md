@@ -17,6 +17,18 @@ Primary framework for the template is [React](https://react.dev/).
 It is not opinionated nor forced recommendation, it's for demo purpose only.  
 Another staple of the DS Template is [Typescript](https://www.typescriptlang.org/).
 
+### Features at a glance:
+
+- Separate packages for UI, Icons, Design Tokens and more
+- Automated icons generation from SVG
+- Automated CSS generation from JS values
+- Example app to see everything in action
+- Storybook development and interactive documentation
+- Documentation website, auto-documenting components
+- Visual Regression Testing for UI library
+- Changelog generation and smart versioning
+- Packages versions synchronization
+
 Now let's see what project consists of and what technologies are under the hood.
 
 
