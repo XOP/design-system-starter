@@ -21,3 +21,15 @@
       var(--awsm-color-primary-gamma-500),
     var(--awsm-shadow-medium);
 }
+
+.icon {
+  display: inline-block;
+  height: 100%;
+  mask-size: cover;
+  background-color: currentColor;
+}
+
+.icon > img {
+  height: 100%;
+  visibility: hidden;
+}
