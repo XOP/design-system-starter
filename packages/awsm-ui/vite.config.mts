@@ -47,4 +47,11 @@ export default defineConfig({
       identifiers: ({ hash }) => `awsm_${hash}`,
     }),
   ],
+
+  test: {
+      environment: 'jsdom',
+      setupFiles: ['./tests/setup.ts'],
+      include: ['./src/**/*.spec.tsx'],
+      globals: true
+    }
 });

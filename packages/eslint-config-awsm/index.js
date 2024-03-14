@@ -15,7 +15,6 @@ module.exports = {
     'storybook-static',
     'test-results',
     '.eslintrc.js',
-    'vite.config.ts',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
