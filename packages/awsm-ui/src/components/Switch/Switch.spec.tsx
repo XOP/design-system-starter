@@ -1,5 +1,5 @@
 import { it, describe, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import { Switch } from '.';
 import { styles, indicatorStyles } from './Switch.css';
@@ -19,6 +19,21 @@ describe('Switch', () => {
     const switchComponent = getByText('Label');
 
     expect(switchComponent).toBeInTheDocument();
+  });
+
+  it('should render with default styles', () => {
+    const { container } = render(<Switch />);
+
+    const switchComponent = container.firstChild;
+
+    expect(switchComponent).toHaveClass(styles({ size: 'regular' }));
+
+    const switchIndicator = container.getElementsByClassName(
+      indicatorStyles({}),
+    )[0];
+
+    expect(switchIndicator).toBeInTheDocument();
+    expect(switchIndicator).toHaveClass(indicatorStyles({ color: 'primary' }));
   });
 
   it('should apply color from props', () => {

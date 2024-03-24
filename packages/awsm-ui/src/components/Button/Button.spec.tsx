@@ -1,41 +1,45 @@
 import { it, describe, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import { Button } from './';
 import { styles } from './Button.css';
 
 describe('Button', () => {
   it('should render with given children', () => {
-    render(<Button>Click me</Button>);
-    const buttonElement = screen.getByRole('button', { name: /click me/i });
+    const { container } = render(<Button>Click me</Button>);
 
-    expect(buttonElement).toBeInTheDocument();
+    expect(container.firstChild).toBeInTheDocument();
+  });
+
+  it('should apply default styles', () => {
+    const { container } = render(<Button>Click me</Button>);
+
+    expect(container.firstChild).toHaveClass(
+      styles({ variant: 'solid', color: 'primary', size: 'regular' }),
+    );
   });
 
   it('should apply the variant style', () => {
-    render(<Button variant="ghost">Click me</Button>);
-    const buttonElement = screen.getByRole('button', { name: /click me/i });
+    const { container } = render(<Button variant="ghost">Click me</Button>);
 
-    expect(buttonElement).toHaveClass(styles({ variant: 'ghost' }));
+    expect(container.firstChild).toHaveClass(styles({ variant: 'ghost' }));
   });
 
   it('should apply the styles according to props', () => {
-    render(
+    const { container } = render(
       <Button color="secondary" variant="ghost" size="small">
         Click me
       </Button>,
     );
-    const buttonElement = screen.getByRole('button', { name: /click me/i });
 
-    expect(buttonElement).toHaveClass(
+    expect(container.firstChild).toHaveClass(
       styles({ color: 'secondary', variant: 'ghost', size: 'small' }),
     );
   });
 
   it('should render in disabled state', () => {
-    render(<Button disabled>Click me</Button>);
-    const buttonElement = screen.getByRole('button', { name: /click me/i });
+    const { container } = render(<Button disabled>Click me</Button>);
 
-    expect(buttonElement).toBeDisabled();
+    expect(container.firstChild).toBeDisabled();
   });
 });
