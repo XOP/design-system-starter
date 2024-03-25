@@ -6,8 +6,8 @@
   "private": true,
   "scripts": {
     "lint": "pnpm lint:pck && lint:app",
-    "lint:pck": "nx run-many -t lint --projects=packages/*",
-    "lint:app": "nx run-many -t lint --projects=apps/*",
+    "lint:pck": "turbo run lint --filter=./packages/*",
+    "lint:app": "turbo run lint --filter=./apps/*",
     "lint:format-log": "prettier --check --log-level=warn \"**/*.{js,cjs,ts,tsx,md,mdx,json}\"",
     "lint:format-fix": "prettier --check --log-level=warn --write \"**/*.{js,cjs,ts,tsx,md,mdx,json}\"",
     "gen:component": "turbo gen awsm-ui-component",
@@ -16,8 +16,10 @@
     "change:gen": "changeset add",
     "change:version": "changeset version",
     "change:publish": "changeset publish",
-    "build:pck": "nx run-many -t build --projects=packages/* --exclude @awsm/tsconfig",
-    "build:app": "nx run-many -t build --projects=apps/* --exclude example-vite-ts",
+    "dev": "turbo run dev --filter=./apps/storybook",
+    "build": "pnpm build:pck && pnpm build:app",
+    "build:pck": "turbo run build --filter=./packages/* --filter=!./packages/awsm-tsconfig",
+    "build:app": "turbo run build --filter=./apps/* --filter=!./apps/example-vite-ts",
     "release": "pnpm build:pck && pnpm change:publish"
   },
   "devDependencies": {
@@ -26,7 +28,6 @@
     "@turbo/gen": "^1.11.1",
     "@types/node": "^20.10.0",
     "mkdirp": "^3.0.1",
-    "nx": "^17.1.3",
     "prettier": "^3.1.0",
     "rimraf": "^5.0.5",
     "syncpack": "^11.2.1",
