@@ -30,14 +30,14 @@
     "build": "tsc && vite build"
   },
   "dependencies": {
-    "@awsm/tokens": "*",
+    "@awsm/tokens": "workspace:*",
     "@vanilla-extract/css": "^1.14.0",
     "@vanilla-extract/recipes": "^0.5.1",
     "clsx": "^2.0.0",
     "react-aria-components": "^1.0.0"
   },
   "devDependencies": {
-    "@awsm/tsconfig": "*",
+    "@awsm/tsconfig": "workspace:*",
     "@csstools/normalize.css": "^12.0.0",
     "@storybook/react": "^7.6.1",
     "@testing-library/jest-dom": "^6.4.2",
@@ -46,7 +46,7 @@
     "@vanilla-extract/vite-plugin": "^3.9.2",
     "@vitejs/plugin-react": "^4.2.0",
     "eslint": "^8.54.0",
-    "eslint-config-awsm": "*",
+    "eslint-config-awsm": "workspace:*",
     "jsdom": "^24.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

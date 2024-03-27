@@ -38,14 +38,14 @@
     }
   },
   "dependencies": {
-    "@awsm/fonts": "*",
-    "@awsm/tokens": "*",
-    "@awsm/ui": "*",
+    "@awsm/fonts": "workspace:*",
+    "@awsm/tokens": "workspace:*",
+    "@awsm/ui": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@awsm/tsconfig": "*",
+    "@awsm/tsconfig": "workspace:*",
     "@playwright/test": "^1.40.1",
     "@storybook/addon-a11y": "^8.0.4",
     "@storybook/addon-essentials": "^8.0.4",
@@ -62,7 +62,7 @@
     "@vanilla-extract/vite-plugin": "^3.9.2",
     "dedent": "^1.5.1",
     "eslint": "^8.54.0",
-    "eslint-config-awsm": "*",
+    "eslint-config-awsm": "workspace:*",
     "http-server": "^14.1.1",
     "storybook": "^8.0.4",
     "typescript": "^5.4.3",

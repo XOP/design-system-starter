@@ -12,9 +12,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@awsm/fonts": "*",
-    "@awsm/icons": "*",
-    "@awsm/ui": "*",
+    "@awsm/fonts": "workspace:*",
+    "@awsm/icons": "workspace:*",
+    "@awsm/ui": "workspace:*",
     "@tsparticles/engine": "^3.0.2",
     "@tsparticles/plugin-emitters": "^3.0.2",
     "@tsparticles/plugin-emitters-shape-square": "^3.0.2",
@@ -26,12 +26,12 @@
     "tsparticles": "^3.0.2"
   },
   "devDependencies": {
-    "@awsm/tsconfig": "*",
+    "@awsm/tsconfig": "workspace:*",
     "@types/react": "^18.2.39",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "eslint": "^8.54.0",
-    "eslint-config-awsm": "*",
+    "eslint-config-awsm": "workspace:*",
     "typescript": "^5.3.2",
     "vite": "^5.0.2"
   }

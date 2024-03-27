@@ -26,8 +26,8 @@
     }
   },
   "dependencies": {
-    "@awsm/fonts": "*",
-    "@awsm/tokens": "*",
+    "@awsm/fonts": "workspace:*",
+    "@awsm/tokens": "workspace:*",
     "@csstools/normalize.css": "^12.0.0",
     "@nanostores/react": "^0.7.1",
     "astro": "^4.0.6",
@@ -49,7 +49,7 @@
     "@vanilla-extract/css": "^1.14.0",
     "@vanilla-extract/vite-plugin": "^3.9.2",
     "eslint": "^8.54.0",
-    "eslint-config-awsm": "*",
+    "eslint-config-awsm": "workspace:*",
     "typescript": "^5.3.2"
   }
 }
