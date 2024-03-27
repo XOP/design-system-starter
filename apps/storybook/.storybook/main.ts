@@ -14,7 +14,7 @@ const storiesPaths = packages.map(
 );
 
 const docsPaths = packages.map(
-  (dir) => `../../../packages/${dir}/**/*.stories.mdx`,
+  (dir) => `../../../packages/${dir}/**/*.mdx`,
 );
 
 const docgenPaths = packages.map((dir) => `../../packages/${dir}/src/**/*.tsx`);
