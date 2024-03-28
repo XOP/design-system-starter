@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { __DemoFlow__ } from '../../helpers/docs';
+import { DemoFlow } from '../../helpers/docs';
 
 import Button from './Button';
 
@@ -92,7 +92,7 @@ export const SizeLarge: Story = {
 
 export const AllVariantsPrimary: Story = {
   render: () => (
-    <__DemoFlow__>
+    <DemoFlow>
       <Button color="primary" variant="solid">
         Solid
       </Button>
@@ -102,13 +102,13 @@ export const AllVariantsPrimary: Story = {
       <Button color="primary" variant="text">
         Text
       </Button>
-    </__DemoFlow__>
+    </DemoFlow>
   ),
 };
 
 export const AllVariantsSecondary: Story = {
   render: () => (
-    <__DemoFlow__>
+    <DemoFlow>
       <Button color="secondary" variant="solid">
         Solid
       </Button>
@@ -118,6 +118,6 @@ export const AllVariantsSecondary: Story = {
       <Button color="secondary" variant="text">
         Text
       </Button>
-    </__DemoFlow__>
+    </DemoFlow>
   ),
 };

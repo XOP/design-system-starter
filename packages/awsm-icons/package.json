@@ -35,8 +35,8 @@
     "build": "pnpm gen && pnpm build:icons"
   },
   "devDependencies": {
-    "@awsm/tokens": "*",
-    "@awsm/tsconfig": "*",
+    "@awsm/tokens": "workspace:*",
+    "@awsm/tsconfig": "workspace:*",
     "@storybook/blocks": "^7.6.1",
     "@svgr/core": "^8.1.0",
     "@svgr/plugin-jsx": "^8.1.0",
@@ -44,7 +44,7 @@
     "@types/react": "^18.2.39",
     "@vanilla-extract/css": "^1.14.0",
     "eslint": "^8.54.0",
-    "eslint-config-awsm": "*",
+    "eslint-config-awsm": "workspace:*",
     "react": "^18.2.0",
     "tsup": "^8.0.1",
     "typescript": "^5.3.2"

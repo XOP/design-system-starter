@@ -60,6 +60,10 @@ const preview: Preview = {
       },
       source: {
         transform: (code: string) => {
+          // emphasizing helper components in code
+          code = code.replace(/Demo\w+/g, (match) => `__${match}__`);
+
+          // cleaning up helper renders
           if (!code.includes('render: (')) {
             return code;
           } else {

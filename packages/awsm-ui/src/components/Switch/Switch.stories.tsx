@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { __DemoFlow__ } from '../../helpers/docs';
+import { DemoFlow } from '../../helpers/docs';
 
 import Switch from './Switch';
 
@@ -50,12 +50,12 @@ export const ColorSecondary: Story = {
 
 export const Disabled: Story = {
   render: () => (
-    <__DemoFlow__>
+    <DemoFlow>
       <Switch isDisabled>Unchecked</Switch>
       <Switch isDisabled isSelected>
         Checked
       </Switch>
-    </__DemoFlow__>
+    </DemoFlow>
   ),
 };
 
@@ -81,9 +81,9 @@ export const NoLabel: Story = {
 
 export const AllColors: Story = {
   render: () => (
-    <__DemoFlow__>
+    <DemoFlow>
       <Switch color="primary">Awesome</Switch>
       <Switch color="secondary">Awesome</Switch>
-    </__DemoFlow__>
+    </DemoFlow>
   ),
 };
