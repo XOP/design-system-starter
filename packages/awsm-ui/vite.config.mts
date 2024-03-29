@@ -1,3 +1,7 @@
+/// <reference types="vitest" />
+
+import path from 'path';
+
 import { defineConfig } from 'vite';
 
 import react from '@vitejs/plugin-react';
@@ -42,16 +46,18 @@ export default defineConfig({
 
   plugins: [
     react(),
-    dts(),
+    dts({
+      tsconfigPath: path.resolve(__dirname, 'tsconfig.build.json'),
+    }),
     vanillaExtractPlugin({
       identifiers: ({ hash }) => `awsm_${hash}`,
     }),
   ],
 
   test: {
-      environment: 'jsdom',
-      setupFiles: ['./tests/setup.ts'],
-      include: ['./src/**/*.spec.tsx'],
-      globals: true
-    }
+    environment: 'jsdom',
+    setupFiles: ['./tests/setup.ts'],
+    include: ['./src/**/*.spec.tsx'],
+    globals: true,
+  },
 });

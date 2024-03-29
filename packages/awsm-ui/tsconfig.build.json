@@ -1,0 +1,24 @@
+{
+  "extends": "@awsm/tsconfig/lib-react.json",
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "src/**/*.stories.tsx",
+    "src/**/*.spec.tsx",
+    "src/helpers/docs"
+  ],
+  "references": [
+    {
+      "path": "../../config/tsconfig/vite.json"
+    }
+  ],
+  "compilerOptions": {
+    "types": [
+      "vitest/globals",
+      "@testing-library/jest-dom"
+    ]
+  }
+}
