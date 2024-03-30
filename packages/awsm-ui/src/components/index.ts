@@ -5,3 +5,7 @@ export { Tabs, TabList, Tab, TabPanel } from './Tabs';
 export type { ButtonProps } from './Button';
 export type { SwitchProps } from './Switch';
 export type { TabsProps, TabListProps, TabProps, TabPanelProps } from './Tabs';
+
+export { Alert } from './Alert';
+
+export type { AlertProps } from './Alert';

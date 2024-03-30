@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { __DemoFlow__ } from '../../helpers';
+import { DemoFlow } from '../../helpers/docs';
 
 import {{pascalCase name}} from './{{pascalCase name}}';
 
@@ -42,9 +42,9 @@ export const ColorSecondary: Story = {
 
 export const AllColors: Story = {
   render: () => (
-    <__DemoFlow__>
+    <DemoFlow>
       <{{pascalCase name}} color="primary">Awesome</{{pascalCase name}}>
       <{{pascalCase name}} color="secondary">Awesome</{{pascalCase name}}>
-    </__DemoFlow__>
+    </DemoFlow>
   ),
 };

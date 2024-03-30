@@ -10,7 +10,7 @@
     "lint:app": "turbo run lint --filter=./apps/*",
     "lint:format": "prettier --check --log-level=warn --write \"**/*.{js,cjs,ts,tsx,md,mdx,json}\"",
     "lint:format:log": "prettier --check --log-level=warn \"**/*.{js,cjs,ts,tsx,md,mdx,json}\"",
-    "gen:component": "turbo gen awsm-ui-component",
+    "gen:ui": "turbo gen awsm-ui-component",
     "syncpack": "syncpack fix-mismatches",
     "syncpack:list": "syncpack list-mismatches",
     "change:gen": "changeset add",

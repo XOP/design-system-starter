@@ -1,0 +1,16 @@
+import { it, describe, expect } from 'vitest';
+import { render } from '@testing-library/react';
+
+import { {{pascalCase name}} } from '.';
+
+describe('{{pascalCase name}}', () => {
+  it('should render component with default props', () => {
+    const { container } = render(<{{pascalCase name}} />);
+
+    const {{name}}Component = container.firstChild;
+
+    expect({{name}}Component).toBeInTheDocument();
+  });
+
+  // ...
+});

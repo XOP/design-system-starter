@@ -46,15 +46,22 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       },
       {
         type: 'add',
+        path: 'packages/awsm-ui/src/components/{{pascalCase name}}/{{pascalCase name}}.spec.tsx',
+        templateFile: 'templates/ui-component-spec.hbs',
+      },
+      {
+        type: 'add',
         path: 'packages/awsm-ui/src/components/{{pascalCase name}}/index.ts',
         template:
-          "export { default as {{pascalCase name}} } from './{{pascalCase name}}';",
+          "export { default as {{pascalCase name}} } from './{{pascalCase name}}';\n\n" + 
+          "export type { {{pascalCase name}}Props } from './{{pascalCase name}}';",
       },
       {
         type: 'append',
         path: 'packages/awsm-ui/src/components/index.ts',
         template:
-          "export { {{pascalCase name}} } from './{{pascalCase name}}';",
+          "export { {{pascalCase name}} } from './{{pascalCase name}}';\n\n" + 
+          "export type { {{pascalCase name}}Props } from './{{pascalCase name}}';",
       },
 
       // documentation
