@@ -7,8 +7,6 @@ import { defineConfig, devices } from '@playwright/test';
 // require('dotenv').config();
 
 const PORT = process.env.PORT || 3030;
-const viewport = { width: 1280, height: 800 };
-const deviceScaleFactor = 2;
 const locale = 'en-us';
 
 export default defineConfig({
@@ -17,44 +15,30 @@ export default defineConfig({
   reporter: 'html',
 
   use: {
-    baseURL: 'http://127.0.0.1:3030',
+    baseURL: `http://127.0.0.1:${PORT}`,
     trace: 'on-first-retry',
   },
 
   projects: [
     {
-      name: 'chromium',
+      name: 'Mobile / iOS',
+      use: {
+        userAgent: devices['iPhone 13'].userAgent,
+        defaultBrowserType: devices['iPhone 13'].defaultBrowserType,
+        viewport: devices['iPhone 13'].viewport,
+        deviceScaleFactor: 3,
+        isMobile: true,
+        hasTouch: true,
+        locale,
+      },
+    },
+    {
+      name: 'Desktop / Chrome',
       use: {
         userAgent: devices['Desktop Chrome'].userAgent,
         defaultBrowserType: devices['Desktop Chrome'].defaultBrowserType,
-        viewport,
-        deviceScaleFactor,
-        isMobile: false,
-        hasTouch: false,
-        locale,
-      },
-    },
-
-    {
-      name: 'firefox',
-      use: {
-        userAgent: devices['Desktop Firefox'].userAgent,
-        defaultBrowserType: devices['Desktop Firefox'].defaultBrowserType,
-        viewport,
-        deviceScaleFactor,
-        isMobile: false,
-        hasTouch: false,
-        locale,
-      },
-    },
-
-    {
-      name: 'webkit',
-      use: {
-        userAgent: devices['Desktop Safari'].userAgent,
-        defaultBrowserType: devices['Desktop Safari'].defaultBrowserType,
-        viewport,
-        deviceScaleFactor,
+        viewport: devices['Desktop Chrome'].viewport,
+        deviceScaleFactor: 2,
         isMobile: false,
         hasTouch: false,
         locale,

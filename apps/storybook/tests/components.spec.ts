@@ -6,7 +6,7 @@ import { getStories, loadStory } from '../utils';
   const stories = getStories();
 
   stories.forEach((story) => {
-    const testName = `${story.kind}-${story.name}`;
+    const testName = `${story.title}-${story.name}`;
 
     test(testName, async ({ page }) => {
       await loadStory(page, story.id);

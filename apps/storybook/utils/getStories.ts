@@ -1,19 +1,15 @@
 import { readFileSync, existsSync } from 'fs';
 
-import { Parameters } from '@storybook/react';
-
 const STORYBOOK_BUILD = './storybook-static/';
-const DOCS_NAME = 'Overview';
 
 interface StoryParams {
   id: string;
-  name: string;
   title: string;
+  name: string;
   importPath: string;
+  storiesImports: string[];
+  type: 'docs' | 'story';
   tags: string[];
-  kind: string;
-  story: string;
-  parameters: Parameters;
 }
 
 const rootPath = new URL('../', import.meta.url);
@@ -25,7 +21,7 @@ const storybookPath = new URL(STORYBOOK_BUILD, rootPath);
  * @returns Story[]
  */
 export function getStories() {
-  const storiesPath = new URL('stories.json', storybookPath);
+  const storiesPath = new URL('index.json', storybookPath);
 
   if (!existsSync(storiesPath)) {
     console.error('⚠️ Could not find storybook-static/stories.json.');
@@ -35,11 +31,12 @@ export function getStories() {
   const storiesFile = readFileSync(storiesPath, 'utf8');
   const storiesJson = JSON.parse(storiesFile);
 
-  const storiesObj: Record<string, StoryParams> = storiesJson.stories;
+  const storiesObj: Record<string, StoryParams> = storiesJson.entries;
   const storiesData = Object.values(storiesObj).reduce<StoryParams[]>(
     (acc, cur) => {
-      const isSkipped = cur.parameters.vrtDisabled === true;
-      const isDocs = cur.name === DOCS_NAME;
+      // TODO
+      const isSkipped = false;
+      const isDocs = cur.type === 'docs';
 
       if (isSkipped || isDocs) {
         return acc;

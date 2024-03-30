@@ -13,30 +13,6 @@
     "vrt:test": "npx playwright test",
     "vrt:update": "npx playwright test --update-snapshots"
   },
-  "nx": {
-    "targets": {
-      "vrt:test": {
-        "dependsOn": [
-          "build"
-        ]
-      },
-      "vrt:update": {
-        "dependsOn": [
-          "build"
-        ]
-      },
-      "dev": {
-        "dependsOn": [
-          "^build"
-        ]
-      },
-      "build": {
-        "dependsOn": [
-          "^build"
-        ]
-      }
-    }
-  },
   "dependencies": {
     "@awsm/fonts": "workspace:*",
     "@awsm/tokens": "workspace:*",

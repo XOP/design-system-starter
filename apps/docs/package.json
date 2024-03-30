@@ -11,20 +11,6 @@
     "dev": "astro dev",
     "build": "astro build"
   },
-  "nx": {
-    "targets": {
-      "dev": {
-        "dependsOn": [
-          "^build"
-        ]
-      },
-      "start": {
-        "dependsOn": [
-          "^build"
-        ]
-      }
-    }
-  },
   "dependencies": {
     "@awsm/fonts": "workspace:*",
     "@awsm/tokens": "workspace:*",
