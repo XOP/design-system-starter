@@ -104,6 +104,7 @@ export const KeyActivationManual: Story = {
     ...Base.args,
     keyboardActivation: 'manual',
   },
+  tags: ['novrt']
 };
 
 export const WithoutPanels: Story = {

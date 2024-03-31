@@ -34,8 +34,7 @@ export function getStories() {
   const storiesObj: Record<string, StoryParams> = storiesJson.entries;
   const storiesData = Object.values(storiesObj).reduce<StoryParams[]>(
     (acc, cur) => {
-      // TODO
-      const isSkipped = false;
+      const isSkipped = cur.tags.includes('novrt');
       const isDocs = cur.type === 'docs';
 
       if (isSkipped || isDocs) {

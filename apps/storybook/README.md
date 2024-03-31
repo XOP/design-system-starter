@@ -67,16 +67,14 @@ Naturally this would scale respectively, as traditional amount of components in 
 It takes time, so for more quick but shallow tests you can limit VRT [configuration](./playwright.config.ts) to 1 browser.  
 
 In addition, some stories might be redundant or not suitable for testing.  
-To bypass VRT for specific stories you can apply `vrtDisabled` parameter like so:
+To bypass VRT for specific stories you can add a `novrt` tag like so:
 
 ```tsx
 export const VrtBypass: Story = {
   args: {
     ...Base.args,
   },
-  parameters: {
-    vrtDisabled: true
-  },
+  tags: ['novrt']
 };
 ```
 
