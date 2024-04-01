@@ -7,6 +7,7 @@
   "type": "module",
   "scripts": {
     "lint": "eslint --ext .js,.cjs,.ts,.cts,.tsx .storybook/ tests/ utils/",
+    "format": "biome format --write ./tests ./utils",
     "dev": "storybook dev -p 6006",
     "build": "storybook build",
     "serve": "http-server ./storybook-static --port 3030",

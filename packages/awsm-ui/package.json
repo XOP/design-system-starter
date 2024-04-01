@@ -26,6 +26,7 @@
   ],
   "scripts": {
     "lint": "eslint --ext .js,.cjs,.ts,.cts,.tsx src/",
+    "format": "biome format --write ./src",
     "test": "vitest",
     "build": "tsc && vite build"
   },

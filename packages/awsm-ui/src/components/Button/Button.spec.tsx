@@ -15,7 +15,7 @@ describe('Button', () => {
     const { container } = render(<Button>Click me</Button>);
 
     expect(container.firstChild).toHaveClass(
-      styles({ variant: 'solid', color: 'primary', size: 'regular' }),
+      styles({ variant: 'solid', color: 'primary', size: 'regular' })
     );
   });
 
@@ -29,11 +29,11 @@ describe('Button', () => {
     const { container } = render(
       <Button color="secondary" variant="ghost" size="small">
         Click me
-      </Button>,
+      </Button>
     );
 
     expect(container.firstChild).toHaveClass(
-      styles({ color: 'secondary', variant: 'ghost', size: 'small' }),
+      styles({ color: 'secondary', variant: 'ghost', size: 'small' })
     );
   });
 

@@ -1,9 +1,0 @@
-**/.changeset/
-**/coverage/
-**/test-results/
-**/dist/
-
-**/storybook-static/
-**/awsm-icons/lib/
-
-nx.json

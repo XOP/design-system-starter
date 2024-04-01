@@ -28,6 +28,7 @@
   ],
   "scripts": {
     "lint": "eslint --ext .js,.cjs,.ts,.cts,.tsx scripts/ stories/",
+    "format": "biome format --write ./scripts ./stories",
     "gen:clean": "rimraf ./lib/icons && mkdirp ./lib/icons",
     "gen": "pnpm gen:clean && tsx ./scripts/generateIcons.cts",
     "build:clean": "rimraf ./dist",

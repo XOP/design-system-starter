@@ -20,7 +20,7 @@ export interface SwitchProps extends BaseSwitchProps {
 
 const Switch = forwardRef(function Switch(
   props: SwitchProps,
-  ref: React.ForwardedRef<HTMLLabelElement>,
+  ref: React.ForwardedRef<HTMLLabelElement>
 ) {
   const {
     className,

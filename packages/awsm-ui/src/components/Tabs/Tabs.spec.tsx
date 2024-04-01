@@ -16,7 +16,7 @@ describe('Tabs', () => {
         <TabPanel id="tab-1">content 1</TabPanel>
         <TabPanel id="tab-2">content 2</TabPanel>
         <TabPanel id="tab-3">content 3</TabPanel>
-      </Tabs>,
+      </Tabs>
     );
 
     expect(getByText('tab 1')).toBeInTheDocument();
@@ -40,7 +40,7 @@ describe('Tabs', () => {
         <TabPanel id="tab-1">content 1</TabPanel>
         <TabPanel id="tab-2">content 2</TabPanel>
         <TabPanel id="tab-3">content 3</TabPanel>
-      </Tabs>,
+      </Tabs>
     );
 
     expect(getByText('tab 1')).toHaveAttribute('data-key', 'tab-1');
@@ -61,7 +61,7 @@ describe('Tabs', () => {
         <TabPanel id="tab-1">content 1</TabPanel>
         <TabPanel id="tab-2">content 2</TabPanel>
         <TabPanel id="tab-3">content 3</TabPanel>
-      </Tabs>,
+      </Tabs>
     );
 
     expect(getByText('tab 2')).toHaveClass(tabStyles({ isSelected: true }));
@@ -78,11 +78,11 @@ describe('Tabs', () => {
         <TabPanel id="tab-1">content 1</TabPanel>
         <TabPanel id="tab-2">content 2</TabPanel>
         <TabPanel id="tab-3">content 3</TabPanel>
-      </Tabs>,
+      </Tabs>
     );
 
     expect(container.firstChild).toHaveClass(
-      tabsStyles({ color: 'primary', variant: 'regular' }),
+      tabsStyles({ color: 'primary', variant: 'regular' })
     );
   });
 
@@ -97,11 +97,11 @@ describe('Tabs', () => {
         <TabPanel id="tab-1">content 1</TabPanel>
         <TabPanel id="tab-2">content 2</TabPanel>
         <TabPanel id="tab-3">content 3</TabPanel>
-      </Tabs>,
+      </Tabs>
     );
 
     expect(container.firstChild).toHaveClass(
-      tabsStyles({ color: 'secondary' }),
+      tabsStyles({ color: 'secondary' })
     );
   });
 
@@ -116,11 +116,11 @@ describe('Tabs', () => {
         <TabPanel id="tab-1">content 1</TabPanel>
         <TabPanel id="tab-2">content 2</TabPanel>
         <TabPanel id="tab-3">content 3</TabPanel>
-      </Tabs>,
+      </Tabs>
     );
 
     expect(container.firstChild).toHaveClass(
-      tabsStyles({ color: 'secondary', variant: 'fluid' }),
+      tabsStyles({ color: 'secondary', variant: 'fluid' })
     );
   });
 
@@ -135,7 +135,7 @@ describe('Tabs', () => {
         <TabPanel id="tab-1">content 1</TabPanel>
         <TabPanel id="tab-2">content 2</TabPanel>
         <TabPanel id="tab-3">content 3</TabPanel>
-      </Tabs>,
+      </Tabs>
     );
 
     expect(getByText('tab 2')).toHaveClass(tabStyles({ isDisabled: true }));

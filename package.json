@@ -5,11 +5,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "lint": "pnpm lint:pck && lint:app",
-    "lint:pck": "turbo run lint --filter=./packages/*",
-    "lint:app": "turbo run lint --filter=./apps/*",
-    "lint:format": "prettier --check --log-level=warn --write \"**/*.{js,cjs,ts,tsx,md,mdx,json}\"",
-    "lint:format:log": "prettier --check --log-level=warn \"**/*.{js,cjs,ts,tsx,md,mdx,json}\"",
+    "lint": "turbo run lint",
+    "format": "turbo run format --no-daemon",
     "gen:ui": "turbo gen awsm-ui-component",
     "syncpack": "syncpack fix-mismatches",
     "syncpack:list": "syncpack list-mismatches",
@@ -23,12 +20,12 @@
     "release": "pnpm build:pck && pnpm change:publish"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.6.3",
     "@changesets/changelog-git": "^0.2.0",
     "@changesets/cli": "^2.27.1",
     "@turbo/gen": "^1.11.1",
     "@types/node": "^20",
     "mkdirp": "^3.0.1",
-    "prettier": "^3.1.0",
     "rimraf": "^5.0.5",
     "syncpack": "^11.2.1",
     "tsx": "^4.6.0",

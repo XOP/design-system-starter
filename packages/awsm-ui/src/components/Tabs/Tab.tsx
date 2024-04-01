@@ -13,7 +13,7 @@ export interface TabProps extends BaseTabProps {}
 
 const Tab = forwardRef(function Tab(
   props: TabProps,
-  ref: React.ForwardedRef<HTMLDivElement>,
+  ref: React.ForwardedRef<HTMLDivElement>
 ) {
   const { className, ...rest } = props;
 

@@ -26,6 +26,7 @@
   ],
   "scripts": {
     "lint": "eslint --ext .js,.cjs,.ts,.cts,.tsx src/ entries/ stories/",
+    "format": "biome format --write ./entries ./src ./stories",
     "build": "vite build && tsc --project tsconfig.build.json"
   },
   "devDependencies": {

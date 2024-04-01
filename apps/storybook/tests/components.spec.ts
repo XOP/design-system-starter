@@ -4,7 +4,7 @@ import { getStories, loadStory } from '../utils';
 
 (async () => {
   const stories = getStories();
-  
+
   stories.forEach((story) => {
     const testName = `${story.title}-${story.name}`;
 

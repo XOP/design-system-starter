@@ -29,7 +29,7 @@ describe('Switch', () => {
     expect(switchComponent).toHaveClass(styles({ size: 'regular' }));
 
     const switchIndicator = container.getElementsByClassName(
-      indicatorStyles({}),
+      indicatorStyles({})
     )[0];
 
     expect(switchIndicator).toBeInTheDocument();
@@ -40,12 +40,12 @@ describe('Switch', () => {
     const { container } = render(<Switch color="secondary">Label</Switch>);
 
     const switchIndicator = container.getElementsByClassName(
-      indicatorStyles({}),
+      indicatorStyles({})
     )[0];
 
     expect(switchIndicator).toBeInTheDocument();
     expect(switchIndicator).toHaveClass(
-      indicatorStyles({ color: 'secondary' }),
+      indicatorStyles({ color: 'secondary' })
     );
   });
 
@@ -53,7 +53,7 @@ describe('Switch', () => {
     const { container } = render(
       <Switch color="secondary" size="small">
         Label
-      </Switch>,
+      </Switch>
     );
 
     const switchComponent = container.firstChild;
@@ -61,12 +61,12 @@ describe('Switch', () => {
     expect(switchComponent).toHaveClass(styles({ size: 'small' }));
 
     const switchIndicator = container.getElementsByClassName(
-      indicatorStyles({}),
+      indicatorStyles({})
     )[0];
 
     expect(switchIndicator).toBeInTheDocument();
     expect(switchIndicator).toHaveClass(
-      indicatorStyles({ color: 'secondary' }),
+      indicatorStyles({ color: 'secondary' })
     );
   });
 

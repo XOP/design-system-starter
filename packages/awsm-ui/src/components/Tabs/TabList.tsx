@@ -15,7 +15,7 @@ export interface TabListProps extends BaseTabListProps<TabProps> {}
 
 const TabList = forwardRef(function TabsList(
   props: TabListProps,
-  ref: React.ForwardedRef<HTMLDivElement>,
+  ref: React.ForwardedRef<HTMLDivElement>
 ) {
   const { className, ...rest } = props;
 
