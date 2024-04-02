@@ -2,7 +2,7 @@
 
 > [https://ds-starter-docs.vercel.app/](https://ds-starter-docs.vercel.app/)
 
-> See also: main [README](/README.md)
+> See also: main [README](../../README.md)
 
 
 ## Mission
@@ -48,7 +48,7 @@ Take a look at the Button example in `src/content/components/Button`.
 There is a mandatory `index.mdx` file and and optional `usage.mdx` file.  
 The names are self-explanatory. Index represents the first page with the examples, whereas Usage is the article explaining component usage nuances, do-s and don't-s and so on.
 
-What you won't find in these MDX files is the examples themselves.  
+What you won't find in these MDX files is the coded examples themselves.  
 Examples in the form of storybook stories are conveniently loaded from the `awsm-ui` package.  
 
 Have a look at the [useStoryLoad](/apps/docs/src/shared/hooks/useStoryLoad.ts) hook.  
@@ -72,7 +72,7 @@ group: 'Form'
 ---
 ```
 
-Here, `title` is the component's page heading, `page` is the organization attribute for component sub-navigation and `group` refers to the component's categorization. Both pages names and components categories are defined in the [globals](/apps/docs/src/shared/globals.ts) file.
+In this case `title` is the component's page heading, `page` is the organization attribute for component sub-navigation and `group` refers to the component's categorization. Both pages names and components categories are defined in the [globals](/apps/docs/src/shared/globals.ts) file.
 
 
 ### Adding Documentation
@@ -81,7 +81,7 @@ Adding a component manually to the docs can be tedious.
 One option is to copy-paste an example and modify as needed.  
 
 However there's a better way involving code generation.  
-Find full description in the main [README](/README.md).
+Find full description in the main [README](../../README.md).
 
 
 ## Usage
@@ -91,33 +91,26 @@ Install the project and run the following commands from the `apps/docs` path.
 
 Development:
 ```sh
-pnpm dev
+turbo dev
 ```
 
 Build:
 ```sh
-pnpm build
+turbo build
 ```
 
 ES Lint:
 ```sh
-pnpm lint
+turbo lint
 ```
 
-Note, that for successful operation all local and remote packages should be properly set up.  
-To ensure all dependencies are ready you might want to run the docs from the **project root**.
+Note, that you can use `pnpm ...` command equivalents for the same operations if needed,  
+but keep in mind that app dependencies have to be built in advance for successful run.
 
-Development:
+For example:
 ```sh
-nx run docs:dev
+pnpm dev
 ```
-
-Build:
-```sh
-nx run docs:build
-```
-
-It's safe to remove `VITE_CJS_IGNORE_WARNING=true` in scripts, it's only disabled to suppress warning, related to vanilla-extract usage. Find further info [here](https://github.com/vanilla-extract-css/vanilla-extract/issues/1236). 
 
 
 ## Extras

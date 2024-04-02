@@ -2,7 +2,7 @@
 
 > [https://ds-starter-app-vite.vercel.app/](https://ds-starter-app-vite.vercel.app/)
 
-> See also: main [README](/README.md)
+> See also: main [README](../../README.md)
 
 
 ## Overview
@@ -11,12 +11,12 @@ Current example app is the simple demonstration of real-life usage of Design Sys
 
 It implements the following dependencies:
 - [@awsm/fonts](/packages/awsm-fonts/) - Fonts
-- [@awsm/icons](/packages//awsm-icons/) - Iconography (tree-shakeable)
+- [@awsm/icons](/packages/awsm-icons/) - Iconography (tree-shakeable)
 - [@awsm/ui](/packages/awsm-ui/) - Core UI library (tree-shakeable)
 
 and the following configs:
-- [@awsm/tsconfig](/packages/awsm-tsconfig/)
-- [eslint-config-awsm](/packages/eslint-config-awsm/)
+- [@awsm/tsconfig](/config/tsconfig/)
+- [eslint-config-awsm](/config/eslint-config-awsm/)
 
 
 ## Technology 
@@ -35,30 +35,25 @@ Install the project and run the following commands from the `apps/example-vite-t
 
 Development:
 ```sh
-pnpm dev
+turbo dev
 ```
 
 Build:
 ```sh
-pnpm build
+turbo build
 ```
 
 ES Lint:
 ```sh
-pnpm lint
+turbo lint
 ```
 
-Note, that for successful operation all local and remote packages should be properly set up.  
-To ensure all dependencies are ready you might want to run the app from the **project root**.
+Note, that you can use `pnpm ...` command equivalents for the same operations if needed,  
+but keep in mind that app dependencies have to be built in advance for successful run.
 
-Development:
+For example:
 ```sh
-nx run example-vite-ts:dev
-```
-
-Build:
-```sh
-nx run example-vite-ts:build
+pnpm dev
 ```
 
 
