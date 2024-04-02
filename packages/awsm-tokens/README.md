@@ -1,6 +1,5 @@
 # AWSM Tokens @ Design System Starter Template
 
-
 ## Overview
 
 Design tokens package is the core dependency for `@awsm/ui`  
@@ -13,7 +12,7 @@ Design tokens are available in 2 formats - CSS custom properties (variables) and
 JS export allows using color tokens as **plain** HEX values, i.e. `#e71b95`,  
 and **references** to CSS variables, which is a more flexible approach to theming, i.e. `var(--awsm-color-secondary-main)`.
 
-Naturally, in the latter case project should import the respective CSS files.
+Naturally, in the latter case project should also import the respective CSS files.
 
 
 ## Installation
@@ -84,23 +83,24 @@ const PrimaryDiv = () => <div style={{ background: tokens.color.primary.main }}>
 After any tokens changes simply run build command:
 
 ```sh
-pnpm build
+turbo build
 ```
 
 If you want to preview changes without compilation, run generation script:
 
 ```sh
-pnpm gen
+turbo gen
 ```
 
-> Note, all tokens are JS-first. Source values can be located in `src/lib/tokens/*.ts` files.  
-> Generation script takes care of CSS variables and references generation.
-
-Alternatively scripts can be run from the project root:
+Equally, `pnpm ...` command would yield the same results, i.e.:   
 
 ```sh
-nx run @awsm/icons:build
+pnpm build
 ```
+
+> All tokens are JS-first. Source values are located in `src/lib/tokens/*.ts` files.  
+> Generation script takes care of CSS variables and references generation.
+> Additional customization variables can be found in `scripts/utils/constants.ts`.
 
 
 ## References

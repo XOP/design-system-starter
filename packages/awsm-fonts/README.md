@@ -4,7 +4,7 @@
 
 Fonts package is optional and created for convenient fonts management.  
 In most cases it makes sense to setup custom loading, you will need to take care of fonts delivery.  
-However for quick hacking or dev-oriented projects base64-encoded files can work just fine.
+However for [quick hacking or dev-oriented projects](https://www.zachleat.com/web/web-font-data-uris/) base64-encoded files can work just fine.
 
 
 ## Installation
@@ -59,18 +59,18 @@ interface FontsProps {
 
 To build the package run the standard command:
 ```sh
-pnpm build
+turbo build
 ```
 
 For ES lint:
 ```sh
-pnpm lint
+turbo lint
 ```
 
-Alternatively scripts can be run from the project root:
+Equally, `pnpm ...` command would yield the same results, i.e.:   
 
 ```sh
-nx run @awsm/icons:build
+pnpm build
 ```
 
 
@@ -78,3 +78,4 @@ nx run @awsm/icons:build
 
 - Fonts by [Google Fonts](https://fonts.google.com/specimen/Play)
 - Build is powered by [Vite](https://vitejs.dev/)
+- Fonts Loading Strategies by [Zach Leatherman](https://www.zachleat.com/web/comprehensive-webfonts/)

@@ -15,7 +15,7 @@ const processedFontSize = Object.keys(tokens.fontSize).reduce<FontSize>(
 
     return { ...acc, ...{ [cur]: String(outputValue) } };
   },
-  {} as FontSize
+  {} as FontSize,
 );
 
 export default {

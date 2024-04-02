@@ -3,7 +3,13 @@ import fs from 'fs/promises';
 
 import * as palette from '../src/lib/tokens/palette';
 
-import { MEMO, PREFIX, convertVarsToCss, convertVarsToRefs } from './utils';
+import {
+  MEMO,
+  PREFIX,
+  THEME_DEFAULT,
+  convertVarsToCss,
+  convertVarsToRefs,
+} from './utils';
 
 const category = 'color';
 const commonPrefix = [PREFIX, category];
@@ -26,7 +32,7 @@ Object.entries(palette).forEach(([moduleName, moduleData]) => {
   tsOutput += `export const ${moduleName} = ${JSON.stringify(
     moduleData,
     null,
-    2,
+    2
   )};\n\n`;
 });
 
@@ -37,16 +43,17 @@ Object.entries(palette).forEach(([moduleName, moduleData]) => {
 
   if (!r && !r?.[0]) {
     throw new Error(
-      '❌ check exported palette name, it should satisfy the pattern "paletteFooBar"',
+      '❌ check exported palette name, it should satisfy the pattern "paletteFooBar"'
     );
   }
 
   cssData += convertVarsToCss(moduleData, ...commonPrefix);
 
   const paletteName = r![0].toLowerCase();
+  const defaultThemeRx = new RegExp(THEME_DEFAULT);
 
   // for default palette without data-* attribute
-  if (/nebula/.test(paletteName)) {
+  if (defaultThemeRx.test(paletteName)) {
     cssOutput += `:root, `;
   }
 
@@ -65,7 +72,7 @@ if (paletteData) {
   varsOutput += `export const paletteVars = ${JSON.stringify(
     varsData,
     null,
-    2,
+    2
   )};`;
 }
 
