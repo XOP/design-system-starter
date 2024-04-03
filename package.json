@@ -15,8 +15,8 @@
     "change:publish": "changeset publish",
     "dev": "turbo run dev --filter=./apps/storybook",
     "build": "pnpm build:pck && pnpm build:app",
-    "build:pck": "turbo run build --filter=./packages/* --filter=!./packages/awsm-tsconfig",
-    "build:app": "turbo run build --filter=./apps/* --filter=!./apps/example-vite-ts",
+    "build:pck": "turbo run build --filter=./packages/*",
+    "build:app": "turbo run build --filter=./apps/*",
     "release": "pnpm build:pck && pnpm change:publish"
   },
   "devDependencies": {

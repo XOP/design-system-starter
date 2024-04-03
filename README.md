@@ -2,16 +2,16 @@
 
 ## About
 
-Design System is the complex organizational entity, allowing for multiple proven benefits but coming with several caveats.  
+Design System is the complex organizational entity, allowing for [multiple proven benefits but coming with several caveats](https://medium.com/@genedesign/design-systems-beyond-basics-unveiling-nuances-and-oversights-6c85807b1c26).  
 There are a couple of things that require consideration from development perspective - architecture and growth pace, both interconnected. It is very important to **start small**, and it's also very important to outline a future Design System early, preventing scalability and growth chaos.
 
-Current Template allows for **better technology shaping** from the start. There are some foundational modules, however it's not necessary to maintain all of them early. Since you know where this is going, you just need to plan and execute accordingly - start with required parts and add more when needed.
+Current Template allows for **better technology shaping** from the start. There are some foundational modules, however it's not necessary to maintain all of them from the get go. Since you already know where the product is headed, you just need to plan and execute accordingly - start with required parts and add more when needed.
 
 
 ## Overview
 
-Design System Template consists of number of packages, as well apps, having various purposes.  
-All packages (expect configs) and apps have their dedicated README.md file containing more information about organization, scripts etc.
+Design System Template consists of number of packages, configs and apps, having various purposes.  
+All packages and apps have their dedicated README.md file containing more information about organization, scripts etc.
 
 Primary framework for the template is [React](https://react.dev/).  
 It is not opinionated nor forced recommendation, it's for demo purpose only.  
@@ -19,18 +19,35 @@ Another staple of the DS Template is [Typescript](https://www.typescriptlang.org
 
 ### Features at a glance:
 
-- Separate packages for UI, Icons, Design Tokens and more
-- Automated icons generation from SVG
-- Automated CSS generation from JS values
-- Example app to see everything in action
-- Storybook development and interactive documentation
-- Documentation website, auto-documenting components
-- Visual Regression Testing for UI library
-- Changelog generation and smart versioning
-- Packages versions synchronization
+- ⭐️ Separate packages for UI, Icons, Design Tokens and more
+- ⭐️ Automated icons generation from SVG
+- ⭐️ Automated CSS generation from JS values
+- 🚀 Example app to see everything in action
+- 🚀 Storybook development and interactive documentation
+- 🚀 Documentation website, auto-documenting components
+- 🛠️ Visual Regression Testing for UI library
+- 🛠️ Changelog generation and smart versioning
+- 🛠️ Packages versions synchronization
+- 🛠️ Quick and reasonable linting and formatting
 
-Now let's see what project consists of and what technologies are under the hood.
+### Brief technologies overview:
 
+- [React](https://react.dev/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Storybook](https://storybook.js.org/) (ver 8)
+- [Turborepo](https://turbo.build/repo)
+- [Syncpack](https://jamiemason.github.io/syncpack/guide/getting-started/)
+- [Vite](https://vitejs.dev/)
+- [Astro](https://astro.build/) (ver 4)
+- [Vitest](https://vitest.dev/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Playwright](https://playwright.dev/)
+- [ESLint](https://eslint.org/)
+- [Biome](https://biomejs.dev/)
+
+Now let's dig deeper and explore the modules in detail.
+
+---
 
 ## Packages
 
@@ -51,12 +68,15 @@ Secondary module, that is not usually separated from the very beginning. However
 
 Another secondary module, that is exactly what it's named after. Fonts distribution can be done very differently and it's just one of the ways to support it. Find more details in the [documentation](/packages/awsm-fonts/README.md).
 
-### Typescript Config - [awsm-tsconfig](/packages/awsm-tsconfig/package.json)
+
+## Configs 
+
+### Typescript Config - [tsconfig](/config/tsconfig/package.json)
 
 There are 2 essential configurations - `lib-js` and `lib-react`.  
 Easy to notice that the latter should be used when framework is utilized.
 
-### ESLint Config - [eslint-config-awsm](/packages/eslint-config-awsm/package.json)
+### ESLint Config - [eslint-config-awsm](/config/eslint-config-awsm/package.json)
 
 ESLint config is composed with minimum amount of opinionated customizations, providing a solid template for further modifications.
 
@@ -83,10 +103,11 @@ Apart from components presentation it also holds articles on patterns, typograph
 
 Example app is a great way to give your Design System a spin, collect insights and discover certain issues at the early stages. If you have multiple modules, it is also an idea for creating a demonstration of how they implement and collaborate together. 
 
+---
 
 ## Technology
 
-First things first, the monorepo is created with [pnpm](https://pnpm.io/) and [Nx](https://nx.dev/). Don't get confused by the `turbo.json` file, it's there as [turborepo](https://turbo.build/repo) is used alongside for generation functionality (see below).
+First things first, the monorepo is created with [pnpm](https://pnpm.io/) and [turbo](https://turbo.build/repo). Both technologies work in synergy for maximum efficiency and developer experience.
 
 At this point it's worth mentioning that nearly **all technologies can be substituted** in one way or another with matching analogues according to your preferences or project requirements. Nothing extraordinary is used in any package or app, in the end it's all HTML, JS and CSS, however there is a _certain bias_ towards certain technologies.
 
@@ -112,13 +133,23 @@ At this point it's worth mentioning that nearly **all technologies can be substi
 
 ### Documentation
 
+The whole [documentation](/apps/docs/README.md) website is running on Astro.
+
 - [Astro](https://astro.build/)
 
 ### Testing
 
+UI library is tested in 2 ways - component testing and visual testing.  
+Note that component testing is part of [ui package](/packages/awsm-ui/tests/setup.ts), whereas VRT is the part of [Storybook app](/apps/storybook/playwright.config.ts).
+
+- [Vitest](https://vitest.dev/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 - [Playwright](https://playwright.dev/)
 
 ### State management
+
+State management is not essential, more of an effective and easy enhancement for the project.  
+Explore [docs](/apps/docs/src/store/store.ts) and [example app](/apps/example-vite-ts/src/components/Space/Space.tsx) to learn more.
 
 - [nanostores](https://github.com/nanostores)
 - [jotai](https://jotai.org/)
@@ -126,7 +157,19 @@ At this point it's worth mentioning that nearly **all technologies can be substi
 
 ### SVG processing
 
+SVG processing is required for producing [icons package](/packages/awsm-icons/scripts/generateIcons.cts).
+
 - [SVGR](https://react-svgr.com/)
+
+### Linting and formatting
+
+Biome and ESLint are working together.  
+Linting part is fully covered by ESLint, whereas formatting is done by Biome.
+
+> Note, so far `*.cts` format is not yet supported by Biome, hence it's excluded in the [configuration](/biome.json).
+
+- [ESLint](https://eslint.org/)
+- [Biome](https://biomejs.dev/)
 
 ### Cool stuff
 
@@ -150,14 +193,22 @@ pnpm gen:component
 ```
 
 When all operations succeed you should see changes in `packages/awsm-ui` and `apps/docs`.  
-In UI you would find a scaffolding for the new component (note, for demo purposes components are based on [react-aria](https://react-spectrum.adobe.com/react-aria/), naturally your approach may vary significantly), including styling with [vanilla-extract](https://vanilla-extract.style/) (similarly here, you styling approach can be very different) and [Storybook](https://storybook.js.org/) stories.  
-In the Docs you would find new files that are sufficient for adding a component to the docs website.  
+In [UI](/packages/awsm-ui/src/components/) you would find a scaffolding for the new component (note, for demo purposes components are based on [react-aria](https://react-spectrum.adobe.com/react-aria/), naturally your approach may vary significantly), including styling with [vanilla-extract](https://vanilla-extract.style/) (similarly here, you styling approach can be very different) and [Storybook](https://storybook.js.org/) stories.  
+
+In the [Docs](/apps/docs/src/content/components/) you would find new files that are sufficient for adding a component to the docs website.  
+
 All you need to do now is to fill the new files with content!
 
 
 ## Scripts
 
-All scripts are ran from the **root path**.
+Scripts can be ran either from a project/app or the root path.  
+Note that root scripts mostly are global by design and would target all packages and apps.
+
+There are a couple of exceptions. For example, to run Storybook in dev mode: 
+```sh
+pnpm dev
+```
 
 ### Build
 
@@ -173,38 +224,23 @@ Apps build:
 pnpm build:app
 ```
 
-### Linting
+### Linting and Formatting
 
-Linting is implemented with [ESLint](https://eslint.org/) and using a custom config, separated in one of the [packages](/packages/eslint-config-awsm/).
+Linting is implemented with [ESLint](https://eslint.org/) and is using a custom config, located in one of the [configs](/config/eslint-config-awsm/).
 
-Both packages and apps:
+Lint everything:
 ```sh
 pnpm lint
 ```
 
-Only packages:
-```sh
-pnpm lint:pck
-```
-
-Only apps:
-```sh
-pnpm lint:app
-```
-
 ### Formatting
 
-Formatting is implemented with [Prettier](https://prettier.io/) and is very minimal by default.  
-Essential config can be located in [.prettierrc.cjs](/.prettierrc.cjs) and [.prettierignore](/.prettierignore).
+Formatting is implemented with [Biome](https://biomejs.dev/) and is very minimal by default.  
+Config can be found in the [root of the project](/biome.json).
 
-Check and log formatting:
+Format everything:
 ```sh
-pnpm lint:format-log
-```
-
-Check and fix formatting:
-```sh
-pnpm lint:format-fix
+pnpm format
 ```
 
 ### Dependencies sync
