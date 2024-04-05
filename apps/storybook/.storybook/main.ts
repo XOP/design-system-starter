@@ -63,6 +63,7 @@ const config: StorybookConfig = {
       propFilter: (prop) => {
         if (prop.parent) {
           return (
+            // when NOT using pnpm or/and react-aria make sure to adjust the regEx
             !/node_modules\/.pnpm\/(?!react-aria)/.test(prop.parent.fileName) &&
             !excludedProps.includes(prop.name)
           );

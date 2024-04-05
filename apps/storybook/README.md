@@ -119,12 +119,12 @@ pnpm serve
 
 Run VRT:
 ```sh
-pnpm vrt:test
+pnpm test
 ```
 
 Update VRT snapshots:
 ```sh
-pnpm vrt:update
+pnpm test:update
 ```
 
 Note, that you can use `pnpm ...` instead of `turbo ...` in respective commands if needed,  

@@ -224,6 +224,15 @@ Apps build:
 pnpm build:app
 ```
 
+### Test
+
+There are different kinds of tests involved, some require building first.
+
+Run component and visual tests:
+```sh
+pnpm test
+```
+
 ### Linting and Formatting
 
 Linting is implemented with [ESLint](https://eslint.org/) and is using a custom config, located in one of the [configs](/config/eslint-config-awsm/).

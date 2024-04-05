@@ -11,8 +11,8 @@
     "dev": "storybook dev -p 6006",
     "build": "storybook build",
     "serve": "http-server ./storybook-static --port 3030",
-    "vrt:test": "npx playwright test",
-    "vrt:update": "npx playwright test --update-snapshots"
+    "test": "npx playwright test",
+    "test:update": "npx playwright test --update-snapshots"
   },
   "dependencies": {
     "@awsm/fonts": "workspace:*",

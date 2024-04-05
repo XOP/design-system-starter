@@ -14,6 +14,7 @@
     "change:version": "changeset version",
     "change:publish": "changeset publish",
     "dev": "turbo run dev --filter=./apps/storybook",
+    "test": "turbo test",
     "build": "pnpm build:pck && pnpm build:app",
     "build:pck": "turbo run build --filter=./packages/*",
     "build:app": "turbo run build --filter=./apps/*",
