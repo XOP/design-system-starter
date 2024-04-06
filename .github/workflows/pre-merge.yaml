@@ -36,34 +36,11 @@ jobs:
       - name: Test - Components
         run: pnpm --filter "@awsm/ui" test
 
-  vrt:
-    name: Visual Regression Testing
-    runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.43.0-jammy
-
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
-
-      - name: Use Node.js 18
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Build
-        run: pnpm build
+      - name: Install Playwirhgt
+        run: pnpm dlx playwright install --with-deps
 
       - name: Test - Visual Regressions
         run: pnpm --filter "awsm-storybook" test
-        env:
-          HOME: /root
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
