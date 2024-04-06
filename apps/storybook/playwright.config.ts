@@ -7,12 +7,23 @@ import { defineConfig, devices } from '@playwright/test';
 // require('dotenv').config();
 
 const PORT = process.env.PORT || 3030;
+const CI = !!process.env.CI;
 const locale = 'en-us';
 
 export default defineConfig({
   testDir: './tests',
+  outputDir: './.test/output',
+  snapshotPathTemplate: './.test/snaps/{projectName}/{testFilePath}/{arg}{ext}',
+  testMatch: '*.spec.{ts,tsx}',
+
   fullyParallel: true,
-  reporter: 'html',
+  workers: CI ? 1 : '50%',
+  retries: CI ? 2 : 0,
+
+  reporter: [
+    ['html', { outputFolder: './.test/report', open: 'never' }],
+    CI ? ['github'] : ['line'],
+  ],
 
   use: {
     baseURL: `http://127.0.0.1:${PORT}`,
