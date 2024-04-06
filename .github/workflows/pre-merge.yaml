@@ -1,4 +1,4 @@
-name: Test
+name: Pre-Merge
 
 on:
   push:
@@ -8,8 +8,8 @@ on:
 
 jobs:
   build:
-    name: Test
-    timeout-minutes: 15
+    name: Pre-Merge
+    timeout-minutes: 5
     runs-on: ubuntu-latest
 
     steps:
@@ -27,5 +27,17 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Test
-        run: pnpm test
+      - name: Lint
+        run: pnpm lint
+
+      - name: Build
+        run: pnpm build
+
+      - name: Test - Components
+        run: pnpm --filter "@awsm/ui" test
+
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+
+      - name: Test - Visual Regressions
+        run: pnpm --filter "awsm-storybook" test
