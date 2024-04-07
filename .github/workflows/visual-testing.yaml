@@ -10,24 +10,32 @@ on:
   workflow_call:
     inputs:
       update-snapshots:
-        description: "Update snapshots?"
+        description: 'Update snapshots?'
         type: boolean
+        required: false
 
   # manual runs
   workflow_dispatch: 
     inputs:
       update-snapshots:
-        description: "Update snapshots?"
+        description: 'Update snapshots?'
         type: boolean
+        required: false
 
 jobs:
-  build:
+  vrt:
     name: Visual Testing
     timeout-minutes: 10
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Printout
+        env:
+          EVENT_CONTEXT: ${{ toJSON(github.event) }}
+        run: |
+          echo $EVENT_CONTEXT
 
       - name: Setup
         uses: ./.github/actions/setup
@@ -46,7 +54,7 @@ jobs:
           restore-keys: cache/${{github.repository}}/refs/heads/main
           path: apps/storybook/.test/**
 
-      - name: Initialize snapshots
+      - name: Initialize Snapshots
         if: ${{steps.cache.outputs.cache-hit != 'true' || inputs.update-snapshots == 'true'}}
         run: pnpm --filter "awsm-storybook" test:update --reporter html
 

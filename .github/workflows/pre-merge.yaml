@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  pre_merge:
     name: Pre-Merge
     timeout-minutes: 5
     runs-on: ubuntu-latest
