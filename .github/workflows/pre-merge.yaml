@@ -6,20 +6,6 @@ on:
   pull_request:
     branches: [ main ]
 
-  # automatic runs
-  workflow_call:
-    inputs:
-      update-snapshots:
-        description: "Update snapshots?"
-        type: boolean
-
-  # manual runs
-  workflow_dispatch: 
-    inputs:
-      update-snapshots:
-        description: "Update snapshots?"
-        type: boolean
-
 jobs:
   build:
     name: Pre-Merge
@@ -28,52 +14,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
 
-      - name: Use Node.js 18
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-          cache: 'pnpm'
+      - name: Setup
+        uses: ./.github/actions/setup
 
-      - name: Install dependencies
-        run: pnpm install
-
-      # - name: Lint
-      #   run: pnpm lint
+      - name: Lint
+        run: pnpm lint
 
       - name: Build
         run: pnpm build
 
-      # - name: Test - Components
-      #   run: pnpm --filter "@awsm/ui" test
-
-      - name: Install Playwright
-        run: pnpm dlx playwright install --with-deps
-
-      - name: Set up Cache
-        id: cache
-        uses: actions/cache@v4
-        with:
-          key: cache/${{github.repository}}/${{github.ref}}
-          restore-keys: cache/${{github.repository}}/refs/heads/main
-          path: apps/storybook/.test/**
-
-      - name: Initialize snapshots
-        if: ${{steps.cache.outputs.cache-hit != 'true' || inputs.update-snapshots == 'true'}}
-        run: pnpm --filter "awsm-storybook" test:update --reporter html
-
-      - name: Test - Visual Regressions
-        continue-on-error: true
-        run: pnpm --filter "awsm-storybook" test
-
-      - name: Upload Report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: playwright-report
-          path: apps/storybook/.test/report/
-          retention-days: 10
-          overwrite: true
+      - name: Test - Components
+        run: pnpm --filter "@awsm/ui" test
