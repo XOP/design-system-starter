@@ -1,0 +1,41 @@
+name: Post-Merge
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+
+on:
+  workflow_dispatch:
+
+  # push:
+  #   branches: [ main ]
+
+jobs:
+  deploy_docs:
+    name: Deploy-Docs
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_PROJECT_DOCS_ID: ${{ secrets.VERCEL_PROJECT_DOCS_ID }}  
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Build
+        run: pnpm build
+
+      - name: Install Vercel CLI
+        run: pnpm add --global vercel@latest
+
+      - name: Pull Vercel Environment
+        working-directory: ./apps/docs
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Vercel Build
+        working-directory: ./apps/docs
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Vercel Deploy
+        working-directory: ./apps/docs
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
