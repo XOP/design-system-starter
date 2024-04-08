@@ -3,15 +3,50 @@ env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
 
 on:
+  workflow_call:
+    inputs:
+      deploy_docs:
+        description: 'Documentation'
+        type: boolean
+        required: false
+        default: true
+      deploy_storybook:
+        description: 'Storybook'
+        type: boolean
+        required: false
+        default: true
+      deploy_example_vite:
+        description: 'Example Vite'
+        type: boolean
+        required: false
+        default: true
+
   workflow_dispatch:
+    inputs:
+      deploy_docs:
+        description: 'Documentation'
+        type: boolean
+        required: false
+        default: true
+      deploy_storybook:
+        description: 'Storybook'
+        type: boolean
+        required: false
+        default: true
+      deploy_example_vite:
+        description: 'Example Vite'
+        type: boolean
+        required: false
+        default: true
 
 jobs:
   deploy_docs:
+    if: ${{ github.event.inputs.deploy_docs == 'true' }}
     name: Deploy-Docs
     timeout-minutes: 20
     runs-on: ubuntu-latest
     env:
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_DOCS_ID }}  
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_DOCS_ID }}
 
     steps:
       - uses: actions/checkout@v4
@@ -38,11 +73,12 @@ jobs:
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
 
   deploy_storybook:
+    if: ${{ github.event.inputs.deploy_storybook == 'true' }}
     name: Deploy-Storybook
     timeout-minutes: 20
     runs-on: ubuntu-latest
     env:
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_STORYBOOK_ID }}  
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_STORYBOOK_ID }}
 
     steps:
       - uses: actions/checkout@v4
@@ -69,11 +105,12 @@ jobs:
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
 
   deploy_example_vite:
+    if: ${{ github.event.inputs.deploy_example_vite == 'true' }}
     name: Deploy-Example-Vite
     timeout-minutes: 20
     runs-on: ubuntu-latest
     env:
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_EXAMPLE_VITE_ID }}  
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_EXAMPLE_VITE_ID }}
 
     steps:
       - uses: actions/checkout@v4
@@ -98,4 +135,3 @@ jobs:
       - name: Vercel Deploy
         working-directory: ./apps/example-vite
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
-      

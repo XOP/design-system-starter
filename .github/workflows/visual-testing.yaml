@@ -6,7 +6,6 @@ on:
   pull_request:
     branches: [ main ]
 
-  # automatic runs
   workflow_call:
     inputs:
       update_snapshots:
@@ -14,7 +13,6 @@ on:
         type: boolean
         required: false
 
-  # manual runs
   workflow_dispatch: 
     inputs:
       update_snapshots:
