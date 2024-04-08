@@ -112,7 +112,7 @@ importers:
         specifier: ^5.4.3
         version: 5.4.3
 
-  apps/example-vite-ts:
+  apps/example-vite:
     dependencies:
       '@awsm/fonts':
         specifier: workspace:*

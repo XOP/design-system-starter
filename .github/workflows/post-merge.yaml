@@ -5,8 +5,8 @@ env:
 on:
   workflow_dispatch:
 
-  # push:
-  #   branches: [ main ]
+  push:
+    branches: [ main ]
 
 jobs:
   deploy_docs:
@@ -22,8 +22,8 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
 
-      - name: Build
-        run: pnpm build
+      - name: Build App
+        run: pnpm build:app
 
       - name: Install Vercel CLI
         run: pnpm add --global vercel@latest
@@ -39,3 +39,66 @@ jobs:
       - name: Vercel Deploy
         working-directory: ./apps/docs
         run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+
+  deploy_storybook:
+    name: Deploy-Storybook
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_STORYBOOK_ID }}  
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Build App
+        run: pnpm build:app
+
+      - name: Install Vercel CLI
+        run: pnpm add --global vercel@latest
+
+      - name: Pull Vercel Environment
+        working-directory: ./apps/storybook
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Vercel Build
+        working-directory: ./apps/storybook
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Vercel Deploy
+        working-directory: ./apps/storybook
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+
+  deploy_example_vite:
+    name: Deploy-Example-Vite
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_EXAMPLE_VITE_ID }}  
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Build App
+        run: pnpm build:app
+
+      - name: Install Vercel CLI
+        run: pnpm add --global vercel@latest
+
+      - name: Pull Vercel Environment
+        working-directory: ./apps/example-vite
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Vercel Build
+        working-directory: ./apps/example-vite
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Vercel Deploy
+        working-directory: ./apps/example-vite
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+      

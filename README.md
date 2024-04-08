@@ -97,7 +97,7 @@ Apart from consolidating all stories from the packages it also offers VRT capabi
 Dedicated documentation website gives your Design System a nice touch of customization and signifies a certain maturity stage.  
 Apart from components presentation it also holds articles on patterns, typography, color system and everything else that is essential for your Design System.
 
-### Example with Vite and Typescript - [example-vite-ts](/apps/example-vite-ts/README.md)
+### Example with Vite and Typescript - [example-vite](/apps/example-vite/README.md)
 
 > [Deployed Demonstration](https://ds-starter-app-vite.vercel.app/)
 
@@ -149,7 +149,7 @@ Note that component testing is part of [ui package](/packages/awsm-ui/tests/setu
 ### State management
 
 State management is not essential, more of an effective and easy enhancement for the project.  
-Explore [docs](/apps/docs/src/store/store.ts) and [example app](/apps/example-vite-ts/src/components/Space/Space.tsx) to learn more.
+Explore [docs](/apps/docs/src/store/store.ts) and [example app](/apps/example-vite/src/components/Space/Space.tsx) to learn more.
 
 - [nanostores](https://github.com/nanostores)
 - [jotai](https://jotai.org/)
