@@ -15,10 +15,11 @@
     "change:publish": "changeset publish",
     "dev": "turbo run dev --filter=./apps/storybook",
     "test": "turbo test",
-    "build": "pnpm build:pck && pnpm build:app",
+    "build": "pnpm build:pck && pnpm build:doc && pnpm build:app",
     "build:pck": "turbo run build --filter=./packages/*",
-    "build:app": "turbo run build --filter=./apps/*",
-    "release": "pnpm build:pck && pnpm change:publish"
+    "build:doc": "turbo run build --filter=./apps/storybook --filter=./apps/docs",
+    "build:app": "turbo run build --filter=./apps/example-*",
+    "release": "pnpm change:publish"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.6.3",
