@@ -34,13 +34,14 @@ jobs:
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_DOCS_ID }}
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Setup
         uses: ./.github/actions/setup
 
       - name: Build App
-        run: pnpm build:app
+        run: pnpm build:doc
 
       - name: Install Vercel CLI
         run: pnpm add --global vercel@latest
@@ -72,7 +73,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Build App
-        run: pnpm build:app
+        run: pnpm build:doc
 
       - name: Install Vercel CLI
         run: pnpm add --global vercel@latest

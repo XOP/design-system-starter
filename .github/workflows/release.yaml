@@ -1,0 +1,38 @@
+name: Release
+
+on:
+  push:
+    paths:
+      - '.changeset/**'
+      - 'packages/**'
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Build Packages
+        run: pnpm build:pck
+
+      - name: Create PR or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: pnpm release
+          commit: 'chore: release packages'
+          title: 'chore: release packages'
+          setupGitUser: false
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
