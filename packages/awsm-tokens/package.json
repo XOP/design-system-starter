@@ -24,7 +24,8 @@
   ],
   "scripts": {
     "lint": "eslint --ext .js,.cjs,.ts,.cts,.tsx src/ scripts/ stories/",
-    "format": "biome format --write ./src ./scripts ./stories",
+    "format": "biome format ./src ./scripts ./stories",
+    "format:fix": "pnpm format --write",
     "build": "pnpm gen && vite build && tsc --project tsconfig.build.json",
     "gen": "pnpm gen:palette && pnpm gen:vars && pnpm format",
     "gen:vars": "tsx ./scripts/generateVars.cts",

@@ -16,6 +16,9 @@
     "format": {
       "cache": true
     },
+    "format:fix": {
+      "cache": true
+    },
     "test": {
       "dependsOn": ["build"],
       "cache": true

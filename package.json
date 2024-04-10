@@ -7,6 +7,7 @@
   "scripts": {
     "lint": "turbo run lint",
     "format": "turbo run format --no-daemon",
+    "format:fix": "turbo run format:fix --no-daemon",
     "gen:ui": "turbo gen awsm-ui-component",
     "syncpack": "syncpack fix-mismatches",
     "syncpack:list": "syncpack list-mismatches",

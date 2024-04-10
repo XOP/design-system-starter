@@ -26,7 +26,8 @@
   ],
   "scripts": {
     "lint": "eslint --ext .js,.cjs,.ts,.cts,.tsx src/",
-    "format": "biome format --write ./src",
+    "format": "biome format ./src",
+    "format:fix": "pnpm format --write",
     "test": "vitest",
     "build": "tsc && vite build"
   },
