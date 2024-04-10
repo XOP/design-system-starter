@@ -1,4 +1,4 @@
-name: Pre-Merge
+name: Quality-Check
 
 on:
   push:
@@ -7,8 +7,8 @@ on:
     branches: [main]
 
 jobs:
-  pre_merge:
-    name: Pre-Merge
+  quality_check:
+    name: Quality-Check
     timeout-minutes: 5
     runs-on: ubuntu-latest
 
@@ -22,8 +22,11 @@ jobs:
       - name: Lint
         run: pnpm lint
 
+      - name: Format Check
+        run: pnpm format:check
+
       - name: Build
         run: pnpm build
 
-      - name: Test - Components
+      - name: Test - UI Library
         run: pnpm --filter "@awsm/ui" test

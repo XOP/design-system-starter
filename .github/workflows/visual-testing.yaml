@@ -30,11 +30,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Print Inputs
-        env:
-          EVENT_INPUTS: ${{ toJSON(github.event.inputs) }}
-        run: |
-          echo $EVENT_INPUTS
+      - name: Printout
+        uses: ./.github/actions/printout
 
       - name: Setup
         uses: ./.github/actions/setup
