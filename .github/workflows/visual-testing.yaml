@@ -1,8 +1,6 @@
 name: Visual Testing
 
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
 
@@ -23,7 +21,7 @@ on:
 jobs:
   vrt:
     name: Visual Testing
-    timeout-minutes: 10
+    timeout-minutes: 60
     runs-on: ubuntu-latest
 
     steps:

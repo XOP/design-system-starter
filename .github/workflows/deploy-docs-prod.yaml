@@ -1,0 +1,103 @@
+name: Deploy Docs Prod
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+
+on:
+  workflow_call:
+    inputs:
+      deploy_docs:
+        description: 'Documentation'
+        type: boolean
+        required: false
+        default: true
+      deploy_storybook:
+        description: 'Storybook'
+        type: boolean
+        required: false
+        default: true
+
+  workflow_dispatch:
+    inputs:
+      deploy_docs:
+        description: 'Documentation'
+        type: boolean
+        required: false
+        default: true
+      deploy_storybook:
+        description: 'Storybook'
+        type: boolean
+        required: false
+        default: true
+
+jobs:
+  deploy_docs:
+    if: ${{ github.event.inputs.deploy_docs == 'true' }}
+    name: Deploy-Docs-Prod
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_DOCS_ID }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Printout
+        uses: ./.github/actions/printout
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Build App
+        run: pnpm build:doc
+
+      - name: Install Vercel CLI
+        run: pnpm add --global vercel@latest
+
+      - name: Pull Vercel Environment
+        working-directory: ./apps/docs
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Vercel Build
+        working-directory: ./apps/docs
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Vercel Deploy
+        working-directory: ./apps/docs
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+  deploy_storybook:
+    if: ${{ github.event.inputs.deploy_storybook == 'true' }}
+    name: Deploy-Storybook-Prod
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_STORYBOOK_ID }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Printout
+        uses: ./.github/actions/printout
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Build App
+        run: pnpm build:doc
+
+      - name: Install Vercel CLI
+        run: pnpm add --global vercel@latest
+
+      - name: Pull Vercel Environment
+        working-directory: ./apps/storybook
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Vercel Build
+        working-directory: ./apps/storybook
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Vercel Deploy
+        working-directory: ./apps/storybook
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}

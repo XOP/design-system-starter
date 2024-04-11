@@ -1,123 +1,38 @@
 name: Post-Merge
-env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
 
 on:
-  workflow_dispatch:
-    inputs:
-      deploy_docs:
-        description: 'Documentation'
-        type: boolean
-        required: false
-        default: true
-      deploy_storybook:
-        description: 'Storybook'
-        type: boolean
-        required: false
-        default: true
-      deploy_example_vite:
-        description: 'Example Vite'
-        type: boolean
-        required: false
-        default: true
-
   push:
     branches: [main]
 
 jobs:
-  deploy_docs:
-    if: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.event.inputs.deploy_docs == 'true') }}
-    name: Deploy-Docs
-    timeout-minutes: 20
+  quality_control:
+    name: Quality-Control
+    timeout-minutes: 60
     runs-on: ubuntu-latest
-    env:
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_DOCS_ID }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup
-        uses: ./.github/actions/setup
+      - name: Quality-Check
+        uses: ./.github/workflows/quality-check.yaml
 
-      - name: Build App
-        run: pnpm build:doc
+      - name: Visual-Testing
+        uses: ./.github/workflows/visual-testing.yaml
 
-      - name: Install Vercel CLI
-        run: pnpm add --global vercel@latest
-
-      - name: Pull Vercel Environment
-        working-directory: ./apps/docs
-        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Vercel Build
-        working-directory: ./apps/docs
-        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Vercel Deploy
-        working-directory: ./apps/docs
-        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
-
-  deploy_storybook:
-    if: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.event.inputs.deploy_storybook == 'true') }}
-    name: Deploy-Storybook
-    timeout-minutes: 20
+  deploy_dev:
+    name: Deploy-Dev
+    timeout-minutes: 30
     runs-on: ubuntu-latest
-    env:
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_STORYBOOK_ID }}
+    needs: [quality_control]
+    if: ${{ needs.quality_control.result == 'success' }}
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Setup
-        uses: ./.github/actions/setup
+      - name: Deploy-Docs-Dev
+        uses: ./.github/workflows/deploy-docs-dev.yaml
 
-      - name: Build App
-        run: pnpm build:doc
-
-      - name: Install Vercel CLI
-        run: pnpm add --global vercel@latest
-
-      - name: Pull Vercel Environment
-        working-directory: ./apps/storybook
-        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Vercel Build
-        working-directory: ./apps/storybook
-        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Vercel Deploy
-        working-directory: ./apps/storybook
-        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
-
-  deploy_example_vite:
-    if: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.event.inputs.deploy_example_vite == 'true') }}
-    name: Deploy-Example-Vite
-    timeout-minutes: 20
-    runs-on: ubuntu-latest
-    env:
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_EXAMPLE_VITE_ID }}
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup
-        uses: ./.github/actions/setup
-
-      - name: Build App
-        run: pnpm build:app
-
-      - name: Install Vercel CLI
-        run: pnpm add --global vercel@latest
-
-      - name: Pull Vercel Environment
-        working-directory: ./apps/example-vite
-        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Vercel Build
-        working-directory: ./apps/example-vite
-        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Vercel Deploy
-        working-directory: ./apps/example-vite
-        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Deploy-Apps-Dev
+        uses: ./.github/workflows/deploy-apps-dev.yaml

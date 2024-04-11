@@ -1,0 +1,57 @@
+name: Deploy Apps Dev
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+
+on:
+  workflow_call:
+    inputs:
+      deploy_example_vite:
+        description: 'Example Vite'
+        type: boolean
+        required: false
+        default: true
+
+  workflow_dispatch:
+    inputs:
+      deploy_example_vite:
+        description: 'Example Vite'
+        type: boolean
+        required: false
+        default: true
+
+jobs:
+  deploy_example_vite:
+    if: ${{ github.event.inputs.deploy_example_vite == 'true' }}
+    name: Deploy-Example-Vite-Dev
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_EXAMPLE_VITE_ID }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Printout
+        uses: ./.github/actions/printout
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Build App
+        run: pnpm build:app
+
+      - name: Install Vercel CLI
+        run: pnpm add --global vercel@latest
+
+      - name: Pull Vercel Environment
+        working-directory: ./apps/example-vite
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Vercel Build
+        working-directory: ./apps/example-vite
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Vercel Deploy
+        working-directory: ./apps/example-vite
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}

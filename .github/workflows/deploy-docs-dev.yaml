@@ -1,4 +1,4 @@
-name: Deployment
+name: Deploy Docs Dev
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
 
@@ -15,11 +15,6 @@ on:
         type: boolean
         required: false
         default: true
-      deploy_example_vite:
-        description: 'Example Vite'
-        type: boolean
-        required: false
-        default: true
 
   workflow_dispatch:
     inputs:
@@ -33,17 +28,12 @@ on:
         type: boolean
         required: false
         default: true
-      deploy_example_vite:
-        description: 'Example Vite'
-        type: boolean
-        required: false
-        default: true
 
 jobs:
   deploy_docs:
     if: ${{ github.event.inputs.deploy_docs == 'true' }}
-    name: Deploy-Docs
-    timeout-minutes: 20
+    name: Deploy-Docs-Dev
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     env:
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_DOCS_ID }}
@@ -52,6 +42,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Printout
+        uses: ./.github/actions/printout
+
       - name: Setup
         uses: ./.github/actions/setup
 
@@ -63,26 +56,30 @@ jobs:
 
       - name: Pull Vercel Environment
         working-directory: ./apps/docs
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Vercel Build
         working-directory: ./apps/docs
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Vercel Deploy
         working-directory: ./apps/docs
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
 
   deploy_storybook:
     if: ${{ github.event.inputs.deploy_storybook == 'true' }}
-    name: Deploy-Storybook
+    name: Deploy-Storybook-Dev
     timeout-minutes: 20
     runs-on: ubuntu-latest
     env:
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_STORYBOOK_ID }}
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Printout
+        uses: ./.github/actions/printout
 
       - name: Setup
         uses: ./.github/actions/setup
@@ -95,44 +92,12 @@ jobs:
 
       - name: Pull Vercel Environment
         working-directory: ./apps/storybook
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Vercel Build
         working-directory: ./apps/storybook
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Vercel Deploy
         working-directory: ./apps/storybook
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
-
-  deploy_example_vite:
-    if: ${{ github.event.inputs.deploy_example_vite == 'true' }}
-    name: Deploy-Example-Vite
-    timeout-minutes: 20
-    runs-on: ubuntu-latest
-    env:
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_EXAMPLE_VITE_ID }}
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup
-        uses: ./.github/actions/setup
-
-      - name: Build App
-        run: pnpm build:app
-
-      - name: Install Vercel CLI
-        run: pnpm add --global vercel@latest
-
-      - name: Pull Vercel Environment
-        working-directory: ./apps/example-vite
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Vercel Build
-        working-directory: ./apps/example-vite
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Vercel Deploy
-        working-directory: ./apps/example-vite
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
