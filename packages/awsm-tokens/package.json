@@ -27,7 +27,7 @@
     "format": "biome format ./src ./scripts ./stories",
     "format:fix": "pnpm format --write",
     "build": "pnpm gen && vite build && tsc --project tsconfig.build.json",
-    "gen": "pnpm gen:palette && pnpm gen:vars && pnpm format",
+    "gen": "pnpm gen:palette && pnpm gen:vars && pnpm format:fix",
     "gen:vars": "tsx ./scripts/generateVars.cts",
     "gen:palette": "tsx ./scripts/generatePaletteVars.cts"
   },
