@@ -11,8 +11,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  release:
-    name: Release
+  release_packages:
+    name: Release-Packages
+    timeout-minutes: 30
     runs-on: ubuntu-latest
 
     steps:
@@ -36,3 +37,15 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  deploy_prod:
+    name: Deploy-Prod
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy-Docs-Prod
+        uses: ./.github/workflows/deploy-docs-prod.yaml
