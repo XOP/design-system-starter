@@ -15,12 +15,18 @@ interface StoryParams {
 const rootPath = new URL('../', import.meta.url);
 const storybookPath = new URL(STORYBOOK_BUILD, rootPath);
 
+interface GetStoriesProps {
+  ignoreTags?: string[];
+}
+
 /**
- * Makes stories.json into collection
+ * Converts stories.json into collection
  * and filters docs pages and skipped examples
+ * @param options
+ * @param options.ignoreTags
  * @returns Story[]
  */
-export function getStories() {
+export function getStories({ ignoreTags = [] }: GetStoriesProps = {}) {
   const storiesPath = new URL('index.json', storybookPath);
 
   if (!existsSync(storiesPath)) {
@@ -34,7 +40,7 @@ export function getStories() {
   const storiesObj: Record<string, StoryParams> = storiesJson.entries;
   const storiesData = Object.values(storiesObj).reduce<StoryParams[]>(
     (acc, cur) => {
-      const isSkipped = cur.tags.includes('novrt');
+      const isSkipped = cur.tags.some((tag) => ignoreTags.includes(tag));
       const isDocs = cur.type === 'docs';
 
       if (isSkipped || isDocs) {
@@ -43,7 +49,7 @@ export function getStories() {
 
       return [...acc, cur];
     },
-    [],
+    []
   );
 
   return storiesData;

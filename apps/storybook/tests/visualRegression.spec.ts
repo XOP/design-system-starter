@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test';
 import { getStories, loadStory } from '../utils';
 
 (async () => {
-  const stories = getStories();
+  const stories = getStories({ ignoreTags: ['skipVrt'] });
 
   stories.forEach((story) => {
     const testName = `${story.title}-${story.name}`;
