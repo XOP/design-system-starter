@@ -31,13 +31,13 @@
     "build": "vite build && tsc --project tsconfig.build.json"
   },
   "devDependencies": {
-    "@awsm/tokens": "workspace:*",
-    "@awsm/tsconfig": "workspace:*",
+    "@ds-starter/tokens": "workspace:*",
+    "@ds-starter/tsconfig": "workspace:*",
     "@storybook/blocks": "^8.0.4",
     "@types/react": "^18.2.74",
     "@vitejs/plugin-react": "^4.2.0",
     "eslint": "^8.54.0",
-    "eslint-config-awsm": "workspace:*",
+    "eslint-config-ds-starter": "workspace:*",
     "react": "^18.2.0",
     "typescript": "^5.4.3",
     "vite": "^5.2.7"

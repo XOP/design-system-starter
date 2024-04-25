@@ -1,4 +1,4 @@
 @import '@csstools/normalize.css/normalize.css';
-@import '@awsm/tokens/css/tokens.css';
+@import '@ds-starter/tokens/css/tokens.css';
 
 @import './core.css';

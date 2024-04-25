@@ -1,6 +1,6 @@
 import { useAtom } from 'jotai';
 
-import Switch from '@awsm/ui/components/Switch/Switch';
+import Switch from '@ds-starter/ui/components/Switch/Switch';
 
 import { shipSpeed } from '../Space/Space';
 

@@ -1,4 +1,4 @@
-import { tokens } from '@awsm/tokens';
+import { tokens } from '@ds-starter/tokens';
 
 const theme = {
   ...tokens,

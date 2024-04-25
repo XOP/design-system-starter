@@ -1,5 +1,5 @@
 {
-  "extends": "@awsm/tsconfig/lib-react.json",
+  "extends": "@ds-starter/tsconfig/lib-react.json",
   "include": ["lib", "stories"],
   "exclude": ["dist", "node_modules", "scripts/template.js"]
 }

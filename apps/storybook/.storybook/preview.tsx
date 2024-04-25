@@ -26,10 +26,10 @@ import { viewport } from './params/viewport';
 import { excludedControls } from './config/excludedControls';
 
 // fonts as base64
-import '@awsm/fonts/css/fonts.css';
+import '@ds-starter/fonts/css/fonts.css';
 
 // ui core styles
-import '../../../packages/awsm-ui/src/assets/styles/index.css';
+import '../../../packages/dss-ui/src/assets/styles/index.css';
 
 const preview: Preview = {
   parameters: {

@@ -12,7 +12,7 @@ const CATEGORIES = [
 ];
 
 export default function generator(plop: PlopTypes.NodePlopAPI): void {
-  plop.setGenerator('awsm-ui-component', {
+  plop.setGenerator('dss-ui-component', {
     description: 'Scaffolds a new UI Component',
     prompts: [
       {
@@ -31,34 +31,34 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       // ui library
       {
         type: 'add',
-        path: 'packages/awsm-ui/src/components/{{pascalCase name}}/{{pascalCase name}}.tsx',
+        path: 'packages/dss-ui/src/components/{{pascalCase name}}/{{pascalCase name}}.tsx',
         templateFile: 'templates/ui-component-core.hbs',
       },
       {
         type: 'add',
-        path: 'packages/awsm-ui/src/components/{{pascalCase name}}/{{pascalCase name}}.css.ts',
+        path: 'packages/dss-ui/src/components/{{pascalCase name}}/{{pascalCase name}}.css.ts',
         templateFile: 'templates/ui-component-css.hbs',
       },
       {
         type: 'add',
-        path: 'packages/awsm-ui/src/components/{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
+        path: 'packages/dss-ui/src/components/{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
         templateFile: 'templates/ui-component-stories.hbs',
       },
       {
         type: 'add',
-        path: 'packages/awsm-ui/src/components/{{pascalCase name}}/{{pascalCase name}}.spec.tsx',
+        path: 'packages/dss-ui/src/components/{{pascalCase name}}/{{pascalCase name}}.spec.tsx',
         templateFile: 'templates/ui-component-spec.hbs',
       },
       {
         type: 'add',
-        path: 'packages/awsm-ui/src/components/{{pascalCase name}}/index.ts',
+        path: 'packages/dss-ui/src/components/{{pascalCase name}}/index.ts',
         template:
           "export { default as {{pascalCase name}} } from './{{pascalCase name}}';\n\n" + 
           "export type { {{pascalCase name}}Props } from './{{pascalCase name}}';",
       },
       {
         type: 'append',
-        path: 'packages/awsm-ui/src/components/index.ts',
+        path: 'packages/dss-ui/src/components/index.ts',
         template:
           "export { {{pascalCase name}} } from './{{pascalCase name}}';\n\n" + 
           "export type { {{pascalCase name}}Props } from './{{pascalCase name}}';",

@@ -50,10 +50,10 @@ jobs:
 
       - name: Initialize Snapshots
         if: ${{ steps.cache.outputs.cache-hit != 'true' || github.event.inputs.update_snapshots == 'true' }}
-        run: pnpm --filter "awsm-storybook" test:update --reporter html
+        run: pnpm --filter "storybook" test:update --reporter html
 
       - name: Test - Visual Regressions
-        run: pnpm --filter "awsm-storybook" test
+        run: pnpm --filter "storybook" test
 
       - name: Upload Report
         if: ${{ always() }}

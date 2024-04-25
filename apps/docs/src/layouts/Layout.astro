@@ -1,7 +1,7 @@
 ---
 import type { CollectionKey } from 'astro:content';
 
-import { GoogleFonts } from '@awsm/fonts';
+import { GoogleFonts } from '@ds-starter/fonts';
 
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -18,7 +18,7 @@ const isIndex = Astro.url.pathname === '/';
 const showMenu = showNav && !isIndex;
 
 import '@csstools/normalize.css/normalize.css';
-import '@awsm/tokens/css/tokens.css';
+import '@ds-starter/tokens/css/tokens.css';
 
 import '../assets/css/index.css';
 ---
@@ -28,7 +28,7 @@ import '../assets/css/index.css';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="AWSM DSSD - Design System Starter Docs" />
+    <meta name="description" content="DSS Docs - Design System Starter Docs" />
 
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

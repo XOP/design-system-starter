@@ -43,7 +43,7 @@ let stories, examplesData;
 
 if (showExamples) {
   stories = await import(
-    `../../../../../packages/awsm-ui/src/components/${entry.data.dir}/${entry.data.component}.stories.tsx`
+    `../../../../../packages/dss-ui/src/components/${entry.data.dir}/${entry.data.component}.stories.tsx`
   );
   examplesData = refineStories(stories);
 }

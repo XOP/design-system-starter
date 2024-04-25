@@ -1,4 +1,4 @@
 {
-  "extends": "@awsm/tsconfig/lib-react.json",
+  "extends": "@ds-starter/tsconfig/lib-react.json",
   "include": [".storybook/*"]
 }

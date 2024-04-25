@@ -1,10 +1,10 @@
-import IconArrowLeft from '@awsm/icons/lib/IconArrowLeft';
-import IconArrowRight from '@awsm/icons/lib/IconArrowRight';
+import IconArrowLeft from '@ds-starter/icons/lib/IconArrowLeft';
+import IconArrowRight from '@ds-starter/icons/lib/IconArrowRight';
 
-import IconArrowLeftSrc from '@awsm/icons/svg/arrow-left.svg';
-import IconArrowRightSrc from '@awsm/icons/svg/arrow-right.svg';
+import IconArrowLeftSrc from '@ds-starter/icons/svg/arrow-left.svg';
+import IconArrowRightSrc from '@ds-starter/icons/svg/arrow-right.svg';
 
-import Button from '@awsm/ui/components/Button/Button';
+import Button from '@ds-starter/ui/components/Button/Button';
 
 import styles from './panel.module.css';
 

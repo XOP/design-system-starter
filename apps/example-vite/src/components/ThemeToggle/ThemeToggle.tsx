@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import Button from '@awsm/ui/components/Button/Button';
+import Button from '@ds-starter/ui/components/Button/Button';
 
 const THEMES = ['nebula', 'prism'];
 const DEFAULT_THEME = 'nebula';

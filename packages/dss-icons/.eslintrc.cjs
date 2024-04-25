@@ -1,5 +1,5 @@
 module.exports = {
   root: true,
-  extends: ['awsm'],
+  extends: ['ds-starter'],
   ignorePatterns: ['scripts/template.js'],
 };

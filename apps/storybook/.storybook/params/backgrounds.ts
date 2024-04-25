@@ -1,4 +1,4 @@
-import { tokensNebula, tokensPrism } from '@awsm/tokens';
+import { tokensNebula, tokensPrism } from '@ds-starter/tokens';
 
 export const backgrounds = {
   default: 'nebula',

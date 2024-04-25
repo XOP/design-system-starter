@@ -19,11 +19,11 @@ export const useStoryLoad = (
   useEffect(() => {
     async function load() {
       const { [name]: _data } = await import(
-        `../../../../../packages/awsm-ui/src/components/${componentDir}/${componentName}.stories.tsx`
+        `../../../../../packages/dss-ui/src/components/${componentDir}/${componentName}.stories.tsx`
       );
 
       const { default: _struct } = await import(
-        `../../../../../packages/awsm-ui/src/components/${componentDir}/${componentName}.stories.tsx`
+        `../../../../../packages/dss-ui/src/components/${componentDir}/${componentName}.stories.tsx`
       );
 
       setIsLoading(false);

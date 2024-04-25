@@ -32,12 +32,12 @@
     "gen:palette": "tsx ./scripts/generatePaletteVars.cts"
   },
   "devDependencies": {
-    "@awsm/tsconfig": "workspace:*",
+    "@ds-starter/tsconfig": "workspace:*",
     "@storybook/blocks": "^8.0.4",
     "@types/react": "^18.2.74",
     "@vanilla-extract/css": "^1.14.0",
     "eslint": "^8.54.0",
-    "eslint-config-awsm": "workspace:*",
+    "eslint-config-ds-starter": "workspace:*",
     "polished": "^4.2.2",
     "typescript": "^5.4.3",
     "vite": "^5.2.7"
