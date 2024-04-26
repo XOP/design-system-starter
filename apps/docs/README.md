@@ -18,7 +18,7 @@ What's more - user-friendly markdown format allows to easily add, format and org
 
 ## Overview
 
-AWSM Docs is powered by [Astro](https://astro.build/) enhanced with [nanostores](https://github.com/nanostores/nanostores) and [store2](https://github.com/nbubna/store#readme) for extra convenience. Structure and design are minimalistic on purpose and provide a great start for further development.
+DSS Docs is powered by [Astro](https://astro.build/) enhanced with [nanostores](https://github.com/nanostores/nanostores) and [store2](https://github.com/nbubna/store#readme) for extra convenience. Structure and design are minimalistic on purpose and provide a great start for further development.
 
 There are 2 kinds of documentation featured in the app: Articles and Components.  
 
@@ -49,7 +49,7 @@ There is a mandatory `index.mdx` file and and optional `usage.mdx` file.
 The names are self-explanatory. Index represents the first page with the examples, whereas Usage is the article explaining component usage nuances, do-s and don't-s and so on.
 
 What you won't find in these MDX files is the coded examples themselves.  
-Examples in the form of storybook stories are conveniently loaded from the `awsm-ui` package.  
+Examples in the form of storybook stories are conveniently loaded from the `dss-ui` package.  
 
 Have a look at the [useStoryLoad](/apps/docs/src/shared/hooks/useStoryLoad.ts) hook.  
 Along with the path to the package it's relying on the following properties, both defined in frontmatter data in `index.mdx`:
@@ -62,7 +62,7 @@ dir: 'Button'
 ```
 
 Here, `component` prop is the file name and `dir` is the folder name in case it's different.  
-Other frontmatter attributes are specific to the AWSM Docs and allow to display and organize component better:
+Other frontmatter attributes are specific to the DSS Docs and allow to display and organize component better:
 ```txt
 ---
 title: 'Button'

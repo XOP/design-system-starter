@@ -1,4 +1,4 @@
-# AWSM Fonts @ Design System Starter Template
+# DSS Fonts @ Design System Starter Template
 
 ## Overview
 
@@ -13,7 +13,7 @@ However for [quick hacking or dev-oriented projects](https://www.zachleat.com/we
 > The packages are not published and only used locally for now.
 
 ```sh
-npm i @awsm/fonts
+npm i @ds-starter/fonts
 ```
 
 
@@ -22,7 +22,7 @@ npm i @awsm/fonts
 ### Base64 fonts
 
 ```tsx
-import '@awsm/fonts/css/fonts.css';
+import '@ds-starter/fonts/css/fonts.css';
 ```
 
 ### Google Fonts helper
@@ -30,7 +30,7 @@ import '@awsm/fonts/css/fonts.css';
 > Note, this component is supposed to be used on server side.
 
 ```tsx
-import { GoogleFonts } from '@awsm/fonts';
+import { GoogleFonts } from '@ds-starter/fonts';
 
 // ...
 

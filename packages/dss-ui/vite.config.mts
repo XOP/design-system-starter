@@ -15,7 +15,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: './src/index.ts',
-      name: '@awsm/ui',
+      name: '@ds-starter/ui',
       fileName: (format, alias) => {
         const extFormat = extensionForFormat(format);
 
@@ -50,7 +50,7 @@ export default defineConfig({
       tsconfigPath: path.resolve(__dirname, 'tsconfig.build.json'),
     }),
     vanillaExtractPlugin({
-      identifiers: ({ hash }) => `awsm_${hash}`,
+      identifiers: ({ hash }) => `dss_${hash}`,
     }),
   ],
 

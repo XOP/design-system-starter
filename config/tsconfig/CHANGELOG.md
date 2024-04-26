@@ -1,4 +1,4 @@
-# @awsm/tsconfig
+# @ds-starter/tsconfig
 
 ## 0.0.1
 

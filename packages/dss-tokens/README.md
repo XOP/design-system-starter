@@ -1,8 +1,8 @@
-# AWSM Tokens @ Design System Starter Template
+# DSS Tokens @ Design System Starter Template
 
 ## Overview
 
-Design tokens package is the core dependency for `@awsm/ui`  
+Design tokens package is the core dependency for `@ds-starter/ui`  
 and very important for consistent design in the apps.
 
 Design tokens are available in 2 formats - CSS custom properties (variables) and JS objects.
@@ -21,7 +21,7 @@ Naturally, in the latter case project should also import the respective CSS file
 > The packages are not published and only used locally for now.
 
 ```sh
-npm i @awsm/tokens
+npm i @ds-starter/tokens
 ```
 
 
@@ -32,7 +32,7 @@ As mentioned, there are different scenarios of how tokens can be utilized.
 ### CSS 
 
 ```css
-@import '@awsm/tokens/css/tokens.css';
+@import '@ds-starter/tokens/css/tokens.css';
 
 /* ... */
 
@@ -48,10 +48,10 @@ body {
 > Note that CSS references only apply to colors.
 
 ```tsx
-import { tokens } from '@awsm/tokens';
+import { tokens } from '@ds-starter/tokens';
 
 // note, this import can be alternatively done via CSS
-import '@awsm/tokens/css/tokens.css';
+import '@ds-starter/tokens/css/tokens.css';
 
 // ...
 
@@ -70,7 +70,7 @@ For demo purposes there are 2 polar themes using the same base colors:
 Respectively, imported tokens are named `tokensNebula` and `tokensPrism`.  
 
 ```tsx
-import { tokensNebula as tokens } from '@awsm/tokens';
+import { tokensNebula as tokens } from '@ds-starter/tokens';
 
 // ...
 

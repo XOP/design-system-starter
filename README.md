@@ -51,22 +51,22 @@ Now let's dig deeper and explore the modules in detail.
 
 ## Packages
 
-### UI Library - [awsm-ui](/packages/awsm-ui/README.md)
+### UI Library - [dss-ui](/packages/dss-ui/README.md)
 
 Primary module. It is hard to imagine a modern Design System without UI module.  
 Template UI is based on the headless [react-aria](https://react-spectrum.adobe.com/react-aria/) library.
 
-### Design Tokens - [awsm-tokens](/packages/awsm-tokens/README.md)
+### Design Tokens - [dss-tokens](/packages/dss-tokens/README.md)
 
 Design Tokens in a separate module provide more flexibility for the clients not using the UI Library. It provides styling capabilities and consistency at the same time. It is easy to notice how quickly tokens become an essential dependency to nearly all packages and apps.
 
-### Icons - [awsm-icons](/packages/awsm-icons/README.md)
+### Icons - [dss-icons](/packages/dss-icons/README.md)
 
 Secondary module, that is not usually separated from the very beginning. However it makes sense further to maintain a dedicated package. Icons offer a simple and efficient process of adding an Icon to the Design System setup.
 
-### Fonts - [awsm-fonts](/packages/awsm-fonts/README.md)
+### Fonts - [dss-fonts](/packages/dss-fonts/README.md)
 
-Another secondary module, that is exactly what it's named after. Fonts distribution can be done very differently and it's just one of the ways to support it. Find more details in the [documentation](/packages/awsm-fonts/README.md).
+Another secondary module, that is exactly what it's named after. Fonts distribution can be done very differently and it's just one of the ways to support it. Find more details in the [documentation](/packages/dss-fonts/README.md).
 
 
 ## Configs 
@@ -76,7 +76,7 @@ Another secondary module, that is exactly what it's named after. Fonts distribut
 There are 2 essential configurations - `lib-js` and `lib-react`.  
 Easy to notice that the latter should be used when framework is utilized.
 
-### ESLint Config - [eslint-config-awsm](/config/eslint-config-awsm/package.json)
+### ESLint Config - [eslint-config-ds-starter](/config/eslint-config-ds-starter/package.json)
 
 ESLint config is composed with minimum amount of opinionated customizations, providing a solid template for further modifications.
 
@@ -140,7 +140,7 @@ The whole [documentation](/apps/docs/README.md) website is running on Astro.
 ### Testing
 
 UI library is tested in 2 ways - component testing and visual testing.  
-Note that component testing is part of [ui package](/packages/awsm-ui/tests/setup.ts), whereas VRT is the part of [Storybook app](/apps/storybook/playwright.config.ts).
+Note that component testing is part of [ui package](/packages/dss-ui/tests/setup.ts), whereas VRT is the part of [Storybook app](/apps/storybook/playwright.config.ts).
 
 - [Vitest](https://vitest.dev/)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
@@ -157,7 +157,7 @@ Explore [docs](/apps/docs/src/store/store.ts) and [example app](/apps/example-vi
 
 ### SVG processing
 
-SVG processing is required for producing [icons package](/packages/awsm-icons/scripts/generateIcons.cts).
+SVG processing is required for producing [icons package](/packages/dss-icons/scripts/generateIcons.cts).
 
 - [SVGR](https://react-svgr.com/)
 
@@ -192,8 +192,8 @@ Run generator:
 pnpm gen:component
 ```
 
-When all operations succeed you should see changes in `packages/awsm-ui` and `apps/docs`.  
-In [UI](/packages/awsm-ui/src/components/) you would find a scaffolding for the new component (note, for demo purposes components are based on [react-aria](https://react-spectrum.adobe.com/react-aria/), naturally your approach may vary significantly), including styling with [vanilla-extract](https://vanilla-extract.style/) (similarly here, you styling approach can be very different) and [Storybook](https://storybook.js.org/) stories.  
+When all operations succeed you should see changes in `packages/dss-ui` and `apps/docs`.  
+In [UI](/packages/dss-ui/src/components/) you would find a scaffolding for the new component (note, for demo purposes components are based on [react-aria](https://react-spectrum.adobe.com/react-aria/), naturally your approach may vary significantly), including styling with [vanilla-extract](https://vanilla-extract.style/) (similarly here, you styling approach can be very different) and [Storybook](https://storybook.js.org/) stories.  
 
 In the [Docs](/apps/docs/src/content/components/) you would find new files that are sufficient for adding a component to the docs website.  
 
@@ -235,7 +235,7 @@ pnpm test
 
 ### Linting and Formatting
 
-Linting is implemented with [ESLint](https://eslint.org/) and is using a custom config, located in one of the [configs](/config/eslint-config-awsm/).
+Linting is implemented with [ESLint](https://eslint.org/) and is using a custom config, located in one of the [configs](/config/eslint-config-ds-starter/).
 
 Lint everything:
 ```sh

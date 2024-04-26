@@ -1,4 +1,4 @@
-# @awsm/ui
+# @ds-starter/ui
 
 ## 0.0.2
 
@@ -12,4 +12,4 @@
 
 - changelog init
 - Updated dependencies
-  - @awsm/tokens@0.0.1
+  - @ds-starter/tokens@0.0.1

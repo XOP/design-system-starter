@@ -107,7 +107,7 @@ importers:
         version: 8.54.0
       eslint-config-ds-starter:
         specifier: workspace:*
-        version: link:../../config/eslint-config-awsm
+        version: link:../../config/eslint-config-ds-starter
       typescript:
         specifier: ^5.4.3
         version: 5.4.3
@@ -168,7 +168,7 @@ importers:
         version: 8.54.0
       eslint-config-ds-starter:
         specifier: workspace:*
-        version: link:../../config/eslint-config-awsm
+        version: link:../../config/eslint-config-ds-starter
       typescript:
         specifier: ^5.4.3
         version: 5.4.3
@@ -247,7 +247,7 @@ importers:
         version: 8.54.0
       eslint-config-ds-starter:
         specifier: workspace:*
-        version: link:../../config/eslint-config-awsm
+        version: link:../../config/eslint-config-ds-starter
       http-server:
         specifier: ^14.1.1
         version: 14.1.1
@@ -261,7 +261,7 @@ importers:
         specifier: ^5.2.7
         version: 5.2.7(@types/node@20.10.0)
 
-  config/eslint-config-awsm:
+  config/eslint-config-ds-starter:
     dependencies:
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.13.1
@@ -312,7 +312,7 @@ importers:
         version: 8.54.0
       eslint-config-ds-starter:
         specifier: workspace:*
-        version: link:../../config/eslint-config-awsm
+        version: link:../../config/eslint-config-ds-starter
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -354,7 +354,7 @@ importers:
         version: 8.54.0
       eslint-config-ds-starter:
         specifier: workspace:*
-        version: link:../../config/eslint-config-awsm
+        version: link:../../config/eslint-config-ds-starter
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -384,7 +384,7 @@ importers:
         version: 8.54.0
       eslint-config-ds-starter:
         specifier: workspace:*
-        version: link:../../config/eslint-config-awsm
+        version: link:../../config/eslint-config-ds-starter
       polished:
         specifier: ^4.2.2
         version: 4.2.2
@@ -442,7 +442,7 @@ importers:
         version: 8.54.0
       eslint-config-ds-starter:
         specifier: workspace:*
-        version: link:../../config/eslint-config-awsm
+        version: link:../../config/eslint-config-ds-starter
       jsdom:
         specifier: ^24.0.0
         version: 24.0.0
@@ -6735,7 +6735,7 @@ packages:
       graphemer: 1.4.0
       ignore: 5.3.0
       natural-compare: 1.4.0
-      semver: 7.5.4
+      semver: 7.6.0
       ts-api-utils: 1.0.3(typescript@5.4.3)
       typescript: 5.4.3
     transitivePeerDependencies:
@@ -6810,7 +6810,7 @@ packages:
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.5.4
+      semver: 7.6.0
       ts-api-utils: 1.0.3(typescript@5.4.3)
       typescript: 5.4.3
     transitivePeerDependencies:
@@ -6830,7 +6830,7 @@ packages:
       '@typescript-eslint/types': 6.13.1
       '@typescript-eslint/typescript-estree': 6.13.1(typescript@5.4.3)
       eslint: 8.54.0
-      semver: 7.5.4
+      semver: 7.6.0
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -13671,6 +13671,7 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
+    dev: true
 
   /semver@7.6.0:
     resolution: {integrity: sha512-EnwXhrlwXMk9gKu5/flx5sv/an57AkRplG3hTK68W7FRDN+k+OWBj65M7719OkA82XLBxrcX0KSHj+X5COhOVg==}

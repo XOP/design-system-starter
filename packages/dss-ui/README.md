@@ -11,7 +11,7 @@ In all cases, UI library is usually exported as a package and needs documentatio
 
 ### Technology 
 
-AWSM UI is built on top of [react-aria](https://react-spectrum.adobe.com/react-aria/), accessibility-first React headless UI library,  
+DSS UI is built on top of [react-aria](https://react-spectrum.adobe.com/react-aria/), accessibility-first React headless UI library,  
 and it's compiled with [Vite](https://vitejs.dev/).  
 For styling and demo purposes [vanilla-extract](https://vanilla-extract.style/) is used. 
 
@@ -25,7 +25,7 @@ Naturally your circumstances and tools of choice can vary quite a lot.
 
 ## Organization
 
-Apart with some helper files and styling assets, a common component in AWSM UI consists of the UI code, CSS code and `*.stories.*` file for [Storybook](https://storybook.js.org/), the essential development and documentation tool.
+Apart with some helper files and styling assets, a common component in DSS UI consists of the UI code, CSS code and `*.stories.*` file for [Storybook](https://storybook.js.org/), the essential development and documentation tool.
 
 Storybook is set up as a [separate app](/apps/storybook/README.md), consolidating all stories across monorepo. 
 
@@ -36,7 +36,7 @@ Storybook is set up as a [separate app](/apps/storybook/README.md), consolidatin
 > The packages are not published and only used locally for now.
 
 ```sh
-npm i @awsm/ui
+npm i @ds-starter/ui
 ```
 
 In the next step make sure to include CSS in your app or project to enable styling.
@@ -44,19 +44,19 @@ In the next step make sure to include CSS in your app or project to enable styli
 In JS:
 
 ```tsx
-import '@awsm/ui/css/styles.css';
+import '@ds-starter/ui/css/styles.css';
 ```
 
 Or in CSS:
 ```css
-@import '@awsm/ui/css/styles.css';
+@import '@ds-starter/ui/css/styles.css';
 ```
 
 
 ## Usage
 
 ```tsx
-import { Switch } from '@awsm/ui';
+import { Switch } from '@ds-starter/ui';
 
 // ...
 <div>
@@ -67,7 +67,7 @@ import { Switch } from '@awsm/ui';
 When tree-shaking is supported you can benefit from dedicated import:
 
 ```tsx
-import Switch from '@awsm/ui/components/Switch/Switch';
+import Switch from '@ds-starter/ui/components/Switch/Switch';
 ```
 
 
@@ -77,7 +77,7 @@ Since development is powered by Storybook, there is no dev script in the project
 The most reliable way to launch dev setup is to run it from root:
 
 ```sh
-nx run awsm-storybook:dev
+nx run storybook:dev
 ```
 
 ### Adding a Component 
@@ -90,7 +90,7 @@ Find full description in the main [README](/README.md).
 
 ### Other scripts
 
-Install the project and run the following commands from the `packages/awsm-ui` path.
+Install the project and run the following commands from the `packages/dss-ui` path.
 
 Build:
 ```sh
@@ -106,7 +106,7 @@ To ensure all dependencies are incorporated you might want to run the storybook 
 
 For example, to build UI:
 ```sh
-nx run @awsm/ui:build
+nx run @ds-starter/ui:build
 ```
 
 

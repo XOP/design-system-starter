@@ -45,7 +45,7 @@ const config: StorybookConfig = {
     return mergeConfig(config, {
       plugins: [
         vanillaExtractPlugin({
-          identifiers: ({ hash }) => `awsm_${hash}`,
+          identifiers: ({ hash }) => `dss_${hash}`,
         }),
       ],
     });

@@ -1,4 +1,4 @@
-# @awsm/icons
+# @ds-starter/icons
 
 ## 0.0.2
 

@@ -1,4 +1,4 @@
-# @awsm/fonts
+# @ds-starter/fonts
 
 ## 0.0.3
 

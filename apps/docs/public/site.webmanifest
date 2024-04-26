@@ -1,6 +1,6 @@
 {
-  "short_name": "AWSM Docs",
-  "name": "AWSM Docs",
+  "short_name": "DSS Docs",
+  "name": "Design System Starter Docs",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

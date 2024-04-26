@@ -10,13 +10,13 @@
 Current example app is the simple demonstration of real-life usage of Design System parts.
 
 It implements the following dependencies:
-- [@awsm/fonts](/packages/awsm-fonts/) - Fonts
-- [@awsm/icons](/packages/awsm-icons/) - Iconography (tree-shakeable)
-- [@awsm/ui](/packages/awsm-ui/) - Core UI library (tree-shakeable)
+- [@ds-starter/fonts](/packages/dss-fonts/) - Fonts
+- [@ds-starter/icons](/packages/dss-icons/) - Iconography (tree-shakeable)
+- [@ds-starter/ui](/packages/dss-ui/) - Core UI library (tree-shakeable)
 
 and the following configs:
-- [@awsm/tsconfig](/config/tsconfig/)
-- [eslint-config-awsm](/config/eslint-config-awsm/)
+- [@ds-starter/tsconfig](/config/tsconfig/)
+- [eslint-config-ds-starter](/config/eslint-config-ds-starter/)
 
 
 ## Technology 

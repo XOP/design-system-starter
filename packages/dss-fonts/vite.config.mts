@@ -13,7 +13,7 @@ export default defineConfig({
         index: resolve(__dirname, './entries/index.ts'),
         css: resolve(__dirname, './entries/css.ts'),
       },
-      name: '@awsm/fonts',
+      name: '@ds-starter/fonts',
       fileName: (format, alias) => `${alias}.${extensionForFormat(format)}.js`,
       formats: ['es', 'cjs'],
     },

@@ -1,9 +1,9 @@
-# AWSM Icons @ Design System Starter Template
+# DSS Icons @ Design System Starter Template
 
 
 ## Overview
 
-Icons is an optional package and naturally is the dependency for `@awsm/ui`.
+Icons is an optional package and naturally is the dependency for `@ds-starter/ui`.
 
 
 ## Installation
@@ -12,7 +12,7 @@ Icons is an optional package and naturally is the dependency for `@awsm/ui`.
 > The packages are not published and only used locally for now.
 
 ```sh
-npm i @awsm/icons
+npm i @ds-starter/icons
 ```
 
 
@@ -21,7 +21,7 @@ npm i @awsm/icons
 ### Icon components
 
 ```tsx
-import { IconArrowLeft } from '@awsm/icons';
+import { IconArrowLeft } from '@ds-starter/icons';
 
 // ...
 <div>
@@ -32,7 +32,7 @@ import { IconArrowLeft } from '@awsm/icons';
 When tree-shaking is supported you can benefit from dedicated import:
 
 ```tsx
-import IconArrowLeft from '@awsm/icons/lib/IconArrowLeft';
+import IconArrowLeft from '@ds-starter/icons/lib/IconArrowLeft';
 ```
 
 ### SVG import
@@ -41,7 +41,7 @@ Depending on the project settings SVG import can work differently.
 In basic cases result of import would be the image src:
 
 ```tsx
-import arrowRightSrc from '@awsm/icons/svg/arrow-right.svg';
+import arrowRightSrc from '@ds-starter/icons/svg/arrow-right.svg';
 
 // ...
 

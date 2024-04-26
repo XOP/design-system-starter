@@ -25,7 +25,7 @@ Here, Storybook functions as facilitator and compiler of the documentation, that
 
 Practically, Storybook project does not contain a single story, but imports and organizes them.  
 Configuration fetches stories from everything that needs visual documentation -  
-`awsm-fonts`, `awsm-icons`, `awsm-tokens` and `awsm-ui`.
+`dss-fonts`, `dss-icons`, `dss-tokens` and `dss-ui`.
 This of course can be modified and extended as needed - see [configuration](./.storybook/main.ts).  
 
 
@@ -45,7 +45,7 @@ Make sure to update that when changing themes settings.
 ### Customization
 
 There are two similar configurations, responsible for component props table output and story controls.  
-As current example library (`@awsm/ui`) depends on `react-aria` as the basis for custom UI library,  
+As current example library (`@ds-starter/ui`) depends on `react-aria` as the basis for custom UI library,  
 there are some properties that are superfluous or redundant for the documentation purposes and can be safely hidden.
 
 Extra controls ([excludedControls](./.storybook/config/excludedControls.ts)) can be tuned and hidden in the story controls panel,  

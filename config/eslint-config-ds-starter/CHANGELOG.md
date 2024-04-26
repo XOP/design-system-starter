@@ -1,4 +1,4 @@
-# eslint-config-awsm
+# eslint-config-ds-starter
 
 ## 0.0.1
 

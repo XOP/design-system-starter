@@ -1,4 +1,4 @@
-# @awsm/tokens
+# @ds-starter/tokens
 
 ## 0.0.2
 

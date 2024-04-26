@@ -6,14 +6,14 @@ module.exports = {
     {
       label: 'Pin local config packages to any version (*)',
       packages: ['**'],
-      dependencies: ['@awsm/tsconfig', 'eslint-config-awsm'],
+      dependencies: ['@ds-starter/tsconfig', 'eslint-config-ds-starter'],
       dependencyTypes: ['dev'],
       pinVersion: '*',
     },
     {
       label: 'Pin unpublished local packages to any version (*)',
       packages: ['**'],
-      dependencies: ['@awsm/fonts', '@awsm/icons', '@awsm/tokens', '@awsm/ui'],
+      dependencies: ['@ds-starter/fonts', '@ds-starter/icons', '@ds-starter/tokens', '@ds-starter/ui'],
       dependencyTypes: ['dev', 'prod'],
       pinVersion: '*',
     },
