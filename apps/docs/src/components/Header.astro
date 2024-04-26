@@ -15,7 +15,7 @@ const { class: className, showMenuToggle = true } = Astro.props;
 <header class:list={['header', className]}>
   <Logo />
   <TopNav />
-  {showMenuToggle && <MenuToggle className="toggle" client:only />}
+  {showMenuToggle && <MenuToggle className="toggle" client:only="react" />}
 </header>
 
 <style>

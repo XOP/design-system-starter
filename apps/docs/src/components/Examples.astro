@@ -20,7 +20,7 @@ const { data, name, dir } = Astro.props;
       return (
         <Example heading={exampleName}>
           <ExampleContent
-            client:only
+            client:only="react"
             name={exampleName}
             componentName={name}
             componentDir={dir}
