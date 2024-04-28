@@ -12,8 +12,10 @@
     "dev": "storybook dev -p 6006",
     "build": "storybook build",
     "serve": "http-server ./storybook-static --port 3030",
-    "test": "npx playwright test",
-    "test:update": "npx playwright test --update-snapshots"
+    "test:vrt": "npx playwright test visualRegression",
+    "test:vrt:update": "npx playwright test --update-snapshots",
+    "test:a11y": "npx playwright test accessibility",
+    "test": "pnpm test:a11y && test:vrt"
   },
   "dependencies": {
     "@ds-starter/fonts": "workspace:*",
@@ -23,6 +25,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.9.0",
     "@ds-starter/tsconfig": "workspace:*",
     "@playwright/test": "^1.43.0",
     "@storybook/addon-a11y": "^8.0.4",

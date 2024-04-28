@@ -194,6 +194,9 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
+      '@axe-core/playwright':
+        specifier: ^4.9.0
+        version: 4.9.0(playwright-core@1.43.0)
       '@ds-starter/tsconfig':
         specifier: workspace:*
         version: link:../../config/tsconfig
@@ -583,6 +586,15 @@ packages:
     hasBin: true
     dependencies:
       default-browser-id: 3.0.0
+    dev: true
+
+  /@axe-core/playwright@4.9.0(playwright-core@1.43.0):
+    resolution: {integrity: sha512-Q1Lz75dNsX38jof+aev7RficDMdH/HLOLySkDdXR0fUoeFcLdw4UNgDO2CNNP4CTpoesEdfYRdd6VmDXjhBgbA==}
+    peerDependencies:
+      playwright-core: '>= 1.0.0'
+    dependencies:
+      axe-core: 4.9.0
+      playwright-core: 1.43.0
     dev: true
 
   /@babel/code-frame@7.23.5:
@@ -7517,6 +7529,11 @@ packages:
   /axe-core@4.7.0:
     resolution: {integrity: sha512-M0JtH+hlOL5pLQwHOLNYZaXuhqmvS8oExsqB1SBYgA4Dk7u/xx+YdGHXaK5pyUfed5mYXdlYiphWq3G8cRi5JQ==}
     engines: {node: '>=4'}
+
+  /axe-core@4.9.0:
+    resolution: {integrity: sha512-H5orY+M2Fr56DWmMFpMrq5Ge93qjNdPVqzBv5gWK3aD1OvjBEJlEzxf09z93dGVQeI0LiW+aCMIx1QtShC/zUw==}
+    engines: {node: '>=4'}
+    dev: true
 
   /axobject-query@3.2.1:
     resolution: {integrity: sha512-jsyHu61e6N4Vbz/v18DHwWYKK0bSWLqn47eeDSKPB7m8tqMHF9YJ+mhIk2lVteyZrY8tnSj/jHOv4YiTCuCJgg==}

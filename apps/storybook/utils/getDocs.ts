@@ -6,18 +6,12 @@ import { STORYBOOK_BUILD } from './constants';
 const rootPath = new URL('../', import.meta.url);
 const storybookPath = new URL(STORYBOOK_BUILD, rootPath);
 
-interface GetStoriesProps {
-  ignoreTags?: string[];
-}
-
 /**
  * Converts stories.json into collection
- * and filters docs pages and skipped examples
- * @param options
- * @param options.ignoreTags
+ * includes only docs pages
  * @returns Story[]
  */
-export function getStories({ ignoreTags = [] }: GetStoriesProps = {}) {
+export function getDocs() {
   const storiesPath = new URL('index.json', storybookPath);
 
   if (!existsSync(storiesPath)) {
@@ -31,10 +25,9 @@ export function getStories({ ignoreTags = [] }: GetStoriesProps = {}) {
   const storiesObj: Record<string, StoryParams> = storiesJson.entries;
   const storiesData = Object.values(storiesObj).reduce<StoryParams[]>(
     (acc, cur) => {
-      const isSkipped = cur.tags.some((tag) => ignoreTags.includes(tag));
-      const isDocs = cur.type === 'docs';
+      const isDocs = cur.type === 'docs' && cur.tags.includes('autodocs');
 
-      if (isSkipped || isDocs) {
+      if (!isDocs) {
         return acc;
       }
 
