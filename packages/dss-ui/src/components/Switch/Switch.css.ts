@@ -15,12 +15,12 @@ export const $borderSize = theme.space.px;
 const colors: { [key in SwitchColors]: StyleRule } = {
   primary: {
     '::after': {
-      backgroundColor: theme.color.primary.gamma[500],
+      backgroundColor: theme.color.primary.tint,
     },
 
     selectors: {
       '[data-selected="true"] &': {
-        backgroundColor: theme.color.primary.tone,
+        backgroundColor: theme.color.primary.main,
         borderColor: theme.color.primary.tone,
       },
       '[data-selected="true"] &::after': {
@@ -31,12 +31,12 @@ const colors: { [key in SwitchColors]: StyleRule } = {
 
   secondary: {
     '::after': {
-      backgroundColor: theme.color.secondary.gamma[500],
+      backgroundColor: theme.color.secondary.tint,
     },
 
     selectors: {
       '[data-selected="true"] &': {
-        backgroundColor: theme.color.secondary.tone,
+        backgroundColor: theme.color.secondary.main,
         borderColor: theme.color.secondary.tone,
       },
       '[data-selected="true"] &::after': {
@@ -80,7 +80,7 @@ export const styles = recipe({
     selectors: {
       ['&[data-disabled]']: {
         filter: 'grayscale(1)',
-        opacity: 0.5,
+        opacity: 0.7,
       },
     },
   },

@@ -105,10 +105,10 @@ const preview: Preview = {
 
     withThemeByDataAttribute<ReactRenderer>({
       themes: {
-        nebula: 'nebula',
-        prism: 'prism',
+        light: 'light',
+        dark: 'dark',
       },
-      defaultTheme: 'nebula',
+      defaultTheme: 'dark',
       attributeName: 'data-awsm',
     }),
   ],

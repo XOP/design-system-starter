@@ -1,27 +1,21 @@
-import { parseToRgb, lighten, darken, shade, tint, mix } from 'polished';
+import { parseToRgb, shade, tint } from 'polished';
 
-import colors from './colors';
+import colors, { light, dark } from './colors';
 
 export type TokensPaletteGamma = {
+  '0': string;
   '50': string;
   '100': string;
-  '150': string;
   '200': string;
-  '250': string;
   '300': string;
-  '350': string;
   '400': string;
-  '450': string;
   '500': string;
-  '550': string;
   '600': string;
-  '650': string;
   '700': string;
-  '750': string;
   '800': string;
-  '850': string;
   '900': string;
   '950': string;
+  '1000': string;
 };
 
 export type TokensPaletteColorBrand = {
@@ -32,6 +26,7 @@ export type TokensPaletteColorBrand = {
   tone: string;
   contrast: string;
   gamma: {
+    '50': string;
     '100': string;
     '200': string;
     '300': string;
@@ -41,6 +36,7 @@ export type TokensPaletteColorBrand = {
     '700': string;
     '800': string;
     '900': string;
+    '950': string;
   };
 };
 
@@ -81,218 +77,240 @@ export interface TokensPalette {
   focusRing: string;
 }
 
-const utils = {
+export const paletteDark = {
+  gamma: {
+    '0': dark.gray[0],
+    '50': dark.gray[50],
+    '100': dark.gray[100],
+    '200': dark.gray[200],
+    '300': dark.gray[300],
+    '400': dark.gray[400],
+    '500': dark.gray[500],
+    '600': dark.gray[600],
+    '700': dark.gray[700],
+    '800': dark.gray[800],
+    '900': dark.gray[900],
+    '950': dark.gray[950],
+    '1000': dark.gray[1000],
+  },
+
+  primary: {
+    main: dark.blue[500],
+    mainRgb: rgbString(dark.blue[500]),
+    tint: dark.blue[600],
+    shade: dark.blue[400],
+    tone: dark.blue[700],
+    contrast: dark.blue[1000],
+    gamma: {
+      '50': dark.blue[50],
+      '100': dark.blue[100],
+      '200': dark.blue[200],
+      '300': dark.blue[300],
+      '400': dark.blue[400],
+      '500': dark.blue[500],
+      '600': dark.blue[600],
+      '700': dark.blue[700],
+      '800': dark.blue[800],
+      '900': dark.blue[900],
+      '950': dark.blue[950],
+    },
+  },
+
+  secondary: {
+    main: dark.pink[500],
+    mainRgb: rgbString(dark.pink[500]),
+    tint: dark.pink[600],
+    shade: dark.pink[400],
+    tone: dark.pink[700],
+    contrast: dark.pink[1000],
+    gamma: {
+      '50': dark.pink[50],
+      '100': dark.pink[100],
+      '200': dark.pink[200],
+      '300': dark.pink[300],
+      '400': dark.pink[400],
+      '500': dark.pink[500],
+      '600': dark.pink[600],
+      '700': dark.pink[700],
+      '800': dark.pink[800],
+      '900': dark.pink[900],
+      '950': dark.pink[950],
+    },
+  },
+
   safe: {
-    main: colors.lima[600],
-    mainRgb: rgbString(colors.lima[600]),
-    tint: tint(0.25, colors.lima[600]),
-    shade: shade(0.25, colors.lima[600]),
-    tone: tone(0.25, colors.lima[600]),
-    contrast: colors.white,
+    main: dark.green[500],
+    mainRgb: rgbString(dark.green[500]),
+    tint: dark.green[600],
+    shade: dark.green[400],
+    tone: dark.green[700],
+    contrast: dark.green[1000],
   },
 
   alert: {
-    main: colors.shiraz[700],
-    mainRgb: rgbString(colors.shiraz[700]),
-    tint: tint(0.25, colors.shiraz[700]),
-    shade: shade(0.25, colors.shiraz[700]),
-    tone: tone(0.25, colors.shiraz[700]),
-    contrast: colors.white,
+    main: dark.red[500],
+    mainRgb: rgbString(dark.red[500]),
+    tint: dark.red[600],
+    shade: dark.red[400],
+    tone: dark.red[700],
+    contrast: dark.red[1000],
   },
 
   info: {
-    main: colors.cerulean[700],
-    mainRgb: rgbString(colors.cerulean[700]),
-    tint: tint(0.25, colors.cerulean[700]),
-    shade: shade(0.25, colors.cerulean[700]),
-    tone: tone(0.25, colors.cerulean[700]),
-    contrast: colors.white,
+    main: dark.sky[500],
+    mainRgb: rgbString(dark.sky[500]),
+    tint: dark.sky[600],
+    shade: dark.sky[400],
+    tone: dark.sky[700],
+    contrast: dark.sky[1000],
   },
 
   warning: {
-    main: colors.gold[600],
-    mainRgb: rgbString(colors.gold[600]),
-    tint: tint(0.25, colors.gold[600]),
-    shade: shade(0.25, colors.gold[600]),
-    tone: tone(0.25, colors.gold[600]),
-    contrast: colors.white,
+    main: dark.amber[500],
+    mainRgb: rgbString(dark.amber[500]),
+    tint: dark.amber[600],
+    shade: dark.amber[400],
+    tone: dark.amber[700],
+    contrast: dark.amber[1000],
   },
-} satisfies Record<string, TokensPaletteColorUtil>;
-
-export const paletteNebula: TokensPalette = {
-  gamma: {
-    '50': colors.gamma[950],
-    '100': colors.gamma[900],
-    '150': colors.gamma[850],
-    '200': colors.gamma[800],
-    '250': colors.gamma[750],
-    '300': colors.gamma[700],
-    '350': colors.gamma[650],
-    '400': colors.gamma[600],
-    '450': colors.gamma[550],
-    '500': colors.gamma[500],
-    '550': colors.gamma[450],
-    '600': colors.gamma[400],
-    '650': colors.gamma[350],
-    '700': colors.gamma[300],
-    '750': colors.gamma[250],
-    '800': colors.gamma[200],
-    '850': colors.gamma[150],
-    '900': colors.gamma[100],
-    '950': colors.gamma[50],
-  },
-
-  primary: {
-    main: colors.blue[400],
-    mainRgb: rgbString(colors.blue[400]),
-    tint: tint(0.25, colors.blue[400]),
-    shade: shade(0.25, colors.blue[400]),
-    tone: tone(0.25, colors.blue[400]),
-    contrast: colors.black,
-    gamma: {
-      '100': darken(0.4, colors.blue[400]),
-      '200': darken(0.3, colors.blue[400]),
-      '300': darken(0.2, colors.blue[400]),
-      '400': darken(0.1, colors.blue[400]),
-      '500': lighten(0.05, colors.blue[400]),
-      '600': lighten(0.15, colors.blue[400]),
-      '700': lighten(0.25, colors.blue[400]),
-      '800': lighten(0.35, colors.blue[400]),
-      '900': lighten(0.45, colors.blue[400]),
-    },
-  },
-
-  secondary: {
-    main: colors.pink[600],
-    mainRgb: rgbString(colors.pink[600]),
-    tint: tint(0.25, colors.pink[600]),
-    shade: shade(0.25, colors.pink[600]),
-    tone: tone(0.25, colors.pink[600]),
-    contrast: colors.white,
-    gamma: {
-      '100': darken(0.4, colors.pink[600]),
-      '200': darken(0.3, colors.pink[600]),
-      '300': darken(0.2, colors.pink[600]),
-      '400': darken(0.1, colors.pink[600]),
-      '500': lighten(0.05, colors.pink[600]),
-      '600': lighten(0.15, colors.pink[600]),
-      '700': lighten(0.25, colors.pink[600]),
-      '800': lighten(0.35, colors.pink[600]),
-      '900': lighten(0.45, colors.pink[600]),
-    },
-  },
-
-  ...utils,
 
   text: {
-    strong: colors.gamma[50],
-    regular: colors.gamma[200],
-    subtle: colors.gamma[300],
-    muted: colors.gamma[400],
+    strong: dark.gray[1000],
+    regular: dark.gray[950],
+    subtle: dark.gray[800],
+    muted: dark.gray[700],
   },
 
   background: {
-    regular: colors.gamma[900],
-    subtle: colors.gamma[850],
-    muted: colors.gamma[750],
+    regular: dark.gray[0],
+    subtle: dark.gray[50],
+    muted: dark.gray[100],
   },
 
-  shadow: colors.gamma[700],
-  shadowRgb: rgbString(colors.gamma[700]),
+  shadow: dark.gray[100],
+  shadowRgb: rgbString(dark.gray[100]),
 
-  focusRing: colors.cerulean[500],
+  focusRing: dark.sky[700],
 };
 
-export const palettePrism: TokensPalette = {
+export const paletteLight: TokensPalette = {
   gamma: {
-    '50': colors.gamma[50],
-    '100': colors.gamma[100],
-    '150': colors.gamma[150],
-    '200': colors.gamma[200],
-    '250': colors.gamma[250],
-    '300': colors.gamma[300],
-    '350': colors.gamma[350],
-    '400': colors.gamma[400],
-    '450': colors.gamma[450],
-    '500': colors.gamma[500],
-    '550': colors.gamma[550],
-    '600': colors.gamma[600],
-    '650': colors.gamma[650],
-    '700': colors.gamma[700],
-    '750': colors.gamma[750],
-    '800': colors.gamma[800],
-    '850': colors.gamma[850],
-    '900': colors.gamma[900],
-    '950': colors.gamma[950],
+    '0': light.gray[0],
+    '50': light.gray[50],
+    '100': light.gray[100],
+    '200': light.gray[200],
+    '300': light.gray[300],
+    '400': light.gray[400],
+    '500': light.gray[500],
+    '600': light.gray[600],
+    '700': light.gray[700],
+    '800': light.gray[800],
+    '900': light.gray[900],
+    '950': light.gray[950],
+    '1000': light.gray[1000],
   },
 
   primary: {
-    main: colors.blue[700],
-    mainRgb: rgbString(colors.blue[700]),
-    tint: tint(0.25, colors.blue[700]),
-    shade: shade(0.25, colors.blue[700]),
-    tone: tone(0.25, colors.blue[700]),
-    contrast: colors.white,
+    main: light.blue[600],
+    mainRgb: rgbString(light.blue[600]),
+    tint: light.blue[500],
+    shade: light.blue[400],
+    tone: light.blue[700],
+    contrast: light.blue[0],
     gamma: {
-      '100': lighten(0.45, colors.blue[700]),
-      '200': lighten(0.35, colors.blue[700]),
-      '300': lighten(0.25, colors.blue[700]),
-      '400': lighten(0.15, colors.blue[700]),
-      '500': lighten(0.05, colors.blue[700]),
-      '600': darken(0.1, colors.blue[700]),
-      '700': darken(0.2, colors.blue[700]),
-      '800': darken(0.3, colors.blue[700]),
-      '900': darken(0.4, colors.blue[700]),
+      '50': light.blue[50],
+      '100': light.blue[100],
+      '200': light.blue[200],
+      '300': light.blue[300],
+      '400': light.blue[400],
+      '500': light.blue[500],
+      '600': light.blue[600],
+      '700': light.blue[700],
+      '800': light.blue[800],
+      '900': light.blue[900],
+      '950': light.blue[950],
     },
   },
 
   secondary: {
-    main: colors.pink[500],
-    mainRgb: rgbString(colors.pink[500]),
-    tint: tint(0.25, colors.pink[500]),
-    shade: shade(0.25, colors.pink[500]),
-    tone: tone(0.25, colors.pink[500]),
-    contrast: colors.black,
+    main: light.pink[600],
+    mainRgb: rgbString(light.pink[600]),
+    tint: light.pink[500],
+    shade: light.pink[400],
+    tone: light.pink[700],
+    contrast: light.pink[0],
     gamma: {
-      '100': lighten(0.45, colors.pink[500]),
-      '200': lighten(0.35, colors.pink[500]),
-      '300': lighten(0.25, colors.pink[500]),
-      '400': lighten(0.15, colors.pink[500]),
-      '500': lighten(0.05, colors.pink[500]),
-      '600': darken(0.1, colors.pink[500]),
-      '700': darken(0.2, colors.pink[500]),
-      '800': darken(0.3, colors.pink[500]),
-      '900': darken(0.4, colors.pink[500]),
+      '50': light.pink[50],
+      '100': light.pink[100],
+      '200': light.pink[200],
+      '300': light.pink[300],
+      '400': light.pink[400],
+      '500': light.pink[500],
+      '600': light.pink[600],
+      '700': light.pink[700],
+      '800': light.pink[800],
+      '900': light.pink[900],
+      '950': light.pink[950],
     },
   },
 
-  ...utils,
+  safe: {
+    main: light.green[500],
+    mainRgb: rgbString(light.green[500]),
+    tint: light.green[600],
+    shade: light.green[400],
+    tone: light.green[700],
+    contrast: light.green[1000],
+  },
+
+  alert: {
+    main: light.red[500],
+    mainRgb: rgbString(light.red[500]),
+    tint: light.red[600],
+    shade: light.red[400],
+    tone: light.red[700],
+    contrast: light.red[1000],
+  },
+
+  info: {
+    main: light.sky[500],
+    mainRgb: rgbString(light.sky[500]),
+    tint: light.sky[600],
+    shade: light.sky[400],
+    tone: light.sky[700],
+    contrast: light.sky[1000],
+  },
+
+  warning: {
+    main: light.amber[500],
+    mainRgb: rgbString(light.amber[500]),
+    tint: light.amber[600],
+    shade: light.amber[400],
+    tone: light.amber[700],
+    contrast: light.amber[1000],
+  },
 
   text: {
-    strong: colors.gamma[950],
-    regular: colors.gamma[850],
-    subtle: colors.gamma[750],
-    muted: colors.gamma[650],
+    strong: light.gray[950],
+    regular: light.gray[900],
+    subtle: light.gray[700],
+    muted: light.gray[500],
   },
 
   background: {
-    regular: colors.white,
-    subtle: colors.gamma[50],
-    muted: colors.gamma[150],
+    regular: light.gray[0],
+    subtle: light.gray[50],
+    muted: light.gray[100],
   },
 
-  shadow: colors.black,
-  shadowRgb: rgbString(colors.black),
+  shadow: light.gray[950],
+  shadowRgb: rgbString(light.gray[950]),
 
-  focusRing: colors.cerulean[800],
+  focusRing: light.sky[600],
 };
 
 function rgbString(color: string) {
   const rgb = parseToRgb(color);
 
   return `${rgb.red}, ${rgb.green}, ${rgb.blue}`;
-}
-
-function tone(amount: number | string, color: string) {
-  return mix(amount, 'rgb(128, 128, 128)', color);
 }

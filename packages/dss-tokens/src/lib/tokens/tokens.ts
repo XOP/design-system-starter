@@ -1,5 +1,5 @@
 import { paletteVars } from './palette.vars';
-import { paletteNebula, palettePrism } from './palette.out';
+import { paletteLight, paletteDark } from './palette.out';
 
 import { makeDetailsTokens } from './details';
 
@@ -20,18 +20,18 @@ export const tokens = {
   ...details,
 };
 
-export const tokensNebula = {
-  color: paletteNebula,
+export const tokensLight = {
+  color: paletteLight,
 
   ...content,
   ...sizes,
-  ...makeDetailsTokens(paletteNebula),
+  ...makeDetailsTokens(paletteLight),
 };
 
-export const tokensPrism = {
-  color: palettePrism,
+export const tokensDark = {
+  color: paletteDark,
 
   ...content,
   ...sizes,
-  ...makeDetailsTokens(palettePrism),
+  ...makeDetailsTokens(paletteDark),
 };

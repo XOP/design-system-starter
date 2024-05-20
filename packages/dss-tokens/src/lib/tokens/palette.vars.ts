@@ -2,25 +2,19 @@
 
 export const paletteVars = {
   gamma: {
+    '0': 'var(--awsm-color-gamma-0)',
     '50': 'var(--awsm-color-gamma-50)',
     '100': 'var(--awsm-color-gamma-100)',
-    '150': 'var(--awsm-color-gamma-150)',
     '200': 'var(--awsm-color-gamma-200)',
-    '250': 'var(--awsm-color-gamma-250)',
     '300': 'var(--awsm-color-gamma-300)',
-    '350': 'var(--awsm-color-gamma-350)',
     '400': 'var(--awsm-color-gamma-400)',
-    '450': 'var(--awsm-color-gamma-450)',
     '500': 'var(--awsm-color-gamma-500)',
-    '550': 'var(--awsm-color-gamma-550)',
     '600': 'var(--awsm-color-gamma-600)',
-    '650': 'var(--awsm-color-gamma-650)',
     '700': 'var(--awsm-color-gamma-700)',
-    '750': 'var(--awsm-color-gamma-750)',
     '800': 'var(--awsm-color-gamma-800)',
-    '850': 'var(--awsm-color-gamma-850)',
     '900': 'var(--awsm-color-gamma-900)',
     '950': 'var(--awsm-color-gamma-950)',
+    '1000': 'var(--awsm-color-gamma-1000)',
   },
   primary: {
     main: 'var(--awsm-color-primary-main)',
@@ -30,6 +24,7 @@ export const paletteVars = {
     tone: 'var(--awsm-color-primary-tone)',
     contrast: 'var(--awsm-color-primary-contrast)',
     gamma: {
+      '50': 'var(--awsm-color-primary-gamma-50)',
       '100': 'var(--awsm-color-primary-gamma-100)',
       '200': 'var(--awsm-color-primary-gamma-200)',
       '300': 'var(--awsm-color-primary-gamma-300)',
@@ -39,6 +34,7 @@ export const paletteVars = {
       '700': 'var(--awsm-color-primary-gamma-700)',
       '800': 'var(--awsm-color-primary-gamma-800)',
       '900': 'var(--awsm-color-primary-gamma-900)',
+      '950': 'var(--awsm-color-primary-gamma-950)',
     },
   },
   secondary: {
@@ -49,6 +45,7 @@ export const paletteVars = {
     tone: 'var(--awsm-color-secondary-tone)',
     contrast: 'var(--awsm-color-secondary-contrast)',
     gamma: {
+      '50': 'var(--awsm-color-secondary-gamma-50)',
       '100': 'var(--awsm-color-secondary-gamma-100)',
       '200': 'var(--awsm-color-secondary-gamma-200)',
       '300': 'var(--awsm-color-secondary-gamma-300)',
@@ -58,6 +55,7 @@ export const paletteVars = {
       '700': 'var(--awsm-color-secondary-gamma-700)',
       '800': 'var(--awsm-color-secondary-gamma-800)',
       '900': 'var(--awsm-color-secondary-gamma-900)',
+      '950': 'var(--awsm-color-secondary-gamma-950)',
     },
   },
   safe: {

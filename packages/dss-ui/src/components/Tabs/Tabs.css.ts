@@ -98,11 +98,11 @@ export const tabStyles = recipe({
         zIndex: 1,
         selectors: {
           [`${tabsStyles.classNames.variants.color.primary} &`]: {
-            borderColor: theme.color.primary.gamma[600],
+            borderColor: theme.color.primary.tint,
             color: theme.color.text.strong,
           },
           [`${tabsStyles.classNames.variants.color.secondary} &`]: {
-            borderColor: theme.color.secondary.gamma[600],
+            borderColor: theme.color.secondary.tint,
             color: theme.color.text.strong,
           },
         },
@@ -112,13 +112,31 @@ export const tabStyles = recipe({
 
     isDisabled: {
       true: {
-        opacity: 0.5,
         cursor: 'default',
-        color: theme.color.text.muted,
+        color: theme.color.text.subtle,
       },
       false: {},
     },
   },
+
+  compoundVariants: [
+    {
+      variants: {
+        isSelected: true,
+        isDisabled: true,
+      },
+      style: {
+        selectors: {
+          [`${tabsStyles.classNames.variants.color.primary} &`]: {
+            borderColor: theme.color.gamma[400],
+          },
+          [`${tabsStyles.classNames.variants.color.secondary} &`]: {
+            borderColor: theme.color.gamma[400],
+          },
+        },
+      },
+    },
+  ],
 });
 
 export const panelStyles = recipe({

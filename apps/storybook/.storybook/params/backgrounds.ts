@@ -1,15 +1,15 @@
-import { tokensNebula, tokensPrism } from '@ds-starter/tokens';
+import { tokensLight, tokensDark } from '@ds-starter/tokens';
 
 export const backgrounds = {
-  default: 'nebula',
+  default: 'dark',
   values: [
     {
-      name: 'nebula',
-      value: tokensNebula.color.gamma[50],
+      name: 'light',
+      value: tokensLight.color.gamma[50],
     },
     {
-      name: 'prism',
-      value: tokensPrism.color.gamma[50],
+      name: 'dark',
+      value: tokensDark.color.gamma[50],
     },
   ],
 };
