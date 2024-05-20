@@ -76,6 +76,7 @@ export const NoLabel: Story = {
   args: {
     ...Base.args,
     children: null,
+    'aria-label': 'Awesome',
   },
 };
 

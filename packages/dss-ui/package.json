@@ -36,7 +36,7 @@
     "@vanilla-extract/css": "^1.14.0",
     "@vanilla-extract/recipes": "^0.5.1",
     "clsx": "^2.0.0",
-    "react-aria-components": "^1.0.0"
+    "react-aria-components": "^1.2.0"
   },
   "devDependencies": {
     "@ds-starter/tsconfig": "workspace:*",
