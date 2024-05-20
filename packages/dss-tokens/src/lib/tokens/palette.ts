@@ -1,6 +1,6 @@
-import { parseToRgb, shade, tint } from 'polished';
+import { parseToRgb } from 'polished';
 
-import colors, { light, dark } from './colors';
+import { light, dark } from './colors';
 
 export type TokensPaletteGamma = {
   '0': string;
@@ -18,7 +18,7 @@ export type TokensPaletteGamma = {
   '1000': string;
 };
 
-export type TokensPaletteColorBrand = {
+export type TokensPaletteColor = {
   main: string;
   mainRgb: string;
   tint: string;
@@ -40,15 +40,6 @@ export type TokensPaletteColorBrand = {
   };
 };
 
-export type TokensPaletteColorUtil = {
-  main: string;
-  mainRgb: string;
-  tint: string;
-  shade: string;
-  tone: string;
-  contrast: string;
-};
-
 export type TokensPaletteColorText = {
   strong: string;
   regular: string;
@@ -64,12 +55,12 @@ export type TokensPaletteColorBackground = {
 
 export interface TokensPalette {
   gamma: TokensPaletteGamma;
-  primary: TokensPaletteColorBrand;
-  secondary: TokensPaletteColorBrand;
-  safe: TokensPaletteColorUtil;
-  alert: TokensPaletteColorUtil;
-  info: TokensPaletteColorUtil;
-  warning: TokensPaletteColorUtil;
+  primary: TokensPaletteColor;
+  secondary: TokensPaletteColor;
+  safe: TokensPaletteColor;
+  alert: TokensPaletteColor;
+  info: TokensPaletteColor;
+  warning: TokensPaletteColor;
   text: TokensPaletteColorText;
   background: TokensPaletteColorBackground;
   shadow: string;
@@ -145,6 +136,19 @@ export const paletteDark = {
     shade: dark.green[400],
     tone: dark.green[700],
     contrast: dark.green[1000],
+    gamma: {
+      '50': dark.green[50],
+      '100': dark.green[100],
+      '200': dark.green[200],
+      '300': dark.green[300],
+      '400': dark.green[400],
+      '500': dark.green[500],
+      '600': dark.green[600],
+      '700': dark.green[700],
+      '800': dark.green[800],
+      '900': dark.green[900],
+      '950': dark.green[950],
+    },
   },
 
   alert: {
@@ -154,6 +158,19 @@ export const paletteDark = {
     shade: dark.red[400],
     tone: dark.red[700],
     contrast: dark.red[1000],
+    gamma: {
+      '50': dark.red[50],
+      '100': dark.red[100],
+      '200': dark.red[200],
+      '300': dark.red[300],
+      '400': dark.red[400],
+      '500': dark.red[500],
+      '600': dark.red[600],
+      '700': dark.red[700],
+      '800': dark.red[800],
+      '900': dark.red[900],
+      '950': dark.red[950],
+    },
   },
 
   info: {
@@ -163,6 +180,19 @@ export const paletteDark = {
     shade: dark.sky[400],
     tone: dark.sky[700],
     contrast: dark.sky[1000],
+    gamma: {
+      '50': dark.sky[50],
+      '100': dark.sky[100],
+      '200': dark.sky[200],
+      '300': dark.sky[300],
+      '400': dark.sky[400],
+      '500': dark.sky[500],
+      '600': dark.sky[600],
+      '700': dark.sky[700],
+      '800': dark.sky[800],
+      '900': dark.sky[900],
+      '950': dark.sky[950],
+    },
   },
 
   warning: {
@@ -172,6 +202,19 @@ export const paletteDark = {
     shade: dark.amber[400],
     tone: dark.amber[700],
     contrast: dark.amber[1000],
+    gamma: {
+      '50': dark.amber[50],
+      '100': dark.amber[100],
+      '200': dark.amber[200],
+      '300': dark.amber[300],
+      '400': dark.amber[400],
+      '500': dark.amber[500],
+      '600': dark.amber[600],
+      '700': dark.amber[700],
+      '800': dark.amber[800],
+      '900': dark.amber[900],
+      '950': dark.amber[950],
+    },
   },
 
   text: {
@@ -261,6 +304,19 @@ export const paletteLight: TokensPalette = {
     shade: light.green[400],
     tone: light.green[700],
     contrast: light.green[1000],
+    gamma: {
+      '50': light.green[50],
+      '100': light.green[100],
+      '200': light.green[200],
+      '300': light.green[300],
+      '400': light.green[400],
+      '500': light.green[500],
+      '600': light.green[600],
+      '700': light.green[700],
+      '800': light.green[800],
+      '900': light.green[900],
+      '950': light.green[950],
+    },
   },
 
   alert: {
@@ -270,6 +326,19 @@ export const paletteLight: TokensPalette = {
     shade: light.red[400],
     tone: light.red[700],
     contrast: light.red[1000],
+    gamma: {
+      '50': light.red[50],
+      '100': light.red[100],
+      '200': light.red[200],
+      '300': light.red[300],
+      '400': light.red[400],
+      '500': light.red[500],
+      '600': light.red[600],
+      '700': light.red[700],
+      '800': light.red[800],
+      '900': light.red[900],
+      '950': light.red[950],
+    },
   },
 
   info: {
@@ -279,6 +348,19 @@ export const paletteLight: TokensPalette = {
     shade: light.sky[400],
     tone: light.sky[700],
     contrast: light.sky[1000],
+    gamma: {
+      '50': light.sky[50],
+      '100': light.sky[100],
+      '200': light.sky[200],
+      '300': light.sky[300],
+      '400': light.sky[400],
+      '500': light.sky[500],
+      '600': light.sky[600],
+      '700': light.sky[700],
+      '800': light.sky[800],
+      '900': light.sky[900],
+      '950': light.sky[950],
+    },
   },
 
   warning: {
@@ -288,6 +370,19 @@ export const paletteLight: TokensPalette = {
     shade: light.amber[400],
     tone: light.amber[700],
     contrast: light.amber[1000],
+    gamma: {
+      '50': light.amber[50],
+      '100': light.amber[100],
+      '200': light.amber[200],
+      '300': light.amber[300],
+      '400': light.amber[400],
+      '500': light.amber[500],
+      '600': light.amber[600],
+      '700': light.amber[700],
+      '800': light.amber[800],
+      '900': light.amber[900],
+      '950': light.amber[950],
+    },
   },
 
   text: {
