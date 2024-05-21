@@ -37,7 +37,7 @@ const { data } = Astro.props;
     padding: var(--awsm-space-6);
     color: var(--awsm-color-secondary-contrast);
     border: var(--awsm-space-1) solid var(--awsm-color-secondary-main);
-    background: var(--awsm-color-secondary-gamma-200);
+    background: var(--awsm-color-secondary-shade);
     font-size: var(--awsm-font-size-n);
     text-decoration: none;
     text-transform: uppercase;
@@ -46,11 +46,11 @@ const { data } = Astro.props;
 
   @media (hover: hover) {
     .nav a:hover {
-      background: var(--awsm-color-secondary-gamma-300);
+      background: var(--awsm-color-secondary-tint);
     }
   }
 
   .nav a.active {
-    background: var(--awsm-color-secondary-gamma-400);
+    background: var(--awsm-color-secondary-tone);
   }
 </style>

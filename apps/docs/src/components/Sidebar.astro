@@ -51,7 +51,7 @@ if (section === NAVIGATION_KEYS.components) {
 
   COMPONENT_GROUPS_ORDER.forEach((heading) => {
     const entries = _navEntries.filter(
-      (item: NavEntry) => item.group === heading,
+      (item: NavEntry) => item.group === heading
     );
 
     if (entries.length) {
@@ -247,8 +247,9 @@ if (currentSlug === 'usage' || currentSlug === 'accessibility') {
   .nav a.active {
     padding-inline-start: var(--awsm-space-2);
     border-inline-start: var(--awsm-space-2) solid
-      var(--awsm-color-secondary-gamma-500);
-    color: var(--awsm-color-primary-gamma-500);
+      var(--awsm-color-secondary-tint);
+    color: var(--awsm-color-text-strong);
+    cursor: default;
   }
 </style>
 
