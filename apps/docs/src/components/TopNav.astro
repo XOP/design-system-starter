@@ -1,6 +1,8 @@
 ---
 import { NAVIGATION } from '../shared/globals';
 
+import ThemeToggle from '../client/ThemeToggle/ThemeToggle';
+
 const currentSlug = Astro.url.pathname.split('/')[1];
 ---
 
@@ -18,6 +20,7 @@ const currentSlug = Astro.url.pathname.split('/')[1];
       );
     })
   }
+  <ThemeToggle className="theme" client:only="react" />
 </nav>
 
 <style>
@@ -33,6 +36,12 @@ const currentSlug = Astro.url.pathname.split('/')[1];
     .nav {
       overflow-x: auto;
     }
+  }
+
+  .theme {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
   }
 
   .nav a {

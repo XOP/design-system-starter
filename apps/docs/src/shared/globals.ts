@@ -68,10 +68,15 @@ export const EXAMPLE_STATE = {
   idle: 'idle',
 } as const;
 
-export const LS_PREFIX = 'awsm';
+export const LS_PREFIX = 'dss';
 export const LS_KEY_META = 'meta';
 
 export const SIDEBAR_STATE = {
   opened: 'opened',
   closed: 'closed',
+} as const;
+
+export const COLOR_THEME = {
+  light: 'light',
+  dark: 'dark',
 } as const;

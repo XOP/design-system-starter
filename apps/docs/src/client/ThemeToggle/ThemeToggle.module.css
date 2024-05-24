@@ -1,0 +1,19 @@
+.root {
+  font-size: var(--awsm-font-size-xl);
+  color: var(--awsm-color-primary-gamma-700);
+}
+
+.root:hover {
+  color: var(--awsm-color-primary-gamma-900);
+}
+
+.button {
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+

@@ -3,6 +3,8 @@ import type { CollectionKey } from 'astro:content';
 
 import { GoogleFonts } from '@ds-starter/fonts';
 
+import { LS_KEY_META, LS_PREFIX } from '../shared/globals';
+
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Sidebar from '../components/Sidebar.astro';
@@ -24,7 +26,7 @@ import '../assets/css/index.css';
 ---
 
 <!doctype html>
-<html lang="en" data-awsm="dark">
+<html lang="en" data-awsm="" data-ls={`${LS_PREFIX} ${LS_KEY_META}`}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -137,6 +139,16 @@ import '../assets/css/index.css';
 
     <script is:inline>
       history.scrollRestoration = 'manual';
+    </script>
+
+    <script is:inline>
+      const lsData = document.documentElement.dataset['ls'].split(' ');
+      const meta =
+        typeof localStorage !== 'undefined' &&
+        localStorage.getItem(`${lsData[0]}.${lsData[1]}`);
+      const theme = JSON.parse(meta).colorTheme;
+
+      document.documentElement.dataset['awsm'] = theme;
     </script>
 
     <script>
