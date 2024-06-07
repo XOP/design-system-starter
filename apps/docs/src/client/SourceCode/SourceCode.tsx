@@ -8,7 +8,7 @@ import { useStore } from '@nanostores/react';
 import Button from '../Button/Button';
 import CopyCode from '../CopyCode/CopyCode';
 
-import { sourceCode, showSourceCode } from '../../store/store';
+import { $sourceCode, showSourceCode } from '../../store/store';
 
 import styles from './SourceCode.module.css';
 
@@ -19,7 +19,7 @@ interface SourceCodeProps {
 const SourceCode = (props: SourceCodeProps) => {
   const { children: jsxCode } = props;
 
-  const $showSource = useStore(sourceCode);
+  const $showSource = useStore($sourceCode);
 
   const sourceCodeData = jsxToString(jsxCode);
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { exampleState } from '../../store/store';
+import { setExampleState } from '../../store/store';
 import { EXAMPLE_STATE } from '../../shared/globals';
 
 import { type ComponentStruct, type Story } from '../types';
@@ -30,7 +30,7 @@ export const useStoryLoad = (
       setData(_data);
       setStruct(_struct);
 
-      exampleState.set(EXAMPLE_STATE.idle);
+      setExampleState(EXAMPLE_STATE.idle);
     }
 
     load();

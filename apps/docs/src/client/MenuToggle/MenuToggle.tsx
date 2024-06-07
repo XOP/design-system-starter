@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import { sidebarState } from '../../store/store';
+import { setSidebarState } from '../../store/store';
 import { SIDEBAR_STATE } from '../../shared/globals';
 
 import styles from './MenuToggle.module.css';
@@ -14,7 +14,7 @@ const MenuToggle = (props: MenuToggleProps) => {
   const { className, onClick } = props;
 
   const handleToggle = () => {
-    sidebarState.set(SIDEBAR_STATE.opened);
+    setSidebarState(SIDEBAR_STATE.opened);
 
     onClick && onClick();
   };

@@ -152,7 +152,7 @@ import '../assets/css/index.css';
     </script>
 
     <script>
-      import { exampleState } from '../store/store';
+      import { $exampleState } from '../store/store';
       import { EXAMPLE_STATE } from '../shared/globals';
 
       if (location.hash) {
@@ -161,7 +161,7 @@ import '../assets/css/index.css';
         location.hash = '';
         window.document.documentElement.style.overflow = 'hidden';
 
-        exampleState.subscribe((state) => {
+        $exampleState.subscribe((state) => {
           if (state === EXAMPLE_STATE.idle) {
             const target = document.getElementById(hash.slice(1).trim());
 

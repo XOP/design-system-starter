@@ -254,7 +254,7 @@ if (currentSlug === 'usage' || currentSlug === 'accessibility') {
 </style>
 
 <script>
-  import { sidebarState } from '../store/store';
+  import { $sidebarState, setSidebarState } from '../store/store';
   import { SIDEBAR_STATE } from '../shared/globals';
 
   const sidebar = document.querySelector('[data-handle="sidebar"]');
@@ -262,7 +262,7 @@ if (currentSlug === 'usage' || currentSlug === 'accessibility') {
   if (sidebar) {
     const clsPrefix = '__state-';
 
-    sidebarState.subscribe((state) => {
+    $sidebarState.subscribe((state) => {
       const cls: string[] = [];
 
       for (let className of sidebar.classList.values()) {
@@ -280,13 +280,13 @@ if (currentSlug === 'usage' || currentSlug === 'accessibility') {
 
     if (close) {
       close.addEventListener('click', () => {
-        sidebarState.set(SIDEBAR_STATE.closed);
+        setSidebarState(SIDEBAR_STATE.closed);
       });
 
       close.addEventListener('keydown', (e: KeyboardEvent) => {
         if (e.code === 'Space' || e.code === 'Enter') {
           e.preventDefault();
-          sidebarState.set(SIDEBAR_STATE.closed);
+          setSidebarState(SIDEBAR_STATE.closed);
         }
       });
     }

@@ -1,4 +1,4 @@
-import { action, atom } from 'nanostores';
+import { atom } from 'nanostores';
 
 import {
   LS_KEY_META,
@@ -27,27 +27,27 @@ export type ColorThemeValues = (typeof COLOR_THEME)[ColorThemeKeys];
 const [getLsMeta, setLsMeta] = localStore<MetaDataStore>();
 
 // synced settings
-export const sourceCode = atom<boolean>(false);
-export const colorTheme = atom<ColorThemeValues>(COLOR_THEME.dark);
+export const $sourceCode = atom<boolean>(false);
+export const $colorTheme = atom<ColorThemeValues>(COLOR_THEME.dark);
 
 // local settings
-export const sidebarState = atom<SidebarStateValues>(SIDEBAR_STATE.closed);
-export const exampleState = atom<ExamplesStateValues>(EXAMPLE_STATE.loading);
+export const $sidebarState = atom<SidebarStateValues>(SIDEBAR_STATE.closed);
+export const $exampleState = atom<ExamplesStateValues>(EXAMPLE_STATE.loading);
 
-sourceCode.listen(() => {
+$sourceCode.listen(() => {
   setMetaStore();
 });
 
-colorTheme.listen(() => {
+$colorTheme.listen(() => {
   setMetaStore();
 });
 
 // store update
 export const updateMetaStore = function updateMetaStore(
-  data: MetaDataStore
+  data: MetaDataStore,
 ): void {
-  sourceCode.set(data.sourceCode as boolean);
-  colorTheme.set(data.colorTheme as ColorThemeValues);
+  showSourceCode(data.sourceCode as boolean);
+  changeColorTheme(data.colorTheme as ColorThemeValues);
 };
 
 // retrieve and set initial data
@@ -62,36 +62,35 @@ if (localMeta === null) {
 // ------------------------------------
 // Actions
 // ------------------------------------
+export function showSourceCode(isShown: boolean) {
+  $sourceCode.set(isShown);
+}
 
-export const showSourceCode = action(
-  sourceCode,
-  'showSourceCode',
-  (store, value: boolean) => {
-    store.set(value);
-  }
-);
+export function changeColorTheme(nextTheme: ColorThemeValues) {
+  $colorTheme.set(nextTheme);
+}
 
-export const changeColorTheme = action(
-  colorTheme,
-  'changeColorTheme',
-  (store, value: ColorThemeValues) => {
-    store.set(value);
-  }
-);
+export function setSidebarState(nextState: SidebarStateValues) {
+  $sidebarState.set(nextState);
+}
+
+export function setExampleState(nextState: ExamplesStateValues) {
+  $exampleState.set(nextState);
+}
 
 // ------------------------------------
 // High Order
 // ------------------------------------
 
 export function setInitialMeta(): void {
-  sourceCode.set(false);
-  colorTheme.set(COLOR_THEME.dark);
+  $sourceCode.set(false);
+  $colorTheme.set(COLOR_THEME.dark);
 }
 
 export function setMetaStore(): void {
   setLsMeta(LS_KEY_META, {
-    sourceCode: sourceCode.get(),
-    colorTheme: colorTheme.get(),
+    sourceCode: $sourceCode.get(),
+    colorTheme: $colorTheme.get(),
   });
 }
 
