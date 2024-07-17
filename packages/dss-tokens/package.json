@@ -28,8 +28,8 @@
     "format:fix": "pnpm format --write",
     "build": "pnpm gen && vite build && tsc --project tsconfig.build.json",
     "gen": "pnpm gen:palette && pnpm gen:vars && pnpm format:fix",
-    "gen:vars": "tsx ./scripts/generateVars.cts",
-    "gen:palette": "tsx ./scripts/generatePaletteVars.cts"
+    "gen:vars": "tsx ./scripts/generateVars.ts",
+    "gen:palette": "unicornix"
   },
   "devDependencies": {
     "@ds-starter/tsconfig": "workspace:*",
@@ -41,5 +41,8 @@
     "polished": "^4.2.2",
     "typescript": "^5.4.3",
     "vite": "^5.2.7"
+  },
+  "dependencies": {
+    "unicornix": "0.6.0-beta.0"
   }
 }

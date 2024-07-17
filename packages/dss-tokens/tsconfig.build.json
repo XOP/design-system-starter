@@ -1,6 +1,6 @@
 {
   "extends": "@ds-starter/tsconfig/lib-js.json",
-  "include": ["src"],
+  "include": ["src", ".unicornix"],
   "exclude": ["dist", "node_modules"],
   "compilerOptions": {
     "noEmit": false,

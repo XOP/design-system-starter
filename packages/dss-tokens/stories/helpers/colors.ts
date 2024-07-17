@@ -24,7 +24,7 @@ export default {
         return { ...acc, ...{ [cur]: tokens.color.primary.gamma[cur] } };
       } else return acc;
     },
-    {}
+    {},
   ),
   primaryGammaTwo: Object.keys(tokens.color.primary.gamma).reduce(
     (acc, cur) => {
@@ -32,7 +32,7 @@ export default {
         return { ...acc, ...{ [cur]: tokens.color.primary.gamma[cur] } };
       } else return acc;
     },
-    {}
+    {},
   ),
 
   secondary: Object.keys(tokens.color.secondary).reduce((acc, cur) => {
@@ -47,7 +47,7 @@ export default {
         return { ...acc, ...{ [cur]: tokens.color.secondary.gamma[cur] } };
       } else return acc;
     },
-    {}
+    {},
   ),
   secondaryGammaTwo: Object.keys(tokens.color.secondary.gamma).reduce(
     (acc, cur) => {
@@ -55,7 +55,7 @@ export default {
         return { ...acc, ...{ [cur]: tokens.color.secondary.gamma[cur] } };
       } else return acc;
     },
-    {}
+    {},
   ),
 
   safe: Object.keys(tokens.color.safe).reduce((acc, cur) => {
@@ -104,7 +104,7 @@ export default {
         return { ...acc, ...{ [cur]: tokens.color.warning.gamma[cur] } };
       } else return acc;
     },
-    {}
+    {},
   ),
   warningGammaTwo: Object.keys(tokens.color.warning.gamma).reduce(
     (acc, cur) => {
@@ -112,7 +112,7 @@ export default {
         return { ...acc, ...{ [cur]: tokens.color.warning.gamma[cur] } };
       } else return acc;
     },
-    {}
+    {},
   ),
 
   info: Object.keys(tokens.color.info).reduce((acc, cur) => {

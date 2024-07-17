@@ -1,5 +1,4 @@
-import { paletteVars } from './palette.vars';
-import { paletteLight, paletteDark } from './palette.out';
+import { paletteVars, paletteLight, paletteDark } from './palette';
 
 import { makeDetailsTokens } from './details';
 
