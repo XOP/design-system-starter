@@ -33,11 +33,11 @@ describe('Switch', () => {
     )[0];
 
     expect(switchIndicator).toBeInTheDocument();
-    expect(switchIndicator).toHaveClass(indicatorStyles({ color: 'primary' }));
+    expect(switchIndicator).toHaveClass(indicatorStyles({ color: 'accent' }));
   });
 
   it('should apply color from props', () => {
-    const { container } = render(<Switch color="secondary">Label</Switch>);
+    const { container } = render(<Switch color="neutral">Label</Switch>);
 
     const switchIndicator = container.getElementsByClassName(
       indicatorStyles({})
@@ -45,13 +45,13 @@ describe('Switch', () => {
 
     expect(switchIndicator).toBeInTheDocument();
     expect(switchIndicator).toHaveClass(
-      indicatorStyles({ color: 'secondary' })
+      indicatorStyles({ color: 'neutral' })
     );
   });
 
   it('should apply the styles according to props', () => {
     const { container } = render(
-      <Switch color="secondary" size="small">
+      <Switch color="neutral" size="small">
         Label
       </Switch>
     );
@@ -66,7 +66,7 @@ describe('Switch', () => {
 
     expect(switchIndicator).toBeInTheDocument();
     expect(switchIndicator).toHaveClass(
-      indicatorStyles({ color: 'secondary' })
+      indicatorStyles({ color: 'neutral' })
     );
   });
 

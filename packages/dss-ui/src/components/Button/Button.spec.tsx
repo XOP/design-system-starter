@@ -15,7 +15,7 @@ describe('Button', () => {
     const { container } = render(<Button>Click me</Button>);
 
     expect(container.firstChild).toHaveClass(
-      styles({ variant: 'solid', color: 'primary', size: 'regular' })
+      styles({ variant: 'solid', color: 'accent', size: 'regular' })
     );
   });
 
@@ -27,13 +27,13 @@ describe('Button', () => {
 
   it('should apply the styles according to props', () => {
     const { container } = render(
-      <Button color="secondary" variant="ghost" size="small">
+      <Button color="neutral" variant="ghost" size="small">
         Click me
       </Button>
     );
 
     expect(container.firstChild).toHaveClass(
-      styles({ color: 'secondary', variant: 'ghost', size: 'small' })
+      styles({ color: 'neutral', variant: 'ghost', size: 'small' })
     );
   });
 

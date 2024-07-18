@@ -8,8 +8,8 @@ import { theme } from '../../theme';
 import { ButtonColors, ButtonSizes, ButtonVariants } from './Button';
 
 const colors: { [key in ButtonColors]: StyleRule } = {
-  primary: {},
-  secondary: {},
+  accent: {},
+  neutral: {},
 };
 
 const variants: { [key in ButtonVariants]: StyleRule } = {
@@ -25,7 +25,7 @@ const sizes: { [key in ButtonSizes]: StyleRule } = {
     height: calc(
       calc.x(theme.fontSize.s, theme.lineHeight.tight),
       calc.x(theme.space[1], 2),
-      calc.x(theme.space.px, 2)
+      calc.x(theme.space.px, 2),
     ),
     fontSize: theme.fontSize.s,
     lineHeight: theme.lineHeight.tight,
@@ -37,7 +37,7 @@ const sizes: { [key in ButtonSizes]: StyleRule } = {
     height: calc(
       calc.x(theme.fontSize.s, theme.lineHeight.tight),
       calc.x(theme.space[2], 2),
-      calc.x(theme.space.px, 2)
+      calc.x(theme.space.px, 2),
     ),
     fontSize: theme.fontSize.s,
     lineHeight: theme.lineHeight.tight,
@@ -49,7 +49,7 @@ const sizes: { [key in ButtonSizes]: StyleRule } = {
     height: calc(
       calc.x(theme.fontSize.n, theme.lineHeight.tight),
       calc.x(theme.space[2], 2),
-      calc.x(theme.space.px, 2)
+      calc.x(theme.space.px, 2),
     ),
     fontSize: theme.fontSize.s,
     lineHeight: theme.lineHeight.tight,
@@ -70,14 +70,12 @@ export const styles = recipe({
       transitionTimingFunction: 'ease-in-out',
 
       ':disabled': {
-        filter: 'grayscale(1)',
-        opacity: 0.9,
         cursor: 'default',
       },
 
       ':focus-visible': {
         outline: `${theme.space['0.5']} solid`,
-        outlineColor: theme.color.focusRing,
+        outlineColor: theme.focus.color,
         outlineOffset: theme.space['0.5'],
       },
     },
@@ -92,131 +90,131 @@ export const styles = recipe({
   compoundVariants: [
     {
       variants: {
-        color: 'primary',
+        color: 'accent',
         variant: 'solid',
       },
       style: {
-        backgroundColor: theme.color.primary.tint,
-        color: theme.color.primary.contrast,
-        borderColor: theme.color.primary.tint,
+        backgroundColor: theme.color.accent.strong,
+        borderColor: theme.color.accent.strong,
+        color: theme.color.accent.contrast,
         ':hover': {
-          backgroundColor: theme.color.primary.tone,
+          backgroundColor: theme.color.accent.accent,
         },
         ':active': {
-          backgroundColor: theme.color.primary.shade,
+          backgroundColor: theme.color.accent.base,
         },
         ':disabled': {
-          backgroundColor: theme.color.primary.main,
-          color: theme.color.primary.contrast,
-          borderColor: theme.color.primary.main,
+          backgroundColor: theme.color.accent.surface,
+          borderColor: theme.color.accent.surface,
+          color: theme.color.accent.accent,
         },
       },
     },
     {
       variants: {
-        color: 'secondary',
+        color: 'neutral',
         variant: 'solid',
       },
       style: {
-        backgroundColor: theme.color.secondary.tint,
-        color: theme.color.secondary.contrast,
-        borderColor: theme.color.secondary.tint,
+        backgroundColor: theme.color.neutral.strong,
+        borderColor: theme.color.neutral.strong,
+        color: theme.color.neutral.contrast,
         ':hover': {
-          backgroundColor: theme.color.secondary.tone,
+          backgroundColor: theme.color.neutral.accent,
         },
         ':active': {
-          backgroundColor: theme.color.secondary.shade,
+          backgroundColor: theme.color.neutral.base,
         },
         ':disabled': {
-          backgroundColor: theme.color.secondary.main,
-          color: theme.color.secondary.contrast,
-          borderColor: theme.color.secondary.main,
+          backgroundColor: theme.color.neutral.surface,
+          borderColor: theme.color.neutral.surface,
+          color: theme.color.neutral.accent,
         },
       },
     },
 
     {
       variants: {
-        color: 'primary',
+        color: 'accent',
         variant: 'ghost',
       },
       style: {
         backgroundColor: 'transparent',
-        color: theme.color.primary.gamma[800],
-        borderColor: theme.color.primary.main,
+        color: theme.color.accent.muted,
+        borderColor: theme.color.accent.base,
         ':hover': {
-          backgroundColor: theme.color.primary.gamma[100],
+          backgroundColor: theme.color.accent.surface,
         },
         ':active': {
-          backgroundColor: theme.color.primary.gamma[50],
+          backgroundColor: theme.color.accent.backdrop,
         },
         ':disabled': {
-          backgroundColor: 'transparent',
-          color: theme.color.primary.gamma[700],
-          borderColor: theme.color.primary.tone,
+          backgroundColor: theme.color.accent.surface,
+          color: theme.color.accent.accent,
+          borderColor: theme.color.accent.border,
         },
       },
     },
     {
       variants: {
-        color: 'secondary',
+        color: 'neutral',
         variant: 'ghost',
       },
       style: {
         backgroundColor: 'transparent',
-        color: theme.color.secondary.gamma[800],
-        borderColor: theme.color.secondary.main,
+        color: theme.color.neutral.muted,
+        borderColor: theme.color.neutral.base,
         ':hover': {
-          backgroundColor: theme.color.secondary.gamma[100],
+          backgroundColor: theme.color.neutral.surface,
         },
         ':active': {
-          backgroundColor: theme.color.secondary.gamma[50],
+          backgroundColor: theme.color.neutral.backdrop,
         },
         ':disabled': {
-          backgroundColor: 'transparent',
-          color: theme.color.secondary.gamma[700],
-          borderColor: theme.color.secondary.tone,
+          backgroundColor: theme.color.neutral.surface,
+          color: theme.color.neutral.accent,
+          borderColor: theme.color.neutral.border,
         },
       },
     },
 
     {
       variants: {
-        color: 'primary',
+        color: 'accent',
         variant: 'text',
       },
       style: {
         backgroundColor: 'transparent',
-        color: theme.color.primary.gamma[800],
+        color: theme.color.accent.muted,
         ':hover': {
-          backgroundColor: theme.color.primary.gamma[100],
+          backgroundColor: theme.color.accent.surface,
         },
         ':active': {
-          backgroundColor: theme.color.primary.gamma[50],
+          backgroundColor: theme.color.accent.backdrop,
         },
         ':disabled': {
-          backgroundColor: 'transparent',
-          color: theme.color.primary.gamma[700],
+          backgroundColor: theme.color.accent.surface,
+          color: theme.color.accent.accent,
         },
       },
     },
     {
       variants: {
-        color: 'secondary',
+        color: 'neutral',
         variant: 'text',
       },
       style: {
         backgroundColor: 'transparent',
-        color: theme.color.secondary.gamma[800],
+        color: theme.color.neutral.muted,
         ':hover': {
-          backgroundColor: theme.color.secondary.gamma[100],
+          backgroundColor: theme.color.neutral.surface,
         },
         ':active': {
-          backgroundColor: theme.color.secondary.gamma[50],
+          backgroundColor: theme.color.neutral.backdrop,
         },
         ':disabled': {
-          backgroundColor: 'transparent',
-          color: theme.color.secondary.gamma[700],
+          backgroundColor: theme.color.neutral.surface,
+          color: theme.color.neutral.accent,
         },
       },
     },

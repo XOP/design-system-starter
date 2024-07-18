@@ -9,7 +9,7 @@ import {
 
 import { tabsStyles } from './Tabs.css';
 
-export type TabsColors = 'primary' | 'secondary';
+export type TabsColors = 'accent' | 'neutral';
 export type TabsVariants = 'regular' | 'fluid';
 
 export interface TabsProps extends BaseTabsProps {
@@ -22,7 +22,7 @@ const Tabs = forwardRef(function Tabs(
   props: TabsProps,
   ref: React.ForwardedRef<HTMLDivElement>
 ) {
-  const { className, color = 'primary', variant = 'regular', ...rest } = props;
+  const { className, color = 'accent', variant = 'regular', ...rest } = props;
 
   return (
     <BaseTabs

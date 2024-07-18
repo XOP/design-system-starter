@@ -82,13 +82,13 @@ describe('Tabs', () => {
     );
 
     expect(container.firstChild).toHaveClass(
-      tabsStyles({ color: 'primary', variant: 'regular' })
+      tabsStyles({ color: 'accent', variant: 'regular' })
     );
   });
 
   it('should render with provided color', () => {
     const { container } = render(
-      <Tabs color="secondary">
+      <Tabs color="neutral">
         <TabList>
           <Tab id="tab-1">tab 1</Tab>
           <Tab id="tab-2">tab 2</Tab>
@@ -101,13 +101,13 @@ describe('Tabs', () => {
     );
 
     expect(container.firstChild).toHaveClass(
-      tabsStyles({ color: 'secondary' })
+      tabsStyles({ color: 'neutral' })
     );
   });
 
   it('should apply the styles according to props', () => {
     const { container } = render(
-      <Tabs color="secondary" variant="fluid">
+      <Tabs color="neutral" variant="fluid">
         <TabList>
           <Tab id="tab-1">tab 1</Tab>
           <Tab id="tab-2">tab 2</Tab>
@@ -120,7 +120,7 @@ describe('Tabs', () => {
     );
 
     expect(container.firstChild).toHaveClass(
-      tabsStyles({ color: 'secondary', variant: 'fluid' })
+      tabsStyles({ color: 'neutral', variant: 'fluid' })
     );
   });
 

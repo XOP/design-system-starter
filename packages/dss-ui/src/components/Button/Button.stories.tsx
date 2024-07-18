@@ -48,17 +48,17 @@ export const VariantText: Story = {
   },
 };
 
-export const ColorPrimary: Story = {
+export const ColorAccent: Story = {
   args: {
     ...Base.args,
-    color: 'primary',
+    color: 'accent',
   },
 };
 
-export const ColorSecondary: Story = {
+export const ColorNeutral: Story = {
   args: {
     ...Base.args,
-    color: 'secondary',
+    color: 'neutral',
   },
 };
 
@@ -90,32 +90,32 @@ export const SizeLarge: Story = {
   },
 };
 
-export const AllVariantsPrimary: Story = {
+export const AllVariantsAccent: Story = {
   render: () => (
     <DemoFlow>
-      <Button color="primary" variant="solid">
+      <Button color="accent" variant="solid">
         Solid
       </Button>
-      <Button color="primary" variant="ghost">
+      <Button color="accent" variant="ghost">
         Ghost
       </Button>
-      <Button color="primary" variant="text">
+      <Button color="accent" variant="text">
         Text
       </Button>
     </DemoFlow>
   ),
 };
 
-export const AllVariantsSecondary: Story = {
+export const AllVariantsNeutral: Story = {
   render: () => (
     <DemoFlow>
-      <Button color="secondary" variant="solid">
+      <Button color="neutral" variant="solid">
         Solid
       </Button>
-      <Button color="secondary" variant="ghost">
+      <Button color="neutral" variant="ghost">
         Ghost
       </Button>
-      <Button color="secondary" variant="text">
+      <Button color="neutral" variant="text">
         Text
       </Button>
     </DemoFlow>

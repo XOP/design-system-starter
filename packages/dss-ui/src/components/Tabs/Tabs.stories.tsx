@@ -64,17 +64,17 @@ export const Selected: Story = {
   },
 };
 
-export const ColorPrimary: Story = {
+export const ColorAccent: Story = {
   args: {
     ...Base.args,
-    color: 'primary',
+    color: 'accent',
   },
 };
 
-export const ColorSecondary: Story = {
+export const ColorNeutral: Story = {
   args: {
     ...Base.args,
-    color: 'secondary',
+    color: 'neutral',
   },
 };
 

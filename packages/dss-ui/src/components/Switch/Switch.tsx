@@ -9,7 +9,7 @@ import {
 
 import { styles, indicatorStyles } from './Switch.css';
 
-export type SwitchColors = 'primary' | 'secondary';
+export type SwitchColors = 'accent' | 'neutral';
 export type SwitchSizes = 'regular' | 'small';
 
 export interface SwitchProps extends BaseSwitchProps {
@@ -25,7 +25,7 @@ const Switch = forwardRef(function Switch(
   const {
     className,
     children: label,
-    color = 'primary',
+    color = 'accent',
     size = 'regular',
     ...rest
   } = props;

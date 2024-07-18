@@ -10,7 +10,7 @@ import {
 import { styles } from './Button.css';
 
 export type ButtonVariants = 'solid' | 'ghost' | 'text';
-export type ButtonColors = 'primary' | 'secondary';
+export type ButtonColors = 'accent' | 'neutral';
 export type ButtonSizes = 'small' | 'regular' | 'large';
 
 export interface ButtonProps extends BaseButtonProps {
@@ -28,7 +28,7 @@ const Button = forwardRef(function Button(
     children,
     className,
     variant = 'solid',
-    color = 'primary',
+    color = 'accent',
     size = 'regular',
     disabled = false,
     ...other
