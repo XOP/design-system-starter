@@ -5,11 +5,11 @@ export const backgrounds = {
   values: [
     {
       name: 'light',
-      value: tokensLight.color.gamma[50],
+      value: tokensLight.color.background.subtle,
     },
     {
       name: 'dark',
-      value: tokensDark.color.gamma[50],
+      value: tokensDark.color.background.subtle,
     },
   ],
 };

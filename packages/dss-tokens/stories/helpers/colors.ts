@@ -1,139 +1,85 @@
 import { tokens } from '../../src/lib/tokens/tokens';
 
 export default {
-  gammaOne: Object.keys(tokens.color.gamma).reduce((acc, cur) => {
+  accent: Object.keys(tokens.color.accent).reduce((acc, cur) => {
+    if (cur !== 'gamma' && cur !== 'alpha') {
+      return { ...acc, ...{ [cur]: tokens.color.accent[cur] } };
+    } else return acc;
+  }, {}),
+  accentGamma1: Object.keys(tokens.color.accent.gamma).reduce((acc, cur) => {
     if (+cur < 500) {
-      return { ...acc, ...{ [cur]: tokens.color.gamma[cur] } };
+      return { ...acc, ...{ [cur]: tokens.color.accent.gamma[cur] } };
     } else return acc;
   }, {}),
-  gammaTwo: Object.keys(tokens.color.gamma).reduce((acc, cur) => {
+  accentGamma2: Object.keys(tokens.color.accent.gamma).reduce((acc, cur) => {
     if (+cur >= 500) {
-      return { ...acc, ...{ [cur]: tokens.color.gamma[cur] } };
+      return { ...acc, ...{ [cur]: tokens.color.accent.gamma[cur] } };
+    } else return acc;
+  }, {}),
+  accentAlpha1: Object.keys(tokens.color.accent.alpha).reduce((acc, cur) => {
+    if (+cur < 500) {
+      return { ...acc, ...{ [cur]: tokens.color.accent.alpha[cur] } };
+    } else return acc;
+  }, {}),
+  accentAlpha2: Object.keys(tokens.color.accent.alpha).reduce((acc, cur) => {
+    if (+cur >= 500) {
+      return { ...acc, ...{ [cur]: tokens.color.accent.alpha[cur] } };
     } else return acc;
   }, {}),
 
-  primary: Object.keys(tokens.color.primary).reduce((acc, cur) => {
-    if (cur === 'mainRgb') return;
-    if (cur !== 'gamma') {
-      return { ...acc, ...{ [cur]: tokens.color.primary[cur] } };
+  neutral: Object.keys(tokens.color.neutral).reduce((acc, cur) => {
+    if (cur !== 'gamma' && cur !== 'alpha') {
+      return { ...acc, ...{ [cur]: tokens.color.neutral[cur] } };
     } else return acc;
   }, {}),
-  primaryGammaOne: Object.keys(tokens.color.primary.gamma).reduce(
-    (acc, cur) => {
-      if (+cur < 500) {
-        return { ...acc, ...{ [cur]: tokens.color.primary.gamma[cur] } };
-      } else return acc;
-    },
-    {},
-  ),
-  primaryGammaTwo: Object.keys(tokens.color.primary.gamma).reduce(
-    (acc, cur) => {
-      if (+cur >= 500) {
-        return { ...acc, ...{ [cur]: tokens.color.primary.gamma[cur] } };
-      } else return acc;
-    },
-    {},
-  ),
-
-  secondary: Object.keys(tokens.color.secondary).reduce((acc, cur) => {
-    if (cur === 'mainRgb') return;
-    if (cur !== 'gamma') {
-      return { ...acc, ...{ [cur]: tokens.color.secondary[cur] } };
+  neutralGamma1: Object.keys(tokens.color.neutral.gamma).reduce((acc, cur) => {
+    if (+cur < 500) {
+      return { ...acc, ...{ [cur]: tokens.color.neutral.gamma[cur] } };
     } else return acc;
   }, {}),
-  secondaryGammaOne: Object.keys(tokens.color.secondary.gamma).reduce(
-    (acc, cur) => {
-      if (+cur < 500) {
-        return { ...acc, ...{ [cur]: tokens.color.secondary.gamma[cur] } };
-      } else return acc;
-    },
-    {},
-  ),
-  secondaryGammaTwo: Object.keys(tokens.color.secondary.gamma).reduce(
-    (acc, cur) => {
-      if (+cur >= 500) {
-        return { ...acc, ...{ [cur]: tokens.color.secondary.gamma[cur] } };
-      } else return acc;
-    },
-    {},
-  ),
+  neutralGamma2: Object.keys(tokens.color.neutral.gamma).reduce((acc, cur) => {
+    if (+cur >= 500) {
+      return { ...acc, ...{ [cur]: tokens.color.neutral.gamma[cur] } };
+    } else return acc;
+  }, {}),
+  neutralAlpha1: Object.keys(tokens.color.neutral.alpha).reduce((acc, cur) => {
+    if (+cur < 500) {
+      return { ...acc, ...{ [cur]: tokens.color.neutral.alpha[cur] } };
+    } else return acc;
+  }, {}),
+  neutralAlpha2: Object.keys(tokens.color.neutral.alpha).reduce((acc, cur) => {
+    if (+cur >= 500) {
+      return { ...acc, ...{ [cur]: tokens.color.neutral.alpha[cur] } };
+    } else return acc;
+  }, {}),
 
   safe: Object.keys(tokens.color.safe).reduce((acc, cur) => {
-    if (cur === 'mainRgb') return;
-    if (cur !== 'gamma') {
+    if (cur !== 'gamma' && cur !== 'alpha') {
       return { ...acc, ...{ [cur]: tokens.color.safe[cur] } };
-    } else return acc;
-  }, {}),
-  safeGammaOne: Object.keys(tokens.color.safe.gamma).reduce((acc, cur) => {
-    if (+cur < 500) {
-      return { ...acc, ...{ [cur]: tokens.color.safe.gamma[cur] } };
-    } else return acc;
-  }, {}),
-  safeGammaTwo: Object.keys(tokens.color.safe.gamma).reduce((acc, cur) => {
-    if (+cur >= 500) {
-      return { ...acc, ...{ [cur]: tokens.color.safe.gamma[cur] } };
     } else return acc;
   }, {}),
 
   alert: Object.keys(tokens.color.alert).reduce((acc, cur) => {
-    if (cur === 'mainRgb') return;
-    if (cur !== 'gamma') {
+    if (cur !== 'gamma' && cur !== 'alpha') {
       return { ...acc, ...{ [cur]: tokens.color.alert[cur] } };
-    } else return acc;
-  }, {}),
-  alertGammaOne: Object.keys(tokens.color.alert.gamma).reduce((acc, cur) => {
-    if (+cur < 500) {
-      return { ...acc, ...{ [cur]: tokens.color.alert.gamma[cur] } };
-    } else return acc;
-  }, {}),
-  alertGammaTwo: Object.keys(tokens.color.alert.gamma).reduce((acc, cur) => {
-    if (+cur >= 500) {
-      return { ...acc, ...{ [cur]: tokens.color.alert.gamma[cur] } };
     } else return acc;
   }, {}),
 
   warning: Object.keys(tokens.color.warning).reduce((acc, cur) => {
-    if (cur === 'mainRgb') return;
-    if (cur !== 'gamma') {
+    if (cur !== 'gamma' && cur !== 'alpha') {
       return { ...acc, ...{ [cur]: tokens.color.warning[cur] } };
     } else return acc;
   }, {}),
-  warningGammaOne: Object.keys(tokens.color.warning.gamma).reduce(
-    (acc, cur) => {
-      if (+cur < 500) {
-        return { ...acc, ...{ [cur]: tokens.color.warning.gamma[cur] } };
-      } else return acc;
-    },
-    {},
-  ),
-  warningGammaTwo: Object.keys(tokens.color.warning.gamma).reduce(
-    (acc, cur) => {
-      if (+cur >= 500) {
-        return { ...acc, ...{ [cur]: tokens.color.warning.gamma[cur] } };
-      } else return acc;
-    },
-    {},
-  ),
 
   info: Object.keys(tokens.color.info).reduce((acc, cur) => {
-    if (cur === 'mainRgb') return;
-    if (cur !== 'gamma') {
+    if (cur !== 'gamma' && cur !== 'alpha') {
       return { ...acc, ...{ [cur]: tokens.color.info[cur] } };
     } else return acc;
   }, {}),
-  infoGammaOne: Object.keys(tokens.color.info.gamma).reduce((acc, cur) => {
-    if (+cur < 500) {
-      return { ...acc, ...{ [cur]: tokens.color.info.gamma[cur] } };
-    } else return acc;
-  }, {}),
-  infoGammaTwo: Object.keys(tokens.color.info.gamma).reduce((acc, cur) => {
-    if (+cur >= 500) {
-      return { ...acc, ...{ [cur]: tokens.color.info.gamma[cur] } };
-    } else return acc;
-  }, {}),
 
-  text: tokens.color.text,
+  content: tokens.color.content,
   background: tokens.color.background,
-  focusRing: { focusRing: tokens.color.focusRing },
-  shadow: { shadow: tokens.color.shadow },
+
+  focus: { color: tokens.focus.color },
+  shadow: { color: tokens.shadow.color },
 };

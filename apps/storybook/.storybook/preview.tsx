@@ -109,7 +109,7 @@ const preview: Preview = {
         dark: 'dark',
       },
       defaultTheme: 'dark',
-      attributeName: 'data-awsm',
+      attributeName: 'data-theme',
     }),
   ],
 };

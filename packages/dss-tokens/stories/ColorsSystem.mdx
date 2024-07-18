@@ -1,5 +1,6 @@
-import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+import { Meta, ColorItem } from '@storybook/blocks';
 
+import ColorPalette from './helpers/ColorPalette.tsx';
 import colors from './helpers/colors.ts';
 
 <Meta title="Foundations/Color System" />
@@ -11,112 +12,85 @@ import colors from './helpers/colors.ts';
 <br />
 
 <ColorPalette>
+  <ColorItem title="Accent" subtitle="color.accent" colors={colors.accent} />
   <ColorItem
-    title="Gamma (Shades)"
-    subtitle="color.gamma"
-    colors={colors.gammaOne}
+    title="Accent Gamma"
+    subtitle="color.accent.gamma"
+    colors={colors.accentGamma1}
   />
   <ColorItem
-    title="Gamma (Shades)"
-    subtitle="color.gamma"
-    colors={colors.gammaTwo}
-  />
-  <ColorItem title="Primary" subtitle="color.primary" colors={colors.primary} />
-  <ColorItem
-    title="Primary Gamma"
-    subtitle="color.primary.gamma"
-    colors={colors.primaryGammaOne}
+    title="Accent Gamma"
+    subtitle="color.accent.gamma"
+    colors={colors.accentGamma2}
   />
   <ColorItem
-    title="Primary Gamma"
-    subtitle="color.primary.gamma"
-    colors={colors.primaryGammaTwo}
+    title="Accent Alpha"
+    subtitle="color.accent.alpha"
+    colors={colors.accentAlpha1}
   />
   <ColorItem
-    title="Secondary"
-    subtitle="color.secondary"
-    colors={colors.secondary}
+    title="Accent Alpha"
+    subtitle="color.accent.alpha"
+    colors={colors.accentAlpha2}
+  />
+
+  <ColorItem title="Neutral" subtitle="color.neutral" colors={colors.neutral} />
+  <ColorItem
+    title="Neutral Gamma"
+    subtitle="color.neutral.gamma"
+    colors={colors.neutralGamma1}
   />
   <ColorItem
-    title="Secondary Gamma"
-    subtitle="color.secondary.gamma"
-    colors={colors.secondaryGammaOne}
+    title="Neutral Gamma"
+    subtitle="color.neutral.gamma"
+    colors={colors.neutralGamma2}
   />
   <ColorItem
-    title="Secondary Gamma"
-    subtitle="color.secondary.gamma"
-    colors={colors.secondaryGammaTwo}
+    title="Neutral Alpha"
+    subtitle="color.neutral.alpha"
+    colors={colors.neutralAlpha1}
   />
+  <ColorItem
+    title="Neutral Alpha"
+    subtitle="color.neutral.alpha"
+    colors={colors.neutralAlpha2}
+  />
+
   <ColorItem
     title="Safe"
     subtitle="color.safe"
     colors={colors.safe}
   />
-  <ColorItem
-    title="Safe Gamma"
-    subtitle="color.safe.gamma"
-    colors={colors.safeGammaOne}
-  />
-  <ColorItem
-    title="Safe Gamma"
-    subtitle="color.safe.gamma"
-    colors={colors.safeGammaTwo}
-  />
+
   <ColorItem
     title="Alert"
     subtitle="color.alert"
     colors={colors.alert}
   />
-  <ColorItem
-    title="Alert Gamma"
-    subtitle="color.alert.gamma"
-    colors={colors.alertGammaOne}
-  />
-  <ColorItem
-    title="Alert Gamma"
-    subtitle="color.alert.gamma"
-    colors={colors.alertGammaTwo}
-  />
+
   <ColorItem
     title="Warning"
     subtitle="color.warning"
     colors={colors.warning}
   />
-  <ColorItem
-    title="Warning Gamma"
-    subtitle="color.warning.gamma"
-    colors={colors.warningGammaOne}
-  />
-  <ColorItem
-    title="Warning Gamma"
-    subtitle="color.warning.gamma"
-    colors={colors.warningGammaTwo}
-  />
+
   <ColorItem
     title="Info"
     subtitle="color.info"
     colors={colors.info}
   />
-  <ColorItem
-    title="Info Gamma"
-    subtitle="color.info.gamma"
-    colors={colors.infoGammaOne}
-  />
-  <ColorItem
-    title="Info Gamma"
-    subtitle="color.info.gamma"
-    colors={colors.infoGammaTwo}
-  />
-  <ColorItem title="Text" subtitle="color.text" colors={colors.text} />
+ 
+  <ColorItem title="Content" subtitle="color.content" colors={colors.content} />
   <ColorItem
     title="Background"
     subtitle="color.background"
     colors={colors.background}
   />
+  
   <ColorItem
     title="Focus Ring"
-    subtitle="color.focusRing"
-    colors={colors.focusRing}
+    subtitle="focus.color"
+    colors={colors.focus}
   />
-  <ColorItem title="Shadow" subtitle="color.shadow" colors={colors.shadow} />
+  <ColorItem title="Shadow" subtitle="shadow.color" colors={colors.shadow} />
 </ColorPalette>
