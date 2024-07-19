@@ -74,9 +74,9 @@ export const styles = recipe({
       },
 
       ':focus-visible': {
-        outline: `${theme.space['0.5']} solid`,
+        outline: theme.focus.outline,
         outlineColor: theme.focus.color,
-        outlineOffset: theme.space['0.5'],
+        outlineOffset: theme.focus.outlineOffset,
       },
     },
   ],

@@ -1,4 +1,5 @@
 import { paletteVars, type TokensPalette } from './palette';
+import { default as sizes } from './sizes';
 
 export type TokensDuration = {
   instant: string;
@@ -50,8 +51,8 @@ export const makeDetailsTokens = (palette: TokensPalette) => {
 
     focus: {
       color: focusTint.accent,
-      outline: `2px solid ${focusTint.accent}`,
-      outlineOffset: '1px',
+      outline: `${sizes.space['0.5']} solid ${focusTint.accent}`,
+      outlineOffset: sizes.space['0.5'],
     } satisfies TokensFocus,
 
     selection: {

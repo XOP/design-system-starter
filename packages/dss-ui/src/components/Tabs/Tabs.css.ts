@@ -7,8 +7,8 @@ import { theme } from '../../theme';
 import { TabsColors, TabsVariants } from './Tabs';
 
 const colors: { [key in TabsColors]: StyleRule } = {
-  primary: {},
-  secondary: {},
+  accent: {},
+  neutral: {},
 };
 
 const variants: { [key in TabsVariants]: StyleRule } = {
@@ -37,7 +37,7 @@ export const listStyles = recipe({
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'nowrap',
-    borderBlockEnd: `${theme.space.px} solid ${theme.color.gamma[300]}`,
+    borderBlockEnd: `${theme.space.px} solid ${theme.color.neutral.border}`,
 
     selectors: {
       [`${tabsStyles.classNames.variants.variant.fluid} &`]: {
@@ -53,8 +53,7 @@ export const tabStyles = recipe({
     paddingBlockEnd: calc(theme.space[3], calc.minus(theme.space[1])),
     paddingInline: theme.space[3],
     borderBlockEnd: `${theme.space[1]} solid transparent`,
-    background: theme.color.gamma[100],
-    color: theme.color.text.regular,
+    color: theme.color.content.subtle,
     fontSize: theme.fontSize.s,
     lineHeight: theme.lineHeight.normal,
     textAlign: 'center',
@@ -64,9 +63,9 @@ export const tabStyles = recipe({
     transitionDuration: theme.duration.instant,
 
     ':focus-visible': {
-      outline: `${theme.space['0.5']} solid`,
-      outlineColor: theme.color.focusRing,
-      outlineOffset: theme.space['0.5'],
+      outline: theme.focus.outline,
+      outlineColor: theme.focus.color,
+      outlineOffset: theme.focus.outlineOffset,
     },
 
     selectors: {
@@ -78,16 +77,16 @@ export const tabStyles = recipe({
         zIndex: 2,
       },
 
-      [`${tabsStyles.classNames.variants.color.primary} &:hover:not([data-disabled])`]:
+      [`${tabsStyles.classNames.variants.color.accent} &:hover:not([data-disabled])`]:
         {
-          backgroundColor: theme.color.primary.gamma[100],
-          color: theme.color.text.strong,
+          backgroundColor: theme.color.accent.surface,
+          color: theme.color.content.strong,
         },
 
-      [`${tabsStyles.classNames.variants.color.secondary} &:hover:not([data-disabled])`]:
+      [`${tabsStyles.classNames.variants.color.neutral} &:hover:not([data-disabled])`]:
         {
-          backgroundColor: theme.color.secondary.gamma[100],
-          color: theme.color.text.strong,
+          backgroundColor: theme.color.neutral.surface,
+          color: theme.color.content.strong,
         },
     },
   },
@@ -97,13 +96,13 @@ export const tabStyles = recipe({
       true: {
         zIndex: 1,
         selectors: {
-          [`${tabsStyles.classNames.variants.color.primary} &`]: {
-            borderColor: theme.color.primary.tint,
-            color: theme.color.text.strong,
+          [`${tabsStyles.classNames.variants.color.accent} &`]: {
+            borderColor: theme.color.accent.accent,
+            color: theme.color.content.strong,
           },
-          [`${tabsStyles.classNames.variants.color.secondary} &`]: {
-            borderColor: theme.color.secondary.tint,
-            color: theme.color.text.strong,
+          [`${tabsStyles.classNames.variants.color.neutral} &`]: {
+            borderColor: theme.color.neutral.accent,
+            color: theme.color.content.strong,
           },
         },
       },
@@ -113,7 +112,7 @@ export const tabStyles = recipe({
     isDisabled: {
       true: {
         cursor: 'default',
-        color: theme.color.text.subtle,
+        color: theme.color.content.subtle,
       },
       false: {},
     },
@@ -127,11 +126,11 @@ export const tabStyles = recipe({
       },
       style: {
         selectors: {
-          [`${tabsStyles.classNames.variants.color.primary} &`]: {
-            borderColor: theme.color.gamma[400],
+          [`${tabsStyles.classNames.variants.color.accent} &`]: {
+            borderColor: theme.color.neutral.border,
           },
-          [`${tabsStyles.classNames.variants.color.secondary} &`]: {
-            borderColor: theme.color.gamma[400],
+          [`${tabsStyles.classNames.variants.color.neutral} &`]: {
+            borderColor: theme.color.neutral.border,
           },
         },
       },
@@ -143,15 +142,14 @@ export const panelStyles = recipe({
   base: {
     paddingBlock: theme.space[3],
     paddingInline: theme.space[3],
-    backgroundColor: theme.color.background.regular,
-    color: theme.color.text.regular,
+    color: theme.color.content.regular,
     fontSize: theme.fontSize.s,
     lineHeight: theme.lineHeight.relaxed,
 
     ':focus-visible': {
-      outline: `${theme.space['0.5']} solid`,
-      outlineColor: theme.color.focusRing,
-      outlineOffset: theme.space['0.5'],
+      outline: theme.focus.outline,
+      outlineColor: theme.focus.color,
+      outlineOffset: theme.focus.outlineOffset,
     },
   },
 });

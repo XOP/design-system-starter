@@ -13,34 +13,34 @@ export const $thumbOffset = theme.space['0.5'];
 export const $borderSize = theme.space.px;
 
 const colors: { [key in SwitchColors]: StyleRule } = {
-  primary: {
+  accent: {
     '::after': {
-      backgroundColor: theme.color.primary.tint,
+      backgroundColor: theme.color.accent.base,
     },
 
     selectors: {
       '[data-selected="true"] &': {
-        backgroundColor: theme.color.primary.main,
-        borderColor: theme.color.primary.tone,
+        backgroundColor: theme.color.accent.strong,
+        borderColor: theme.color.accent.base,
       },
       '[data-selected="true"] &::after': {
-        backgroundColor: theme.color.primary.contrast,
+        backgroundColor: theme.color.accent.contrast,
       },
     },
   },
 
-  secondary: {
+  neutral: {
     '::after': {
-      backgroundColor: theme.color.secondary.tint,
+      backgroundColor: theme.color.neutral.tone,
     },
 
     selectors: {
       '[data-selected="true"] &': {
-        backgroundColor: theme.color.secondary.main,
-        borderColor: theme.color.secondary.tone,
+        backgroundColor: theme.color.neutral.strong,
+        borderColor: theme.color.neutral.base,
       },
       '[data-selected="true"] &::after': {
-        backgroundColor: theme.color.secondary.contrast,
+        backgroundColor: theme.color.neutral.contrast,
       },
     },
   },
@@ -73,14 +73,13 @@ export const styles = recipe({
     display: 'inline-flex',
     alignItems: 'center',
     gap: theme.space[2],
-    color: theme.color.text.regular,
+    color: theme.color.content.regular,
     fontFamily: theme.fontFamily,
     userSelect: 'none',
 
     selectors: {
       ['&[data-disabled]']: {
-        filter: 'grayscale(1)',
-        opacity: 0.7,
+        opacity: 0.5,
       },
     },
   },
@@ -98,7 +97,7 @@ export const indicatorStyles = recipe({
     width: calc($trackSize, calc.x($thumbOffset, 2), calc.x($borderSize, 2)),
     height: calc($thumbSize, calc.x($thumbOffset, 2), calc.x($borderSize, 2)),
     borderRadius: theme.radius.pill,
-    border: `${$borderSize} solid ${theme.color.gamma[500]}`,
+    border: `${$borderSize} solid ${theme.color.neutral.base}`,
     backgroundColor: 'transparent',
     transitionProperty: 'background-color',
     transitionDuration: theme.duration.short,
@@ -119,9 +118,9 @@ export const indicatorStyles = recipe({
 
     selectors: {
       '[data-focus-visible] &': {
-        outline: `${theme.space['0.5']} solid`,
-        outlineColor: theme.color.focusRing,
-        outlineOffset: theme.space['0.5'],
+        outline: theme.focus.outline,
+        outlineColor: theme.focus.color,
+        outlineOffset: theme.focus.outlineOffset,
       },
 
       '[data-selected=true] &::after': {
