@@ -8,14 +8,14 @@ module.exports = {
       packages: ['**'],
       dependencies: ['@ds-starter/tsconfig', 'eslint-config-ds-starter'],
       dependencyTypes: ['dev'],
-      pinVersion: '*',
+      pinVersion: 'workspace:*',
     },
     {
       label: 'Pin unpublished local packages to any version (*)',
       packages: ['**'],
       dependencies: ['@ds-starter/fonts', '@ds-starter/icons', '@ds-starter/tokens', '@ds-starter/ui'],
       dependencyTypes: ['dev', 'prod'],
-      pinVersion: '*',
+      pinVersion: 'workspace:*',
     },
   ],
 };

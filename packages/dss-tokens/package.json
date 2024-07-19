@@ -33,9 +33,9 @@
   },
   "devDependencies": {
     "@ds-starter/tsconfig": "workspace:*",
-    "@storybook/blocks": "^8.0.4",
+    "@storybook/blocks": "^8.2.4",
     "@types/react": "^18.2.74",
-    "@vanilla-extract/css": "^1.14.0",
+    "@vanilla-extract/css": "^1.14.2",
     "eslint": "^8.54.0",
     "eslint-config-ds-starter": "workspace:*",
     "polished": "^4.2.2",

@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@ds-starter/tokens": "workspace:*",
-    "@vanilla-extract/css": "^1.14.0",
+    "@vanilla-extract/css": "^1.14.2",
     "@vanilla-extract/recipes": "^0.5.1",
     "clsx": "^2.0.0",
     "react-aria-components": "^1.2.0"
@@ -41,7 +41,7 @@
   "devDependencies": {
     "@ds-starter/tsconfig": "workspace:*",
     "@csstools/normalize.css": "^12.0.0",
-    "@storybook/react": "^8.0.4",
+    "@storybook/react": "^8.2.4",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",
     "@types/react": "^18.2.74",

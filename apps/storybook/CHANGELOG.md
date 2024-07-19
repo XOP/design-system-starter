@@ -1,4 +1,4 @@
-# storybook
+# dss-storybook
 
 ## 0.0.1
 

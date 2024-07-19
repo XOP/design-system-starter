@@ -6,7 +6,6 @@ Fonts package is optional and created for convenient fonts management.
 In most cases it makes sense to setup custom loading, you will need to take care of fonts delivery.  
 However for [quick hacking or dev-oriented projects](https://www.zachleat.com/web/web-font-data-uris/) base64-encoded files can work just fine.
 
-
 ## Installation
 
 > Note, installation instructions are for presentation purpose only.  
@@ -15,7 +14,6 @@ However for [quick hacking or dev-oriented projects](https://www.zachleat.com/we
 ```sh
 npm i @ds-starter/fonts
 ```
-
 
 ## Usage
 
@@ -54,25 +52,25 @@ interface FontsProps {
 }
 ```
 
-
 ## Development
 
 To build the package run the standard command:
+
 ```sh
 turbo build
 ```
 
 For ES lint:
+
 ```sh
 turbo lint
 ```
 
-Equally, `pnpm ...` command would yield the same results, i.e.:   
+Equally, `pnpm ...` command would yield the same results, i.e.:
 
 ```sh
 pnpm build
 ```
-
 
 ## References
 

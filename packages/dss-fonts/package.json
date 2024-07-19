@@ -33,7 +33,7 @@
   "devDependencies": {
     "@ds-starter/tokens": "workspace:*",
     "@ds-starter/tsconfig": "workspace:*",
-    "@storybook/blocks": "^8.0.4",
+    "@storybook/blocks": "^8.2.4",
     "@types/react": "^18.2.74",
     "@vitejs/plugin-react": "^4.2.0",
     "eslint": "^8.54.0",

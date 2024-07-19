@@ -7,11 +7,11 @@ import { calc } from '../../helpers/utils';
 import { {{pascalCase name}}Colors } from './{{pascalCase name}}';
 
 const colors: { [key in {{pascalCase name}}Colors]: StyleRule } = {
-  primary: {
-    backgroundColor: theme.color.primary.gamma[500],
+  accent: {
+    backgroundColor: theme.color.accent.base,
   },
-  secondary: {
-    backgroundColor: theme.color.secondary.gamma[500],
+  neutral: {
+    backgroundColor: theme.color.neutral.base,
   },
 };
 
@@ -19,7 +19,7 @@ export const styles = recipe({
   base: {
     boxSizing: 'border-box',
     paddingBlock: calc(calc.x(theme.space[2], 2), '10vh'),
-    color: theme.color.text.regular,
+    color: theme.color.content.regular,
     fontFamily: theme.fontFamily,
 
     selectors: {

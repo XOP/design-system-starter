@@ -1,10 +1,8 @@
 # DSS Icons @ Design System Starter Template
 
-
 ## Overview
 
 Icons is an optional package and naturally is the dependency for `@ds-starter/ui`.
-
 
 ## Installation
 
@@ -14,7 +12,6 @@ Icons is an optional package and naturally is the dependency for `@ds-starter/ui
 ```sh
 npm i @ds-starter/icons
 ```
-
 
 ## Usage
 
@@ -50,17 +47,17 @@ import arrowRightSrc from '@ds-starter/icons/svg/arrow-right.svg';
 </figure>
 ```
 
-
 ## Managing icons
 
-It's all set up for maximum DX (Developer Experience). The process of adding an icon is straightforward.   
-Place an SVG file in `/svg` folder and build the project. 
+It's all set up for maximum DX (Developer Experience). The process of adding an icon is straightforward.  
+Place an SVG file in `/svg` folder and build the project.
 
 ```sh
 pnpm build
 ```
 
-or 
+or
+
 ```sh
 turbo build
 ```
@@ -72,7 +69,6 @@ First - generation script is processing SVG files and generates new Icon compone
 Then - build process takes care of bundling and typings.
 
 Generation is based on [SVGR](https://react-svgr.com/), that you can refer to further documentation and examples.
-
 
 ## References
 

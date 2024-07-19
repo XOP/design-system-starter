@@ -26,25 +26,25 @@ export const Base: Story = {
   },
 };
 
-export const ColorPrimary: Story = {
+export const ColorAccent: Story = {
   args: {
     ...Base.args,
-    color: 'primary',
+    color: 'accent',
   },
 };
 
-export const ColorSecondary: Story = {
+export const ColorNeutral: Story = {
   args: {
     ...Base.args,
-    color: 'secondary',
+    color: 'neutral',
   },
 };
 
 export const AllColors: Story = {
   render: () => (
     <DemoFlow>
-      <{{pascalCase name}} color="primary">Awesome</{{pascalCase name}}>
-      <{{pascalCase name}} color="secondary">Awesome</{{pascalCase name}}>
+      <{{pascalCase name}} color="accent">Awesome</{{pascalCase name}}>
+      <{{pascalCase name}} color="neutral">Awesome</{{pascalCase name}}>
     </DemoFlow>
   ),
 };
