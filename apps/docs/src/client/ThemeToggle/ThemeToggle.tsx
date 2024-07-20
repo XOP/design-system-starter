@@ -18,7 +18,7 @@ const ThemeToggle = ({ className }: ThemeToggleProps) => {
       $currentTheme === COLOR_THEME.dark ? COLOR_THEME.light : COLOR_THEME.dark;
 
     changeColorTheme(nextTheme);
-    document.documentElement.dataset['awsm'] = nextTheme;
+    document.documentElement.dataset['theme'] = nextTheme;
   };
 
   return (

@@ -30,7 +30,7 @@ const slug = 'awsm-' + slugify(heading, { lower: true });
     margin: 0;
     margin-block-end: var(--awsm-space-6);
 
-    color: var(--awsm-color-text-regular);
+    color: var(--awsm-color-content-regular);
     font-size: var(--awsm-font-size-l);
     font-weight: normal;
 
@@ -43,7 +43,7 @@ const slug = 'awsm-' + slugify(heading, { lower: true });
     position: absolute;
     left: calc(-1 * var(--awsm-space-4));
     opacity: 0;
-    color: var(--awsm-color-primary-gamma-700);
+    color: var(--awsm-color-accent-base);
     font-weight: bold;
     font-size: var(--awsm-font-size-l);
     transition:
@@ -53,7 +53,7 @@ const slug = 'awsm-' + slugify(heading, { lower: true });
 
   .heading.--active::before {
     opacity: 1;
-    color: var(--awsm-color-secondary-gamma-700);
+    color: var(--awsm-color-neutral-base);
   }
 
   @media (hover: hover) {

@@ -133,7 +133,7 @@ if (currentSlug === 'usage' || currentSlug === 'accessibility') {
     min-width: 16rem;
 
     background: var(--awsm-color-background-muted);
-    color: var(--awsm-color-text-regular);
+    color: var(--awsm-color-content-muted);
   }
 
   @media screen and (max-width: 780px) {
@@ -178,7 +178,7 @@ if (currentSlug === 'usage' || currentSlug === 'accessibility') {
 
     text-transform: uppercase;
     font-size: var(--awsm-font-size-l);
-    color: var(--awsm-color-text-regular);
+    color: var(--awsm-color-content-muted);
   }
 
   .close {
@@ -228,18 +228,18 @@ if (currentSlug === 'usage' || currentSlug === 'accessibility') {
 
   .nav li h3 {
     margin-block-start: var(--awsm-space-8);
-    color: var(--awsm-color-text-regular);
+    color: var(--awsm-color-content-muted);
   }
 
   .nav a {
     display: block;
-    color: var(--awsm-color-text-regular);
+    color: var(--awsm-color-content-regular);
     text-decoration: none;
   }
 
   @media (hover: hover) {
     .nav a:hover {
-      color: var(--awsm-color-text-strong);
+      color: var(--awsm-color-content-strong);
       text-decoration: underline;
     }
   }
@@ -247,8 +247,8 @@ if (currentSlug === 'usage' || currentSlug === 'accessibility') {
   .nav a.active {
     padding-inline-start: var(--awsm-space-2);
     border-inline-start: var(--awsm-space-2) solid
-      var(--awsm-color-secondary-tint);
-    color: var(--awsm-color-text-strong);
+      var(--awsm-color-accent-accent);
+    color: var(--awsm-color-content-strong);
     cursor: default;
   }
 </style>

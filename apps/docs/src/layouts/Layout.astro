@@ -26,7 +26,7 @@ import '../assets/css/index.css';
 ---
 
 <!doctype html>
-<html lang="en" data-awsm="" data-ls={`${LS_PREFIX} ${LS_KEY_META}`}>
+<html lang="en" data-theme="dark" data-ls={`${LS_PREFIX} ${LS_KEY_META}`}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -148,7 +148,7 @@ import '../assets/css/index.css';
         localStorage.getItem(`${lsData[0]}.${lsData[1]}`);
       const theme = JSON.parse(meta).colorTheme;
 
-      document.documentElement.dataset['awsm'] = theme;
+      document.documentElement.dataset['theme'] = theme;
     </script>
 
     <script>

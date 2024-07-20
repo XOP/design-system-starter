@@ -42,7 +42,7 @@ As mentioned, there are different scenarios of how tokens can be utilized.
 body {
   font-size: var(--awsm-font-size-n);
   line-height: var(--awsm-line-height-normal);
-  color: var(--awsm-color-text-regular);
+  color: var(--awsm-color-content-regular);
 }
 ```
 

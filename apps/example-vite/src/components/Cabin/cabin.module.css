@@ -10,5 +10,5 @@
 .root > svg {
   width: 100%;
   height: 100%;
-  fill: var(--awsm-color-primary-shade, #000);
+  fill: var(--awsm-color-accent-shade, #000);
 }

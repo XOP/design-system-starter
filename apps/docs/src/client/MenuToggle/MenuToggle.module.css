@@ -1,7 +1,7 @@
 .root {
   font-size: var(--awsm-font-size-xl);
   line-height: 0;
-  color: var(--awsm-color-text-strong);
+  color: var(--awsm-color-content-strong);
 }
 
 .button {

@@ -36,12 +36,12 @@ const { page = COLLECTION, data } = Astro.props;
     align-items: center;
     margin-block-start: calc(-1 * var(--awsm-space-4));
     margin-block-end: var(--awsm-space-8);
-    background: var(--awsm-color-secondary-main);
+    background: var(--awsm-color-neutral-surface);
   }
 
   .nav a {
     padding: var(--awsm-space-3) var(--awsm-space-6);
-    color: var(--awsm-color-secondary-contrast);
+    color: var(--awsm-color-neutral-content);
     border: var(--awsm-space-1) solid transparent;
     font-size: var(--awsm-font-size-s);
     text-decoration: none;
@@ -50,11 +50,12 @@ const { page = COLLECTION, data } = Astro.props;
 
   @media (hover: hover) {
     .nav a:hover {
-      background: var(--awsm-color-secondary-tint);
+      background: var(--awsm-color-neutral-soft);
     }
   }
 
   .nav a.active {
-    background: var(--awsm-color-secondary-tint);
+    background: var(--awsm-color-neutral-strong);
+    color: var(--awsm-color-neutral-contrast);
   }
 </style>

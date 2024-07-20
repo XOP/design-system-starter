@@ -1,7 +1,7 @@
 
 .example {
-  background: var(--awsm-color-gamma-50); 
-  border: var(--awsm-space-px) solid var(--awsm-color-primary-gamma-300);
+  background: var(--awsm-color-neutral-backdrop); 
+  border: var(--awsm-space-px) solid var(--awsm-color-accent-border);
   border-radius: var(--awsm-radius-n);
   overflow: auto;
 }
@@ -42,7 +42,7 @@
 .loading_actions,
 .loading_body {
   display: block;
-  background: var(--awsm-color-gamma-200);
+  background: var(--awsm-color-neutral-soft);
   border-radius: var(--awsm-radius-s);
 }
 

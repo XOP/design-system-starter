@@ -46,9 +46,9 @@ const { data, className } = Astro.props;
   .nav a {
     display: block;
     padding: var(--awsm-space-6);
-    color: var(--awsm-color-secondary-contrast);
-    border: var(--awsm-space-1) solid var(--awsm-color-secondary-main);
-    background: var(--awsm-color-secondary-shade);
+    color: var(--awsm-color-neutral-muted);
+    border: var(--awsm-space-1) solid var(--awsm-color-accent-accent);
+    background: var(--awsm-color-neutral-surface);
     font-size: var(--awsm-font-size-n);
     text-decoration: none;
     text-align: center;
@@ -56,11 +56,11 @@ const { data, className } = Astro.props;
 
   @media (hover: hover) {
     .nav a:hover {
-      background: var(--awsm-color-secondary-tint);
+      background: var(--awsm-color-neutral-soft);
     }
   }
 
   .nav a.active {
-    background: var(--awsm-color-secondary-tone);
+    background: var(--awsm-color-neutral-soft);
   }
 </style>

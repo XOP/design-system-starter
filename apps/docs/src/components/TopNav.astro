@@ -46,7 +46,7 @@ const currentSlug = Astro.url.pathname.split('/')[1];
 
   .nav a {
     padding-block: var(--awsm-space-1);
-    color: var(--awsm-color-primary-gamma-700);
+    color: var(--awsm-color-accent-muted);
     text-decoration: none;
     text-wrap: nowrap;
     border-block-end: var(--awsm-space-1) solid transparent;
@@ -54,14 +54,14 @@ const currentSlug = Astro.url.pathname.split('/')[1];
 
   @media (hover: hover) {
     .nav a:hover {
-      color: var(--awsm-color-primary-gamma-800);
-      border-color: var(--awsm-color-primary-tone);
+      color: var(--awsm-color-accent-content);
+      border-color: var(--awsm-color-accent-base);
     }
   }
 
   .nav a.active {
-    color: var(--awsm-color-primary-gamma-900);
-    border-color: var(--awsm-color-primary-tone);
+    color: var(--awsm-color-accent-gamma-900);
+    border-color: var(--awsm-color-accent-base);
     cursor: default;
   }
 </style>
