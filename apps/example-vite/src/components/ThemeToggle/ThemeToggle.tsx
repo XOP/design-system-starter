@@ -2,18 +2,18 @@ import { useEffect, useState } from 'react';
 
 import Button from '@ds-starter/ui/components/Button/Button';
 
-const THEMES = ['nebula', 'prism'];
-const DEFAULT_THEME = 'nebula';
+const THEMES = ['dark', 'light'];
+const DEFAULT_THEME = 'dark';
 
 const ThemeToggle = () => {
   const [currentIndex, setCurrentIndex] = useState(-1);
 
   const getThemeName = (): string => {
-    return document.documentElement.dataset.awsm || '';
+    return document.documentElement.dataset.theme || '';
   };
 
   const setTheme = (theme: string) => {
-    document.documentElement.dataset.awsm = theme;
+    document.documentElement.dataset.theme = theme;
   };
 
   useEffect(() => {

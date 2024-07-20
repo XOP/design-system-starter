@@ -16,7 +16,7 @@ const Panel = () => {
     <div className={styles.root}>
       <Button
         variant="ghost"
-        color="secondary"
+        color="neutral"
         size="small"
         aria-label="Roll Left"
       >
@@ -29,7 +29,7 @@ const Panel = () => {
       </Button>
       <Button
         variant="solid"
-        color="secondary"
+        color="neutral"
         size="small"
         aria-label="Strong Roll Left"
       >
@@ -37,7 +37,7 @@ const Panel = () => {
       </Button>
       <Button
         variant="solid"
-        color="secondary"
+        color="neutral"
         size="small"
         aria-label="Strong Roll Right"
       >
@@ -45,7 +45,7 @@ const Panel = () => {
       </Button>
       <Button
         variant="ghost"
-        color="secondary"
+        color="neutral"
         size="small"
         aria-label="Roll Right"
       >
