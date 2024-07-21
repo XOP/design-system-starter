@@ -1,5 +1,5 @@
-import { resolve } from 'path';
-import { readFile, readdir, writeFile } from 'fs/promises';
+import { resolve } from 'node:path';
+import { readFile, readdir, writeFile } from 'node:fs/promises';
 
 import { transform } from '@svgr/core';
 

@@ -27,8 +27,8 @@
     "svg"
   ],
   "scripts": {
-    "lint": "eslint --ext .js,.cjs,.ts,.cts,.tsx scripts/ stories/",
-    "format": "biome format ./scripts ./stories",
+    "lint": "biome lint",
+    "format": "biome format",
     "format:fix": "pnpm format --write",
     "gen:clean": "rimraf ./lib/icons && mkdirp ./lib/icons",
     "gen": "pnpm gen:clean && tsx ./scripts/generateIcons.cts",
@@ -45,8 +45,6 @@
     "@svgr/plugin-svgo": "^8.1.0",
     "@types/react": "^18.2.74",
     "@vanilla-extract/css": "^1.14.2",
-    "eslint": "^8.54.0",
-    "eslint-config-ds-starter": "workspace:*",
     "react": "^18.2.0",
     "tsup": "^8.0.1",
     "typescript": "^5.4.3"
