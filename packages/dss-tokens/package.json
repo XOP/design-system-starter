@@ -23,8 +23,8 @@
     "src/lib"
   ],
   "scripts": {
-    "lint": "eslint --ext .js,.cjs,.ts,.cts,.tsx src/ scripts/ stories/",
-    "format": "biome format ./src ./scripts ./stories",
+    "lint": "biome lint",
+    "format": "biome format",
     "format:fix": "pnpm format --write",
     "build": "pnpm gen && vite build && tsc --project tsconfig.build.json",
     "gen": "pnpm gen:palette && pnpm gen:vars && pnpm format:fix",
@@ -32,12 +32,11 @@
     "gen:palette": "unicornix"
   },
   "devDependencies": {
+    "@babel/core": "^7.24.9",
     "@ds-starter/tsconfig": "workspace:*",
     "@storybook/blocks": "^8.2.4",
     "@types/react": "^18.2.74",
     "@vanilla-extract/css": "^1.14.2",
-    "eslint": "^8.54.0",
-    "eslint-config-ds-starter": "workspace:*",
     "polished": "^4.2.2",
     "typescript": "^5.4.3",
     "vite": "^5.2.7"

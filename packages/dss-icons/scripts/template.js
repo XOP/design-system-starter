@@ -14,4 +14,4 @@ ${variables.exports};
 `;
 };
 
-module.exports = template;
+export default template;

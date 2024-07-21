@@ -18,7 +18,7 @@ const cssOutputDir = path.resolve(process.cwd(), 'src/lib/css');
     const content = await import(`../src/lib/tokens/entries/${vars[i]}`);
     const cssData = convertVarsToCss(content, ...commonPrefix);
 
-    cssOutput += `:root `;
+    cssOutput += ':root ';
     cssOutput += `{\n${cssData}\n}\n`;
 
     await fs.writeFile(path.resolve(cssOutputDir, cssOutputFile), cssOutput);

@@ -31,7 +31,7 @@
     "format": "biome format",
     "format:fix": "pnpm format --write",
     "gen:clean": "rimraf ./lib/icons && mkdirp ./lib/icons",
-    "gen": "pnpm gen:clean && tsx ./scripts/generateIcons.cts",
+    "gen": "pnpm gen:clean && tsx ./scripts/generateIcons.ts",
     "build:clean": "rimraf ./dist",
     "build:icons": "pnpm build:clean && tsup-node && tsc --project ./tsconfig.build.json",
     "build": "pnpm gen && pnpm build:icons"

@@ -1,7 +1,7 @@
 {
   "extends": ["../../biome.json"],
   "files": {
-    "include": ["entries", "src", "stories"],
+    "include": ["scripts", "src", "stories"],
     "ignoreUnknown": true
   }
 }
