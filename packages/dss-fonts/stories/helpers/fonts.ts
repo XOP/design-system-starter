@@ -1,11 +1,12 @@
 import { tokens } from '@ds-starter/tokens';
 
-const fontSize = { ...tokens.fontSize } as const;
+const fontSize = { ...tokens.fontSize };
 type FontSize = typeof fontSize;
 
 const processedFontSize = Object.keys(tokens.fontSize).reduce<FontSize>(
   (acc, cur) => {
-    const value = tokens.fontSize[cur as keyof FontSize];
+    const key = cur as keyof FontSize;
+    const value = tokens.fontSize[key];
     const parsedValue = parseFloat(value + '');
     let outputValue = parsedValue;
 
@@ -13,7 +14,9 @@ const processedFontSize = Object.keys(tokens.fontSize).reduce<FontSize>(
       outputValue = Math.round(parsedValue * 16);
     }
 
-    return { ...acc, ...{ [cur]: String(outputValue) } };
+    acc[key] = String(outputValue);
+
+    return acc;
   },
   {} as FontSize,
 );

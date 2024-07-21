@@ -1,15 +1,20 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.6.0/schema.json",
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "files": {
-    "ignore": [
-      "*.cts"
-    ]
+    "ignore": ["*.cts"]
   },
   "organizeImports": {
     "enabled": false
   },
   "linter": {
-    "enabled": false
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "style": {
+        "useTemplate": "off",
+        "useNumberNamespace": "off"
+      }
+    }
   },
   "formatter": {
     "enabled": true,
@@ -22,7 +27,7 @@
       "jsxQuoteStyle": "double",
       "quoteStyle": "single",
       "attributePosition": "multiline",
-      "trailingComma": "all"
+      "trailingCommas": "all"
     }
   }
 }
