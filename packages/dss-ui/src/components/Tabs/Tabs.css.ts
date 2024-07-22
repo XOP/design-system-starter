@@ -1,10 +1,10 @@
 import { recipe } from '@vanilla-extract/recipes';
-import { StyleRule } from '@vanilla-extract/css';
+import type { StyleRule } from '@vanilla-extract/css';
 
 import { calc } from '../../helpers/utils';
 import { theme } from '../../theme';
 
-import { TabsColors, TabsVariants } from './Tabs';
+import type { TabsColors, TabsVariants } from './Tabs';
 
 const colors: { [key in TabsColors]: StyleRule } = {
   accent: {},
@@ -73,7 +73,7 @@ export const tabStyles = recipe({
         flexGrow: 1,
       },
 
-      [`&[data-focus-visible]`]: {
+      '&[data-focus-visible]': {
         zIndex: 2,
       },
 

@@ -4,7 +4,7 @@ import { clsx } from 'clsx';
 
 import {
   Switch as BaseSwitch,
-  SwitchProps as BaseSwitchProps,
+  type SwitchProps as BaseSwitchProps,
 } from 'react-aria-components';
 
 import { styles, indicatorStyles } from './Switch.css';

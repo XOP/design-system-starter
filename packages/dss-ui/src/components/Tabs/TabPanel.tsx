@@ -4,7 +4,7 @@ import { clsx } from 'clsx';
 
 import {
   TabPanel as BaseTabPanel,
-  TabPanelProps as BaseTabPanelProps,
+  type TabPanelProps as BaseTabPanelProps,
 } from 'react-aria-components';
 
 import { panelStyles } from './Tabs.css';

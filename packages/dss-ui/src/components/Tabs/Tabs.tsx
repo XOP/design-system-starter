@@ -4,7 +4,7 @@ import { clsx } from 'clsx';
 
 import {
   Tabs as BaseTabs,
-  TabsProps as BaseTabsProps,
+  type TabsProps as BaseTabsProps,
 } from 'react-aria-components';
 
 import { tabsStyles } from './Tabs.css';

@@ -4,12 +4,12 @@ import { clsx } from 'clsx';
 
 import {
   TabList as BaseTabList,
-  TabListProps as BaseTabListProps,
+  type TabListProps as BaseTabListProps,
 } from 'react-aria-components';
 
 import { listStyles } from './Tabs.css';
 
-import { TabProps } from './Tab';
+import type { TabProps } from './Tab';
 
 export interface TabListProps extends BaseTabListProps<TabProps> {}
 

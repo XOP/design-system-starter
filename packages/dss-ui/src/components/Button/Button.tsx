@@ -4,7 +4,7 @@ import { clsx } from 'clsx';
 
 import {
   Button as BaseButton,
-  ButtonProps as BaseButtonProps,
+  type ButtonProps as BaseButtonProps,
 } from 'react-aria-components';
 
 import { styles } from './Button.css';

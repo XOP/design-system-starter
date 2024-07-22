@@ -33,7 +33,7 @@ export function getDocs() {
 
       return [...acc, cur];
     },
-    []
+    [],
   );
 
   return storiesData;

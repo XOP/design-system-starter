@@ -16,7 +16,7 @@ const ExampleContent = (props: ExampleContentProps) => {
   const [struct, data, isLoading] = useStoryLoad(
     name,
     componentName,
-    componentDir,
+    componentDir
   );
 
   if (isLoading) {

@@ -40,7 +40,7 @@ export function getStories({ ignoreTags = [] }: GetStoriesProps = {}) {
 
       return [...acc, cur];
     },
-    []
+    [],
   );
 
   return storiesData;

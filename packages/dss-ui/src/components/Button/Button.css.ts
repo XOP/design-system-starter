@@ -1,11 +1,11 @@
 import { recipe } from '@vanilla-extract/recipes';
 
-import { StyleRule } from '@vanilla-extract/css';
+import type { StyleRule } from '@vanilla-extract/css';
 
 import { calc } from '../../helpers/utils';
 import { theme } from '../../theme';
 
-import { ButtonColors, ButtonSizes, ButtonVariants } from './Button';
+import type { ButtonColors, ButtonSizes, ButtonVariants } from './Button';
 
 const colors: { [key in ButtonColors]: StyleRule } = {
   accent: {},

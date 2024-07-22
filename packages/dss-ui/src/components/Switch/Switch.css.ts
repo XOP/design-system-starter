@@ -1,10 +1,10 @@
-import { createVar, StyleRule } from '@vanilla-extract/css';
+import { createVar, type StyleRule } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { calc } from '../../helpers/utils';
 import { theme } from '../../theme';
 
-import { SwitchColors, SwitchSizes } from './Switch';
+import type { SwitchColors, SwitchSizes } from './Switch';
 
 export const $thumbSize = createVar();
 export const $trackSize = createVar();
@@ -78,7 +78,7 @@ export const styles = recipe({
     userSelect: 'none',
 
     selectors: {
-      ['&[data-disabled]']: {
+      '&[data-disabled]': {
         opacity: 0.5,
       },
     },

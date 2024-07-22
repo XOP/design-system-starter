@@ -51,7 +51,7 @@ if (section === NAVIGATION_KEYS.components) {
 
   COMPONENT_GROUPS_ORDER.forEach((heading) => {
     const entries = _navEntries.filter(
-      (item: NavEntry) => item.group === heading
+      (item: NavEntry) => item.group === heading,
     );
 
     if (entries.length) {

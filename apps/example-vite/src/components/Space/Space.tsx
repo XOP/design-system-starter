@@ -90,7 +90,7 @@ const Space = () => {
         },
       ],
     }),
-    [speed],
+    [speed]
   );
 
   if (init) {

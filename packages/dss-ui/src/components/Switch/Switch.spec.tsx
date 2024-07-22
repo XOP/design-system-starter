@@ -44,9 +44,7 @@ describe('Switch', () => {
     )[0];
 
     expect(switchIndicator).toBeInTheDocument();
-    expect(switchIndicator).toHaveClass(
-      indicatorStyles({ color: 'neutral' })
-    );
+    expect(switchIndicator).toHaveClass(indicatorStyles({ color: 'neutral' }));
   });
 
   it('should apply the styles according to props', () => {
@@ -65,9 +63,7 @@ describe('Switch', () => {
     )[0];
 
     expect(switchIndicator).toBeInTheDocument();
-    expect(switchIndicator).toHaveClass(
-      indicatorStyles({ color: 'neutral' })
-    );
+    expect(switchIndicator).toHaveClass(indicatorStyles({ color: 'neutral' }));
   });
 
   it('should render selected', () => {

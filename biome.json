@@ -27,10 +27,21 @@
   },
   "javascript": {
     "formatter": {
+      "indentWidth": 2,
       "jsxQuoteStyle": "double",
       "quoteStyle": "single",
       "attributePosition": "multiline",
       "trailingCommas": "all"
     }
-  }
+  },
+  "overrides": [
+    {
+      "include": ["*.tsx", "*.jsx"],
+      "javascript": {
+        "formatter": {
+          "trailingCommas": "es5"
+        }
+      }
+    }
+  ]
 }

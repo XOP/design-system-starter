@@ -41,16 +41,18 @@ const indexPath = resolve(outputDir, 'index.ts');
           focusable: 'false',
         },
       },
-      { componentName }
+      { componentName },
     );
 
     await writeFile(resolve(outputDir, `${componentName}.tsx`), reactCode);
     console.log(`${componentName} icon generated`);
   }
 
-  const indexData = iconsList.map((iconName) => {
-    return `export { default as ${iconName} } from './${iconName}';`;
-  }).join('\n');
+  const indexData = iconsList
+    .map((iconName) => {
+      return `export { default as ${iconName} } from './${iconName}';`;
+    })
+    .join('\n');
 
   await writeFile(indexPath, indexData);
   console.log('ℹ️ index.ts generated');

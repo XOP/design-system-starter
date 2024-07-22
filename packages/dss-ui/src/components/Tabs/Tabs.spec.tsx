@@ -100,9 +100,7 @@ describe('Tabs', () => {
       </Tabs>
     );
 
-    expect(container.firstChild).toHaveClass(
-      tabsStyles({ color: 'neutral' })
-    );
+    expect(container.firstChild).toHaveClass(tabsStyles({ color: 'neutral' }));
   });
 
   it('should apply the styles according to props', () => {
