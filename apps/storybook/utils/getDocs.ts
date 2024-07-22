@@ -1,7 +1,7 @@
-import { readFileSync, existsSync } from 'fs';
+import { readFileSync, existsSync } from 'node:fs';
 
-import { StoryParams } from './types';
 import { STORYBOOK_BUILD } from './constants';
+import type { StoryParams } from './types';
 
 const rootPath = new URL('../', import.meta.url);
 const storybookPath = new URL(STORYBOOK_BUILD, rootPath);
@@ -31,7 +31,9 @@ export function getDocs() {
         return acc;
       }
 
-      return [...acc, cur];
+      acc.push(cur);
+
+      return acc;
     },
     [],
   );

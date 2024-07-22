@@ -1,4 +1,4 @@
-import * as Playwright from '@playwright/test';
+import type * as Playwright from '@playwright/test';
 
 /**
  * Loads storybook story in isolated mode

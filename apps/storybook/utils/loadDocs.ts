@@ -1,4 +1,4 @@
-import * as Playwright from '@playwright/test';
+import type * as Playwright from '@playwright/test';
 
 /**
  * Loads storybook docs in isolated mode
@@ -8,7 +8,7 @@ import * as Playwright from '@playwright/test';
 export async function loadDocs(
   page: Playwright.Page,
   id: string,
-  tag: string = 'overview',
+  tag = 'overview',
 ) {
   const fullId = id.includes(`--${tag}`) ? id : `${id}--${tag}`;
   const search = new URLSearchParams({ viewMode: 'docs', id: fullId });

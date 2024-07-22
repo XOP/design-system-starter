@@ -1,4 +1,4 @@
-import { join, dirname } from 'path';
+import { join, dirname } from 'node:path';
 import { mergeConfig } from 'vite';
 
 import type { StorybookConfig } from '@storybook/react-vite';
@@ -67,15 +67,15 @@ const config: StorybookConfig = {
             !/node_modules\/.pnpm\/(?!react-aria)/.test(prop.parent.fileName) &&
             !excludedProps.includes(prop.name)
           );
-        } else {
-          return false;
         }
+
+        return false;
       },
     },
   },
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// biome-ignore lint: *
 function getAbsolutePath(value: string): any {
   return dirname(require.resolve(join(value, 'package.json')));
 }

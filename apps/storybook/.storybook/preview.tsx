@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 
 import dedent from 'dedent';
 
@@ -59,27 +59,25 @@ const preview: Preview = {
         sourceState: 'shown',
       },
       source: {
-        transform: (code: string) => {
+        transform: (_: string) => {
           // emphasizing helper components in code
-          code = code.replace(/Demo\w+/g, (match) => `__${match}__`);
+          const code = _.replace(/Demo\w+/g, (match) => `__${match}__`);
 
           // cleaning up helper renders
           if (!code.includes('render: (')) {
             return code;
-          } else {
-            let _code = code;
-
-            // extracting from render:
-            const _parsed = code.match(
-              /(?<=render: \(\) => )<+(.|\n)+>+(?=,)?/,
-            );
-
-            if (_parsed && _parsed[0]) {
-              _code = _parsed[0];
-            }
-
-            return dedent(_code);
           }
+
+          let _code = code;
+
+          // extracting from render:
+          const _parsed = code.match(/(?<=render: \(\) => )<+(.|\n)+>+(?=,)?/);
+
+          if (_parsed?.[0]) {
+            _code = _parsed[0];
+          }
+
+          return dedent(_code);
         },
       },
 
