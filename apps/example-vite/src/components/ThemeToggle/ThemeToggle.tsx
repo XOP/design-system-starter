@@ -5,16 +5,16 @@ import Button from '@ds-starter/ui/components/Button/Button';
 const THEMES = ['dark', 'light'];
 const DEFAULT_THEME = 'dark';
 
+const getThemeName = (): string => {
+  return document.documentElement.dataset.theme || '';
+};
+
+const setTheme = (theme: string) => {
+  document.documentElement.dataset.theme = theme;
+};
+
 const ThemeToggle = () => {
   const [currentIndex, setCurrentIndex] = useState(-1);
-
-  const getThemeName = (): string => {
-    return document.documentElement.dataset.theme || '';
-  };
-
-  const setTheme = (theme: string) => {
-    document.documentElement.dataset.theme = theme;
-  };
 
   useEffect(() => {
     const currentTheme = getThemeName() || DEFAULT_THEME;

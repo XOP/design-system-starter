@@ -163,12 +163,6 @@ importers:
       '@vitejs/plugin-react-swc':
         specifier: ^3.5.0
         version: 3.5.0(@swc/helpers@0.5.3)(vite@5.2.7(@types/node@20.10.0))
-      eslint:
-        specifier: ^8.54.0
-        version: 8.54.0
-      eslint-config-ds-starter:
-        specifier: workspace:*
-        version: link:../../config/eslint-config-ds-starter
       typescript:
         specifier: ^5.4.3
         version: 5.4.3
@@ -245,12 +239,6 @@ importers:
       dedent:
         specifier: ^1.5.1
         version: 1.5.1
-      eslint:
-        specifier: ^8.54.0
-        version: 8.54.0
-      eslint-config-ds-starter:
-        specifier: workspace:*
-        version: link:../../config/eslint-config-ds-starter
       http-server:
         specifier: ^14.1.1
         version: 14.1.1

@@ -6,8 +6,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "lint": "eslint --ext .js,.cjs,.ts,.cts,.tsx src/",
-    "format": "biome format ./src *.html",
+    "lint": "biome lint",
+    "format": "biome format",
     "format:fix": "pnpm format --write",
     "dev": "vite",
     "build": "tsc && vite build",
@@ -32,8 +32,6 @@
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.23",
     "@vitejs/plugin-react-swc": "^3.5.0",
-    "eslint": "^8.54.0",
-    "eslint-config-ds-starter": "workspace:*",
     "typescript": "^5.4.3",
     "vite": "^5.2.7"
   }

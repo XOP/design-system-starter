@@ -8,7 +8,7 @@ import { loadEmittersPlugin } from '@tsparticles/plugin-emitters';
 import { loadEmittersShapeSquare } from '@tsparticles/plugin-emitters-shape-square';
 import { loadLifeUpdater } from '@tsparticles/updater-life';
 
-import { type ISourceOptions } from '@tsparticles/engine';
+import type { ISourceOptions } from '@tsparticles/engine';
 
 import styles from './space.module.css';
 
@@ -97,7 +97,7 @@ const Space = () => {
     return <Particles id="space" options={options} />;
   }
 
-  return <div className={styles.root}></div>;
+  return <div className={styles.root} />;
 };
 
 export default Space;
