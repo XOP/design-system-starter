@@ -4,7 +4,6 @@
 
 > See also: main [README](../../README.md)
 
-
 ## Overview
 
 Current example app is the simple demonstration of real-life usage of Design System parts.
@@ -17,7 +16,6 @@ It implements the following dependencies:
 and the following configs:
 - [@ds-starter/tsconfig](/config/tsconfig/)
 - [eslint-config-ds-starter](/config/eslint-config-ds-starter/)
-
 
 ## Technology 
 
@@ -35,27 +33,27 @@ Install the project and run the following commands from the `apps/example-vite-t
 
 Development:
 ```sh
-turbo dev
+pnpm dev
 ```
 
 Build:
 ```sh
-turbo build
+pnpm build
 ```
 
-ES Lint:
+Lint:
 ```sh
-turbo lint
+pnpm lint
 ```
 
-Note, that you can use `pnpm ...` command equivalents for the same operations if needed,  
-but keep in mind that app dependencies have to be built in advance for successful run.
-
-For example:
+Format:
 ```sh
-pnpm dev
+pnpm format
 ```
 
+> Note that local commands don't consider workspace dependencies - make sure to build everything in advance.  
+> Alternatively, add a command to the project root (i.e. `turbo run dev --filter=./apps/example-vite`) or use **global** `turbo` commands (i.e. `turbo dev`).  
+> Explore [turbo docs](https://turbo.build/repo/docs/crafting-your-repository/running-tasks#using-global-turbo) for more information.
 
 ## Extras
 

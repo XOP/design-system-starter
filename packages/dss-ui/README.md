@@ -73,7 +73,7 @@ Since development is powered by Storybook, there is no dev script in the project
 The most reliable way to launch dev setup is to run it from root:
 
 ```sh
-nx run storybook:dev
+pnpm run dev
 ```
 
 ### Adding a Component
@@ -94,19 +94,21 @@ Build:
 pnpm build
 ```
 
-ES Lint:
+Lint:
 
 ```sh
 pnpm lint
 ```
 
-To ensure all dependencies are incorporated you might want to run the storybook from the **project root**.
-
-For example, to build UI:
+Format:
 
 ```sh
-nx run @ds-starter/ui:build
+pnpm format
 ```
+
+> Note that local commands don't consider workspace dependencies - make sure to build everything in advance.  
+> Alternatively, use **global** `turbo` commands (i.e. `turbo dev`).  
+> Explore [turbo docs](https://turbo.build/repo/docs/crafting-your-repository/running-tasks#using-global-turbo) for more information.
 
 ## References
 

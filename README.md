@@ -3,9 +3,9 @@
 ## About
 
 Design System is the complex organizational entity, allowing for [multiple proven benefits but coming with several caveats](https://medium.com/@genedesign/design-systems-beyond-basics-unveiling-nuances-and-oversights-6c85807b1c26).  
-There are a couple of things that require consideration from development perspective - architecture and growth pace, both interconnected. It is very important to **start small**, and it's also very important to outline a future Design System early, preventing scalability and growth chaos.
+There are a couple of things that require consideration from development perspective - architecture and growth pace, both interconnected. It is very important to **start small**, and it's also very important to outline a future Design System early, preventing scalability impediments and spontaneous growth drawbacks.
 
-Current Template allows for **better technology shaping** from the start. There are some foundational modules, however it's not necessary to maintain all of them from the get go. Since you already know where the product is headed, you just need to plan and execute accordingly - start with required parts and add more when needed.
+**Design System Starter** (DSS for short) Template allows for **better technology shaping** from the start. There are some foundational modules, however it's not necessary to maintain all of them from the get go. Since you already know where the product is headed, you just need to plan and execute accordingly - start with required parts and add more when needed.
 
 
 ## Overview
@@ -42,7 +42,6 @@ Another staple of the DS Template is [Typescript](https://www.typescriptlang.org
 - [Vitest](https://vitest.dev/)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 - [Playwright](https://playwright.dev/)
-- [ESLint](https://eslint.org/)
 - [Biome](https://biomejs.dev/)
 
 Now let's dig deeper and explore the modules in detail.
@@ -75,10 +74,6 @@ Another secondary module, that is exactly what it's named after. Fonts distribut
 
 There are 2 essential configurations - `lib-js` and `lib-react`.  
 Easy to notice that the latter should be used when framework is utilized.
-
-### ESLint Config - [eslint-config-ds-starter](/config/eslint-config-ds-starter/package.json)
-
-ESLint config is composed with minimum amount of opinionated customizations, providing a solid template for further modifications.
 
 
 ## Apps
@@ -163,12 +158,9 @@ SVG processing is required for producing [icons package](/packages/dss-icons/scr
 
 ### Linting and formatting
 
-Biome and ESLint are working together.  
-Linting part is fully covered by ESLint, whereas formatting is done by Biome.
+Biome takes care of both linting and formatting at blazing speeds.  
+Main configuration is located at the [project root](/biome.json) and extended on the package level.
 
-> Note, so far `*.cts` format is not yet supported by Biome, hence it's excluded in the [configuration](/biome.json).
-
-- [ESLint](https://eslint.org/)
 - [Biome](https://biomejs.dev/)
 
 ### Cool stuff
@@ -176,8 +168,9 @@ Linting part is fully covered by ESLint, whereas formatting is done by Biome.
 - [polished](https://polished.js.org/)
 - [tsParticles](https://particles.js.org/)
 
-### Notable mentions
+### Color and Tokens
 
+- [Unicornix Color Themes](https://www.npmjs.com/package/unicornix)
 - [Design Tokens Generator](https://www.design-tokens.dev/)
 - [Tailwind Color Generator](https://uicolors.app/create)
 
@@ -235,17 +228,12 @@ pnpm test
 
 ### Linting and Formatting
 
-Linting is implemented with [ESLint](https://eslint.org/) and is using a custom config, located in one of the [configs](/config/eslint-config-ds-starter/).
+Both linting and formatting commands follow [Biome CLI](https://biomejs.dev/reference/cli/) without any customizations.
 
 Lint everything:
 ```sh
 pnpm lint
 ```
-
-### Formatting
-
-Formatting is implemented with [Biome](https://biomejs.dev/) and is very minimal by default.  
-Config can be found in the [root of the project](/biome.json).
 
 Format everything:
 ```sh
@@ -286,4 +274,6 @@ pnpm change:publish
 ```
 
 
-## [LICENSE](./LICENSE)
+## License
+
+This project is licensed under the [MIT License](./LICENSE)

@@ -85,24 +85,14 @@ const AccentDiv = () => (
 After any tokens changes simply run build command:
 
 ```sh
-turbo build
+pnpm build
 ```
 
 If you want to preview changes without compilation, run generation script:
 
 ```sh
-turbo gen
+pnpm gen
 ```
-
-Equally, `pnpm ...` command would yield the same results, i.e.:
-
-```sh
-pnpm build
-```
-
-> All tokens are JS-first. Source values are located in `src/lib/tokens/*.ts` files.  
-> Generation script takes care of CSS variables and references generation.
-> Additional customization variables can be found in `scripts/utils/constants.ts`.
 
 ## References
 

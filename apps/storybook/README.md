@@ -1,11 +1,8 @@
-.storybook/ tests/ utils/
-
 # Storybook @ Design System Starter Template
 
 > [https://ds-starter-storybook.vercel.app/](https://ds-starter-storybook.vercel.app/)
 
 > See also: main [README](../../README.md)
-
 
 ## Overview
 
@@ -19,7 +16,6 @@ consolidating UI library components exposition along with installation and usage
 > However if you need or intend to use Storybook 7 (not 6 or earlier!) most of the settings will be the same.  
 > The biggest difference will be in the [VRT configuration](#visual-regression-testing) due to `index.json` (`stories.json`) schema difference.
 
-
 ## Organization
 
 There are several approaches to Storybook organization and usage, also within monorepo.  
@@ -29,7 +25,6 @@ Practically, Storybook project does not contain a single story, but imports and 
 Configuration fetches stories from everything that needs visual documentation -  
 `dss-fonts`, `dss-icons`, `dss-tokens` and `dss-ui`.
 This of course can be modified and extended as needed - see [configuration](./.storybook/main.ts).  
-
 
 ## Configuration
 
@@ -55,7 +50,6 @@ they are imported in the [preview.tsx](./.storybook/preview.tsx).
 
 Extra properties ([excludedProps](./.storybook/config//excludedProps.ts)) can be tuned and hidden on the Overview page,  
 those are used by the [main.ts](./.storybook/main.ts) in the `propFilter` function.
-
 
 ## Visual regression testing
 
@@ -93,7 +87,6 @@ Finally, you can completely replace the overall testing with atomic tests config
 `loadDocs` on the contrary takes a screenshot of the Overview page. It saves a lot of time and bandwidth,  
 however it's prone to false positives related to micro layout shifts. Imagine there are 20 component variants and something goes wrong with the first one so all other 19 are affected as well.
 
-
 ## Usage
 
 Development and build operations are standard and straightforward.  
@@ -101,17 +94,22 @@ Install the project and run the following commands from the `apps/storybook` pat
 
 Development:
 ```sh
-turbo dev
+pnpm dev
 ```
 
 Build:
 ```sh
-turbo build
+pnpm build
 ```
 
-ES Lint:
+Lint:
 ```sh
-turbo lint
+pnpm lint
+```
+
+Format:
+```sh
+pnpm format
 ```
 
 Preview:
@@ -129,14 +127,9 @@ Update VRT snapshots:
 pnpm test:update
 ```
 
-Note, that you can use `pnpm ...` instead of `turbo ...` in respective commands if needed,  
-but keep in mind that app dependencies have to be built in advance for successful run.
-
-For example:
-```sh
-pnpm dev
-```
-
+> Note that local commands don't consider workspace dependencies - make sure to build everything in advance.  
+> Alternatively, run project from the root (`pnpm dev`) or use **global** `turbo` commands (i.e. `turbo dev`).  
+> Explore [turbo docs](https://turbo.build/repo/docs/crafting-your-repository/running-tasks#using-global-turbo) for more information.
 
 ## References
 

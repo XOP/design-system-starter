@@ -56,12 +56,6 @@ Place an SVG file in `/svg` folder and build the project.
 pnpm build
 ```
 
-or
-
-```sh
-turbo build
-```
-
 That's it!
 
 Two processes happen during this process.  
@@ -69,6 +63,10 @@ First - generation script is processing SVG files and generates new Icon compone
 Then - build process takes care of bundling and typings.
 
 Generation is based on [SVGR](https://react-svgr.com/), that you can refer to further documentation and examples.
+
+> Note that local commands don't consider workspace dependencies - make sure to build everything in advance.  
+> Alternatively, use **global** `turbo` commands (i.e. `turbo dev`).  
+> Explore [turbo docs](https://turbo.build/repo/docs/crafting-your-repository/running-tasks#using-global-turbo) for more information.
 
 ## References
 

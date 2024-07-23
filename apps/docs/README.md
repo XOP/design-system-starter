@@ -4,7 +4,6 @@
 
 > See also: main [README](../../README.md)
 
-
 ## Mission
 
 Documentation is essential to solid Design System architecture.  
@@ -14,7 +13,6 @@ However further Storybook and Figma start to lack presentation, whereas it's imp
 Documentation website can help solve this and other problems.  
 For one - it becomes a gateway to more specific documentation (design, development).  
 What's more - user-friendly markdown format allows to easily add, format and organize new documents.
-
 
 ## Overview
 
@@ -38,7 +36,6 @@ Icons are a crucial part of any design system or product experience.
 ```
 
 File will be discovered by Astro during development or build stage and appear in the sidebar navigation.
-
 
 ### Components
 
@@ -74,7 +71,6 @@ group: 'Form'
 
 In this case `title` is the component's page heading, `page` is the organization attribute for component sub-navigation and `group` refers to the component's categorization. Both pages names and components categories are defined in the [globals](/apps/docs/src/shared/globals.ts) file.
 
-
 ### Adding Documentation
 
 Adding a component manually to the docs can be tedious.  
@@ -83,7 +79,6 @@ One option is to copy-paste an example and modify as needed.
 However there's a better way involving code generation.  
 Find full description in the main [README](../../README.md).
 
-
 ## Usage
 
 Development and build operations are standard and straightforward.  
@@ -91,27 +86,27 @@ Install the project and run the following commands from the `apps/docs` path.
 
 Development:
 ```sh
-turbo dev
+pnpm dev
 ```
 
 Build:
 ```sh
-turbo build
+pnpm build
 ```
 
-ES Lint:
+Lint:
 ```sh
-turbo lint
+pnpm lint
 ```
 
-Note, that you can use `pnpm ...` command equivalents for the same operations if needed,  
-but keep in mind that app dependencies have to be built in advance for successful run.
-
-For example:
+Format:
 ```sh
-pnpm dev
+pnpm format
 ```
 
+> Note that local commands don't consider workspace dependencies - make sure to build everything in advance.  
+> Alternatively, add a command to the project root (i.e. `turbo run dev --filter=./apps/docs`) or use **global** `turbo` commands (i.e. `turbo dev`).  
+> Explore [turbo docs](https://turbo.build/repo/docs/crafting-your-repository/running-tasks#using-global-turbo) for more information.
 
 ## Extras
 

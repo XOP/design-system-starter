@@ -57,20 +57,24 @@ interface FontsProps {
 To build the package run the standard command:
 
 ```sh
-turbo build
-```
-
-For ES lint:
-
-```sh
-turbo lint
-```
-
-Equally, `pnpm ...` command would yield the same results, i.e.:
-
-```sh
 pnpm build
 ```
+
+Lint:
+
+```sh
+pnpm lint
+```
+
+Format:
+
+```sh
+pnpm format
+```
+
+> Note that local commands don't consider workspace dependencies - make sure to build everything in advance.  
+> Alternatively, use **global** `turbo` commands (i.e. `turbo dev`).  
+> Explore [turbo docs](https://turbo.build/repo/docs/crafting-your-repository/running-tasks#using-global-turbo) for more information.
 
 ## References
 
