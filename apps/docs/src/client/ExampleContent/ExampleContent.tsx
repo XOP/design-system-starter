@@ -22,8 +22,8 @@ const ExampleContent = (props: ExampleContentProps) => {
   if (isLoading) {
     return (
       <div className={styles.loading}>
-        <span className={styles.loading_body}></span>
-        <span className={styles.loading_actions}></span>
+        <span className={styles.loading_body} />
+        <span className={styles.loading_actions} />
       </div>
     );
   }
@@ -34,7 +34,8 @@ const ExampleContent = (props: ExampleContentProps) => {
   const { component: AnyComponent } = struct;
   const Component = AnyComponent as JSX.ElementType;
 
-  let Variant;
+  // biome-ignore lint: *
+  let Variant: any;
 
   if (data.render) {
     if (data.args) {

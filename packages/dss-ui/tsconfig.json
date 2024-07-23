@@ -9,7 +9,7 @@
   ],
   "references": [
     {
-      "path": "../../config/tsconfig/vite.json"
+      "path": "../../tsconfig/vite.json"
     }
   ],
   "compilerOptions": {

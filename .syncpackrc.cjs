@@ -6,7 +6,7 @@ module.exports = {
     {
       label: 'Pin local config packages to any version (*)',
       packages: ['**'],
-      dependencies: ['@ds-starter/tsconfig', 'eslint-config-ds-starter'],
+      dependencies: ['@ds-starter/tsconfig'],
       dependencyTypes: ['dev'],
       pinVersion: 'workspace:*',
     },

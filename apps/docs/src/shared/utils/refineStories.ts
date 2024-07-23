@@ -1,7 +1,8 @@
 import { includeKeys, excludeKeys } from 'filter-obj';
 
 import { DEFAULT, EXAMPLE_SORT_KEYS } from '../globals';
-import { type Stories, type Story } from '../types';
+
+import type { Stories, Story } from '../types';
 
 /**
  * refineStories

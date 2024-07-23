@@ -7,8 +7,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "lint": "eslint --ext .js,.cjs,.ts,.cts,.tsx src/",
-    "format": "biome format ./src",
+    "lint": "biome lint",
+    "format": "biome format",
     "format:fix": "pnpm format --write",
     "dev": "astro dev",
     "build": "astro build"
@@ -36,8 +36,6 @@
     "@types/react-dom": "^18.2.23",
     "@vanilla-extract/css": "^1.14.2",
     "@vanilla-extract/vite-plugin": "^4.0.7",
-    "eslint": "^8.54.0",
-    "eslint-config-ds-starter": "workspace:*",
     "typescript": "^5.4.3"
   }
 }

@@ -9,6 +9,8 @@ import Examples from '../../components/Examples.astro';
 import { getCollectionName } from '../../shared/utils';
 import { refineStories } from '../../shared/utils/refineStories';
 
+import type { Stories, StoriesCollection } from '../../shared/types';
+
 export const COLLECTION = 'components';
 
 export async function getStaticPaths() {
@@ -39,7 +41,8 @@ const navEntries = componentEntries.map((item) => {
 
 const showExamples = entry.slug.split('/').length === 1;
 
-let stories, examplesData;
+let stories: Stories;
+let examplesData: StoriesCollection = [];
 
 if (showExamples) {
   stories = await import(

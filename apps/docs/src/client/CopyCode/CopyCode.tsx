@@ -26,7 +26,7 @@ const CopyCode = (props: CopyCodeProps) => {
       console.error('Clipboard Error', e);
     }
 
-    onClick && onClick(data);
+    onClick?.(data);
   };
 
   return (

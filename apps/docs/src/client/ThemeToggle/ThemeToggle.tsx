@@ -18,12 +18,13 @@ const ThemeToggle = ({ className }: ThemeToggleProps) => {
       $currentTheme === COLOR_THEME.dark ? COLOR_THEME.light : COLOR_THEME.dark;
 
     changeColorTheme(nextTheme);
-    document.documentElement.dataset['theme'] = nextTheme;
+    document.documentElement.dataset.theme = nextTheme;
   };
 
   return (
     <div className={clsx(styles.root, className)}>
       <button
+        type="button"
         className={styles.button}
         onClick={handleToggle}
         title="Change theme"

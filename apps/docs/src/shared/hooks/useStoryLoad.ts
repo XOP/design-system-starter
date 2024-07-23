@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { setExampleState } from '../../store/store';
 import { EXAMPLE_STATE } from '../../shared/globals';
 
-import { type ComponentStruct, type Story } from '../types';
+import type { ComponentStruct, Story } from '../types';
 
 export const useStoryLoad = (
   name: string,
@@ -34,7 +34,7 @@ export const useStoryLoad = (
     }
 
     load();
-  }, []);
+  }, [name, componentDir, componentName]);
 
   return [struct, data, isLoading];
 };
