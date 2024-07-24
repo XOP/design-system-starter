@@ -34,8 +34,8 @@
     "@astrojs/react": "^3.6.0",
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.23",
-    "@vanilla-extract/css": "^1.14.2",
-    "@vanilla-extract/vite-plugin": "^4.0.7",
+    "@vanilla-extract/css": "^1.15.3",
+    "@vanilla-extract/vite-plugin": "4.0.10",
     "typescript": "^5.5.4"
   }
 }

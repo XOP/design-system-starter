@@ -36,10 +36,10 @@
     "@ds-starter/tsconfig": "workspace:*",
     "@storybook/blocks": "^8.2.4",
     "@types/react": "^18.2.74",
-    "@vanilla-extract/css": "^1.14.2",
+    "@vanilla-extract/css": "^1.15.3",
     "polished": "^4.2.2",
     "typescript": "^5.5.4",
-    "vite": "^5.2.7"
+    "vite": "^5.3.4"
   },
   "dependencies": {
     "unicornix": "0.6.0-beta.0"

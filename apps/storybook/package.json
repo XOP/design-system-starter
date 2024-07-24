@@ -39,12 +39,12 @@
     "@types/node": "^20",
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.23",
-    "@vanilla-extract/css": "^1.14.2",
-    "@vanilla-extract/vite-plugin": "^4.0.7",
+    "@vanilla-extract/css": "^1.15.3",
+    "@vanilla-extract/vite-plugin": "4.0.10",
     "dedent": "^1.5.1",
     "http-server": "^14.1.1",
     "storybook": "^8.2.4",
     "typescript": "^5.5.4",
-    "vite": "^5.2.7"
+    "vite": "^5.3.4"
   }
 }
