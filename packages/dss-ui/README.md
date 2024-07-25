@@ -1,4 +1,4 @@
-# UI @ Design System Starter Template
+# DSS UI @ Design System Starter Template
 
 ## Overview
 
