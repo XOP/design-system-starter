@@ -3,7 +3,6 @@
   "version": "0.0.3",
   "author": "Evgeny Khoroshilov (https://github.com/XOP)",
   "license": "MIT",
-  "private": true,
   "type": "module",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",

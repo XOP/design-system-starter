@@ -15,7 +15,7 @@
     "test:vrt": "npx playwright test visualRegression",
     "test:vrt:update": "npx playwright test --update-snapshots",
     "test:a11y": "npx playwright test accessibility",
-    "test": "pnpm test:a11y && test:vrt"
+    "test": "pnpm test:a11y && pnpm test:vrt"
   },
   "dependencies": {
     "@ds-starter/fonts": "workspace:*",

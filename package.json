@@ -13,14 +13,13 @@
     "syncpack:list": "syncpack list-mismatches",
     "change:gen": "changeset add",
     "change:version": "changeset version",
-    "change:publish": "changeset publish",
     "dev": "turbo run dev --filter=./apps/storybook",
     "test": "turbo test",
     "build": "pnpm build:pck && pnpm build:doc && pnpm build:app",
     "build:pck": "turbo run build --filter=./packages/*",
     "build:doc": "turbo run build --filter=./apps/storybook --filter=./apps/docs",
     "build:app": "turbo run build --filter=./apps/example-*",
-    "release": "pnpm change:publish"
+    "release": "pnpm publish -r"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
