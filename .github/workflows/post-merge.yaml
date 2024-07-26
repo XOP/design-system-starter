@@ -6,33 +6,21 @@ on:
 
 jobs:
   quality_control:
-    name: Quality-Control
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
+    name: Quality-Check
+    uses: ./.github/workflows/quality-check.yaml
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+  visual_testing:
+    name: Visual-Testing
+    uses: ./.github/workflows/visual-testing.yaml
 
-      - name: Quality-Check
-        uses: ./.github/workflows/quality-check.yaml
-
-      - name: Visual-Testing
-        uses: ./.github/workflows/visual-testing.yaml
-
-  deploy_dev:
-    name: Deploy-Dev
-    timeout-minutes: 30
-    runs-on: ubuntu-latest
+  deploy_docs_dev:
+    name: Deploy-Docs-Dev
     needs: [quality_control]
     if: ${{ needs.quality_control.result == 'success' }}
+    uses: ./.github/workflows/deploy-docs-dev.yaml
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Deploy-Docs-Dev
-        uses: ./.github/workflows/deploy-docs-dev.yaml
-
-      - name: Deploy-Apps-Dev
-        uses: ./.github/workflows/deploy-apps-dev.yaml
+  deploy_apps_dev:
+    name: Deploy-Apps-Dev
+    needs: [quality_control]
+    if: ${{ needs.quality_control.result == 'success' }}
+    uses: ./.github/workflows/deploy-apps-dev.yaml

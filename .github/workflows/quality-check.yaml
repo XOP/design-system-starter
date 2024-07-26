@@ -21,12 +21,16 @@ jobs:
 
       - name: Lint
         run: pnpm lint
+        shell: bash
 
       - name: Format Check
         run: pnpm format:check
+        shell: bash
 
       - name: Build
         run: pnpm build
+        shell: bash
 
       - name: Test - UI Library
         run: pnpm --filter "@ds-starter/ui" test
+        shell: bash

@@ -1,6 +1,7 @@
 # Setup
 # installs pnpm and dependencies
 
+name: pnpm and Node setup
 runs:
   using: 'composite'
   steps:
@@ -15,4 +16,5 @@ runs:
         cache: 'pnpm'
 
     - name: Install dependencies
+      shell: bash
       run: pnpm install

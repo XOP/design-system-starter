@@ -1,6 +1,7 @@
 # Printout
 # prints inputs
 
+name: Printout
 runs:
   using: 'composite'
   steps:
