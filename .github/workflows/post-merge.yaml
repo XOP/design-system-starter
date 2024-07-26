@@ -16,11 +16,15 @@ jobs:
   deploy_docs_dev:
     name: Deploy-Docs-Dev
     needs: [quality_control]
+    # extra control for dev deployment can be achieved
+    # needs: [quality_control, visual_testing]
     if: ${{ needs.quality_control.result == 'success' }}
     uses: ./.github/workflows/deploy-docs-dev.yaml
 
   deploy_apps_dev:
     name: Deploy-Apps-Dev
     needs: [quality_control]
+    # extra control for dev deployment can be achieved
+    # needs: [quality_control, visual_testing]
     if: ${{ needs.quality_control.result == 'success' }}
     uses: ./.github/workflows/deploy-apps-dev.yaml

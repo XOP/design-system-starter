@@ -40,12 +40,4 @@ jobs:
 
   deploy_prod:
     name: Deploy-Prod
-    timeout-minutes: 30
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Deploy-Docs-Prod
-        uses: ./.github/workflows/deploy-docs-prod.yaml
+    uses: ./.github/workflows/deploy-docs-prod.yaml

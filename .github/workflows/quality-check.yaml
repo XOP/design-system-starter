@@ -24,7 +24,7 @@ jobs:
         shell: bash
 
       - name: Format Check
-        run: pnpm format:check
+        run: pnpm format
         shell: bash
 
       - name: Build
