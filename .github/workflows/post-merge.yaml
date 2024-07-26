@@ -13,26 +13,22 @@ jobs:
   #   name: Visual-Testing
   #   uses: ./.github/workflows/visual-testing.yaml
 
-  debug:
-    runs-on: ubuntu-latest
-    needs: [quality_control]
-    steps:
-      - name: Print Result
-        run: |
-          echo "result: ${{ needs.quality_control.result }}"
-
   deploy_docs_dev:
     name: Deploy-Docs-Dev
-    needs: [quality_control]
     # extra control for dev deployment can be achieved
     # needs: [quality_control, visual_testing]
-    if: ${{ needs.quality_control.result == 'success' }}
+    needs: [quality_control]
+    # this can be fine-tuned when issue is resolved
+    # https://github.com/actions/runner/issues/2205
+    # if: ${{ needs.quality_control.result == 'success' }}
     uses: ./.github/workflows/deploy-docs-dev.yaml
 
   deploy_apps_dev:
     name: Deploy-Apps-Dev
-    needs: [quality_control]
     # extra control for dev deployment can be achieved
     # needs: [quality_control, visual_testing]
-    if: ${{ needs.quality_control.result == 'success' }}
+    needs: [quality_control]
+    # this can be fine-tuned when issue is resolved
+    # https://github.com/actions/runner/issues/2205
+    # if: ${{ needs.quality_control.result == 'success' }}
     uses: ./.github/workflows/deploy-apps-dev.yaml
