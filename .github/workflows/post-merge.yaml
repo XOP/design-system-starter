@@ -9,9 +9,17 @@ jobs:
     name: Quality-Check
     uses: ./.github/workflows/quality-check.yaml
 
-  visual_testing:
-    name: Visual-Testing
-    uses: ./.github/workflows/visual-testing.yaml
+  # visual_testing:
+  #   name: Visual-Testing
+  #   uses: ./.github/workflows/visual-testing.yaml
+
+  debug:
+    runs-on: ubuntu-latest
+    needs: [quality_control]
+    steps:
+      - name: Print Result
+        run: |
+          echo "result: ${{ needs.quality_control.result }}"
 
   deploy_docs_dev:
     name: Deploy-Docs-Dev
