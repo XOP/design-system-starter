@@ -17,18 +17,23 @@ jobs:
     name: Deploy-Docs-Dev
     # extra control for dev deployment can be achieved
     # needs: [quality_control, visual_testing]
-    needs: [quality_control]
+    needs: quality_control
     # this can be fine-tuned when issue is resolved
     # https://github.com/actions/runner/issues/2205
     # if: ${{ needs.quality_control.result == 'success' }}
     uses: ./.github/workflows/deploy-docs-dev.yaml
+    with:
+      deploy_docs: true
+      deploy_storybook: true
 
   deploy_apps_dev:
     name: Deploy-Apps-Dev
     # extra control for dev deployment can be achieved
     # needs: [quality_control, visual_testing]
-    needs: [quality_control]
+    needs: quality_control
     # this can be fine-tuned when issue is resolved
     # https://github.com/actions/runner/issues/2205
     # if: ${{ needs.quality_control.result == 'success' }}
     uses: ./.github/workflows/deploy-apps-dev.yaml
+    with:
+      deploy_example_vite: true
