@@ -12,34 +12,42 @@ inputs:
 
 runs:
   using: 'composite'
+
   steps:
     - name: Build App
       run: pnpm build:doc
+      shell: bash
 
     - name: Install Vercel CLI
       run: pnpm add --global vercel@latest
+      shell: bash
 
     - name: Pull Vercel Environment
       working-directory: ./apps/docs
       run: vercel pull --yes --environment=preview --token=${{ inputs.vercel_token }}
+      shell: bash
 
     - name: Vercel Build Dev
       if: ${{ inputs.mode == 'dev' }}
       working-directory: ./apps/docs
       run: vercel build --token=${{ inputs.vercel_token }}
+      shell: bash
 
     - name: Vercel Deploy Dev
       if: ${{ inputs.mode == 'dev' }}
       working-directory: ./apps/docs
       run: vercel deploy --prebuilt --token=${{ inputs.vercel_token }}
+      shell: bash
 
     - name: Vercel Build Prod
       if: ${{ inputs.mode == 'prod' }}
       working-directory: ./apps/docs
       run: vercel build --token=${{ inputs.vercel_token }}
+      shell: bash
 
     - name: Vercel Deploy Prod
       if: ${{ inputs.mode == 'prod' }}
       working-directory: ./apps/docs
       run: vercel deploy --prod --prebuilt --token=${{ inputs.vercel_token }}
+      shell: bash
     
