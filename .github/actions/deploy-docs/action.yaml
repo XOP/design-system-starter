@@ -1,0 +1,45 @@
+# Deploy Docs
+# deploys documentation in dev and prod modes
+
+name: Deploy Docs
+inputs:
+  vercel_token:
+    required: true
+
+  mode:
+    required: false
+    default: 'dev'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Build App
+      run: pnpm build:doc
+
+    - name: Install Vercel CLI
+      run: pnpm add --global vercel@latest
+
+    - name: Pull Vercel Environment
+      working-directory: ./apps/docs
+      run: vercel pull --yes --environment=preview --token=${{ inputs.vercel_token }}
+
+    - name: Vercel Build Dev
+      if: ${{ inputs.mode == 'dev' }}
+      working-directory: ./apps/docs
+      run: vercel build --token=${{ inputs.vercel_token }}
+
+    - name: Vercel Deploy Dev
+      if: ${{ inputs.mode == 'dev' }}
+      working-directory: ./apps/docs
+      run: vercel deploy --prebuilt --token=${{ inputs.vercel_token }}
+
+    - name: Vercel Build Prod
+      if: ${{ inputs.mode == 'prod' }}
+      working-directory: ./apps/docs
+      run: vercel build --token=${{ inputs.vercel_token }}
+
+    - name: Vercel Deploy Prod
+      if: ${{ inputs.mode == 'prod' }}
+      working-directory: ./apps/docs
+      run: vercel deploy --prod --prebuilt --token=${{ inputs.vercel_token }}
+    

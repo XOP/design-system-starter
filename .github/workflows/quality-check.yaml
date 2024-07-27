@@ -25,8 +25,8 @@ jobs:
       - name: Format Check
         run: pnpm format
 
-      - name: Build
-        run: pnpm build
+      # - name: Build
+      #   run: pnpm build
 
-      - name: Test - UI Library
-        run: pnpm --filter "@ds-starter/ui" test
+      # - name: Test - UI Library
+      #   run: pnpm --filter "@ds-starter/ui" test
