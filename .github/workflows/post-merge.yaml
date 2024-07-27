@@ -39,3 +39,4 @@ jobs:
         with:
           mode: 'dev'
           vercel_token: ${{ secrets.VERCEL_TOKEN }}
+          app_dir: ./apps/docs

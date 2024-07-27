@@ -1,12 +1,9 @@
-# Deploy Docs
-# deploys documentation in dev and prod modes
+# Deploy Apps
+# deploys applications in dev and prod modes
 
-name: Deploy Docs
+name: Deploy Apps
 inputs:
   vercel_token:
-    required: true
-
-  app_dir:
     required: true
 
   mode:
@@ -18,7 +15,7 @@ runs:
 
   steps:
     - name: Build App
-      run: pnpm build:doc
+      run: pnpm build:app
       shell: bash
 
     - name: Install Vercel CLI
@@ -26,31 +23,30 @@ runs:
       shell: bash
 
     - name: Pull Vercel Environment
-      working-directory: ${{ inputs.app_dir }}
+      working-directory: ./apps/example-vite
       run: vercel pull --yes --environment=preview --token=${{ inputs.vercel_token }}
       shell: bash
 
     - name: Vercel Build DEV
       if: ${{ inputs.mode == 'dev' }}
-      working-directory: ${{ inputs.app_dir }}
+      working-directory: ./apps/example-vite
       run: vercel build --token=${{ inputs.vercel_token }}
       shell: bash
 
     - name: Vercel Deploy DEV
       if: ${{ inputs.mode == 'dev' }}
-      working-directory: ${{ inputs.app_dir }}
+      working-directory: ./apps/example-vite
       run: vercel deploy --prebuilt --token=${{ inputs.vercel_token }}
       shell: bash
-
+      
     - name: Vercel Build PROD
       if: ${{ inputs.mode == 'prod' }}
-      working-directory: ${{ inputs.app_dir }}
+      working-directory: ./apps/example-vite
       run: vercel build --prod --token=${{ inputs.vercel_token }}
       shell: bash
 
     - name: Vercel Deploy PROD
       if: ${{ inputs.mode == 'prod' }}
-      working-directory: ${{ inputs.app_dir }}
+      working-directory: ./apps/example-vite
       run: vercel deploy --prebuilt --prod --token=${{ inputs.vercel_token }}
       shell: bash
-    
