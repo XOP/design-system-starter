@@ -1,5 +1,8 @@
 name: Post-Merge
 
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+
 on:
   push:
     branches: [main]
@@ -15,25 +18,24 @@ jobs:
 
   deploy_docs_dev:
     name: Deploy-Docs-Dev
-    # extra control for dev deployment can be achieved
-    # needs: [quality_control, visual_testing]
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
     needs: quality_control
-    # this can be fine-tuned when issue is resolved
-    # https://github.com/actions/runner/issues/2205
-    # if: ${{ needs.quality_control.result == 'success' }}
-    uses: ./.github/workflows/deploy-docs-dev.yaml
-    with:
-      deploy_docs: true
-      deploy_storybook: true
+    env:
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_DOCS_ID }}
 
-  deploy_apps_dev:
-    name: Deploy-Apps-Dev
-    # extra control for dev deployment can be achieved
-    # needs: [quality_control, visual_testing]
-    needs: quality_control
-    # this can be fine-tuned when issue is resolved
-    # https://github.com/actions/runner/issues/2205
-    # if: ${{ needs.quality_control.result == 'success' }}
-    uses: ./.github/workflows/deploy-apps-dev.yaml
-    with:
-      deploy_example_vite: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Printout
+        uses: ./.github/actions/printout
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Deploy
+        uses: ./.github/actions/deploy-docs
+        with:
+          mode: 'dev'
+          vercel_token: ${{ secrets.VERCEL_TOKEN }}
