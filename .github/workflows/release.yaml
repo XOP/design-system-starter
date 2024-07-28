@@ -4,8 +4,10 @@ on:
   push:
     paths:
       - '.changeset/**'
-      - 'packages/**'
     branches: [main]
+
+  # debug
+  workflow_call:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -33,7 +35,6 @@ jobs:
           publish: pnpm release
           commit: 'chore: release packages'
           title: 'chore: release packages'
-          setupGitUser: false
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
