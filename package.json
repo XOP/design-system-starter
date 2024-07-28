@@ -19,7 +19,7 @@
     "build:pck": "turbo run build --filter=./packages/*",
     "build:doc": "turbo run build --filter=./apps/storybook --filter=./apps/docs",
     "build:app": "turbo run build --filter=./apps/example-*",
-    "release": "pnpm publish -r"
+    "release": "pnpm -r publish --access public --filter \"./packages/**\" --filter \"./tsconfig\""
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",

@@ -2,6 +2,5 @@
   "name": "@ds-starter/tsconfig",
   "version": "0.1.0",
   "author": "Evgeny Khoroshilov (https://github.com/XOP)",
-  "license": "MIT",
-  "private": true
+  "license": "MIT"
 }
