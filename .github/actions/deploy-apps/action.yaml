@@ -6,6 +6,9 @@ inputs:
   vercel_token:
     required: true
 
+  app_dir:
+    required: true
+
   mode:
     required: false
     default: 'dev'
@@ -23,30 +26,30 @@ runs:
       shell: bash
 
     - name: Pull Vercel Environment
-      working-directory: ./apps/example-vite
+      working-directory: ${{ inputs.app_dir }}
       run: vercel pull --yes --environment=preview --token=${{ inputs.vercel_token }}
       shell: bash
 
     - name: Vercel Build DEV
       if: ${{ inputs.mode == 'dev' }}
-      working-directory: ./apps/example-vite
+      working-directory: ${{ inputs.app_dir }}
       run: vercel build --token=${{ inputs.vercel_token }}
       shell: bash
 
     - name: Vercel Deploy DEV
       if: ${{ inputs.mode == 'dev' }}
-      working-directory: ./apps/example-vite
+      working-directory: ${{ inputs.app_dir }}
       run: vercel deploy --prebuilt --token=${{ inputs.vercel_token }}
       shell: bash
       
     - name: Vercel Build PROD
       if: ${{ inputs.mode == 'prod' }}
-      working-directory: ./apps/example-vite
+      working-directory: ${{ inputs.app_dir }}
       run: vercel build --prod --token=${{ inputs.vercel_token }}
       shell: bash
 
     - name: Vercel Deploy PROD
       if: ${{ inputs.mode == 'prod' }}
-      working-directory: ./apps/example-vite
+      working-directory: ${{ inputs.app_dir }}
       run: vercel deploy --prebuilt --prod --token=${{ inputs.vercel_token }}
       shell: bash

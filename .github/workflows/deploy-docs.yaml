@@ -1,10 +1,16 @@
-name: Deploy Docs Dev
+name: Deploy Docs
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
+      deploy_mode:
+        description: 'Mode'
+        type: choice
+        options: ['dev', 'prod']
+        required: false
+        default: 'dev'
       deploy_docs:
         description: 'Documentation'
         type: boolean
@@ -16,8 +22,13 @@ on:
         required: false
         default: true
 
-  workflow_dispatch:
+  workflow_call:
     inputs:
+      deploy_mode:
+        description: 'Mode'
+        type: string
+        required: false
+        default: 'dev'
       deploy_docs:
         description: 'Documentation'
         type: boolean
@@ -32,7 +43,7 @@ on:
 jobs:
   deploy_docs:
     if: ${{ github.event.inputs.deploy_docs == 'true' }}
-    name: Deploy-Docs-Dev
+    name: Deploy-Docs
     timeout-minutes: 30
     runs-on: ubuntu-latest
     env:
@@ -48,28 +59,17 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
 
-      - name: Build App
-        run: pnpm build:doc
-
-      - name: Install Vercel CLI
-        run: pnpm add --global vercel@latest
-
-      - name: Pull Vercel Environment
-        working-directory: ./apps/docs
-        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Vercel Build
-        working-directory: ./apps/docs
-        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Vercel Deploy
-        working-directory: ./apps/docs
-        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Deploy
+        uses: ./.github/actions/deploy-docs
+        with:
+          mode: ${{ github.event.inputs.deploy_mode }}
+          vercel_token: ${{ secrets.VERCEL_TOKEN }}
+          app_dir: ./apps/docs
 
   deploy_storybook:
     if: ${{ github.event.inputs.deploy_storybook == 'true' }}
-    name: Deploy-Storybook-Dev
-    timeout-minutes: 20
+    name: Deploy-Storybook
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     env:
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_STORYBOOK_ID }}
@@ -84,20 +84,9 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
 
-      - name: Build App
-        run: pnpm build:doc
-
-      - name: Install Vercel CLI
-        run: pnpm add --global vercel@latest
-
-      - name: Pull Vercel Environment
-        working-directory: ./apps/storybook
-        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Vercel Build
-        working-directory: ./apps/storybook
-        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Vercel Deploy
-        working-directory: ./apps/storybook
-        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Deploy
+        uses: ./.github/actions/deploy-docs
+        with:
+          mode: ${{ github.event.inputs.deploy_mode }}
+          vercel_token: ${{ secrets.VERCEL_TOKEN }}
+          app_dir: ./apps/storybook

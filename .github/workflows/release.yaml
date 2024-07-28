@@ -38,6 +38,8 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  deploy_prod:
-    name: Deploy-Prod
-    uses: ./.github/workflows/deploy-docs-prod.yaml
+  deploy_docs_prod:
+    name: Deploy-Docs-Prod
+    uses: ./.github/workflows/deploy-docs.yaml
+    with:
+      deploy_mode: 'prod'

@@ -40,3 +40,53 @@ jobs:
           mode: 'dev'
           vercel_token: ${{ secrets.VERCEL_TOKEN }}
           app_dir: ./apps/docs
+
+  deploy_storybook_dev:
+    name: Deploy-Storybook-Dev
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    needs: quality_control
+    env:
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_STORYBOOK_ID }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Printout
+        uses: ./.github/actions/printout
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Deploy
+        uses: ./.github/actions/deploy-docs
+        with:
+          mode: 'dev'
+          vercel_token: ${{ secrets.VERCEL_TOKEN }}
+          app_dir: ./apps/storybook
+
+  deploy_example_vite_dev:
+    name: Deploy-Example-Vite-Dev
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    needs: quality_control
+    env:
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_EXAMPLE_VITE_ID }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Printout
+        uses: ./.github/actions/printout
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Deploy
+        uses: ./.github/actions/deploy-apps
+        with:
+          mode: 'dev'
+          vercel_token: ${{ secrets.VERCEL_TOKEN }}
+          app_dir: ./apps/example-vite
