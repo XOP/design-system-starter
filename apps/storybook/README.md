@@ -84,6 +84,8 @@ Finally, you can completely replace the overall testing with atomic tests config
 
 `loadStory` would load a specific story for a specific component. The id-s of that stories can be found in the `storybook-static/index.json` (`stories.json` in Storybook 7) file after Storybook build.
 
+> Note that `storybook-static` is replaced with `dist` output folder for more convenient work with Vercel CLI.
+
 `loadDocs` on the contrary takes a screenshot of the Overview page. It saves a lot of time and bandwidth,  
 however it's prone to false positives related to micro layout shifts. Imagine there are 20 component variants and something goes wrong with the first one so all other 19 are affected as well.
 
