@@ -98,5 +98,4 @@ pnpm gen
 
 - Palette is generated with [Unicornix](https://www.npmjs.com/package/unicornix)
 - Design tokens schema is inspired by [Design Tokens Generator](https://www.design-tokens.dev/)
-- Color gammas are created with [Tailwind Color Generator](https://uicolors.app/create)
 - Build is powered by [Vite](https://vitejs.dev/)
