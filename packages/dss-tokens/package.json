@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "author": "Evgeny Khoroshilov (https://github.com/XOP)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/XOP/design-system-starter"
+  },
   "type": "module",
   "exports": {
     ".": {
@@ -36,7 +40,6 @@
     "@storybook/blocks": "^8.2.4",
     "@types/react": "^18.2.74",
     "@vanilla-extract/css": "^1.15.3",
-    "polished": "^4.2.2",
     "typescript": "^5.5.4",
     "vite": "^5.3.4"
   },

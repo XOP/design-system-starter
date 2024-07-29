@@ -1,5 +1,12 @@
 # DSS UI @ Design System Starter Template
 
+> **@ds-starter/ui** is the part of the [Design System Starter (DSS) Template](https://github.com/XOP/design-system-starter)  
+> The package is created for demo purposes and is not intended for production usage  
+> See it in action:  
+> - [DSS Storybook](https://ds-starter-storybook.vercel.app/)
+> - [DSS Documentation](https://ds-starter-docs.vercel.app/)
+> - [Example App](https://ds-starter-app-vite.vercel.app/)
+
 ## Overview
 
 UI library is one of the essential pieces of Design System puzzle.  
@@ -28,9 +35,6 @@ Apart with some helper files and styling assets, a common component in DSS UI co
 Storybook is set up as a [separate app](/apps/storybook/README.md), consolidating all stories across monorepo.
 
 ## Installation
-
-> Note, installation instructions are for presentation purpose only.  
-> The packages are not published and only used locally for now.
 
 ```sh
 npm i @ds-starter/ui

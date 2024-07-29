@@ -1,5 +1,12 @@
 # DSS Fonts @ Design System Starter Template
 
+> **@ds-starter/fonts** is the part of the [Design System Starter (DSS) Template](https://github.com/XOP/design-system-starter)  
+> The package is created for demo purposes and is not intended for production usage  
+> See it in action:  
+> - [DSS Storybook](https://ds-starter-storybook.vercel.app/)
+> - [DSS Documentation](https://ds-starter-docs.vercel.app/)
+> - [Example App](https://ds-starter-app-vite.vercel.app/)
+
 ## Overview
 
 Fonts package is optional and created for convenient fonts management.  
@@ -7,9 +14,6 @@ In most cases it makes sense to setup custom loading, you will need to take care
 However for [quick hacking or dev-oriented projects](https://www.zachleat.com/web/web-font-data-uris/) base64-encoded files can work just fine.
 
 ## Installation
-
-> Note, installation instructions are for presentation purpose only.  
-> The packages are not published and only used locally for now.
 
 ```sh
 npm i @ds-starter/fonts

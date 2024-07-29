@@ -7,7 +7,6 @@ There are a couple of things that require consideration from development perspec
 
 **Design System Starter** (DSS for short) Template allows for **better technology shaping** from the start. There are some foundational modules, however it's not necessary to maintain all of them from the get go. Since you already know where the product is headed, you just need to plan and execute accordingly - start with required parts and add more when needed.
 
-
 ## Overview
 
 Design System Template consists of number of packages, configs and apps, having various purposes.  
@@ -26,7 +25,7 @@ Another staple of the DS Template is [Typescript](https://www.typescriptlang.org
 - 🚀 Storybook development and interactive documentation
 - 🚀 Documentation website, auto-documenting components
 - 🛠️ Visual Regression Testing for UI library
-- 🛠️ Changelog generation and smart versioning
+- 🛠️ Changelog generation and automated release process
 - 🛠️ Packages versions synchronization
 - 🛠️ Quick and reasonable linting and formatting
 
@@ -67,14 +66,12 @@ Secondary module, that is not usually separated from the very beginning. However
 
 Another secondary module, that is exactly what it's named after. Fonts distribution can be done very differently and it's just one of the ways to support it. Find more details in the [documentation](/packages/dss-fonts/README.md).
 
-
 ## Configs 
 
-### Typescript Config - [tsconfig](/config/tsconfig/package.json)
+### Typescript Config - [tsconfig](/tsconfig/package.json)
 
 There are 2 essential configurations - `lib-js` and `lib-react`.  
 Easy to notice that the latter should be used when framework is utilized.
-
 
 ## Apps
 
@@ -165,15 +162,12 @@ Main configuration is located at the [project root](/biome.json) and extended on
 
 ### Cool stuff
 
-- [polished](https://polished.js.org/)
 - [tsParticles](https://particles.js.org/)
 
 ### Color and Tokens
 
 - [Unicornix Color Themes](https://www.npmjs.com/package/unicornix)
 - [Design Tokens Generator](https://www.design-tokens.dev/)
-- [Tailwind Color Generator](https://uicolors.app/create)
-
 
 ## Adding Components
 
@@ -191,7 +185,6 @@ In [UI](/packages/dss-ui/src/components/) you would find a scaffolding for the n
 In the [Docs](/apps/docs/src/content/components/) you would find new files that are sufficient for adding a component to the docs website.  
 
 All you need to do now is to fill the new files with content!
-
 
 ## Scripts
 
@@ -272,7 +265,6 @@ Publish modules:
 ```sh
 pnpm change:publish
 ```
-
 
 ## License
 

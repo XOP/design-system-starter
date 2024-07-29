@@ -2,5 +2,9 @@
   "name": "@ds-starter/tsconfig",
   "version": "0.1.0",
   "author": "Evgeny Khoroshilov (https://github.com/XOP)",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/XOP/design-system-starter"
+  }
 }
