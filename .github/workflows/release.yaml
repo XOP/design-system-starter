@@ -9,6 +9,9 @@ on:
   # for debug purposes
   workflow_dispatch:
 
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
 
