@@ -6,7 +6,7 @@ on:
       - '.changeset/**'
     branches: [main]
 
-  # debug
+  # for debug purposes
   workflow_dispatch:
 
 concurrency:
@@ -39,8 +39,50 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  deploy_docs_prod:
+  deploy_docs_dev:
     name: Deploy-Docs-Prod
-    uses: ./.github/workflows/deploy-docs.yaml
-    with:
-      deploy_mode: 'prod'
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_DOCS_ID }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Printout
+        uses: ./.github/actions/printout
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Deploy
+        uses: ./.github/actions/deploy-docs
+        with:
+          mode: 'prod'
+          vercel_token: ${{ secrets.VERCEL_TOKEN }}
+          app_dir: ./apps/docs
+
+  deploy_storybook_dev:
+    name: Deploy-Storybook-Prod
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_STORYBOOK_ID }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Printout
+        uses: ./.github/actions/printout
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Deploy
+        uses: ./.github/actions/deploy-docs
+        with:
+          mode: 'prod'
+          vercel_token: ${{ secrets.VERCEL_TOKEN }}
+          app_dir: ./apps/storybook

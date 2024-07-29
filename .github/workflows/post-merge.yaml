@@ -12,9 +12,9 @@ jobs:
     name: Quality-Check
     uses: ./.github/workflows/quality-check.yaml
 
-  # visual_testing:
-  #   name: Visual-Testing
-  #   uses: ./.github/workflows/visual-testing.yaml
+  visual_testing:
+    name: Visual-Testing
+    uses: ./.github/workflows/visual-testing.yaml
 
   deploy_docs_dev:
     name: Deploy-Docs-Dev
