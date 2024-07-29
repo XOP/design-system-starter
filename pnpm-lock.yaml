@@ -330,9 +330,6 @@ importers:
       '@vanilla-extract/css':
         specifier: ^1.15.3
         version: 1.15.3
-      polished:
-        specifier: ^4.2.2
-        version: 4.2.2
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
