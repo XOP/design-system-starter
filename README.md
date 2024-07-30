@@ -247,7 +247,7 @@ List mismatches for inspection:
 pnpm syncpack:list
 ```
 
-### Changelog
+### Changelog and Release
 
 Changelog automation can be implemented in a number of ways, here we rely on [Changesets](https://github.com/changesets/changesets/tree/main). Configuration can be found in the [dedicated folder](/.changeset/config.json). Examples of the changelog generation are in the CHANGELOG.md files. Note that real-world logs will also contain commit data and links.
 
@@ -263,8 +263,21 @@ pnpm change:version
 
 Publish modules:
 ```sh
-pnpm change:publish
+pnpm release
 ```
+
+### Automation
+
+Project uses Github [actions](/.github/actions/) and [workflows](/.github/workflows/) for standard operations, such as post-merge checks, deployment of apps and release of the packages. 
+
+Workflows use the following secrets set up in the repo:
+
+- `NPM_TOKEN` - NPM authorization token, used for packages publishing
+- `VERCEL_ORG_ID` - Vercel organization ID, used for deployment of apps
+- `VERCEL_PROJECT_STORYBOOK_ID` - Vercel Project ID for Storybook application, used for deployment
+- `VERCEL_PROJECT_DOCS_ID` - Vercel Project ID for Docs application, used for deployment
+- `VERCEL_PROJECT_EXAMPLE_VITE_ID` - Vercel Project ID for Example Vite application, used for deployment
+- `VERCEL_TOKEN` - Vercel authorization token, used for all Vercel operations
 
 ## License
 
