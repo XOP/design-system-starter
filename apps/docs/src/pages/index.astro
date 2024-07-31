@@ -26,23 +26,142 @@ const entries = NAVIGATION.map((item) => {
 <Layout title="Welcome to DSS Docs" showNav={false}>
   <Content>
     <h2>Welcome to DSS Docs!</h2>
-
-    <p>
-      <big>
-        DSS is made to kickstart and slingshot your Design System website
-        without much hustle. It's fast to develop and build, open for
-        customization and easy to maintain by non-developers.
-      </big>
+    <p class="intro">
+      DSS Docs Application is the part of the{' '}
+      <a
+        href="https://github.com/XOP/design-system-starter"
+        title="Design System Starter (DSS) Template"
+      >
+        Design System Starter (DSS) Template
+      </a>{' '}
+      family.
     </p>
 
-    <p>
-      Welcome to the central nexus for [YOUR DS BRAND], the definitive resource
-      for our design language and digital identity. Here, you will find
-      everything required to navigate and utilize our design system, empowering
-      you to craft consistent, accessible, and engaging customer experiences
-      that resonate with our brand's core values.
-    </p>
+    <div class="about">
+      <section>
+        <h3>Explore parts of DSS</h3>
+        <ul>
+          <li>
+            <a
+              href="https://ds-starter-storybook.vercel.app/"
+              title="DSS Storybook"
+            >
+              DSS Storybook
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://ds-starter-docs.vercel.app/"
+              title="DSS Documentation Website"
+            >
+              DSS Docs Website
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://ds-starter-app-vite.vercel.app/"
+              title="DSS Example Application"
+            >
+              DSS Example Application
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3>NPM packages</h3>
+        <ul>
+          <li>
+            <a
+              href="https://www.npmjs.com/package/@ds-starter/fonts"
+              title="@ds-starter/fonts"
+            >
+              @ds-starter/fonts
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.npmjs.com/package/@ds-starter/icons"
+              title="@ds-starter/icons"
+            >
+              @ds-starter/icons
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.npmjs.com/package/@ds-starter/tokens"
+              title="@ds-starter/tokens"
+            >
+              @ds-starter/tokens
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.npmjs.com/package/@ds-starter/ui"
+              title="@ds-starter/ui"
+            >
+              @ds-starter/ui
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.npmjs.com/package/@ds-starter/tsconfig"
+              title="@ds-starter/tsconfig"
+            >
+              @ds-starter/tsconfig
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3>Github</h3>
+        <ul>
+          <li>
+            <a
+              href="https://github.com/XOP/design-system-starter"
+              title="DSS Monorepo"
+            >
+              DSS Monorepo
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
   </Content>
 
   <IntroNav data={entries} />
 </Layout>
+
+<style>
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--awsm-space-8);
+    margin-block-start: var(--awsm-space-8);
+  }
+
+  @media screen and (max-width: 780px) {
+    .about {
+      grid-template-columns: auto;
+    }
+  }
+
+  .about h3 {
+    margin: 0;
+    margin-block-end: var(--awsm-space-2);
+
+    text-transform: uppercase;
+    color: var(--awsm-color-content-subtle);
+  }
+
+  .intro a,
+  .about a {
+    color: var(--awsm-color-accent-accent);
+  }
+
+  @media (hover: hover) {
+    .intro a:hover,
+    .about a:hover {
+      color: var(--awsm-color-content-strong);
+    }
+  }
+</style>

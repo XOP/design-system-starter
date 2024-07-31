@@ -9,6 +9,8 @@ import { excludedProps } from './config/excludedProps';
 
 const packages = ['dss-tokens', 'dss-fonts', 'dss-icons', 'dss-ui'];
 
+const introPath = '../stories/**/*.mdx';
+
 const storiesPaths = packages.map(
   (dir) => `../../../packages/${dir}/src/**/*.stories.@(js|jsx|ts|tsx)`,
 );
@@ -18,7 +20,7 @@ const docsPaths = packages.map((dir) => `../../../packages/${dir}/**/*.mdx`);
 const docgenPaths = packages.map((dir) => `../../packages/${dir}/src/**/*.tsx`);
 
 const config: StorybookConfig = {
-  stories: [...storiesPaths, ...docsPaths],
+  stories: [introPath, ...storiesPaths, ...docsPaths],
 
   addons: [
     getAbsolutePath('@storybook/addon-essentials'),

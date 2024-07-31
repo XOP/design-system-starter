@@ -1,5 +1,7 @@
 import styles from './meta.module.css';
 
+const year = new Date().getFullYear();
+
 const Meta = () => {
   return (
     <footer className={styles.root}>
@@ -7,7 +9,7 @@ const Meta = () => {
       <a href="https://github.com/XOP" title="XOP Github">
         XOP
       </a>{' '}
-      2023 - now
+      2023 - {year}
     </footer>
   );
 };
