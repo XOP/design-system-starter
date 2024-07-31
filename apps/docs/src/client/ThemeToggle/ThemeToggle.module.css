@@ -1,4 +1,5 @@
 .root {
+  width: var(--awsm-space-10);
   font-size: var(--awsm-font-size-xl);
   color: var(--awsm-color-accent-base);
 }
