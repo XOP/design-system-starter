@@ -9,11 +9,30 @@ interface Props {
 }
 
 const { page = COLLECTION, data } = Astro.props;
+
+const organizedData = data.toSorted((a, b) => {
+  const aHasSlash = a.slug.includes('/');
+  const bHasSlash = b.slug.includes('/');
+
+  // example slug should be first
+  if (!aHasSlash && bHasSlash) return -1;
+  if (aHasSlash && !bHasSlash) return 1;
+
+  // other slugs are sorded by the name
+  if (aHasSlash && bHasSlash) {
+    const aPostSlash = a.slug.split('/')[1];
+    const bPostSlash = b.slug.split('/')[1];
+
+    return aPostSlash.localeCompare(bPostSlash);
+  }
+
+  return 0;
+});
 ---
 
 <nav class="nav">
   {
-    data.map((entry) => {
+    organizedData?.map((entry) => {
       const isActive = currentSlug === (entry.slug.split('/')[1] || '');
 
       return (
