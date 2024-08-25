@@ -44,6 +44,6 @@
     "vite": "^5.3.4"
   },
   "dependencies": {
-    "unicornix": "0.7.0-beta.0"
+    "unicornix": "0.8.1"
   }
 }
