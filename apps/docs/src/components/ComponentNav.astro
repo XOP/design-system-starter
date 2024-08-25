@@ -10,7 +10,7 @@ interface Props {
 
 const { page = COLLECTION, data } = Astro.props;
 
-const organizedData = data.toSorted((a, b) => {
+const organizedData = data.sort((a, b) => {
   const aHasSlash = a.slug.includes('/');
   const bHasSlash = b.slug.includes('/');
 
