@@ -50,7 +50,10 @@ const Panel = () => {
         aria-label="Roll Right"
       >
         <span
-          style={{ maskImage: `url(${IconArrowRightSrc})` }}
+          style={{
+            maskImage: `url(${IconArrowRightSrc})`,
+            WebkitMaskImage: `url(${IconArrowRightSrc})`,
+          }}
           className={styles.icon}
         >
           <img src={IconArrowRightSrc} alt="" />
