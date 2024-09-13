@@ -1,6 +1,5 @@
-
 .example {
-  background: var(--awsm-color-neutral-backdrop); 
+  background: var(--awsm-color-neutral-backdrop);
   border: var(--awsm-space-px) solid var(--awsm-color-accent-border);
   border-radius: var(--awsm-radius-n);
   overflow: auto;

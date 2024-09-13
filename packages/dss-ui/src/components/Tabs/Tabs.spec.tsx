@@ -105,7 +105,10 @@ describe('Tabs', () => {
 
   it('should apply the styles according to props', () => {
     const { container } = render(
-      <Tabs color="neutral" variant="fluid">
+      <Tabs
+        color="neutral"
+        variant="fluid"
+      >
         <TabList>
           <Tab id="tab-1">tab 1</Tab>
           <Tab id="tab-2">tab 2</Tab>

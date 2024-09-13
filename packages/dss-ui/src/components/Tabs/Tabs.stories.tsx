@@ -37,13 +37,22 @@ export const Base: Story = {
         <Tab id="tab-2">This is Tab 2</Tab>
         <Tab id="tab-3">And Three</Tab>
       </TabList>,
-      <TabPanel key="1" id="tab-1">
+      <TabPanel
+        key="1"
+        id="tab-1"
+      >
         Tab 1 Content
       </TabPanel>,
-      <TabPanel key="2" id="tab-2">
+      <TabPanel
+        key="2"
+        id="tab-2"
+      >
         This is Tab 2 Content
       </TabPanel>,
-      <TabPanel key="3" id="tab-3">
+      <TabPanel
+        key="3"
+        id="tab-3"
+      >
         And Three Content
       </TabPanel>,
     ],

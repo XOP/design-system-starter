@@ -20,7 +20,11 @@ const TabList = forwardRef(function TabsList(
   const { className, ...rest } = props;
 
   return (
-    <BaseTabList {...rest} ref={ref} className={clsx(className, listStyles())}>
+    <BaseTabList
+      {...rest}
+      ref={ref}
+      className={clsx(className, listStyles())}
+    >
       {props.children}
     </BaseTabList>
   );

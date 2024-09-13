@@ -94,7 +94,12 @@ const Space = () => {
   );
 
   if (init) {
-    return <Particles id="space" options={options} />;
+    return (
+      <Particles
+        id="space"
+        options={options}
+      />
+    );
   }
 
   return <div className={styles.root} />;

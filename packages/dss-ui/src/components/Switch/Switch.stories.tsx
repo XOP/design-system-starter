@@ -52,7 +52,10 @@ export const Disabled: Story = {
   render: () => (
     <DemoFlow>
       <Switch isDisabled>Unchecked</Switch>
-      <Switch isDisabled isSelected>
+      <Switch
+        isDisabled
+        isSelected
+      >
         Checked
       </Switch>
     </DemoFlow>

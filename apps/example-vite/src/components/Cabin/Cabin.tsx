@@ -25,7 +25,10 @@ const Cabin = () => (
       </g>
       <defs>
         <clipPath id="a">
-          <path fill="#fff" d="M0 0h1200v900H0z" />
+          <path
+            fill="#fff"
+            d="M0 0h1200v900H0z"
+          />
         </clipPath>
       </defs>
     </svg>

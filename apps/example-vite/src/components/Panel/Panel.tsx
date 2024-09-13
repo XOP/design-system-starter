@@ -24,7 +24,10 @@ const Panel = () => {
           style={{ maskImage: `url(${IconArrowLeftSrc})` }}
           className={styles.icon}
         >
-          <img src={IconArrowLeftSrc} alt="" />
+          <img
+            src={IconArrowLeftSrc}
+            alt=""
+          />
         </span>
       </Button>
       <Button
@@ -56,7 +59,10 @@ const Panel = () => {
           }}
           className={styles.icon}
         >
-          <img src={IconArrowRightSrc} alt="" />
+          <img
+            src={IconArrowRightSrc}
+            alt=""
+          />
         </span>
       </Button>
     </div>

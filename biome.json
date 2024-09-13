@@ -23,7 +23,13 @@
     "enabled": true,
     "indentStyle": "space",
     "indentWidth": 2,
-    "lineWidth": 80
+    "lineWidth": 80,
+    "formatWithErrors": true
+  },
+  "css": {
+    "parser": {
+      "cssModules": true
+    }
   },
   "javascript": {
     "formatter": {

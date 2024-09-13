@@ -22,7 +22,10 @@ const About = () => {
       >
         About the App
       </Button>
-      <aside className={styles.root} data-is-open={isOpen}>
+      <aside
+        className={styles.root}
+        data-is-open={isOpen}
+      >
         <section className={styles.content}>
           <h2>About the App</h2>
           <p>

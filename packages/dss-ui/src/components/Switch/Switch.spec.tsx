@@ -49,7 +49,10 @@ describe('Switch', () => {
 
   it('should apply the styles according to props', () => {
     const { container } = render(
-      <Switch color="neutral" size="small">
+      <Switch
+        color="neutral"
+        size="small"
+      >
         Label
       </Switch>
     );

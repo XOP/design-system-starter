@@ -27,7 +27,11 @@ describe('Button', () => {
 
   it('should apply the styles according to props', () => {
     const { container } = render(
-      <Button color="neutral" variant="ghost" size="small">
+      <Button
+        color="neutral"
+        variant="ghost"
+        size="small"
+      >
         Click me
       </Button>
     );

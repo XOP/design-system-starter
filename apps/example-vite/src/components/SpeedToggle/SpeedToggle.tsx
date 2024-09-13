@@ -18,7 +18,10 @@ const SpeedToggle = () => {
   };
 
   return (
-    <Switch onChange={handleChange} defaultSelected>
+    <Switch
+      onChange={handleChange}
+      defaultSelected
+    >
       {speedLabel(speed)}
     </Switch>
   );

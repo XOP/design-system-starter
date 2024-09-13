@@ -1,15 +1,15 @@
 @font-face {
-  font-family: 'Play';
+  font-family: "Play";
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url('../../fonts/Play/400.woff') format('woff');
+  src: url("../../fonts/Play/400.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'Play';
+  font-family: "Play";
   font-style: bold;
   font-display: swap;
   font-weight: 700;
-  src: url('../../fonts/Play/700.woff') format('woff');
+  src: url("../../fonts/Play/700.woff") format("woff");
 }

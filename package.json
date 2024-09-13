@@ -22,7 +22,7 @@
     "release": "pnpm -r publish --access public --filter \"./packages/**\" --filter \"./tsconfig\""
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.8.3",
+    "@biomejs/biome": "^1.9.0",
     "@changesets/changelog-git": "^0.2.0",
     "@changesets/cli": "^2.27.1",
     "@turbo/gen": "^2.0.9",

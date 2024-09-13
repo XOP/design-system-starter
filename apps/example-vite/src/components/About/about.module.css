@@ -8,13 +8,13 @@
   bottom: 0;
 }
 
-.root[data-is-open='true'] {
+.root[data-is-open="true"] {
   display: block;
   backdrop-filter: blur(var(--awsm-space-1));
 }
 
 .root::before {
-  content: '';
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
@@ -25,7 +25,7 @@
   opacity: 0.8;
 }
 
-[data-theme='light'] {
+[data-theme="light"] {
   .root {
     box-shadow: var(--awsm-shadow-large);
   }

@@ -16,7 +16,10 @@ const Fonts = ({
     <>
       {preconnect && (
         <>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com"
+          />
           <link
             rel="preconnect"
             href="https://fonts.gstatic.com"
@@ -25,7 +28,10 @@ const Fonts = ({
         </>
       )}
 
-      <link href={fontsHref} rel="stylesheet" />
+      <link
+        href={fontsHref}
+        rel="stylesheet"
+      />
     </>
   );
 };

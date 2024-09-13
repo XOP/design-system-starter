@@ -17,8 +17,7 @@
   border: var(--awsm-space-1) solid var(--awsm-color-accent-soft);
   background-color: var(--awsm-color-background-muted);
   box-shadow: 0 calc(-1 * var(--awsm-space-1)) 0 var(--awsm-space-1)
-      var(--awsm-color-accent-alpha-500),
-    var(--awsm-shadow-small);
+    var(--awsm-color-accent-alpha-500), var(--awsm-shadow-small);
 }
 
 .icon {

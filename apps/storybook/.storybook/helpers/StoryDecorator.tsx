@@ -7,7 +7,10 @@ export const StoryDecorator = ({
 }: {
   children: React.ReactElement;
 }) => (
-  <div style={{ margin: 'var(--awsm-space-4)' }} data-testid={STORY_TEST_ID}>
+  <div
+    style={{ margin: 'var(--awsm-space-4)' }}
+    data-testid={STORY_TEST_ID}
+  >
     {children}
   </div>
 );

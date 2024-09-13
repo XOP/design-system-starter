@@ -14,8 +14,10 @@
 .code::after {
   content: "";
   position: absolute;
-  top: 0; left: 0;
-  bottom: 0; right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   border-radius: var(--awsm-radius-n);
   border: var(--awsm-space-px) solid var(--awsm-color-neutral-alpha-600);
   pointer-events: none;
@@ -29,6 +31,6 @@
   display: flex;
   gap: var(--awsm-space-4);
   justify-content: flex-end;
-  
+
   margin-block-start: var(--awsm-space-2);
 }

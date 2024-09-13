@@ -7,13 +7,27 @@
   --awsm-duration-long: 346ms;
   --awsm-duration-extra: 490ms;
   --awsm-shadow-color: var(--awsm-color-neutral-content);
-  --awsm-shadow-small: 0px 1px 1px var(--awsm-color-neutral-alpha-400), 0px 1px 2px -0.5px var(--awsm-color-neutral-alpha-700), 0px 1px 4px -3px var(--awsm-color-neutral-alpha-600);
-  --awsm-shadow-medium: 0px 1px 1px -0.5px var(--awsm-color-neutral-alpha-300), 0px 1px 2px -1px var(--awsm-color-neutral-alpha-500), 0px 2px 3px -1.5px var(--awsm-color-neutral-alpha-600), 0px 5px 6px -2px var(--awsm-color-neutral-alpha-600);
-  --awsm-shadow-large: 0px 0.5px 0.5px var(--awsm-color-neutral-alpha-400), 0px 2px 2px -0.5px var(--awsm-color-neutral-alpha-500), 0px 5px 6px -1px var(--awsm-color-neutral-alpha-500), 0px 8px 9px -1px var(--awsm-color-neutral-alpha-600), 0px 12px 14px -2px var(--awsm-color-neutral-alpha-600), 0px 16px 20px -3px var(--awsm-color-neutral-alpha-500);
+  --awsm-shadow-small:
+    0px 1px 1px var(--awsm-color-neutral-alpha-400), 0px 1px 2px -0.5px var(
+      --awsm-color-neutral-alpha-700
+    ), 0px 1px 4px -3px var(--awsm-color-neutral-alpha-600);
+  --awsm-shadow-medium:
+    0px 1px 1px -0.5px var(--awsm-color-neutral-alpha-300), 0px 1px 2px -1px var(
+      --awsm-color-neutral-alpha-500
+    ), 0px 2px 3px -1.5px var(--awsm-color-neutral-alpha-600), 0px 5px 6px -2px var(
+      --awsm-color-neutral-alpha-600
+    );
+  --awsm-shadow-large:
+    0px 0.5px 0.5px var(--awsm-color-neutral-alpha-400), 0px 2px 2px -0.5px var(
+      --awsm-color-neutral-alpha-500
+    ), 0px 5px 6px -1px var(--awsm-color-neutral-alpha-500), 0px 8px 9px -1px var(
+      --awsm-color-neutral-alpha-600
+    ), 0px 12px 14px -2px var(--awsm-color-neutral-alpha-600), 0px 16px 20px -3px var(
+      --awsm-color-neutral-alpha-500
+    );
   --awsm-focus-color: var(--awsm-color-accent-accent);
   --awsm-focus-outline: 2px solid var(--awsm-color-accent-accent);
   --awsm-focus-outline-offset: 2px;
   --awsm-selection-color: var(--awsm-color-accent-contrast);
   --awsm-selection-contrast: var(--awsm-color-accent-strong);
-
 }

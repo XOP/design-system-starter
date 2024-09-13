@@ -31,7 +31,11 @@ const CopyCode = (props: CopyCodeProps) => {
 
   return (
     <span className={className}>
-      <Button onClick={handleCopy} title="Copy to clipboard" disabled={busy}>
+      <Button
+        onClick={handleCopy}
+        title="Copy to clipboard"
+        disabled={busy}
+      >
         {busy ? 'Copied!' : 'Copy'}
       </Button>
     </span>

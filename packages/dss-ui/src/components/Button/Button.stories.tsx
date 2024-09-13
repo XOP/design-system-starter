@@ -93,13 +93,22 @@ export const SizeLarge: Story = {
 export const AllVariantsAccent: Story = {
   render: () => (
     <DemoFlow>
-      <Button color="accent" variant="solid">
+      <Button
+        color="accent"
+        variant="solid"
+      >
         Solid
       </Button>
-      <Button color="accent" variant="ghost">
+      <Button
+        color="accent"
+        variant="ghost"
+      >
         Ghost
       </Button>
-      <Button color="accent" variant="text">
+      <Button
+        color="accent"
+        variant="text"
+      >
         Text
       </Button>
     </DemoFlow>
@@ -109,13 +118,22 @@ export const AllVariantsAccent: Story = {
 export const AllVariantsNeutral: Story = {
   render: () => (
     <DemoFlow>
-      <Button color="neutral" variant="solid">
+      <Button
+        color="neutral"
+        variant="solid"
+      >
         Solid
       </Button>
-      <Button color="neutral" variant="ghost">
+      <Button
+        color="neutral"
+        variant="ghost"
+      >
         Ghost
       </Button>
-      <Button color="neutral" variant="text">
+      <Button
+        color="neutral"
+        variant="text"
+      >
         Text
       </Button>
     </DemoFlow>
