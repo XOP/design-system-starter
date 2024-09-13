@@ -22,6 +22,8 @@ jobs:
   vrt:
     name: Visual Testing
     timeout-minutes: 60
+    # depending on your local setup:
+    # runs-on: macos-14
     runs-on: ubuntu-latest
 
     steps:

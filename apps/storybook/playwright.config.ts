@@ -57,6 +57,14 @@ export default defineConfig({
     },
   ],
 
+  expect: {
+    toHaveScreenshot: {
+      // consider higher values (~0.05) for more complex screens
+      // consider lower values (~0.005) for small atomic components
+      maxDiffPixelRatio: 0.01,
+    },
+  },
+
   webServer: {
     command: 'pnpm serve',
     url: `http://127.0.0.1:${PORT}`,
